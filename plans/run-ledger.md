@@ -8,6 +8,8 @@ Update after each verified stage. A planned run becomes complete after its artif
 | 2026-11-22 | GitHub destination | Verified | Public `mbh2006/ATML-PA_4`, default branch `main`, size 0 at initial check. |
 | 2026-11-22 | Staff data | Source verified | Staff README and scripts specify locked public selections, bundled MQAR/retrieval data, and teacher/original-draft banks. Materialized assets are pending. |
 | 2026-11-22 | Local runtime | Inspected | Python 3.11.7 on the default path, no importable PyTorch in that runtime, no NVIDIA command found, and about 49 GiB free on D:. |
-| 2026-11-22 | Kaggle access | API reachable | Existing account authenticated for a read-only kernel listing. Actual CUDA allocation and usable quota require a private smoke run. |
+| 2026-11-22 | Plans and repository | Verified | Three task plans and evidence guide pushed to `main` in `17dea92`. |
+| 2026-11-22 | Kaggle CUDA smoke | Passed | Private `mbh2006/atml-pa4-gpu-preflight/1` exposed two Tesla T4 GPUs with 15,636,037,632 bytes each. A finite FP16 SDPA result and five warmed times were recovered. Both GitHub sources were reachable from Linux. |
+| 2026-11-22 | Preflight evidence recovery | Verified | Local `runs/preflight/kaggle-v1/preflight.json` and kernel log. JSON SHA-256 `f844342ace48ad68b041596f23541549099bfad9137daa7db8aa1f42c4676c01`. Runtime stock Transformers 5.20.2 and Hub 1.33.0 require isolation from the course pins. |
 | 2026-11-22 | Course dependency lock | Pending | Staff public data requirements located. The separate course environment lock referenced by the manual was not located in the PA4 folder. |
 | 2026-11-22 | Experiment evidence | Pending | No measured experimental results yet. See the three task plans for the artifacts and checks that will establish results. |
