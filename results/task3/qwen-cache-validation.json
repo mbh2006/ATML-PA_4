@@ -1,0 +1,356 @@
+{
+  "source_revision": "dbfe47882adace346e8614159131619683750fe9",
+  "models": {
+    "model_target": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "model_draft": "7ae557604adf67be50417f59c2c2f167def9a775"
+  },
+  "rounds": [
+    {
+      "prompt_id": 0,
+      "gamma": 2,
+      "round": 0,
+      "cache_length": 41,
+      "target_error": {
+        "absolute_max": 0.00015413761138916016,
+        "relative_l2": 0.00019815533596556634
+      },
+      "draft_error": {
+        "absolute_max": 5.221366882324219e-05,
+        "relative_l2": 5.7385197578696534e-05
+      },
+      "accepted": 2,
+      "examined": 2,
+      "emitted": [
+        16,
+        17,
+        3039
+      ],
+      "proposed": 2,
+      "pending_token": 3039,
+      "target_verification_tokens": 2,
+      "draft_calls": 2
+    },
+    {
+      "prompt_id": 0,
+      "gamma": 2,
+      "round": 1,
+      "cache_length": 44,
+      "target_error": {
+        "absolute_max": 2.3896063794381917e-07,
+        "relative_l2": 3.3822252021309396e-07
+      },
+      "draft_error": {
+        "absolute_max": 1.1920928955078125e-07,
+        "relative_l2": 1.4690192529087653e-07
+      },
+      "accepted": 2,
+      "examined": 2,
+      "emitted": [
+        220,
+        16,
+        18
+      ],
+      "proposed": 2,
+      "pending_token": 18,
+      "target_verification_tokens": 3,
+      "draft_calls": 3
+    },
+    {
+      "prompt_id": 0,
+      "gamma": 2,
+      "round": 2,
+      "cache_length": 47,
+      "target_error": {
+        "absolute_max": 5.960464477539062e-07,
+        "relative_l2": 6.357471420415095e-07
+      },
+      "draft_error": {
+        "absolute_max": 5.426954885479063e-08,
+        "relative_l2": 5.428046634392558e-08
+      },
+      "accepted": 2,
+      "examined": 2,
+      "emitted": [
+        374,
+        220,
+        16
+      ],
+      "proposed": 2,
+      "pending_token": 16,
+      "target_verification_tokens": 3,
+      "draft_calls": 3
+    },
+    {
+      "prompt_id": 0,
+      "gamma": 2,
+      "round": 3,
+      "cache_length": 50,
+      "target_error": {
+        "absolute_max": 5.662441253662109e-06,
+        "relative_l2": 7.930226274766028e-06
+      },
+      "draft_error": {
+        "absolute_max": 0.0009326934814453125,
+        "relative_l2": 0.0013698253314942122
+      },
+      "accepted": 2,
+      "examined": 2,
+      "emitted": [
+        20,
+        21,
+        13
+      ],
+      "proposed": 2,
+      "pending_token": 13,
+      "target_verification_tokens": 3,
+      "draft_calls": 3
+    },
+    {
+      "prompt_id": 0,
+      "gamma": 2,
+      "round": 4,
+      "cache_length": 52,
+      "target_error": {
+        "absolute_max": 3.3380445074726595e-09,
+        "relative_l2": 3.5204688053624977e-09
+      },
+      "draft_error": {
+        "absolute_max": 1.5859633606396528e-09,
+        "relative_l2": 3.129121406431068e-09
+      },
+      "accepted": 1,
+      "examined": 1,
+      "emitted": [
+        151645
+      ],
+      "proposed": 1,
+      "pending_token": null,
+      "target_verification_tokens": 2,
+      "draft_calls": 2
+    },
+    {
+      "prompt_id": 0,
+      "gamma": 4,
+      "round": 0,
+      "cache_length": 43,
+      "target_error": {
+        "absolute_max": 1.1920928955078125e-07,
+        "relative_l2": 1.206015269872296e-07
+      },
+      "draft_error": {
+        "absolute_max": 1.1920928955078125e-07,
+        "relative_l2": 1.2768279589181475e-07
+      },
+      "accepted": 4,
+      "examined": 4,
+      "emitted": [
+        16,
+        17,
+        3039,
+        220,
+        16
+      ],
+      "proposed": 4,
+      "pending_token": 16,
+      "target_verification_tokens": 4,
+      "draft_calls": 4
+    },
+    {
+      "prompt_id": 0,
+      "gamma": 4,
+      "round": 1,
+      "cache_length": 48,
+      "target_error": {
+        "absolute_max": 7.774497134960257e-08,
+        "relative_l2": 1.0291739727108506e-07
+      },
+      "draft_error": {
+        "absolute_max": 6.979703903198242e-05,
+        "relative_l2": 8.393599273404106e-05
+      },
+      "accepted": 4,
+      "examined": 4,
+      "emitted": [
+        18,
+        374,
+        220,
+        16,
+        20
+      ],
+      "proposed": 4,
+      "pending_token": 20,
+      "target_verification_tokens": 5,
+      "draft_calls": 5
+    },
+    {
+      "prompt_id": 0,
+      "gamma": 4,
+      "round": 2,
+      "cache_length": 52,
+      "target_error": {
+        "absolute_max": 5.093564681146745e-09,
+        "relative_l2": 5.611644926517556e-09
+      },
+      "draft_error": {
+        "absolute_max": 1.5859633606396528e-09,
+        "relative_l2": 3.129121406431068e-09
+      },
+      "accepted": 3,
+      "examined": 3,
+      "emitted": [
+        21,
+        13,
+        151645
+      ],
+      "proposed": 3,
+      "pending_token": null,
+      "target_verification_tokens": 4,
+      "draft_calls": 4
+    },
+    {
+      "prompt_id": 1,
+      "gamma": 2,
+      "round": 0,
+      "cache_length": 52,
+      "target_error": {
+        "absolute_max": 4.395383257360663e-08,
+        "relative_l2": 4.4085805228633035e-08
+      },
+      "draft_error": {
+        "absolute_max": 5.125999450683594e-06,
+        "relative_l2": 5.963022431387799e-06
+      },
+      "accepted": 2,
+      "examined": 2,
+      "emitted": [
+        17,
+        15,
+        17
+      ],
+      "proposed": 2,
+      "pending_token": 17,
+      "target_verification_tokens": 2,
+      "draft_calls": 2
+    },
+    {
+      "prompt_id": 1,
+      "gamma": 2,
+      "round": 1,
+      "cache_length": 55,
+      "target_error": {
+        "absolute_max": 6.694946819152392e-10,
+        "relative_l2": 9.723418736840017e-10
+      },
+      "draft_error": {
+        "absolute_max": 1.430511474609375e-06,
+        "relative_l2": 1.9275910290161846e-06
+      },
+      "accepted": 2,
+      "examined": 2,
+      "emitted": [
+        21,
+        151645
+      ],
+      "proposed": 2,
+      "pending_token": null,
+      "target_verification_tokens": 3,
+      "draft_calls": 3
+    },
+    {
+      "prompt_id": 1,
+      "gamma": 4,
+      "round": 0,
+      "cache_length": 54,
+      "target_error": {
+        "absolute_max": 4.774332046508789e-05,
+        "relative_l2": 6.623556691920385e-05
+      },
+      "draft_error": {
+        "absolute_max": 0.000414455309510231,
+        "relative_l2": 0.0005890800384804606
+      },
+      "accepted": 4,
+      "examined": 4,
+      "emitted": [
+        17,
+        15,
+        17,
+        21,
+        151645
+      ],
+      "proposed": 4,
+      "pending_token": 151645,
+      "target_verification_tokens": 4,
+      "draft_calls": 4
+    }
+  ],
+  "split_prefill": [
+    {
+      "prompt_id": 0,
+      "model": "target",
+      "error": {
+        "absolute_max": 0.04296875,
+        "relative_l2": 0.002878644270822406
+      }
+    },
+    {
+      "prompt_id": 0,
+      "model": "draft",
+      "error": {
+        "absolute_max": 0.0390625,
+        "relative_l2": 0.00267017912119627
+      }
+    },
+    {
+      "prompt_id": 1,
+      "model": "target",
+      "error": {
+        "absolute_max": 0.07373046875,
+        "relative_l2": 0.005840909667313099
+      }
+    },
+    {
+      "prompt_id": 1,
+      "model": "draft",
+      "error": {
+        "absolute_max": 0.05078125,
+        "relative_l2": 0.00313797895796597
+      }
+    }
+  ],
+  "forced_rollback": [
+    {
+      "prompt_id": 0,
+      "proposal": 16,
+      "residual_token": 1249,
+      "cache_length": 39,
+      "target_distribution_error": {
+        "absolute_max": 0.0036858320236206055,
+        "relative_l2": 0.006418121978640556
+      },
+      "draft_distribution_error": {
+        "absolute_max": 0.001581348478794098,
+        "relative_l2": 0.00275815068744123
+      }
+    },
+    {
+      "prompt_id": 1,
+      "proposal": 16,
+      "residual_token": 17,
+      "cache_length": 50,
+      "target_distribution_error": {
+        "absolute_max": 0.0015465617179870605,
+        "relative_l2": 0.0022677371744066477
+      },
+      "draft_distribution_error": {
+        "absolute_max": 0.002286061644554138,
+        "relative_l2": 0.004135310649871826
+      }
+    }
+  ],
+  "versions": {
+    "transformers": "4.57.1",
+    "huggingface_hub": "0.36.2"
+  },
+  "status": "passed"
+}
