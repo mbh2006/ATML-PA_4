@@ -45,6 +45,42 @@ def check_split_prefill(model, prompt):
     return absolute_and_relative_error(actual, reference)
 
 
+class ForcedFirstRejection(TorchSampling):
+    """Select a known rejected proposal solely for the cache regression check."""
+
+    def __init__(self, target, draft):
+        super().__init__(target.model.device, 6304)
+        difference = draft.next_distribution - target.next_distribution
+        self.initial_proposal = difference.argmax().item()
+        if difference[self.initial_proposal].item() <= 0:
+            raise ValueError("No draft proposal has strictly higher probability than the target")
+
+    def choose(self, distribution):
+        if self.initial_proposal is not None:
+            token = self.initial_proposal
+            self.initial_proposal = None
+            return token
+        return super().choose(distribution)
+
+    def uniform(self):
+        return 1 - 2**-53
+
+
+def check_rollback(target, draft, prompt):
+    target_decoder, draft_decoder = QwenDecoder(target, prompt), QwenDecoder(draft, prompt)
+    sampling = ForcedFirstRejection(target_decoder, draft_decoder)
+    sampler = SpeculativeDecoder(target_decoder, draft_decoder, sampling, eos_ids(target))
+    result = sampler.step(width=4, remaining=8)
+    assert result.accepted == 0 and result.examined == 1 and result.pending_token is not None
+    assert target_decoder.length == draft_decoder.length == prompt.size(1)
+    return {
+        "proposal": result.proposals[0], "residual_token": result.pending_token,
+        "cache_length": int(target_decoder.length),
+        "target_distribution_error": check_distribution(target_decoder, prompt),
+        "draft_distribution_error": check_distribution(draft_decoder, prompt),
+    }
+
+
 @torch.inference_mode()
 def validate(lock, evidence):
     pins = {"transformers": "4.57.1", "huggingface_hub": "0.36.2"}
@@ -91,7 +127,7 @@ def validate(lock, evidence):
                     "proposed": len(result.proposals), "pending_token": result.pending_token,
                     "target_verification_tokens": result.verification_tokens, "draft_calls": result.draft_calls,
                 })
-    assert any(row["accepted"] < row["examined"] for row in evidence["rounds"]), "No real-model rollback was exercised"
+        evidence["forced_rollback"].append({"prompt_id": prompt_id, **check_rollback(target, draft, prompt)})
 
 
 def main():
@@ -103,7 +139,7 @@ def main():
     evidence = {
         "source_revision": os.environ.get("PA4_SOURCE_REVISION"),
         "models": {key: lock["revisions"][key] for key in ("model_target", "model_draft")},
-        "rounds": [], "split_prefill": [],
+        "rounds": [], "split_prefill": [], "forced_rollback": [],
     }
     try:
         validate(lock, evidence)

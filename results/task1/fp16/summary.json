@@ -1,0 +1,1864 @@
+{
+  "source_revision": "14d780fcf043cbb4b876a957e178402495e4bef2",
+  "condition": "fp16_baseline",
+  "environment": {
+    "torch": "2.11.0+cu130",
+    "cuda": "13.0",
+    "device": "Tesla T4",
+    "transformers": "4.57.1",
+    "huggingface_hub": "0.36.2",
+    "dtype": "float16",
+    "attention_backend": "sdpa"
+  },
+  "model_revision": "8faed761d45a263340a0528343f099c05c9a4323",
+  "inventory": {
+    "eligible": [
+      {
+        "name": "model.layers.0.self_attn.q_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359291
+      },
+      {
+        "name": "model.layers.0.self_attn.k_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393215
+      },
+      {
+        "name": "model.layers.0.self_attn.v_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393212
+      },
+      {
+        "name": "model.layers.0.self_attn.o_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359293
+      },
+      {
+        "name": "model.layers.0.mlp.gate_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762541
+      },
+      {
+        "name": "model.layers.0.mlp.up_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762531
+      },
+      {
+        "name": "model.layers.0.mlp.down_proj.weight",
+        "shape": [
+          1536,
+          8960
+        ],
+        "elements": 13762560,
+        "nonzero": 13762536
+      },
+      {
+        "name": "model.layers.1.self_attn.q_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359290
+      },
+      {
+        "name": "model.layers.1.self_attn.k_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393215
+      },
+      {
+        "name": "model.layers.1.self_attn.v_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393215
+      },
+      {
+        "name": "model.layers.1.self_attn.o_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359295
+      },
+      {
+        "name": "model.layers.1.mlp.gate_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762540
+      },
+      {
+        "name": "model.layers.1.mlp.up_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762527
+      },
+      {
+        "name": "model.layers.1.mlp.down_proj.weight",
+        "shape": [
+          1536,
+          8960
+        ],
+        "elements": 13762560,
+        "nonzero": 13762530
+      },
+      {
+        "name": "model.layers.2.self_attn.q_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359292
+      },
+      {
+        "name": "model.layers.2.self_attn.k_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393215
+      },
+      {
+        "name": "model.layers.2.self_attn.v_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393215
+      },
+      {
+        "name": "model.layers.2.self_attn.o_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359290
+      },
+      {
+        "name": "model.layers.2.mlp.gate_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762528
+      },
+      {
+        "name": "model.layers.2.mlp.up_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762538
+      },
+      {
+        "name": "model.layers.2.mlp.down_proj.weight",
+        "shape": [
+          1536,
+          8960
+        ],
+        "elements": 13762560,
+        "nonzero": 13762535
+      },
+      {
+        "name": "model.layers.3.self_attn.q_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359293
+      },
+      {
+        "name": "model.layers.3.self_attn.k_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393215
+      },
+      {
+        "name": "model.layers.3.self_attn.v_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393214
+      },
+      {
+        "name": "model.layers.3.self_attn.o_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359290
+      },
+      {
+        "name": "model.layers.3.mlp.gate_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762538
+      },
+      {
+        "name": "model.layers.3.mlp.up_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762526
+      },
+      {
+        "name": "model.layers.3.mlp.down_proj.weight",
+        "shape": [
+          1536,
+          8960
+        ],
+        "elements": 13762560,
+        "nonzero": 13762538
+      },
+      {
+        "name": "model.layers.4.self_attn.q_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359293
+      },
+      {
+        "name": "model.layers.4.self_attn.k_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393216
+      },
+      {
+        "name": "model.layers.4.self_attn.v_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393216
+      },
+      {
+        "name": "model.layers.4.self_attn.o_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359289
+      },
+      {
+        "name": "model.layers.4.mlp.gate_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762527
+      },
+      {
+        "name": "model.layers.4.mlp.up_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762536
+      },
+      {
+        "name": "model.layers.4.mlp.down_proj.weight",
+        "shape": [
+          1536,
+          8960
+        ],
+        "elements": 13762560,
+        "nonzero": 13762535
+      },
+      {
+        "name": "model.layers.5.self_attn.q_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359294
+      },
+      {
+        "name": "model.layers.5.self_attn.k_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393215
+      },
+      {
+        "name": "model.layers.5.self_attn.v_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393216
+      },
+      {
+        "name": "model.layers.5.self_attn.o_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359291
+      },
+      {
+        "name": "model.layers.5.mlp.gate_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762536
+      },
+      {
+        "name": "model.layers.5.mlp.up_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762534
+      },
+      {
+        "name": "model.layers.5.mlp.down_proj.weight",
+        "shape": [
+          1536,
+          8960
+        ],
+        "elements": 13762560,
+        "nonzero": 13762532
+      },
+      {
+        "name": "model.layers.6.self_attn.q_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359291
+      },
+      {
+        "name": "model.layers.6.self_attn.k_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393216
+      },
+      {
+        "name": "model.layers.6.self_attn.v_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393216
+      },
+      {
+        "name": "model.layers.6.self_attn.o_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359288
+      },
+      {
+        "name": "model.layers.6.mlp.gate_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762532
+      },
+      {
+        "name": "model.layers.6.mlp.up_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762535
+      },
+      {
+        "name": "model.layers.6.mlp.down_proj.weight",
+        "shape": [
+          1536,
+          8960
+        ],
+        "elements": 13762560,
+        "nonzero": 13762531
+      },
+      {
+        "name": "model.layers.7.self_attn.q_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359290
+      },
+      {
+        "name": "model.layers.7.self_attn.k_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393216
+      },
+      {
+        "name": "model.layers.7.self_attn.v_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393216
+      },
+      {
+        "name": "model.layers.7.self_attn.o_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359286
+      },
+      {
+        "name": "model.layers.7.mlp.gate_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762521
+      },
+      {
+        "name": "model.layers.7.mlp.up_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762526
+      },
+      {
+        "name": "model.layers.7.mlp.down_proj.weight",
+        "shape": [
+          1536,
+          8960
+        ],
+        "elements": 13762560,
+        "nonzero": 13762537
+      },
+      {
+        "name": "model.layers.8.self_attn.q_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359290
+      },
+      {
+        "name": "model.layers.8.self_attn.k_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393216
+      },
+      {
+        "name": "model.layers.8.self_attn.v_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393216
+      },
+      {
+        "name": "model.layers.8.self_attn.o_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359292
+      },
+      {
+        "name": "model.layers.8.mlp.gate_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762528
+      },
+      {
+        "name": "model.layers.8.mlp.up_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762522
+      },
+      {
+        "name": "model.layers.8.mlp.down_proj.weight",
+        "shape": [
+          1536,
+          8960
+        ],
+        "elements": 13762560,
+        "nonzero": 13762535
+      },
+      {
+        "name": "model.layers.9.self_attn.q_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359291
+      },
+      {
+        "name": "model.layers.9.self_attn.k_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393216
+      },
+      {
+        "name": "model.layers.9.self_attn.v_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393213
+      },
+      {
+        "name": "model.layers.9.self_attn.o_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359292
+      },
+      {
+        "name": "model.layers.9.mlp.gate_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762526
+      },
+      {
+        "name": "model.layers.9.mlp.up_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762531
+      },
+      {
+        "name": "model.layers.9.mlp.down_proj.weight",
+        "shape": [
+          1536,
+          8960
+        ],
+        "elements": 13762560,
+        "nonzero": 13762528
+      },
+      {
+        "name": "model.layers.10.self_attn.q_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359291
+      },
+      {
+        "name": "model.layers.10.self_attn.k_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393216
+      },
+      {
+        "name": "model.layers.10.self_attn.v_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393216
+      },
+      {
+        "name": "model.layers.10.self_attn.o_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359292
+      },
+      {
+        "name": "model.layers.10.mlp.gate_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762537
+      },
+      {
+        "name": "model.layers.10.mlp.up_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762537
+      },
+      {
+        "name": "model.layers.10.mlp.down_proj.weight",
+        "shape": [
+          1536,
+          8960
+        ],
+        "elements": 13762560,
+        "nonzero": 13762529
+      },
+      {
+        "name": "model.layers.11.self_attn.q_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359289
+      },
+      {
+        "name": "model.layers.11.self_attn.k_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393214
+      },
+      {
+        "name": "model.layers.11.self_attn.v_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393213
+      },
+      {
+        "name": "model.layers.11.self_attn.o_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359294
+      },
+      {
+        "name": "model.layers.11.mlp.gate_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762525
+      },
+      {
+        "name": "model.layers.11.mlp.up_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762534
+      },
+      {
+        "name": "model.layers.11.mlp.down_proj.weight",
+        "shape": [
+          1536,
+          8960
+        ],
+        "elements": 13762560,
+        "nonzero": 13762526
+      },
+      {
+        "name": "model.layers.12.self_attn.q_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359291
+      },
+      {
+        "name": "model.layers.12.self_attn.k_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393214
+      },
+      {
+        "name": "model.layers.12.self_attn.v_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393216
+      },
+      {
+        "name": "model.layers.12.self_attn.o_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359291
+      },
+      {
+        "name": "model.layers.12.mlp.gate_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762527
+      },
+      {
+        "name": "model.layers.12.mlp.up_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762528
+      },
+      {
+        "name": "model.layers.12.mlp.down_proj.weight",
+        "shape": [
+          1536,
+          8960
+        ],
+        "elements": 13762560,
+        "nonzero": 13762523
+      },
+      {
+        "name": "model.layers.13.self_attn.q_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359292
+      },
+      {
+        "name": "model.layers.13.self_attn.k_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393215
+      },
+      {
+        "name": "model.layers.13.self_attn.v_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393215
+      },
+      {
+        "name": "model.layers.13.self_attn.o_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359288
+      },
+      {
+        "name": "model.layers.13.mlp.gate_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762518
+      },
+      {
+        "name": "model.layers.13.mlp.up_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762533
+      },
+      {
+        "name": "model.layers.13.mlp.down_proj.weight",
+        "shape": [
+          1536,
+          8960
+        ],
+        "elements": 13762560,
+        "nonzero": 13762530
+      },
+      {
+        "name": "model.layers.14.self_attn.q_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359286
+      },
+      {
+        "name": "model.layers.14.self_attn.k_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393214
+      },
+      {
+        "name": "model.layers.14.self_attn.v_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393215
+      },
+      {
+        "name": "model.layers.14.self_attn.o_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359293
+      },
+      {
+        "name": "model.layers.14.mlp.gate_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762520
+      },
+      {
+        "name": "model.layers.14.mlp.up_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762531
+      },
+      {
+        "name": "model.layers.14.mlp.down_proj.weight",
+        "shape": [
+          1536,
+          8960
+        ],
+        "elements": 13762560,
+        "nonzero": 13762518
+      },
+      {
+        "name": "model.layers.15.self_attn.q_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359289
+      },
+      {
+        "name": "model.layers.15.self_attn.k_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393215
+      },
+      {
+        "name": "model.layers.15.self_attn.v_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393216
+      },
+      {
+        "name": "model.layers.15.self_attn.o_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359294
+      },
+      {
+        "name": "model.layers.15.mlp.gate_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762529
+      },
+      {
+        "name": "model.layers.15.mlp.up_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762526
+      },
+      {
+        "name": "model.layers.15.mlp.down_proj.weight",
+        "shape": [
+          1536,
+          8960
+        ],
+        "elements": 13762560,
+        "nonzero": 13762519
+      },
+      {
+        "name": "model.layers.16.self_attn.q_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359290
+      },
+      {
+        "name": "model.layers.16.self_attn.k_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393214
+      },
+      {
+        "name": "model.layers.16.self_attn.v_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393216
+      },
+      {
+        "name": "model.layers.16.self_attn.o_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359291
+      },
+      {
+        "name": "model.layers.16.mlp.gate_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762533
+      },
+      {
+        "name": "model.layers.16.mlp.up_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762525
+      },
+      {
+        "name": "model.layers.16.mlp.down_proj.weight",
+        "shape": [
+          1536,
+          8960
+        ],
+        "elements": 13762560,
+        "nonzero": 13762517
+      },
+      {
+        "name": "model.layers.17.self_attn.q_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359295
+      },
+      {
+        "name": "model.layers.17.self_attn.k_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393216
+      },
+      {
+        "name": "model.layers.17.self_attn.v_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393215
+      },
+      {
+        "name": "model.layers.17.self_attn.o_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359292
+      },
+      {
+        "name": "model.layers.17.mlp.gate_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762523
+      },
+      {
+        "name": "model.layers.17.mlp.up_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762535
+      },
+      {
+        "name": "model.layers.17.mlp.down_proj.weight",
+        "shape": [
+          1536,
+          8960
+        ],
+        "elements": 13762560,
+        "nonzero": 13762530
+      },
+      {
+        "name": "model.layers.18.self_attn.q_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359288
+      },
+      {
+        "name": "model.layers.18.self_attn.k_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393213
+      },
+      {
+        "name": "model.layers.18.self_attn.v_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393216
+      },
+      {
+        "name": "model.layers.18.self_attn.o_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359291
+      },
+      {
+        "name": "model.layers.18.mlp.gate_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762516
+      },
+      {
+        "name": "model.layers.18.mlp.up_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762524
+      },
+      {
+        "name": "model.layers.18.mlp.down_proj.weight",
+        "shape": [
+          1536,
+          8960
+        ],
+        "elements": 13762560,
+        "nonzero": 13762533
+      },
+      {
+        "name": "model.layers.19.self_attn.q_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359293
+      },
+      {
+        "name": "model.layers.19.self_attn.k_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393213
+      },
+      {
+        "name": "model.layers.19.self_attn.v_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393216
+      },
+      {
+        "name": "model.layers.19.self_attn.o_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359293
+      },
+      {
+        "name": "model.layers.19.mlp.gate_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762525
+      },
+      {
+        "name": "model.layers.19.mlp.up_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762528
+      },
+      {
+        "name": "model.layers.19.mlp.down_proj.weight",
+        "shape": [
+          1536,
+          8960
+        ],
+        "elements": 13762560,
+        "nonzero": 13762527
+      },
+      {
+        "name": "model.layers.20.self_attn.q_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359287
+      },
+      {
+        "name": "model.layers.20.self_attn.k_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393216
+      },
+      {
+        "name": "model.layers.20.self_attn.v_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393215
+      },
+      {
+        "name": "model.layers.20.self_attn.o_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359286
+      },
+      {
+        "name": "model.layers.20.mlp.gate_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762518
+      },
+      {
+        "name": "model.layers.20.mlp.up_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762533
+      },
+      {
+        "name": "model.layers.20.mlp.down_proj.weight",
+        "shape": [
+          1536,
+          8960
+        ],
+        "elements": 13762560,
+        "nonzero": 13762541
+      },
+      {
+        "name": "model.layers.21.self_attn.q_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359287
+      },
+      {
+        "name": "model.layers.21.self_attn.k_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393215
+      },
+      {
+        "name": "model.layers.21.self_attn.v_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393215
+      },
+      {
+        "name": "model.layers.21.self_attn.o_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359293
+      },
+      {
+        "name": "model.layers.21.mlp.gate_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762522
+      },
+      {
+        "name": "model.layers.21.mlp.up_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762537
+      },
+      {
+        "name": "model.layers.21.mlp.down_proj.weight",
+        "shape": [
+          1536,
+          8960
+        ],
+        "elements": 13762560,
+        "nonzero": 13762532
+      },
+      {
+        "name": "model.layers.22.self_attn.q_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359286
+      },
+      {
+        "name": "model.layers.22.self_attn.k_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393214
+      },
+      {
+        "name": "model.layers.22.self_attn.v_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393213
+      },
+      {
+        "name": "model.layers.22.self_attn.o_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359292
+      },
+      {
+        "name": "model.layers.22.mlp.gate_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762530
+      },
+      {
+        "name": "model.layers.22.mlp.up_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762523
+      },
+      {
+        "name": "model.layers.22.mlp.down_proj.weight",
+        "shape": [
+          1536,
+          8960
+        ],
+        "elements": 13762560,
+        "nonzero": 13762532
+      },
+      {
+        "name": "model.layers.23.self_attn.q_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359285
+      },
+      {
+        "name": "model.layers.23.self_attn.k_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393213
+      },
+      {
+        "name": "model.layers.23.self_attn.v_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393215
+      },
+      {
+        "name": "model.layers.23.self_attn.o_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359293
+      },
+      {
+        "name": "model.layers.23.mlp.gate_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762518
+      },
+      {
+        "name": "model.layers.23.mlp.up_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762533
+      },
+      {
+        "name": "model.layers.23.mlp.down_proj.weight",
+        "shape": [
+          1536,
+          8960
+        ],
+        "elements": 13762560,
+        "nonzero": 13762538
+      },
+      {
+        "name": "model.layers.24.self_attn.q_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359294
+      },
+      {
+        "name": "model.layers.24.self_attn.k_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393215
+      },
+      {
+        "name": "model.layers.24.self_attn.v_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393215
+      },
+      {
+        "name": "model.layers.24.self_attn.o_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359292
+      },
+      {
+        "name": "model.layers.24.mlp.gate_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762523
+      },
+      {
+        "name": "model.layers.24.mlp.up_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762530
+      },
+      {
+        "name": "model.layers.24.mlp.down_proj.weight",
+        "shape": [
+          1536,
+          8960
+        ],
+        "elements": 13762560,
+        "nonzero": 13762534
+      },
+      {
+        "name": "model.layers.25.self_attn.q_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359285
+      },
+      {
+        "name": "model.layers.25.self_attn.k_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393216
+      },
+      {
+        "name": "model.layers.25.self_attn.v_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393215
+      },
+      {
+        "name": "model.layers.25.self_attn.o_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359293
+      },
+      {
+        "name": "model.layers.25.mlp.gate_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762528
+      },
+      {
+        "name": "model.layers.25.mlp.up_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762534
+      },
+      {
+        "name": "model.layers.25.mlp.down_proj.weight",
+        "shape": [
+          1536,
+          8960
+        ],
+        "elements": 13762560,
+        "nonzero": 13762531
+      },
+      {
+        "name": "model.layers.26.self_attn.q_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359282
+      },
+      {
+        "name": "model.layers.26.self_attn.k_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393216
+      },
+      {
+        "name": "model.layers.26.self_attn.v_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393216
+      },
+      {
+        "name": "model.layers.26.self_attn.o_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359296
+      },
+      {
+        "name": "model.layers.26.mlp.gate_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762519
+      },
+      {
+        "name": "model.layers.26.mlp.up_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762532
+      },
+      {
+        "name": "model.layers.26.mlp.down_proj.weight",
+        "shape": [
+          1536,
+          8960
+        ],
+        "elements": 13762560,
+        "nonzero": 13762532
+      },
+      {
+        "name": "model.layers.27.self_attn.q_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359289
+      },
+      {
+        "name": "model.layers.27.self_attn.k_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393215
+      },
+      {
+        "name": "model.layers.27.self_attn.v_proj.weight",
+        "shape": [
+          256,
+          1536
+        ],
+        "elements": 393216,
+        "nonzero": 393215
+      },
+      {
+        "name": "model.layers.27.self_attn.o_proj.weight",
+        "shape": [
+          1536,
+          1536
+        ],
+        "elements": 2359296,
+        "nonzero": 2359291
+      },
+      {
+        "name": "model.layers.27.mlp.gate_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762535
+      },
+      {
+        "name": "model.layers.27.mlp.up_proj.weight",
+        "shape": [
+          8960,
+          1536
+        ],
+        "elements": 13762560,
+        "nonzero": 13762531
+      },
+      {
+        "name": "model.layers.27.mlp.down_proj.weight",
+        "shape": [
+          1536,
+          8960
+        ],
+        "elements": 13762560,
+        "nonzero": 13762530
+      }
+    ],
+    "dense_baseline_weight_bytes": 3087428608,
+    "eligible_weights": 1310195712,
+    "eligible_nonzero": 1310192798
+  },
+  "latency": {
+    "prompt_token_source": [
+      60,
+      136,
+      150,
+      162
+    ],
+    "decode_steps": 64,
+    "warmups": 2,
+    "repetitions": 5,
+    "prefill_512": {
+      "elapsed_seconds": [
+        0.09789156099998308,
+        0.09824755100004268,
+        0.09876431799995089,
+        0.09886965399999781,
+        0.0988728240000114
+      ],
+      "peak_allocated_bytes": [
+        3164137472,
+        3164137472,
+        3164137472,
+        3164137472,
+        3164137472
+      ]
+    },
+    "prefill_2048": {
+      "elapsed_seconds": [
+        0.6493133550000039,
+        0.6519134819999977,
+        0.6509949090000191,
+        0.6515572440000028,
+        0.6480562860000418
+      ],
+      "peak_allocated_bytes": [
+        3707199488,
+        3707199488,
+        3707199488,
+        3707199488,
+        3707199488
+      ]
+    },
+    "decode_64_prompt_512": {
+      "elapsed_seconds": [
+        2.0325197589999675,
+        2.0228612169999565,
+        2.044245038999975,
+        2.0438512470000205,
+        2.018041423999989
+      ],
+      "peak_allocated_bytes": [
+        3126909440,
+        3126909440,
+        3126909440,
+        3126909440,
+        3126909440
+      ]
+    }
+  },
+  "wikitext2_test_windows": {
+    "nll_sum": 138963.41917991638,
+    "scored_tokens": 50000,
+    "mean_nll": 2.779268383598328,
+    "ppl": 16.107232320825414
+  },
+  "c4_validation_windows": {
+    "nll_sum": 135276.60708236694,
+    "scored_tokens": 50000,
+    "mean_nll": 2.705532141647339,
+    "ppl": 14.962276622962518
+  },
+  "hellaswag": {
+    "n": 2000,
+    "accuracy": 0.504,
+    "accuracy_norm": 0.6945,
+    "token_boundary_differences": 0,
+    "task_version": "lm-eval v0.4.9 / HellaSwag 1.0"
+  },
+  "status": "passed"
+}
