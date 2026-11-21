@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "torch": "2.11.0+cu130",
+  "operators": {
+    "dense": {
+      "causal_max_difference": 0.0,
+      "trainable_parameters": 437824
+    },
+    "local": {
+      "causal_max_difference": 0.0,
+      "trainable_parameters": 437824
+    },
+    "linear": {
+      "causal_max_difference": 0.0,
+      "trainable_parameters": 437824,
+      "maximum_dense_kernel_error": 4.76837158203125e-07
+    },
+    "dilated": {
+      "causal_max_difference": 0.0,
+      "trainable_parameters": 437824
+    },
+    "topk": {
+      "causal_max_difference": 0.0,
+      "trainable_parameters": 437824
+    }
+  },
+  "checkpoint_resume": {
+    "split_update": 2,
+    "final_update": 4,
+    "model_and_optimizer_bitwise_equal": true
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "torch": "2.11.0+cu130",
+  "pruning_counts": {
+    "0.5": [
+      38,
+      247,
+      45,
+      130
+    ],
+    "0.75": [
+      63,
+      362,
+      59,
+      206
+    ]
+  },
+  "precision": {
+    "widths": [
+      4,
+      3,
+      4
+    ],
+    "packed_bytes": 20,
+    "probe_error": 5.2
+  },
+  "packing": {
+    "2": {
+      "packed_bytes": 280,
+      "max_reconstruction_error": 0.31467175483703613
+    },
+    "3": {
+      "packed_bytes": 408,
+      "max_reconstruction_error": 0.13478747010231018
+    },
+    "4": {
+      "packed_bytes": 536,
+      "max_reconstruction_error": 0.06290992349386215
+    },
+    "8": {
+      "packed_bytes": 1048,
+      "max_reconstruction_error": 0.0037034843116998672
+    }
+  }
+}
