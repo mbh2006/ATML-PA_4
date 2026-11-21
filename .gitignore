@@ -1,0 +1,14 @@
+/ATML_PA4.pdf
+/.venv/
+/.pytest_cache/
+**/__pycache__/
+/runs/
+/checkpoints/
+/data/
+/vendor/
+/.runtime/
+*.safetensors
+*.ckpt
+*.pt
+.env
+kaggle.json
