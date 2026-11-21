@@ -1,0 +1,272 @@
+[
+  {
+    "path": "dense-controls/dense-mixed-k16-6304/checkpoints/update-1000.pt",
+    "bytes": 5295107,
+    "sha256": "e0a3b025c6746fdc622a298fd9430647a31a0c72dbd8f1c0e445ba6a9e76e349"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6304/checkpoints/update-1250.pt",
+    "bytes": 5295107,
+    "sha256": "1544bc53e019c96d5bf0e92dc2afbcf593760f5bba19a943188ae06660c51de9"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6304/checkpoints/update-1500.pt",
+    "bytes": 5295107,
+    "sha256": "b413291ffca5f2e2eb7437bdf604483531bba5c9e49406da05c9f122e2df4dc1"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6304/checkpoints/update-1750.pt",
+    "bytes": 5295107,
+    "sha256": "d1128737a1949f0dd6b361a3480d3ca99d5ba609b00748d6f5938827686025f8"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6304/checkpoints/update-2000.pt",
+    "bytes": 5295107,
+    "sha256": "597f5c4d00dd9f6c6cb8416b9ebcdf9ee8b052716d42e8be0a5103348e30a089"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6304/checkpoints/update-2250.pt",
+    "bytes": 5295107,
+    "sha256": "44665e6e59271dcdb4e6f5b06768b188594cad537e1e57a59f3deb7935c30ffc"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6304/checkpoints/update-250.pt",
+    "bytes": 5294983,
+    "sha256": "220b0549dbdbe4867a3945142b16f2023260f0b25cbd862e3fce6efdcc685429"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6304/checkpoints/update-2500.pt",
+    "bytes": 5295107,
+    "sha256": "4f7477858be3f666e79e3ebd10fb78ac42049388422fc2b00e77f432a2c13f09"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6304/checkpoints/update-2750.pt",
+    "bytes": 5295107,
+    "sha256": "7a98c2c66a9b35e46af15c87f0f1fbf5fbb972c7cacc1c1be9d06de10d310746"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6304/checkpoints/update-3000.pt",
+    "bytes": 5295107,
+    "sha256": "b746831ad1df0b6849145e78c99a9e59760013dcea27c027e8e9974b439d76db"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6304/checkpoints/update-3250.pt",
+    "bytes": 5295107,
+    "sha256": "7989ca5eb4e37de3b233573bb5b40294cc17b96ff8dc4314d1d9b3c847ea537b"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6304/checkpoints/update-3500.pt",
+    "bytes": 5295107,
+    "sha256": "3125463eeaec24b2e5130dc1ba5698c2ce6b7af1627eec07ff963fc574be74ff"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6304/checkpoints/update-3750.pt",
+    "bytes": 5295107,
+    "sha256": "2f281a60dedfecbc28324ba477d26ee8654e91fc0ae292942861b37d4f3f067c"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6304/checkpoints/update-4000.pt",
+    "bytes": 5295107,
+    "sha256": "5edf86789c82df47251be5d445314de778d278018faed8330467205ab930a7a7"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6304/checkpoints/update-4250.pt",
+    "bytes": 5295107,
+    "sha256": "1fe8838072781afbe0211737532f7a9a5a36f80be907a8996a1a06e6c0dfacc6"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6304/checkpoints/update-4500.pt",
+    "bytes": 5295107,
+    "sha256": "ef10e686e6c46458a595b89a6d75529de679cbccb0f398bfcda92cf00dc2f2ff"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6304/checkpoints/update-500.pt",
+    "bytes": 5294983,
+    "sha256": "9a3a6f2a6d81246ebe504c5713c7f508f6acb29ef9191d27ef213579bd3fd983"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6304/checkpoints/update-750.pt",
+    "bytes": 5294983,
+    "sha256": "20ce584bdc624b1804fe451c805030d45f887546e389786809deb61b4542d9f3"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6305/checkpoints/update-1000.pt",
+    "bytes": 5295107,
+    "sha256": "1da7237cc1ededf55f1f94a910ded6fceb59d92a3008db487bf07814e369ae61"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6305/checkpoints/update-1250.pt",
+    "bytes": 5295107,
+    "sha256": "8f09b52974cacee7bb5d0d9dc365c556031f8fee50b1ba3978a9291799e7bc52"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6305/checkpoints/update-1500.pt",
+    "bytes": 5295107,
+    "sha256": "d2185544bd1b302941e8462a60e3beec573caf96e81eda7481a9ef33492cb0cf"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6305/checkpoints/update-1750.pt",
+    "bytes": 5295107,
+    "sha256": "1ac33e4c92c1471af82e19f7037cda8e2b54fa1e9e439ef03aee23719bd6c509"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6305/checkpoints/update-2000.pt",
+    "bytes": 5295107,
+    "sha256": "30faddbd745f9d7b9ae09d39ad606817ca4277b58af6f9c6d77b0b826143add6"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6305/checkpoints/update-2250.pt",
+    "bytes": 5295107,
+    "sha256": "b456dac59720e26b1e0a950387bb61b591cb1552ce1d38c36ab4d2a04163b6dc"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6305/checkpoints/update-250.pt",
+    "bytes": 5294983,
+    "sha256": "59dc5cdb1959761f674cc7b7999e6455f8b094e8785d09166f8a5e2d5db1ba85"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6305/checkpoints/update-2500.pt",
+    "bytes": 5295107,
+    "sha256": "b728b974695998ab178832091804712f733897757bf744b3b5649ec4e0d5a024"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6305/checkpoints/update-2750.pt",
+    "bytes": 5295107,
+    "sha256": "2a8d50cb4bfae8998c0542925575bb1e5a7755c4b57a5d21d1190301ddc3b11c"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6305/checkpoints/update-3000.pt",
+    "bytes": 5295107,
+    "sha256": "c0e78774647ce1ae2feece06432ed17fc9e19e43bb12de532d3b1f7422b84043"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6305/checkpoints/update-3250.pt",
+    "bytes": 5295107,
+    "sha256": "527d8bcc7a89bb9121853fccf60b10aacaab96418b4fadab8e549d4f82db67bd"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6305/checkpoints/update-3500.pt",
+    "bytes": 5295107,
+    "sha256": "5cda91ae9c0029f5eba69e666c9298a44e6d8ad1b0a15ad37fa97ad774f21128"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6305/checkpoints/update-3750.pt",
+    "bytes": 5295107,
+    "sha256": "33cc03c248a58f93cea47907121e92ac05a2864b3373601a65d1c84ccb05b440"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6305/checkpoints/update-4000.pt",
+    "bytes": 5295107,
+    "sha256": "3ebf94446f58b9ce6e1e69fbd3e6045f7e7ded62a5d7f2a2fea78d1210d80967"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6305/checkpoints/update-4250.pt",
+    "bytes": 5295107,
+    "sha256": "53248b7c277e2305fac0961c19541b8be82126050b582f2385520845357e0c27"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6305/checkpoints/update-4500.pt",
+    "bytes": 5295107,
+    "sha256": "25d4438f92d558dd684c886c218778ee6e090e6ef9a0154636adf77303b05bc1"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6305/checkpoints/update-500.pt",
+    "bytes": 5294983,
+    "sha256": "8915bcb4425459f434ddf4b030391daf77d29f36b86063a616ec55a514cbe702"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6305/checkpoints/update-750.pt",
+    "bytes": 5294983,
+    "sha256": "a4707fbf80a84a5d39d985d419cd693f71c09543ff61019e81eecffe8eb81f99"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6306/checkpoints/update-1000.pt",
+    "bytes": 5295107,
+    "sha256": "e7ec62017dc6a85b98c1c165b7f801d82208dc322193e9cda9c74041ef029080"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6306/checkpoints/update-1250.pt",
+    "bytes": 5295107,
+    "sha256": "dc27450fe0d09076c3c3ac8941866ee7fb7ef85c2112905a08ca47a301f5ab24"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6306/checkpoints/update-1500.pt",
+    "bytes": 5295107,
+    "sha256": "365c70e45857b2cebd9f46d7f6bec0d6ab3175fabae3565096345e5e62ccf1ac"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6306/checkpoints/update-1750.pt",
+    "bytes": 5295107,
+    "sha256": "6389ddad544d4c6673ad055fb394475ac88c9c23d385a5ac9106cf80af075370"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6306/checkpoints/update-2000.pt",
+    "bytes": 5295107,
+    "sha256": "7ab5200ffed32f5d2b881b71c5c21eadf51d990ee44f89b4d01afd5d76368d3e"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6306/checkpoints/update-2250.pt",
+    "bytes": 5295107,
+    "sha256": "f0c35ce73499f7b2d6bd88424f86a4fb462fd0103710d93ec483435b41d2fbed"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6306/checkpoints/update-250.pt",
+    "bytes": 5294983,
+    "sha256": "9ece9ef582e7e9ceef655ecdc61c35b7d41b2a3a9a302c3b3f4179565537c49c"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6306/checkpoints/update-2500.pt",
+    "bytes": 5295107,
+    "sha256": "7a44834496651e85b5ce33379a30e7a97aabc1a3f3a9d0a456bac7a85f955996"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6306/checkpoints/update-2750.pt",
+    "bytes": 5295107,
+    "sha256": "420d062f34463c8967a2d71f23a4f7aab0009d43b0c342ae064050911c9bc4eb"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6306/checkpoints/update-3000.pt",
+    "bytes": 5295107,
+    "sha256": "4d14b23468804c078c8a9c10360b0d3e7a0a73650f4fb945977abd00183e18b3"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6306/checkpoints/update-3250.pt",
+    "bytes": 5295107,
+    "sha256": "3e4dcae57ecaaf90cf9eddae19556a51952e0e83ce0476ac6b91067b058cc4a6"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6306/checkpoints/update-3500.pt",
+    "bytes": 5295107,
+    "sha256": "102f58aa2e0c2e983aeeb36a9e42b70cea02edd7b4a40f12f8740f7a6f903871"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6306/checkpoints/update-3750.pt",
+    "bytes": 5295107,
+    "sha256": "13d4c45d36256572eb88a9f2bae2d21c891254ed63dbaf47023e1c7288a17cf2"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6306/checkpoints/update-4000.pt",
+    "bytes": 5295107,
+    "sha256": "410308774bdd86c584d87a7a7a9c3c0d534b4ecacbe8b5cb6880c3a023e161ff"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6306/checkpoints/update-4250.pt",
+    "bytes": 5295107,
+    "sha256": "a4d9b462865a16fb221414013c9254a130d16e3eeccc91f0474d5706dbfeb3fa"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6306/checkpoints/update-4500.pt",
+    "bytes": 5295107,
+    "sha256": "0fe80c319fef23d89b5dd802149d5bb0e97da7cefb89cec7678aa6d40be61c6b"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6306/checkpoints/update-500.pt",
+    "bytes": 5294983,
+    "sha256": "d7084ee30b5d952d6cd5dc38657d3f574588f066667c174267b22e22f1a7caad"
+  },
+  {
+    "path": "dense-controls/dense-mixed-k16-6306/checkpoints/update-750.pt",
+    "bytes": 5294983,
+    "sha256": "45f99a8c53e5ce2e4b11363f81661efde52c5754ef315e1ddc6183bc211ba7ce"
+  }
+]

@@ -1,0 +1,67 @@
+{
+  "selected_top_k": 64,
+  "criterion": "mean K=16 development far, then near, then smaller k",
+  "training": {
+    "mode": "topk",
+    "k": 16,
+    "regime": "mixed",
+    "seeds": [
+      6304,
+      6305,
+      6306
+    ],
+    "updates": 4500
+  },
+  "candidates": [
+    {
+      "top_k": 32,
+      "seeds": [
+        {
+          "seed": 6304,
+          "summary_sha256": "3ec139c2cd74a15cd4a0d1fc207478a60351c2d2d7eb698982ac70b212abd366",
+          "far": 1.0,
+          "near": 1.0
+        },
+        {
+          "seed": 6305,
+          "summary_sha256": "5d683f7c1ea6efa00e1bebd11317c7cb68472c0e8251ee3a9afeb945f5969a14",
+          "far": 0.999755859375,
+          "near": 1.0
+        },
+        {
+          "seed": 6306,
+          "summary_sha256": "13aa361f4208a42d5d63a57e089df69d257f1fc727b63a1ee433e2f14618de75",
+          "far": 1.0,
+          "near": 1.0
+        }
+      ],
+      "development_far": 0.9999186197916666,
+      "development_near": 1.0
+    },
+    {
+      "top_k": 64,
+      "seeds": [
+        {
+          "seed": 6304,
+          "summary_sha256": "3336fc391bc7699d822423f6a9e0cb1ebdef90d91c759b43f33c4408806e4cdb",
+          "far": 1.0,
+          "near": 1.0
+        },
+        {
+          "seed": 6305,
+          "summary_sha256": "a53771176c954c09943ef028cc1a5a1f290c81c1346e3dbced6b0c57ddd0612f",
+          "far": 1.0,
+          "near": 1.0
+        },
+        {
+          "seed": 6306,
+          "summary_sha256": "59be4a2555f4ade049e226e5b515d92b84db2c396982378bdfa6fae3840bea57",
+          "far": 1.0,
+          "near": 1.0
+        }
+      ],
+      "development_far": 1.0,
+      "development_near": 1.0
+    }
+  ]
+}
