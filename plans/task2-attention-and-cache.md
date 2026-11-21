@@ -7,6 +7,7 @@ Manual pages 5–11. Use standalone runners for Parts A, B, and C so operator ch
 - Use the same seeded Q/K/V and upstream gradient for dense attention, tiled online softmax, and PyTorch SDPA. Measure lengths 256, 512, 1024, 2048, 4096, 8192 with B=2, H=4, d=64 in FP16 and FP32 where supported. Compute causal mask from actual positions. Use FP32 maxima, mass and value accumulators for tiling. Handle short tiles and fully masked rows with defined zero output.
 - Test future-key/value perturbations, high-magnitude scores, nondivisible tiles, and output/gradient equivalence to dense FP32 on feasible lengths. Probe at least two tile shapes for correctness and freeze 128×128 for the grid. Save absolute and relative errors for outputs and each input gradient. Check memory before attempting long dense conditions and log unsupported/OOM cases.
 - Save ten warmed repetitions per supported condition. Time forward separately from complete forward-plus-backward. Record actual SDPA backend, shape, dtype, peak allocated and reserved GPU bytes, and tiled autograd intermediates. Derive latency/error/memory curves and a backend/status table from the raw rows.
+- The measured dense and tiled reference paths upcast FP16 inputs for score computation and accumulation and cast their outputs back to FP16. The SDPA measurements use the dispatched native backend. This precision choice affects the memory and latency curves.
 
 ## B. MQAR
 

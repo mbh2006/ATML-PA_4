@@ -91,12 +91,12 @@ class PackedWeight:
         ))
 
     def dequantize(self, dtype=torch.float16):
-        values = _unpack_codes(self.codes, self.bits)
+        values = unpack_codes(self.codes, self.bits)
         groups = (values.float() - self.zero_point[..., None]) * self.scale[..., None].float()
         return groups.flatten(start_dim=1)[:, :self.columns].to(dtype)
 
 
-def _pack_codes(values, bits):
+def pack_codes(values, bits):
     if bits == 8:
         return values.to(torch.uint8)
     lanes = torch.arange(8, device=values.device)
@@ -105,7 +105,7 @@ def _pack_codes(values, bits):
     return ((words[..., None] >> offsets) & 255).to(torch.uint8).flatten(start_dim=-2)
 
 
-def _unpack_codes(payload, bits):
+def unpack_codes(payload, bits):
     if bits == 8:
         return payload
     offsets = torch.arange(bits, device=payload.device) * 8
@@ -128,7 +128,7 @@ def quantize_weight(weight, bits, group_size=128):
     stored_scale = scale.float()
     zero_point = (-minimum / stored_scale).round().clamp(0, qmax).to(torch.uint8)
     quantized = (groups / stored_scale[..., None]).round() + zero_point[..., None]
-    codes = _pack_codes(quantized.clamp(0, qmax).to(torch.uint8), bits)
+    codes = pack_codes(quantized.clamp(0, qmax).to(torch.uint8), bits)
     return PackedWeight(bits, columns, group_size, codes, scale, zero_point)
 
 

@@ -23,3 +23,4 @@ Setup evidence includes the [CUDA smoke result](results/setup/gpu-preflight.json
 - Task 3 real-Qwen validation passed split prefill, replay after speculative rounds, and targeted rollback. [Cache validation evidence](results/task3/qwen-cache-validation.json)
 - Task 1 compression primitives passed exact mask, packed-byte, and mixed-allocation checks. [Compression checks](results/pilot/weight-validation.json)
 - Task 2B pilots covered each operator on CUDA. The CPU recovery check reproduced model and optimizer states bit for bit. [Operator and resume checks](results/pilot/mqar-validation.json), [pilot timing](results/pilot/mqar-timing.json)
+- Task 2C packing and byte-budget checks passed on synthetic cache tensors. [KV codec validation](results/pilot/kv-codec-validation.json)

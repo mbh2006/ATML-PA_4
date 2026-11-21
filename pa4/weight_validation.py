@@ -4,13 +4,43 @@ import argparse
 import itertools
 import json
 from pathlib import Path
+from types import SimpleNamespace
 
 import torch
+from torch import nn
 
+from pa4.weight_calibration import collect
 from pa4.weight_compression import (
-    BIT_WIDTHS, _pack_codes, _unpack_codes, allocate_precision, allocate_pruning,
-    pruning_scores, quantize_weight, row_pruning_mask, two_of_four_mask,
+    BIT_WIDTHS, allocate_precision, allocate_pruning, pack_codes,
+    pruning_scores, quantize_weight, row_pruning_mask, two_of_four_mask, unpack_codes,
 )
+from pa4.weight_evaluation import ELIGIBLE
+
+
+class CalibrationFixture(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.config = SimpleNamespace(num_hidden_layers=1)
+        self.device = torch.device("cpu")
+        for name in ELIGIBLE:
+            self.add_module(name, nn.Linear(1, 1, bias=False))
+
+    def forward(self, input_ids, use_cache, logits_to_keep):
+        assert not use_cache and logits_to_keep == 1
+        for name in ELIGIBLE:
+            getattr(self, name)(input_ids.float().unsqueeze(-1))
+
+
+def check_calibration_hooks():
+    rows = [{"source_row": source, "token_ids": list(range(512))} for source in range(128)]
+    stats, positions = collect(CalibrationFixture(), rows, save_probe_inputs=True)
+    expected = torch.arange(512, dtype=torch.float32)
+    for item in stats.values():
+        torch.testing.assert_close(item["l2"], (expected.square().sum() * 128).sqrt().unsqueeze(0))
+        torch.testing.assert_close(item["mean_abs"], expected.mean().unsqueeze(0))
+        assert item["tokens"] == 65_536
+        assert item["probe_inputs"][:, 0].tolist() == positions * 128
+    return {"scope": "fixture", "projections": len(stats), "probe_positions": positions}
 
 
 def validate():
@@ -52,10 +82,10 @@ def validate():
     packing = {}
     for bits in BIT_WIDTHS:
         codes = (torch.arange(128) % (1 << bits)).reshape(1, 1, 128)
-        actual = _pack_codes(codes, bits)
+        actual = pack_codes(codes, bits)
         manual = sum(code << (index * bits) for index, code in enumerate(codes.flatten().tolist()))
         assert actual.numpy().tobytes() == manual.to_bytes(128 * bits // 8, "little")
-        assert torch.equal(_unpack_codes(actual, bits), codes)
+        assert torch.equal(unpack_codes(actual, bits), codes)
 
         packed = quantize_weight(values, bits)
         reconstruction = packed.dequantize(torch.float32)
@@ -64,13 +94,16 @@ def validate():
         torch.testing.assert_close(reconstruction[1:3], values[1:3], atol=2e-4, rtol=0)
         assert len(packed.serialize()) == packed.nbytes == 4 * 2 * (128 * bits // 8 + 3)
         assert torch.equal(
-            _unpack_codes(packed.codes, bits)[:, -1, 7:],
+            unpack_codes(packed.codes, bits)[:, -1, 7:],
             packed.zero_point[:, -1, None].expand(-1, 121),
         )
         packing[str(bits)] = {
             "packed_bytes": packed.nbytes, "max_reconstruction_error": (reconstruction - values).abs().max().item(),
         }
-    return {"status": "passed", "torch": torch.__version__, "pruning_counts": pruning, "precision": mixed, "packing": packing}
+    return {
+        "status": "passed", "torch": torch.__version__, "pruning_counts": pruning, "precision": mixed,
+        "packing": packing, "calibration_hooks": check_calibration_hooks(),
+    }
 
 
 def main():

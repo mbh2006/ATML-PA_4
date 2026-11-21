@@ -1,4 +1,4 @@
-"""Run the Task 3 cache gate and Task 1 FP16 reference on Kaggle."""
+"""Run the Qwen cache gate, FP16 reference, or weight calibration on Kaggle."""
 
 import argparse
 import hashlib
@@ -24,7 +24,8 @@ def main():
     parser.add_argument("--revision", required=True)
     parser.add_argument("--inputs", type=Path, default=Path("/kaggle/input"))
     parser.add_argument("--output", type=Path, default=Path("/kaggle/working"))
-    parser.add_argument("--tasks", nargs="+", choices=("task1", "task3"), default=["task3", "task1"])
+    parser.add_argument("--tasks", nargs="+", choices=("task1", "task3", "calibration"),
+                        default=["task3", "task1"])
     args = parser.parse_args()
     source = args.source.resolve()
     evidence = {"source_revision": args.revision, "commands": {}}
@@ -48,9 +49,13 @@ def main():
                         ]
                     else:
                         data = matching_data(args.inputs, source / "results/setup/public-data-manifest.json")
+                        module, directory = (
+                            ("pa4.weight_calibration", "task1-calibration")
+                            if task == "calibration" else ("pa4.weight_evaluation", "task1-fp16")
+                        )
                         arguments = [
-                            "-m", "pa4.weight_evaluation", "--data", str(data),
-                            "--output", str(args.output / "task1-fp16"),
+                            "-m", module, "--data", str(data),
+                            "--output", str(args.output / directory),
                         ]
                     result = subprocess.run(
                         [sys.executable, "-u", *arguments], cwd=source, env=environment, check=False
