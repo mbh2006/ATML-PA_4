@@ -19,6 +19,6 @@ Reviewed against the released manual and the [staff data schemas](https://github
 
 ## Hold points before expensive runs
 
-1. Confirm the course experiment environment lock and resolve environment compatibility. Install the staff data requirements in an isolated path for data preparation and validate generated hashes. Record any source-script compatibility fix and its effect on the experiment protocol.
+1. Apply the staff data requirements and record resolved dependencies. The supplied staff repository contains the generation and cache pins, and its data materialization checks against them passed. Record the exact PyTorch/CUDA environment for synthetic operator experiments. Apply any additional course lock if released before the affected runs. Record source-script compatibility fixes and their impact on the experiment protocol.
 2. Validate the Task 1 data denominators and four-option HellaSwag scorer, operator and generator edge cases in Task 2, and exact-distribution and real-Qwen cache tests in Task 3. Store the underlying diagnostic rows and assertions before collecting large-run evidence.
 3. Verify a dry-run evidence round trip, including a committed job output, local download, manifest hash and resumed run. Record experiment throughput and memory on the intended runtime so the full matrix can be scheduled against the available quota.
