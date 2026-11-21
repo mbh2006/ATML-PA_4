@@ -12,6 +12,7 @@ from pathlib import Path
 
 COURSE_REPO = "https://github.com/AbDu11aHHH/atml-pa4-datasets.git"
 COURSE_REVISION = "6a0a9ec9da7ef3d313ee3036cfec493886723644"
+REMOVED_LEGACY_CHECKER = "scripts/check_release_STAFF_LEGACY.py"
 
 
 def run(command, directory, environment):
@@ -27,6 +28,29 @@ def copy_and_hash(source, destination):
     with destination.open("rb") as stream:
         digest = hashlib.file_digest(stream, "sha256").hexdigest()
     return {"bytes": destination.stat().st_size, "sha256": digest}
+
+
+def verify_staff_checksums(staff, scratch, environment):
+    command = [sys.executable, "scripts/verify_checksums.py"]
+    result = subprocess.run(
+        command, cwd=staff, env=environment, capture_output=True, text=True, check=False,
+    )
+    print(result.stdout, end="", flush=True)
+    if result.stderr:
+        print(result.stderr, end="", file=sys.stderr, flush=True)
+    if not result.returncode:
+        return []
+
+    # This exact staff revision removed the legacy checker but kept its checksum entry.
+    only_known_failure = f"CHECKSUM FAILURES:\n - {REMOVED_LEGACY_CHECKER}"
+    if result.stdout.strip() != only_known_failure or (staff / REMOVED_LEGACY_CHECKER).exists():
+        result.check_returncode()
+    checksums = json.loads((staff / "SHA256SUMS.json").read_text(encoding="utf-8"))
+    del checksums[REMOVED_LEGACY_CHECKER]
+    manifest = scratch / "effective-checksums.json"
+    manifest.write_text(json.dumps(checksums), encoding="utf-8")
+    run([*command, "--manifest", str(manifest)], staff, environment)
+    return [REMOVED_LEGACY_CHECKER]
 
 
 def main():
@@ -45,7 +69,9 @@ def main():
 
             run(["git", "clone", COURSE_REPO, str(staff)], root, environment)
             run(["git", "checkout", "--detach", COURSE_REVISION], staff, environment)
-            run([sys.executable, "scripts/verify_checksums.py"], staff, environment)
+            evidence["checksum_excluded_missing_paths"] = verify_staff_checksums(
+                staff, root, environment
+            )
             run([sys.executable, "scripts/validate_assets.py"], staff, environment)
             run([
                 sys.executable, "-m", "pip", "install", "--disable-pip-version-check",
