@@ -12,3 +12,5 @@ Experiment code and reproducibility records for EE-5102 / CS-6304, Fall 2026.
 | [Run ledger](plans/run-ledger.md) | Verified progress, inputs, and unresolved items |
 
 The [course dataset repository](https://github.com/AbDu11aHHH/atml-pa4-datasets) supplies the fixed selections and preprocessing tools. The task plans identify outputs by experiment stage so each value used in the student-authored report can be traced to a saved result.
+
+Setup evidence includes the [CUDA smoke result](results/setup/gpu-preflight.json), [validated data manifest](results/setup/public-data-manifest.json), and [locked source revisions](results/setup/local_source_revisions.json).

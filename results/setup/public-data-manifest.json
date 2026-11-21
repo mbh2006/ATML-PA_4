@@ -1,0 +1,41 @@
+{
+  "staff_revision": "6a0a9ec9da7ef3d313ee3036cfec493886723644",
+  "status": "passed",
+  "artifacts": {
+    "data/local_source_revisions.json": {
+      "bytes": 728,
+      "sha256": "edafd4b5508098d8366908538573ee42caaa3f7e7225c5e659bad0d031127b4c"
+    },
+    "data/public_locked/c4_calibration_locked.jsonl.gz": {
+      "bytes": 122529,
+      "sha256": "cb2fbc76c7d32a4837ccd06a6faf99c22a40b1ac9f353920ff5b201816105996"
+    },
+    "data/public_locked/c4_development_locked.jsonl.gz": {
+      "bytes": 31376,
+      "sha256": "212bfc66898840942c2a0720ef308d865983ad7d7bc9b8f5c0db6dcb07cf14a3"
+    },
+    "data/public_locked/c4_validation_windows_locked.jsonl.gz": {
+      "bytes": 97845,
+      "sha256": "1f4647e635c6947edba100f369ee4caf61bdf803398c82ba1aad3f55f76e7de0"
+    },
+    "data/public_locked/gsm8k_test_locked.jsonl.gz": {
+      "bytes": 15053,
+      "sha256": "a7a96fb93f8a188508fc24c0de54f4da9ceb47a894b64884be42e04613360c08"
+    },
+    "data/public_locked/gsm8k_train_locked.jsonl.gz": {
+      "bytes": 119802,
+      "sha256": "f7f2c3dff05bd4eaf42a45a47598b8b9d434d77813518612f4304e97d8943e0c"
+    },
+    "data/public_locked/hellaswag_val_locked.jsonl.gz": {
+      "bytes": 755571,
+      "sha256": "3c16ecd32152c6ee842da6448cf49d48db773823519526c62ac699c07be10da6"
+    },
+    "data/public_locked/wikitext2_test_windows_locked.jsonl.gz": {
+      "bytes": 99381,
+      "sha256": "108266ab1ed8e9159d4733a5451e2936964528648aacd006200a71ae2cd816ce"
+    }
+  },
+  "checksum_excluded_missing_paths": [
+    "scripts/check_release_STAFF_LEGACY.py"
+  ]
+}
