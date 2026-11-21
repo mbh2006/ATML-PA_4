@@ -1,0 +1,579 @@
+{
+  "seed": 6304,
+  "trials_per_method": 100000,
+  "output_length": 3,
+  "proposal_width": 2,
+  "target_weights": [
+    0.6,
+    0.25,
+    0.15
+  ],
+  "draft_weights": [
+    0.15,
+    0.35,
+    0.5
+  ],
+  "boundaries": {
+    "full_acceptance_and_bonus": true,
+    "truncated_final_round": true,
+    "rejected_eos_and_residual": true,
+    "accepted_eos": true,
+    "pending_token_fused_into_verification": true,
+    "zero_output_budget": true
+  },
+  "exact": {
+    "chi_squared": 28.771562962962964,
+    "degrees_of_freedom": 26,
+    "p_value": 0.321572174166495,
+    "sequence_counts": [
+      {
+        "sequence": [
+          0,
+          0,
+          0
+        ],
+        "target_probability": 0.216,
+        "expected_count": 21600.0,
+        "observed_count": 21702
+      },
+      {
+        "sequence": [
+          0,
+          0,
+          1
+        ],
+        "target_probability": 0.09,
+        "expected_count": 9000.0,
+        "observed_count": 9194
+      },
+      {
+        "sequence": [
+          0,
+          0,
+          2
+        ],
+        "target_probability": 0.054,
+        "expected_count": 5400.0,
+        "observed_count": 5293
+      },
+      {
+        "sequence": [
+          0,
+          1,
+          0
+        ],
+        "target_probability": 0.0225,
+        "expected_count": 2250.0,
+        "observed_count": 2251
+      },
+      {
+        "sequence": [
+          0,
+          1,
+          1
+        ],
+        "target_probability": 0.09,
+        "expected_count": 9000.0,
+        "observed_count": 8777
+      },
+      {
+        "sequence": [
+          0,
+          1,
+          2
+        ],
+        "target_probability": 0.0375,
+        "expected_count": 3750.0,
+        "observed_count": 3822
+      },
+      {
+        "sequence": [
+          0,
+          2,
+          0
+        ],
+        "target_probability": 0.0225,
+        "expected_count": 2250.0,
+        "observed_count": 2260
+      },
+      {
+        "sequence": [
+          0,
+          2,
+          1
+        ],
+        "target_probability": 0.0135,
+        "expected_count": 1350.0,
+        "observed_count": 1315
+      },
+      {
+        "sequence": [
+          0,
+          2,
+          2
+        ],
+        "target_probability": 0.054,
+        "expected_count": 5400.0,
+        "observed_count": 5322
+      },
+      {
+        "sequence": [
+          1,
+          0,
+          0
+        ],
+        "target_probability": 0.0225,
+        "expected_count": 2250.0,
+        "observed_count": 2232
+      },
+      {
+        "sequence": [
+          1,
+          0,
+          1
+        ],
+        "target_probability": 0.009375,
+        "expected_count": 937.5,
+        "observed_count": 939
+      },
+      {
+        "sequence": [
+          1,
+          0,
+          2
+        ],
+        "target_probability": 0.005625,
+        "expected_count": 562.5,
+        "observed_count": 588
+      },
+      {
+        "sequence": [
+          1,
+          1,
+          0
+        ],
+        "target_probability": 0.0225,
+        "expected_count": 2250.0,
+        "observed_count": 2241
+      },
+      {
+        "sequence": [
+          1,
+          1,
+          1
+        ],
+        "target_probability": 0.09,
+        "expected_count": 9000.0,
+        "observed_count": 9025
+      },
+      {
+        "sequence": [
+          1,
+          1,
+          2
+        ],
+        "target_probability": 0.0375,
+        "expected_count": 3750.0,
+        "observed_count": 3744
+      },
+      {
+        "sequence": [
+          1,
+          2,
+          0
+        ],
+        "target_probability": 0.015625,
+        "expected_count": 1562.5,
+        "observed_count": 1605
+      },
+      {
+        "sequence": [
+          1,
+          2,
+          1
+        ],
+        "target_probability": 0.009375,
+        "expected_count": 937.5,
+        "observed_count": 947
+      },
+      {
+        "sequence": [
+          1,
+          2,
+          2
+        ],
+        "target_probability": 0.0375,
+        "expected_count": 3750.0,
+        "observed_count": 3704
+      },
+      {
+        "sequence": [
+          2,
+          0,
+          0
+        ],
+        "target_probability": 0.0225,
+        "expected_count": 2250.0,
+        "observed_count": 2249
+      },
+      {
+        "sequence": [
+          2,
+          0,
+          1
+        ],
+        "target_probability": 0.009375,
+        "expected_count": 937.5,
+        "observed_count": 940
+      },
+      {
+        "sequence": [
+          2,
+          0,
+          2
+        ],
+        "target_probability": 0.005625,
+        "expected_count": 562.5,
+        "observed_count": 593
+      },
+      {
+        "sequence": [
+          2,
+          1,
+          0
+        ],
+        "target_probability": 0.003375,
+        "expected_count": 337.5,
+        "observed_count": 337
+      },
+      {
+        "sequence": [
+          2,
+          1,
+          1
+        ],
+        "target_probability": 0.0135,
+        "expected_count": 1350.0,
+        "observed_count": 1267
+      },
+      {
+        "sequence": [
+          2,
+          1,
+          2
+        ],
+        "target_probability": 0.005625,
+        "expected_count": 562.5,
+        "observed_count": 553
+      },
+      {
+        "sequence": [
+          2,
+          2,
+          0
+        ],
+        "target_probability": 0.0225,
+        "expected_count": 2250.0,
+        "observed_count": 2329
+      },
+      {
+        "sequence": [
+          2,
+          2,
+          1
+        ],
+        "target_probability": 0.0135,
+        "expected_count": 1350.0,
+        "observed_count": 1356
+      },
+      {
+        "sequence": [
+          2,
+          2,
+          2
+        ],
+        "target_probability": 0.054,
+        "expected_count": 5400.0,
+        "observed_count": 5415
+      }
+    ]
+  },
+  "incorrect_residual": {
+    "chi_squared": 36449.74932296297,
+    "degrees_of_freedom": 26,
+    "p_value": 0.0,
+    "sequence_counts": [
+      {
+        "sequence": [
+          0,
+          0,
+          0
+        ],
+        "target_probability": 0.216,
+        "expected_count": 21600.0,
+        "observed_count": 7818
+      },
+      {
+        "sequence": [
+          0,
+          0,
+          1
+        ],
+        "target_probability": 0.09,
+        "expected_count": 9000.0,
+        "observed_count": 6104
+      },
+      {
+        "sequence": [
+          0,
+          0,
+          2
+        ],
+        "target_probability": 0.054,
+        "expected_count": 5400.0,
+        "observed_count": 3658
+      },
+      {
+        "sequence": [
+          0,
+          1,
+          0
+        ],
+        "target_probability": 0.0225,
+        "expected_count": 2250.0,
+        "observed_count": 3060
+      },
+      {
+        "sequence": [
+          0,
+          1,
+          1
+        ],
+        "target_probability": 0.09,
+        "expected_count": 9000.0,
+        "observed_count": 7053
+      },
+      {
+        "sequence": [
+          0,
+          1,
+          2
+        ],
+        "target_probability": 0.0375,
+        "expected_count": 3750.0,
+        "observed_count": 5227
+      },
+      {
+        "sequence": [
+          0,
+          2,
+          0
+        ],
+        "target_probability": 0.0225,
+        "expected_count": 2250.0,
+        "observed_count": 3026
+      },
+      {
+        "sequence": [
+          0,
+          2,
+          1
+        ],
+        "target_probability": 0.0135,
+        "expected_count": 1350.0,
+        "observed_count": 1799
+      },
+      {
+        "sequence": [
+          0,
+          2,
+          2
+        ],
+        "target_probability": 0.054,
+        "expected_count": 5400.0,
+        "observed_count": 4241
+      },
+      {
+        "sequence": [
+          1,
+          0,
+          0
+        ],
+        "target_probability": 0.0225,
+        "expected_count": 2250.0,
+        "observed_count": 3970
+      },
+      {
+        "sequence": [
+          1,
+          0,
+          1
+        ],
+        "target_probability": 0.009375,
+        "expected_count": 937.5,
+        "observed_count": 2391
+      },
+      {
+        "sequence": [
+          1,
+          0,
+          2
+        ],
+        "target_probability": 0.005625,
+        "expected_count": 562.5,
+        "observed_count": 1470
+      },
+      {
+        "sequence": [
+          1,
+          1,
+          0
+        ],
+        "target_probability": 0.0225,
+        "expected_count": 2250.0,
+        "observed_count": 3074
+      },
+      {
+        "sequence": [
+          1,
+          1,
+          1
+        ],
+        "target_probability": 0.09,
+        "expected_count": 9000.0,
+        "observed_count": 7084
+      },
+      {
+        "sequence": [
+          1,
+          1,
+          2
+        ],
+        "target_probability": 0.0375,
+        "expected_count": 3750.0,
+        "observed_count": 5098
+      },
+      {
+        "sequence": [
+          1,
+          2,
+          0
+        ],
+        "target_probability": 0.015625,
+        "expected_count": 1562.5,
+        "observed_count": 4092
+      },
+      {
+        "sequence": [
+          1,
+          2,
+          1
+        ],
+        "target_probability": 0.009375,
+        "expected_count": 937.5,
+        "observed_count": 2417
+      },
+      {
+        "sequence": [
+          1,
+          2,
+          2
+        ],
+        "target_probability": 0.0375,
+        "expected_count": 3750.0,
+        "observed_count": 6676
+      },
+      {
+        "sequence": [
+          2,
+          0,
+          0
+        ],
+        "target_probability": 0.0225,
+        "expected_count": 2250.0,
+        "observed_count": 3955
+      },
+      {
+        "sequence": [
+          2,
+          0,
+          1
+        ],
+        "target_probability": 0.009375,
+        "expected_count": 937.5,
+        "observed_count": 2460
+      },
+      {
+        "sequence": [
+          2,
+          0,
+          2
+        ],
+        "target_probability": 0.005625,
+        "expected_count": 562.5,
+        "observed_count": 1447
+      },
+      {
+        "sequence": [
+          2,
+          1,
+          0
+        ],
+        "target_probability": 0.003375,
+        "expected_count": 337.5,
+        "observed_count": 902
+      },
+      {
+        "sequence": [
+          2,
+          1,
+          1
+        ],
+        "target_probability": 0.0135,
+        "expected_count": 1350.0,
+        "observed_count": 2401
+      },
+      {
+        "sequence": [
+          2,
+          1,
+          2
+        ],
+        "target_probability": 0.005625,
+        "expected_count": 562.5,
+        "observed_count": 1478
+      },
+      {
+        "sequence": [
+          2,
+          2,
+          0
+        ],
+        "target_probability": 0.0225,
+        "expected_count": 2250.0,
+        "observed_count": 3144
+      },
+      {
+        "sequence": [
+          2,
+          2,
+          1
+        ],
+        "target_probability": 0.0135,
+        "expected_count": 1350.0,
+        "observed_count": 1853
+      },
+      {
+        "sequence": [
+          2,
+          2,
+          2
+        ],
+        "target_probability": 0.054,
+        "expected_count": 5400.0,
+        "observed_count": 4102
+      }
+    ]
+  },
+  "status": "passed"
+}

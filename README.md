@@ -14,3 +14,8 @@ Experiment code and reproducibility records for EE-5102 / CS-6304, Fall 2026.
 The [course dataset repository](https://github.com/AbDu11aHHH/atml-pa4-datasets) supplies the fixed selections and preprocessing tools. The task plans identify outputs by experiment stage so each value used in the student-authored report can be traced to a saved result.
 
 Setup evidence includes the [CUDA smoke result](results/setup/gpu-preflight.json), [validated data manifest](results/setup/public-data-manifest.json), and [locked source revisions](results/setup/local_source_revisions.json).
+
+## Verified experiments
+
+- Task 2A ran all 36 exact attention conditions on CUDA. [Raw numerical and timing grid](results/task2a/operator-grid.json)
+- Task 3 passed the local Markov sampler gate. Reproduce with `python -m pa4.speculative_validation --output runs/task3/markov-validation.json`. [Joint sequence counts and test statistics](results/task3/markov-validation.json)

@@ -1,0 +1,2691 @@
+{
+  "seed": 6304,
+  "source_revision": "0434cd13c55a4910d3280ea5b1cb93dec82c8dac",
+  "python": "3.13.16",
+  "torch": "2.11.0+cu130",
+  "cuda": "13.0",
+  "device": "Tesla T4",
+  "total_memory_bytes": 15636037632,
+  "warmup_repetitions": 2,
+  "measured_repetitions": 10,
+  "tile": [
+    128,
+    128
+  ],
+  "reference": "dense FP32 with TF32 disabled",
+  "rows": [
+    {
+      "shape": [
+        2,
+        4,
+        256,
+        64
+      ],
+      "dtype": "torch.float16",
+      "operator": "dense",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.00044249999999124157,
+          0.0004592580000064572,
+          0.0004192260000195347,
+          0.0004566439999962313,
+          0.0004633970000043064,
+          0.0004988609999827531,
+          0.00046541699998670083,
+          0.0004598900000019057,
+          0.0004118850000054408,
+          0.000443179000001237
+        ],
+        "peak_allocated_bytes": 30280192,
+        "peak_reserved_bytes": 48234496
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.0011629939999977523,
+          0.0016753319999907035,
+          0.0011807850000025155,
+          0.001149055000013277,
+          0.0011740410000129486,
+          0.0011463689999970939,
+          0.001138844999985622,
+          0.0011128810000116118,
+          0.0011265299999934086,
+          0.001108079000005091
+        ],
+        "peak_allocated_bytes": 31132160,
+        "peak_reserved_bytes": 48234496
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "error": {
+        "output": {
+          "maximum_absolute": 0.0012596845626831055,
+          "relative_l2": 0.0003781047894860658,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 0.0009326338768005371,
+          "relative_l2": 0.0005000670074755693,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 0.0010139942169189453,
+          "relative_l2": 0.0005023501690323395,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 0.0016949176788330078,
+          "relative_l2": 0.0003843732599642746,
+          "finite": true
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        4,
+        256,
+        64
+      ],
+      "dtype": "torch.float16",
+      "operator": "tiled",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.0018980389999967429,
+          0.0017750499999920066,
+          0.0018864879999966888,
+          0.00186535899999285,
+          0.001802477999973462,
+          0.0017559890000029554,
+          0.001871398999981011,
+          0.0017053079999982401,
+          0.001726330999986203,
+          0.0017196250000210966
+        ],
+        "peak_allocated_bytes": 24418304,
+        "peak_reserved_bytes": 50331648
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.0038027490000160924,
+          0.004003755999974601,
+          0.0038171799999986433,
+          0.003845123000019157,
+          0.0037444280000045183,
+          0.003866968000011184,
+          0.003954985000007127,
+          0.003832232000007707,
+          0.00383487999999943,
+          0.003804949999988594
+        ],
+        "peak_allocated_bytes": 26518528,
+        "peak_reserved_bytes": 31457280
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "error": {
+        "output": {
+          "maximum_absolute": 0.0012596845626831055,
+          "relative_l2": 0.00037810027525061947,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 0.0009326338768005371,
+          "relative_l2": 0.0005000323302734872,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 0.0010139942169189453,
+          "relative_l2": 0.000502474037371679,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 0.0016949176788330078,
+          "relative_l2": 0.0003841789882854319,
+          "finite": true
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        4,
+        256,
+        64
+      ],
+      "dtype": "torch.float16",
+      "operator": "sdpa",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          7.774100001256556e-05,
+          7.309299999747054e-05,
+          8.842599999070444e-05,
+          7.727999999929125e-05,
+          7.194400001253598e-05,
+          7.199399999535672e-05,
+          7.144600002106927e-05,
+          7.183300002111537e-05,
+          7.118700000319222e-05,
+          7.130300002700096e-05
+        ],
+        "peak_allocated_bytes": 20447232,
+        "peak_reserved_bytes": 31457280
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.00037799200001131794,
+          0.00033747800000583084,
+          0.0003258670000150232,
+          0.00032732500000065556,
+          0.000325590999977976,
+          0.0003146800000024541,
+          0.00031975699999975404,
+          0.0003152109999859931,
+          0.0003152429999886408,
+          0.0003156239999952959
+        ],
+        "peak_allocated_bytes": 22036992,
+        "peak_reserved_bytes": 27262976
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "backend_events": [
+        "aten::_scaled_dot_product_efficient_attention"
+      ],
+      "error": {
+        "output": {
+          "maximum_absolute": 0.001279398798942566,
+          "relative_l2": 0.00040468214765494465,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 0.0013439655303955078,
+          "relative_l2": 0.0005896441782107853,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 0.0013179779052734375,
+          "relative_l2": 0.0005872137310790297,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 0.0016949176788330078,
+          "relative_l2": 0.00042348942135516407,
+          "finite": true
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        4,
+        256,
+        64
+      ],
+      "dtype": "torch.float32",
+      "operator": "dense",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.0005043660000012551,
+          0.0005010700000127599,
+          0.00044966499999077314,
+          0.0005644009999912214,
+          0.00045129000000088126,
+          0.0005488529999979619,
+          0.0004429399999992256,
+          0.0004791490000002341,
+          0.0004357679999884567,
+          0.00047811000001729553
+        ],
+        "peak_allocated_bytes": 27658752,
+        "peak_reserved_bytes": 48234496
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.0012882129999809422,
+          0.0011555019999889282,
+          0.0011819930000172008,
+          0.0012127440000142542,
+          0.0011778310000067904,
+          0.0011759150000045793,
+          0.0011400580000042737,
+          0.0011233820000029482,
+          0.0011397259999910148,
+          0.0012028730000110954
+        ],
+        "peak_allocated_bytes": 28639744,
+        "peak_reserved_bytes": 48234496
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "error": {
+        "output": {
+          "maximum_absolute": 0.0,
+          "relative_l2": 0.0,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 0.0,
+          "relative_l2": 0.0,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 0.0,
+          "relative_l2": 0.0,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 0.0,
+          "relative_l2": 0.0,
+          "finite": true
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        4,
+        256,
+        64
+      ],
+      "dtype": "torch.float32",
+      "operator": "tiled",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.002133496999988438,
+          0.002057660000019723,
+          0.0020410940000203937,
+          0.002212286999991875,
+          0.0020557230000122217,
+          0.0021606740000095215,
+          0.002045997000010402,
+          0.0020500550000122075,
+          0.00202664399998298,
+          0.0020307930000171837
+        ],
+        "peak_allocated_bytes": 21796864,
+        "peak_reserved_bytes": 48234496
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.004562387000021317,
+          0.00443752200001768,
+          0.004449429999993981,
+          0.004535854000010886,
+          0.005977524000002177,
+          0.004832691000018485,
+          0.004628576000015983,
+          0.00454175699999837,
+          0.00440401000000179,
+          0.004441320000012183
+        ],
+        "peak_allocated_bytes": 23634944,
+        "peak_reserved_bytes": 29360128
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "error": {
+        "output": {
+          "maximum_absolute": 5.364418029785156e-07,
+          "relative_l2": 1.9278571065509607e-07,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 7.301568984985352e-07,
+          "relative_l2": 2.93301358933003e-07,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 1.430511474609375e-06,
+          "relative_l2": 3.9668917011640773e-07,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 2.86102294921875e-06,
+          "relative_l2": 3.019959011706436e-07,
+          "finite": true
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        4,
+        256,
+        64
+      ],
+      "dtype": "torch.float32",
+      "operator": "sdpa",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.00020289600001888175,
+          0.00018246500002305766,
+          0.000197321999991118,
+          0.00021028099999398364,
+          0.00018397499999878164,
+          0.00018002800001681862,
+          0.00017677400001048227,
+          0.0001810079999984282,
+          0.00019364199999927223,
+          0.00017843100002323808
+        ],
+        "peak_allocated_bytes": 19660800,
+        "peak_reserved_bytes": 29360128
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.0006925739999985581,
+          0.0006798279999884471,
+          0.0006473140000196054,
+          0.0006573320000029526,
+          0.0006454210000015337,
+          0.0006406889999936993,
+          0.0006565200000068216,
+          0.0006879720000085854,
+          0.0008048370000039995,
+          0.0007480229999998755
+        ],
+        "peak_allocated_bytes": 22306816,
+        "peak_reserved_bytes": 27262976
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "backend_events": [
+        "aten::_scaled_dot_product_efficient_attention"
+      ],
+      "error": {
+        "output": {
+          "maximum_absolute": 5.662441253662109e-07,
+          "relative_l2": 2.1186140866376121e-07,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 7.599592208862305e-07,
+          "relative_l2": 3.1197084798002925e-07,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 1.430511474609375e-06,
+          "relative_l2": 4.1003716957364103e-07,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 3.337860107421875e-06,
+          "relative_l2": 3.94343703652802e-07,
+          "finite": true
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        4,
+        512,
+        64
+      ],
+      "dtype": "torch.float16",
+      "operator": "dense",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.0011947490000068228,
+          0.0011525310000024547,
+          0.0011705229999847688,
+          0.0011474650000025122,
+          0.0011405370000261428,
+          0.0011382950000040637,
+          0.0011738190000016857,
+          0.0011429609999993318,
+          0.0011442240000008042,
+          0.0011446660000160591
+        ],
+        "peak_allocated_bytes": 60559872,
+        "peak_reserved_bytes": 75497472
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.0027919650000001184,
+          0.0028252049999935025,
+          0.002786186999998108,
+          0.0027863900000113517,
+          0.0027830399999970723,
+          0.0027875970000081907,
+          0.0028152399999896716,
+          0.002787756000003583,
+          0.002786026000023867,
+          0.0027874090000068463
+        ],
+        "peak_allocated_bytes": 62394880,
+        "peak_reserved_bytes": 77594624
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "error": {
+        "output": {
+          "maximum_absolute": 0.0015044212341308594,
+          "relative_l2": 0.0003849685474089844,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 0.0017049312591552734,
+          "relative_l2": 0.0004953222890839324,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 0.0014405250549316406,
+          "relative_l2": 0.000492807518965477,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 0.0022802352905273438,
+          "relative_l2": 0.0003909297760252382,
+          "finite": true
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        4,
+        512,
+        64
+      ],
+      "dtype": "torch.float16",
+      "operator": "tiled",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.006470140000004676,
+          0.006099741000014092,
+          0.0061019039999905544,
+          0.006065094999996745,
+          0.006067247999993697,
+          0.006069900999989386,
+          0.0060449540000035995,
+          0.006070036000011214,
+          0.006078755000004321,
+          0.006053430999998
+        ],
+        "peak_allocated_bytes": 30445568,
+        "peak_reserved_bytes": 77594624
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.013251829000012094,
+          0.013927197999976215,
+          0.013498681000015722,
+          0.01342087000000447,
+          0.013619651999988491,
+          0.018178551999994852,
+          0.013655910000011318,
+          0.013923756000025378,
+          0.013219773999992412,
+          0.013173511999980292
+        ],
+        "peak_allocated_bytes": 38198272,
+        "peak_reserved_bytes": 44040192
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "error": {
+        "output": {
+          "maximum_absolute": 0.0015044212341308594,
+          "relative_l2": 0.000384950720974046,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 0.0017049312591552734,
+          "relative_l2": 0.0004952905618829408,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 0.0014405250549316406,
+          "relative_l2": 0.0004927595998559465,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 0.0022802352905273438,
+          "relative_l2": 0.00039062655269015746,
+          "finite": true
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        4,
+        512,
+        64
+      ],
+      "dtype": "torch.float16",
+      "operator": "sdpa",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.00016308200000025863,
+          0.00016796500000282322,
+          0.0001510390000021289,
+          0.00014975900000990805,
+          0.00014821400000641916,
+          0.00014606999999955406,
+          0.00016174400002455513,
+          0.00016481599999451646,
+          0.0001510809999842877,
+          0.0001506590000133201
+        ],
+        "peak_allocated_bytes": 23855104,
+        "peak_reserved_bytes": 44040192
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.0006005190000166749,
+          0.0005506739999816546,
+          0.0005422129999885783,
+          0.0005301390000056472,
+          0.0005247599999904651,
+          0.0005183669999837548,
+          0.0005178749999856791,
+          0.0005296249999844349,
+          0.0005254509999872425,
+          0.0005443160000027092
+        ],
+        "peak_allocated_bytes": 27034624,
+        "peak_reserved_bytes": 31457280
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "backend_events": [
+        "aten::_scaled_dot_product_efficient_attention"
+      ],
+      "error": {
+        "output": {
+          "maximum_absolute": 0.0015044212341308594,
+          "relative_l2": 0.0004114379510629963,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 0.001977682113647461,
+          "relative_l2": 0.0005879355351462803,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 0.0019154548645019531,
+          "relative_l2": 0.000583095838689059,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 0.0022802352905273438,
+          "relative_l2": 0.00043935059808662734,
+          "finite": true
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        4,
+        512,
+        64
+      ],
+      "dtype": "torch.float32",
+      "operator": "dense",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.0011093269999946642,
+          0.001108301000016354,
+          0.0011127420000036636,
+          0.0011050049999994371,
+          0.0010918579999952271,
+          0.0010856170000010934,
+          0.0010842780000075436,
+          0.0011184710000122777,
+          0.001086830000019745,
+          0.0010880810000060137
+        ],
+        "peak_allocated_bytes": 55316992,
+        "peak_reserved_bytes": 73400320
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.00269137699999078,
+          0.002681985999998915,
+          0.0026996880000069723,
+          0.0026793899999972837,
+          0.0026835019999964516,
+          0.0026840719999938756,
+          0.0026813180000146986,
+          0.0026804259999835267,
+          0.002682991999989781,
+          0.0027043470000194247
+        ],
+        "peak_allocated_bytes": 57147904,
+        "peak_reserved_bytes": 73400320
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "error": {
+        "output": {
+          "maximum_absolute": 0.0,
+          "relative_l2": 0.0,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 0.0,
+          "relative_l2": 0.0,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 0.0,
+          "relative_l2": 0.0,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 0.0,
+          "relative_l2": 0.0,
+          "finite": true
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        4,
+        512,
+        64
+      ],
+      "dtype": "torch.float32",
+      "operator": "tiled",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.0059888220000061665,
+          0.005965930999991542,
+          0.005927510000020675,
+          0.005937471999999389,
+          0.006091330000003836,
+          0.0059825660000001335,
+          0.005913816999992605,
+          0.006108286999989332,
+          0.00616438900001981,
+          0.005948188000019172
+        ],
+        "peak_allocated_bytes": 24678400,
+        "peak_reserved_bytes": 73400320
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.014940492000022232,
+          0.013411355999977559,
+          0.012924628999996912,
+          0.012994120000001885,
+          0.01296215399997891,
+          0.013105769999981476,
+          0.01299242499999309,
+          0.01393987999998103,
+          0.014120702000013807,
+          0.013333206999988079
+        ],
+        "peak_allocated_bytes": 32431104,
+        "peak_reserved_bytes": 39845888
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "error": {
+        "output": {
+          "maximum_absolute": 5.960464477539062e-07,
+          "relative_l2": 2.32814458900141e-07,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 1.155717768597242e-06,
+          "relative_l2": 3.21255614951523e-07,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 3.5762786865234375e-06,
+          "relative_l2": 5.493706054144117e-07,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 8.106231689453125e-06,
+          "relative_l2": 4.889876651226209e-07,
+          "finite": true
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        4,
+        512,
+        64
+      ],
+      "dtype": "torch.float32",
+      "operator": "sdpa",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.0004671270000073946,
+          0.00044646399999237474,
+          0.0004556279999974322,
+          0.00044231600000443905,
+          0.0004447950000212586,
+          0.000443283000009842,
+          0.00044256500001438326,
+          0.00044832800000449424,
+          0.0004576059999976678,
+          0.0004443760000185648
+        ],
+        "peak_allocated_bytes": 22282240,
+        "peak_reserved_bytes": 39845888
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.0016239790000156518,
+          0.0016178850000017064,
+          0.0016188989999932346,
+          0.001636098000005859,
+          0.001628869000001032,
+          0.0016351670000176455,
+          0.0016214850000153547,
+          0.0016211249999855681,
+          0.0016140660000019125,
+          0.001637674000022571
+        ],
+        "peak_allocated_bytes": 27574272,
+        "peak_reserved_bytes": 33554432
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "backend_events": [
+        "aten::_scaled_dot_product_efficient_attention"
+      ],
+      "error": {
+        "output": {
+          "maximum_absolute": 6.556510925292969e-07,
+          "relative_l2": 2.6857987555622294e-07,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 1.155717768597242e-06,
+          "relative_l2": 3.575096753513151e-07,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 3.5762786865234375e-06,
+          "relative_l2": 5.630436552349894e-07,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 8.106231689453125e-06,
+          "relative_l2": 5.461534076255853e-07,
+          "finite": true
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        4,
+        1024,
+        64
+      ],
+      "dtype": "torch.float16",
+      "operator": "dense",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.0033936160000109794,
+          0.0034033450000094945,
+          0.003387433999989753,
+          0.003375153000007458,
+          0.0033827549999898565,
+          0.003380609999993567,
+          0.0034025159999941934,
+          0.003406909999995378,
+          0.0033879890000036994,
+          0.0033863539999856584
+        ],
+        "peak_allocated_bytes": 172237824,
+        "peak_reserved_bytes": 184549376
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.008221543999979986,
+          0.00814438899999459,
+          0.00814326400001164,
+          0.008157946000011407,
+          0.008151706999996122,
+          0.00815679300001193,
+          0.008139116999984708,
+          0.008137639000011632,
+          0.00813754899999708,
+          0.00813268600001038
+        ],
+        "peak_allocated_bytes": 176432128,
+        "peak_reserved_bytes": 186646528
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "error": {
+        "output": {
+          "maximum_absolute": 0.001088857650756836,
+          "relative_l2": 0.0003934080564198651,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 0.0012788772583007812,
+          "relative_l2": 0.000504084059734433,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 0.0011196136474609375,
+          "relative_l2": 0.0004984785469802723,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 0.0023221969604492188,
+          "relative_l2": 0.0003975939454729217,
+          "finite": true
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        4,
+        1024,
+        64
+      ],
+      "dtype": "torch.float16",
+      "operator": "tiled",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.020615920000011556,
+          0.02049084500001186,
+          0.020648439000012786,
+          0.020541590999982873,
+          0.020361300999979903,
+          0.02028577199999404,
+          0.020353267000018604,
+          0.020109490000010055,
+          0.020287322000001495,
+          0.020341301000001977
+        ],
+        "peak_allocated_bytes": 42508288,
+        "peak_reserved_bytes": 186646528
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.04365608500000917,
+          0.04435131399998227,
+          0.04342354899998213,
+          0.04345166300001324,
+          0.042798047000019324,
+          0.04389697999999953,
+          0.042529268999999204,
+          0.04508612699999048,
+          0.042953014000005396,
+          0.043219518999990214
+        ],
+        "peak_allocated_bytes": 67570688,
+        "peak_reserved_bytes": 94371840
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "error": {
+        "output": {
+          "maximum_absolute": 0.001088857650756836,
+          "relative_l2": 0.0003934034599143315,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 0.0012788772583007812,
+          "relative_l2": 0.0005040692959965694,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 0.0011196136474609375,
+          "relative_l2": 0.0004985001341037143,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 0.0023221969604492188,
+          "relative_l2": 0.0003975397202120117,
+          "finite": true
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        4,
+        1024,
+        64
+      ],
+      "dtype": "torch.float16",
+      "operator": "sdpa",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.0002291529999922659,
+          0.00020960300000183452,
+          0.00022620300001108262,
+          0.00022649499999261025,
+          0.0002524349999930564,
+          0.00020967999998333653,
+          0.0002568650000114303,
+          0.00021907999999370986,
+          0.00020376700001634163,
+          0.00020767399999499503
+        ],
+        "peak_allocated_bytes": 30670848,
+        "peak_reserved_bytes": 94371840
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.0008857509999984359,
+          0.0008804569999938394,
+          0.0008905569999910767,
+          0.0008838630000127523,
+          0.0008662729999855401,
+          0.0009284649999869998,
+          0.0008676209999975981,
+          0.0008665949999908662,
+          0.0008853439999825241,
+          0.0008590040000058252
+        ],
+        "peak_allocated_bytes": 37029888,
+        "peak_reserved_bytes": 52428800
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "backend_events": [
+        "aten::_scaled_dot_product_efficient_attention"
+      ],
+      "error": {
+        "output": {
+          "maximum_absolute": 0.001153022050857544,
+          "relative_l2": 0.00041993895867889974,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 0.00165635347366333,
+          "relative_l2": 0.0006027369801501285,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 0.0017499923706054688,
+          "relative_l2": 0.0005968121529424948,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 0.0023221969604492188,
+          "relative_l2": 0.0004473307582569243,
+          "finite": true
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        4,
+        1024,
+        64
+      ],
+      "dtype": "torch.float32",
+      "operator": "dense",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.002954052000006868,
+          0.0029586109999968357,
+          0.002940158999990672,
+          0.0029378339999936998,
+          0.0029438800000036736,
+          0.0029408869999940634,
+          0.0030739410000251155,
+          0.0029398270000058346,
+          0.002943251999994345,
+          0.0029601070000069285
+        ],
+        "peak_allocated_bytes": 161752064,
+        "peak_reserved_bytes": 186646528
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.0069372109999790155,
+          0.006946618000000626,
+          0.00694168300000797,
+          0.006943833999997651,
+          0.0069333739999990485,
+          0.006941606999987471,
+          0.006930940000017927,
+          0.006928909000009753,
+          0.006932588000012174,
+          0.0069544220000068435
+        ],
+        "peak_allocated_bytes": 164897792,
+        "peak_reserved_bytes": 180355072
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "error": {
+        "output": {
+          "maximum_absolute": 0.0,
+          "relative_l2": 0.0,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 0.0,
+          "relative_l2": 0.0,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 0.0,
+          "relative_l2": 0.0,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 0.0,
+          "relative_l2": 0.0,
+          "finite": true
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        4,
+        1024,
+        64
+      ],
+      "dtype": "torch.float32",
+      "operator": "tiled",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.020824341000007962,
+          0.02118688999999563,
+          0.020680836000025238,
+          0.020756350999988626,
+          0.020718332999990707,
+          0.02039509899998393,
+          0.02112261999999987,
+          0.02115610000001311,
+          0.02075313299999948,
+          0.02014377500000819
+        ],
+        "peak_allocated_bytes": 30973952,
+        "peak_reserved_bytes": 182452224
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.04270514800001024,
+          0.04377292499998475,
+          0.044283522999990055,
+          0.04344057899999143,
+          0.04316610099999707,
+          0.043514904999995,
+          0.04309126199999014,
+          0.043908662999996295,
+          0.04315867599999024,
+          0.043293710000000374
+        ],
+        "peak_allocated_bytes": 56036352,
+        "peak_reserved_bytes": 69206016
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "error": {
+        "output": {
+          "maximum_absolute": 4.76837158203125e-07,
+          "relative_l2": 2.903376411054527e-07,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 8.344650268554688e-07,
+          "relative_l2": 3.7495292520205254e-07,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 3.4570693969726562e-06,
+          "relative_l2": 7.435576691889957e-07,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 5.7220458984375e-06,
+          "relative_l2": 7.277560803671801e-07,
+          "finite": true
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        4,
+        1024,
+        64
+      ],
+      "dtype": "torch.float32",
+      "operator": "sdpa",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.0008914500000116732,
+          0.0008629810000115867,
+          0.0008979060000058325,
+          0.0008742730000221854,
+          0.0008134310000116329,
+          0.000861315999998169,
+          0.0008248700000024201,
+          0.0007964100000208418,
+          0.0008172779999995328,
+          0.000854704000005313
+        ],
+        "peak_allocated_bytes": 27525120,
+        "peak_reserved_bytes": 69206016
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.0037627849999921636,
+          0.0037658910000004653,
+          0.003726556999993136,
+          0.0037334240000177488,
+          0.0037754840000161494,
+          0.0037266790000103356,
+          0.003733017000001837,
+          0.003765044000004991,
+          0.003744165000000521,
+          0.003688164999999799
+        ],
+        "peak_allocated_bytes": 38109184,
+        "peak_reserved_bytes": 44040192
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "backend_events": [
+        "aten::_scaled_dot_product_efficient_attention"
+      ],
+      "error": {
+        "output": {
+          "maximum_absolute": 9.5367431640625e-07,
+          "relative_l2": 3.553497530286724e-07,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 8.940696716308594e-07,
+          "relative_l2": 4.520376830204776e-07,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 3.337860107421875e-06,
+          "relative_l2": 7.533621365861223e-07,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 5.245208740234375e-06,
+          "relative_l2": 7.778311318549372e-07,
+          "finite": true
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        4,
+        2048,
+        64
+      ],
+      "dtype": "torch.float16",
+      "operator": "dense",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.011784915000021101,
+          0.011756127000012384,
+          0.011749366999993072,
+          0.011750261000003093,
+          0.011761762999981329,
+          0.011766210999979876,
+          0.011763032000004614,
+          0.011753448999996863,
+          0.011761302999985901,
+          0.011389772999990555
+        ],
+        "peak_allocated_bytes": 600066048,
+        "peak_reserved_bytes": 622854144
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.02494599199999925,
+          0.024905046000014863,
+          0.02491078700001026,
+          0.024907928999994056,
+          0.02485835199999542,
+          0.02486788499999193,
+          0.02493978399999719,
+          0.024896143999995957,
+          0.024909894999979088,
+          0.024929283000005853
+        ],
+        "peak_allocated_bytes": 610551808,
+        "peak_reserved_bytes": 736100352
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "error": {
+        "output": {
+          "maximum_absolute": 0.0014472007751464844,
+          "relative_l2": 0.0003966102456651144,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 0.0013146400451660156,
+          "relative_l2": 0.0005101336656949617,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 0.0014271736145019531,
+          "relative_l2": 0.0005063448664586755,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 0.0019800662994384766,
+          "relative_l2": 0.0003999166259195465,
+          "finite": true
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        4,
+        2048,
+        64
+      ],
+      "dtype": "torch.float16",
+      "operator": "tiled",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.07343415800002617,
+          0.07446094899998457,
+          0.07212631499999134,
+          0.07165474799998606,
+          0.07271621699999287,
+          0.07260696500000563,
+          0.0720318470000052,
+          0.07273527800001034,
+          0.07178538799999501,
+          0.07171004399998537
+        ],
+        "peak_allocated_bytes": 66633728,
+        "peak_reserved_bytes": 742391808
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.1566611830000113,
+          0.1572219690000054,
+          0.15559211400000095,
+          0.15560632699998678,
+          0.1570200879999959,
+          0.1559962599999949,
+          0.15902438599999869,
+          0.15945757800000138,
+          0.1570915900000216,
+          0.1568334199999981
+        ],
+        "peak_allocated_bytes": 152464384,
+        "peak_reserved_bytes": 169869312
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "error": {
+        "output": {
+          "maximum_absolute": 0.0014472007751464844,
+          "relative_l2": 0.00039659332149189917,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 0.0013146400451660156,
+          "relative_l2": 0.0005101052918986741,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 0.0014271736145019531,
+          "relative_l2": 0.0005064404648140224,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 0.0019800662994384766,
+          "relative_l2": 0.00039996986829629453,
+          "finite": true
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        4,
+        2048,
+        64
+      ],
+      "dtype": "torch.float16",
+      "operator": "sdpa",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.0005236190000061924,
+          0.0005030789999977969,
+          0.0004936310000118738,
+          0.0005960270000002765,
+          0.0005381129999761924,
+          0.0005573480000009567,
+          0.00047937700000488803,
+          0.0004490089999933389,
+          0.00047671100000457045,
+          0.0004563239999981761
+        ],
+        "peak_allocated_bytes": 44302336,
+        "peak_reserved_bytes": 169869312
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.0018690489999926285,
+          0.001843309999998155,
+          0.0018913939999833929,
+          0.001963211999992609,
+          0.0019727869999996983,
+          0.0019502820000241172,
+          0.0019421599999986938,
+          0.001991683999989391,
+          0.0019611319999910393,
+          0.0020047040000008565
+        ],
+        "peak_allocated_bytes": 57020416,
+        "peak_reserved_bytes": 65011712
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "backend_events": [
+        "aten::_scaled_dot_product_efficient_attention"
+      ],
+      "error": {
+        "output": {
+          "maximum_absolute": 0.001240849494934082,
+          "relative_l2": 0.0004246640306964086,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 0.002276182174682617,
+          "relative_l2": 0.0005990671013712686,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 0.0029938220977783203,
+          "relative_l2": 0.0005943891897596632,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 0.002379179000854492,
+          "relative_l2": 0.00044651711418441605,
+          "finite": true
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        4,
+        2048,
+        64
+      ],
+      "dtype": "torch.float32",
+      "operator": "dense",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.010661208000016131,
+          0.01066611100000614,
+          0.010670643000025848,
+          0.010654896000005465,
+          0.010652105000019674,
+          0.01065346800001521,
+          0.010655184000000872,
+          0.010625191000002587,
+          0.01062962299999981,
+          0.010642157999996016
+        ],
+        "peak_allocated_bytes": 579094528,
+        "peak_reserved_bytes": 601882624
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.024644795000000386,
+          0.024702083999983415,
+          0.024748313000003463,
+          0.024884776999982705,
+          0.024846693999990066,
+          0.024892422999982955,
+          0.024840603999990662,
+          0.024800546000022905,
+          0.024868554999983417,
+          0.024801155000005792
+        ],
+        "peak_allocated_bytes": 587483136,
+        "peak_reserved_bytes": 715128832
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "error": {
+        "output": {
+          "maximum_absolute": 0.0,
+          "relative_l2": 0.0,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 0.0,
+          "relative_l2": 0.0,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 0.0,
+          "relative_l2": 0.0,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 0.0,
+          "relative_l2": 0.0,
+          "finite": true
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        4,
+        2048,
+        64
+      ],
+      "dtype": "torch.float32",
+      "operator": "tiled",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.07498409699999797,
+          0.07421731100001239,
+          0.07351442300000599,
+          0.07424969200002351,
+          0.07461007499998118,
+          0.07431550500001549,
+          0.07402019599999221,
+          0.07419236299998033,
+          0.07348730399999681,
+          0.07314277300000072
+        ],
+        "peak_allocated_bytes": 43565056,
+        "peak_reserved_bytes": 721420288
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.15534843000000365,
+          0.15668273400001453,
+          0.15656063500000528,
+          0.15729538499999762,
+          0.1574084209999853,
+          0.15907600499997443,
+          0.15778263100000345,
+          0.1605167799999947,
+          0.15582596599998055,
+          0.15861467100000937
+        ],
+        "peak_allocated_bytes": 129395712,
+        "peak_reserved_bytes": 148897792
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "error": {
+        "output": {
+          "maximum_absolute": 5.960464477539062e-07,
+          "relative_l2": 3.6282276383812235e-07,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 7.243438062687346e-07,
+          "relative_l2": 4.514927225747328e-07,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 5.4836273193359375e-06,
+          "relative_l2": 1.0556786206645965e-06,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 7.62939453125e-06,
+          "relative_l2": 1.0417967382733413e-06,
+          "finite": true
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        4,
+        2048,
+        64
+      ],
+      "dtype": "torch.float32",
+      "operator": "sdpa",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.0017894780000062838,
+          0.0017855849999932616,
+          0.001700343000010207,
+          0.0017208620000133124,
+          0.0016502050000042345,
+          0.0017521179999846481,
+          0.001683743000000959,
+          0.0017150710000066738,
+          0.0016711960000179715,
+          0.001725171000003911
+        ],
+        "peak_allocated_bytes": 38010880,
+        "peak_reserved_bytes": 148897792
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.007076855000008209,
+          0.0070383380000009765,
+          0.006887766999994938,
+          0.0070885990000135735,
+          0.006971757000002299,
+          0.0070172700000057375,
+          0.0070239669999807575,
+          0.006975692999986904,
+          0.007086186999998745,
+          0.007087760000018761
+        ],
+        "peak_allocated_bytes": 59179008,
+        "peak_reserved_bytes": 85983232
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "backend_events": [
+        "aten::_scaled_dot_product_efficient_attention"
+      ],
+      "error": {
+        "output": {
+          "maximum_absolute": 6.854534149169922e-07,
+          "relative_l2": 4.67050180037737e-07,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 9.5367431640625e-07,
+          "relative_l2": 5.747161336940093e-07,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 4.76837158203125e-06,
+          "relative_l2": 1.0705186233649338e-06,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 8.344650268554688e-06,
+          "relative_l2": 1.0796283715099146e-06,
+          "finite": true
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        4,
+        4096,
+        64
+      ],
+      "dtype": "torch.float16",
+      "operator": "dense",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.04148566800000708,
+          0.04146313999999052,
+          0.04154124799998726,
+          0.04178990500000168,
+          0.04188485599999581,
+          0.04180601199999501,
+          0.041612025999995694,
+          0.041465041999998675,
+          0.0414578419999998,
+          0.04143617900001573
+        ],
+        "peak_allocated_bytes": 2273611776,
+        "peak_reserved_bytes": 2287992832
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.09636414999999943,
+          0.09720350799997846,
+          0.09704052300000399,
+          0.09664418200000569,
+          0.09650261300001262,
+          0.09667535799999882,
+          0.097150771999992,
+          0.09650598999999715,
+          0.09637906300000054,
+          0.09677147799999375
+        ],
+        "peak_allocated_bytes": 2302971904,
+        "peak_reserved_bytes": 2808086528
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "error": {
+        "output": {
+          "maximum_absolute": 0.0015621185302734375,
+          "relative_l2": 0.00039841881371699563,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 0.0014482736587524414,
+          "relative_l2": 0.0005076709350137186,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 0.0014497041702270508,
+          "relative_l2": 0.0005086533503771302,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 0.002571582794189453,
+          "relative_l2": 0.00039975238030170735,
+          "finite": true
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        4,
+        4096,
+        64
+      ],
+      "dtype": "torch.float16",
+      "operator": "tiled",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.2776685210000096,
+          0.2754706479999811,
+          0.27706197000000543,
+          0.28565014000000133,
+          0.2756167729999959,
+          0.27736732500000016,
+          0.28103781400000116,
+          0.28192665700001385,
+          0.2790325470000141,
+          0.3020764629999917
+        ],
+        "peak_allocated_bytes": 114884608,
+        "peak_reserved_bytes": 2818572288
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.5939889299999948,
+          0.5957242839999992,
+          0.5991699360000098,
+          0.5919215160000135,
+          0.602619940000011,
+          0.5949169369999936,
+          0.607775193000009,
+          0.6171643959999926,
+          0.6396695800000032,
+          0.6140231539999945
+        ],
+        "peak_allocated_bytes": 426847232,
+        "peak_reserved_bytes": 473956352
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "error": {
+        "output": {
+          "maximum_absolute": 0.0015621185302734375,
+          "relative_l2": 0.00039841828603476916,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 0.0014482736587524414,
+          "relative_l2": 0.0005076771342308044,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 0.0014497041702270508,
+          "relative_l2": 0.0005084362122502054,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 0.002571582794189453,
+          "relative_l2": 0.0003995179712844497,
+          "finite": true
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        4,
+        4096,
+        64
+      ],
+      "dtype": "torch.float16",
+      "operator": "sdpa",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.0011482550000039282,
+          0.0011246219999918594,
+          0.0010965449999957855,
+          0.001082441000022527,
+          0.0011031589999959124,
+          0.0011064550000128293,
+          0.001094082999998136,
+          0.001099932000016679,
+          0.0010809219999998732,
+          0.0010811149999767622
+        ],
+        "peak_allocated_bytes": 71565312,
+        "peak_reserved_bytes": 473956352
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.004803038999995124,
+          0.004791127999993705,
+          0.004812135000008766,
+          0.004908980999999812,
+          0.00576997199999596,
+          0.005791506999997864,
+          0.005794154999989587,
+          0.006474850999978798,
+          0.006610424000001558,
+          0.006671703000023399
+        ],
+        "peak_allocated_bytes": 97001472,
+        "peak_reserved_bytes": 106954752
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "backend_events": [
+        "aten::_scaled_dot_product_efficient_attention"
+      ],
+      "error": {
+        "output": {
+          "maximum_absolute": 0.0015621185302734375,
+          "relative_l2": 0.00042872518703084407,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 0.0014623403549194336,
+          "relative_l2": 0.0005925979053278406,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 0.0018765926361083984,
+          "relative_l2": 0.0005929836343069749,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 0.002571582794189453,
+          "relative_l2": 0.0004464018244173813,
+          "finite": true
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        4,
+        4096,
+        64
+      ],
+      "dtype": "torch.float32",
+      "operator": "dense",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.04207606299999611,
+          0.042085953999986714,
+          0.04165290699998536,
+          0.04141179399999828,
+          0.041370844999988776,
+          0.04127210199999354,
+          0.04125678500000163,
+          0.04112089199998081,
+          0.04107471899999382,
+          0.04103184900000656
+        ],
+        "peak_allocated_bytes": 2231668736,
+        "peak_reserved_bytes": 2254438400
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.09688846800000306,
+          0.09742624000000433,
+          0.09724248999998508,
+          0.09660227599999871,
+          0.0967218459999799,
+          0.0970348989999934,
+          0.09758861700001376,
+          0.09695727900000861,
+          0.09662181900000633,
+          0.09692438000001857
+        ],
+        "peak_allocated_bytes": 2256834560,
+        "peak_reserved_bytes": 2766143488
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "error": {
+        "output": {
+          "maximum_absolute": 0.0,
+          "relative_l2": 0.0,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 0.0,
+          "relative_l2": 0.0,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 0.0,
+          "relative_l2": 0.0,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 0.0,
+          "relative_l2": 0.0,
+          "finite": true
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        4,
+        4096,
+        64
+      ],
+      "dtype": "torch.float32",
+      "operator": "tiled",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.2827874989999941,
+          0.2784625859999892,
+          0.28057225699998867,
+          0.28490132499999277,
+          0.28831852099997946,
+          0.2959326719999922,
+          0.30089492099997983,
+          0.2829682549999859,
+          0.28389796999999817,
+          0.28528726999999776
+        ],
+        "peak_allocated_bytes": 68747264,
+        "peak_reserved_bytes": 2776629248
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.6234391200000005,
+          0.6397888289999969,
+          0.5980816819999859,
+          0.6000904199999866,
+          0.5906063759999824,
+          0.5973804410000128,
+          0.600958329000008,
+          0.5993044639999994,
+          0.5995282019999877,
+          0.5987376250000125
+        ],
+        "peak_allocated_bytes": 380709888,
+        "peak_reserved_bytes": 432013312
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "error": {
+        "output": {
+          "maximum_absolute": 5.960464477539062e-07,
+          "relative_l2": 4.6520768386619504e-07,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 9.5367431640625e-07,
+          "relative_l2": 5.508124968448079e-07,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 9.5367431640625e-06,
+          "relative_l2": 1.4964645719589708e-06,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 1.0967254638671875e-05,
+          "relative_l2": 1.4843045838945684e-06,
+          "finite": true
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        4,
+        4096,
+        64
+      ],
+      "dtype": "torch.float32",
+      "operator": "sdpa",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.004754026000000522,
+          0.004888614999998708,
+          0.005268481000001657,
+          0.0052790480000055595,
+          0.005340740000008282,
+          0.005338507999994135,
+          0.006139842999999701,
+          0.00599907400001598,
+          0.006179733000010401,
+          0.00642255300002148
+        ],
+        "peak_allocated_bytes": 58982400,
+        "peak_reserved_bytes": 432013312
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.025952561000025298,
+          0.027405500000014626,
+          0.026576270999981944,
+          0.026329059999994797,
+          0.025366985000005116,
+          0.02543540499999608,
+          0.025375293999985615,
+          0.02547882299998605,
+          0.025423032999981388,
+          0.025566386999997803
+        ],
+        "peak_allocated_bytes": 101318656,
+        "peak_reserved_bytes": 127926272
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "backend_events": [
+        "aten::_scaled_dot_product_efficient_attention"
+      ],
+      "error": {
+        "output": {
+          "maximum_absolute": 6.556510925292969e-07,
+          "relative_l2": 6.191314409169975e-07,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 7.748603820800781e-07,
+          "relative_l2": 7.185496031450884e-07,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 9.5367431640625e-06,
+          "relative_l2": 1.5136425356149597e-06,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 1.1205673217773438e-05,
+          "relative_l2": 1.5136330789567175e-06,
+          "finite": true
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        4,
+        8192,
+        64
+      ],
+      "dtype": "torch.float16",
+      "operator": "dense",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.1707827110000153,
+          0.17083755900000597,
+          0.17113113000002045,
+          0.17011874199999966,
+          0.17168161800000803,
+          0.17064025900000956,
+          0.17115058400000294,
+          0.1705422349999992,
+          0.17010931699999787,
+          0.1712809150000112
+        ],
+        "peak_allocated_bytes": 8892260352,
+        "peak_reserved_bytes": 8923381760
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.4053878050000037,
+          0.40639505300001133,
+          0.40606586100000186,
+          0.4062674950000087,
+          0.4063488669999913,
+          0.4062178220000021,
+          0.4060852800000134,
+          0.4060486239999932,
+          0.4057582930000194,
+          0.4065466130000175
+        ],
+        "peak_allocated_bytes": 8984535040,
+        "peak_reserved_bytes": 11003756544
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "error": {
+        "output": {
+          "maximum_absolute": 0.0014412403106689453,
+          "relative_l2": 0.00039952968068999545,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 0.0014405250549316406,
+          "relative_l2": 0.0005160631977981867,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 0.0017573833465576172,
+          "relative_l2": 0.000512750885535578,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 0.0016613006591796875,
+          "relative_l2": 0.0004070711603054207,
+          "finite": true
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        4,
+        8192,
+        64
+      ],
+      "dtype": "torch.float16",
+      "operator": "tiled",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          1.0900646110000025,
+          1.0959584499999835,
+          1.1173822130000133,
+          1.093269974000009,
+          1.0885251120000135,
+          1.0870524320000072,
+          1.0912215820000029,
+          1.0979412540000055,
+          1.1046435949999989,
+          1.101338276000007
+        ],
+        "peak_allocated_bytes": 211386368,
+        "peak_reserved_bytes": 11022630912
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          2.7222745050000015,
+          2.71153980699998,
+          2.7587599519999912,
+          2.713975726000001,
+          2.7575077559999954,
+          2.7278076949999956,
+          2.7404477480000082,
+          2.7356637609999837,
+          2.7311359779999975,
+          2.750736107000023
+        ],
+        "peak_allocated_bytes": 1393994752,
+        "peak_reserved_bytes": 1472200704
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "error": {
+        "output": {
+          "maximum_absolute": 0.0014412403106689453,
+          "relative_l2": 0.0003995183856965108,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 0.0014405250549316406,
+          "relative_l2": 0.0005160337240407588,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 0.0017573833465576172,
+          "relative_l2": 0.0005126126721877839,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 0.0016613006591796875,
+          "relative_l2": 0.00040707628497678574,
+          "finite": true
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        4,
+        8192,
+        64
+      ],
+      "dtype": "torch.float16",
+      "operator": "sdpa",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.003909496999995099,
+          0.003904556000009052,
+          0.0038982490000307735,
+          0.003949511999962851,
+          0.00486099199997625,
+          0.004777707000016562,
+          0.004807420000020102,
+          0.00495422800003098,
+          0.006060760999957893,
+          0.006067846999997073
+        ],
+        "peak_allocated_bytes": 126091264,
+        "peak_reserved_bytes": 1472200704
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.024987330000044494,
+          0.025821216000053937,
+          0.02561597799996207,
+          0.025406678000024385,
+          0.025339068999983283,
+          0.025283615000034843,
+          0.02495866100002786,
+          0.024890564999964226,
+          0.024896742000009908,
+          0.02492796200004932
+        ],
+        "peak_allocated_bytes": 176963584,
+        "peak_reserved_bytes": 230686720
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "backend_events": [
+        "aten::_scaled_dot_product_efficient_attention"
+      ],
+      "error": {
+        "output": {
+          "maximum_absolute": 0.0014412403106689453,
+          "relative_l2": 0.0004303826145649664,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 0.0021445751190185547,
+          "relative_l2": 0.0006032678300677952,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 0.0016977787017822266,
+          "relative_l2": 0.0005995618043704348,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 0.002113521099090576,
+          "relative_l2": 0.00045591970820348755,
+          "finite": true
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        4,
+        8192,
+        64
+      ],
+      "dtype": "torch.float32",
+      "operator": "dense",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.17381228300001794,
+          0.1725990430000479,
+          0.1733686369999532,
+          0.17237532299998293,
+          0.1735362889999692,
+          0.17140587299996923,
+          0.17367612999998983,
+          0.17298304600001302,
+          0.17352572999999438,
+          0.17282901800001582
+        ],
+        "peak_allocated_bytes": 8808374272,
+        "peak_reserved_bytes": 8954839040
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.4124060899999904,
+          0.4153642869999885,
+          0.4151015130000246,
+          0.41243136299999605,
+          0.4165240689999905,
+          0.4075788260000195,
+          0.4143730160000132,
+          0.41561841999998705,
+          0.4169885020000379,
+          0.41407553200002667
+        ],
+        "peak_allocated_bytes": 8892260352,
+        "peak_reserved_bytes": 10911481856
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "error": {
+        "output": {
+          "maximum_absolute": 0.0,
+          "relative_l2": 0.0,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 0.0,
+          "relative_l2": 0.0,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 0.0,
+          "relative_l2": 0.0,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 0.0,
+          "relative_l2": 0.0,
+          "finite": true
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        4,
+        8192,
+        64
+      ],
+      "dtype": "torch.float32",
+      "operator": "tiled",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          1.0762847959999817,
+          1.0854897570000048,
+          1.0767802760000222,
+          1.116468005999991,
+          1.0781320589999837,
+          1.0776411459999622,
+          1.0790621190000138,
+          1.073314843999981,
+          1.080175295999993,
+          1.0766477090000421
+        ],
+        "peak_allocated_bytes": 119111680,
+        "peak_reserved_bytes": 10930356224
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          2.7287868039999807,
+          2.7474035150000304,
+          2.739340243000015,
+          2.734576964999974,
+          2.712464498999964,
+          2.7351779279999846,
+          2.769846094000002,
+          2.7163101749999896,
+          2.7235733229999823,
+          2.7831662959999903
+        ],
+        "peak_allocated_bytes": 1301720064,
+        "peak_reserved_bytes": 1358954496
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "error": {
+        "output": {
+          "maximum_absolute": 5.960464477539062e-07,
+          "relative_l2": 6.125206126745425e-07,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 1.1920928955078125e-06,
+          "relative_l2": 7.155675982122232e-07,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 1.4066696166992188e-05,
+          "relative_l2": 2.111741622035266e-06,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 1.7404556274414062e-05,
+          "relative_l2": 2.145288201331024e-06,
+          "finite": true
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        4,
+        8192,
+        64
+      ],
+      "dtype": "torch.float32",
+      "operator": "sdpa",
+      "forward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.02586850500000537,
+          0.02781946400000379,
+          0.026965416999985337,
+          0.025736236999989615,
+          0.024705630999960704,
+          0.025172551000025578,
+          0.025677965999989283,
+          0.025911240000027647,
+          0.02543142000001808,
+          0.025001718999988043
+        ],
+        "peak_allocated_bytes": 100925440,
+        "peak_reserved_bytes": 1358954496
+      },
+      "forward_backward": {
+        "status": "passed",
+        "elapsed_seconds": [
+          0.10582567399995924,
+          0.10436007700002392,
+          0.10645978399998057,
+          0.10586326899999676,
+          0.10620965300000762,
+          0.1050046850000399,
+          0.10462724299998172,
+          0.10668745999998919,
+          0.10569260599999097,
+          0.10604925599994885
+        ],
+        "peak_allocated_bytes": 185597952,
+        "peak_reserved_bytes": 226492416
+      },
+      "reference": {
+        "status": "passed"
+      },
+      "backend_events": [
+        "aten::_scaled_dot_product_efficient_attention"
+      ],
+      "error": {
+        "output": {
+          "maximum_absolute": 6.407499313354492e-07,
+          "relative_l2": 8.357584648531805e-07,
+          "finite": true
+        },
+        "query_gradient": {
+          "maximum_absolute": 1.1077971748818527e-06,
+          "relative_l2": 9.052810751516204e-07,
+          "finite": true
+        },
+        "key_gradient": {
+          "maximum_absolute": 1.6450881958007812e-05,
+          "relative_l2": 2.136629070955787e-06,
+          "finite": true
+        },
+        "value_gradient": {
+          "maximum_absolute": 1.7642974853515625e-05,
+          "relative_l2": 2.181435940329584e-06,
+          "finite": true
+        }
+      }
+    }
+  ],
+  "correctness": {
+    "dense": {
+      "causality_passed": true,
+      "normal_error": [
+        {
+          "maximum_absolute": 0.0,
+          "relative_l2": 0.0,
+          "finite": true
+        },
+        {
+          "maximum_absolute": 0.0,
+          "relative_l2": 0.0,
+          "finite": true
+        },
+        {
+          "maximum_absolute": 0.0,
+          "relative_l2": 0.0,
+          "finite": true
+        },
+        {
+          "maximum_absolute": 0.0,
+          "relative_l2": 0.0,
+          "finite": true
+        }
+      ]
+    },
+    "tiled": {
+      "causality_passed": true,
+      "normal_error": [
+        {
+          "maximum_absolute": 4.76837158203125e-07,
+          "relative_l2": 1.0221039894138349e-07,
+          "finite": true
+        },
+        {
+          "maximum_absolute": 5.960464477539062e-07,
+          "relative_l2": 1.8939678715980937e-07,
+          "finite": true
+        },
+        {
+          "maximum_absolute": 4.163011908531189e-07,
+          "relative_l2": 1.6805156289867935e-07,
+          "finite": true
+        },
+        {
+          "maximum_absolute": 4.76837158203125e-07,
+          "relative_l2": 8.215829151766012e-08,
+          "finite": true
+        }
+      ]
+    },
+    "sdpa": {
+      "causality_passed": true,
+      "normal_error": [
+        {
+          "maximum_absolute": 4.76837158203125e-07,
+          "relative_l2": 1.2776503852110477e-07,
+          "finite": true
+        },
+        {
+          "maximum_absolute": 1.6689300537109375e-06,
+          "relative_l2": 3.0687499640093316e-07,
+          "finite": true
+        },
+        {
+          "maximum_absolute": 9.5367431640625e-07,
+          "relative_l2": 2.395150292443818e-07,
+          "finite": true
+        },
+        {
+          "maximum_absolute": 4.76837158203125e-07,
+          "relative_l2": 1.4874515610350802e-07,
+          "finite": true
+        }
+      ]
+    },
+    "tiled_7x13": {
+      "causality_passed": true,
+      "normal_error": [
+        {
+          "maximum_absolute": 5.960464477539062e-07,
+          "relative_l2": 1.2553541336236901e-07,
+          "finite": true
+        },
+        {
+          "maximum_absolute": 5.960464477539062e-07,
+          "relative_l2": 2.210698574050829e-07,
+          "finite": true
+        },
+        {
+          "maximum_absolute": 7.152557373046875e-07,
+          "relative_l2": 2.3385600193199316e-07,
+          "finite": true
+        },
+        {
+          "maximum_absolute": 1.1920928955078125e-06,
+          "relative_l2": 1.7639718952170227e-07,
+          "finite": true
+        }
+      ]
+    },
+    "tiled_17x5": {
+      "causality_passed": true,
+      "normal_error": [
+        {
+          "maximum_absolute": 3.5762786865234375e-07,
+          "relative_l2": 1.0509164941520215e-07,
+          "finite": true
+        },
+        {
+          "maximum_absolute": 5.960464477539062e-07,
+          "relative_l2": 2.1641769142232744e-07,
+          "finite": true
+        },
+        {
+          "maximum_absolute": 5.960464477539062e-07,
+          "relative_l2": 2.0951893291486308e-07,
+          "finite": true
+        },
+        {
+          "maximum_absolute": 1.1920928955078125e-06,
+          "relative_l2": 1.7683106998282902e-07,
+          "finite": true
+        }
+      ]
+    },
+    "extreme_masked": {
+      "fully_masked_row_is_zero": true,
+      "error": [
+        {
+          "maximum_absolute": 5.960464477539063e-08,
+          "relative_l2": 1.8078426686536874e-09,
+          "finite": true
+        },
+        {
+          "maximum_absolute": 4.300579894334078e-05,
+          "relative_l2": 4.15629995396951e-06,
+          "finite": true
+        },
+        {
+          "maximum_absolute": 3.0609950044890866e-05,
+          "relative_l2": 2.9293335578295186e-06,
+          "finite": true
+        },
+        {
+          "maximum_absolute": 1.1920928955078125e-07,
+          "relative_l2": 5.360795470697988e-09,
+          "finite": true
+        }
+      ]
+    }
+  },
+  "status": "complete"
+}
