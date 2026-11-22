@@ -10,6 +10,7 @@ import torch
 from torch import nn
 
 from pa4.weight_calibration import collect
+from pa4.weight_awq import EXPONENTS
 from pa4.weight_compression import (
     BIT_WIDTHS, allocate_precision, allocate_pruning, pack_codes,
     pruning_scores, quantize_weight, row_pruning_mask, two_of_four_mask, unpack_codes,
@@ -27,6 +28,8 @@ def check_uniform_controls():
     }
     results = {}
     for condition, (method, setting) in CONDITIONS.items():
+        if method == "q2":
+            continue
         model = nn.Module()
         model.config = SimpleNamespace(num_hidden_layers=1)
         for name in ELIGIBLE:
@@ -40,6 +43,37 @@ def check_uniform_controls():
         else:
             assert all(row["mask_count"] == 512 * setting // 100 for row in rows)
         results[condition] = "passed"
+    return results
+
+
+def check_awq_controls():
+    results = {}
+    for bits in (8, 4, 3):
+        model = nn.Module()
+        model.config = SimpleNamespace(num_hidden_layers=1)
+        model.mlp = nn.Module()
+        for name in ELIGIBLE:
+            owner = model.mlp if name in ("gate_proj", "up_proj", "down_proj") else model
+            owner.add_module(name, nn.Linear(128, 128, bias=name != "up_proj"))
+        generator = torch.Generator().manual_seed(6304)
+        inputs = torch.randn(12, 128, generator=generator) * torch.linspace(0.05, 3, 128)
+        calibration = {
+            name: {"mean_abs": inputs.abs().mean(0), "probe_inputs": inputs}
+            for name, module in model.named_modules() if isinstance(module, nn.Linear)
+        }
+        rows = apply_uniform(model, calibration, f"q2-int{bits}")
+        by_name = {row["name"]: row for row in rows}
+        assert by_name["mlp.down_proj"]["folded_into"] == "mlp.up_proj"
+        assert by_name["mlp.down_proj"]["fold_relative_error"] < 1e-5
+        assert by_name["mlp.down_proj"]["compensation_bytes"] == 0
+        assert by_name["mlp.up_proj"]["compensation_bytes"] == 256
+        assert all(row["packed_weight_bytes"] == 128 * (128 * bits // 8 + 3) for row in rows)
+        assert all([entry["exponent"] for entry in row["candidate_errors"]] == list(EXPONENTS) for row in rows)
+        forward = model.mlp.down_proj(
+            torch.nn.functional.silu(model.mlp.gate_proj(inputs)) * model.mlp.up_proj(inputs)
+        )
+        assert torch.isfinite(forward).all()
+        results[str(bits)] = {"tested_projections": len(rows), "fold_relative_error": by_name["mlp.down_proj"]["fold_relative_error"]}
     return results
 
 
@@ -129,7 +163,7 @@ def validate():
     return {
         "status": "passed", "torch": torch.__version__, "pruning_counts": pruning, "precision": mixed,
         "packing": packing, "calibration_hooks": check_calibration_hooks(),
-        "uniform_controls": check_uniform_controls(),
+        "uniform_controls": check_uniform_controls(), "awq_controls": check_awq_controls(),
     }
 
 

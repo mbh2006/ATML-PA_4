@@ -20,7 +20,7 @@ def matching_data(input_root: Path, expected_manifest: Path) -> Path:
 
 UNIFORM_CONDITIONS = (
     "magnitude-25", "magnitude-50", "magnitude-75", "wanda-25", "wanda-50", "wanda-75",
-    "wanda-2of4", "q1-int8", "q1-int4", "q1-int3",
+    "wanda-2of4", "q1-int8", "q1-int4", "q1-int3", "q2-int8", "q2-int4", "q2-int3",
 )
 
 

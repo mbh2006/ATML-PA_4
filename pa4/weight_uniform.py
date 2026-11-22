@@ -11,6 +11,7 @@ import torch
 from torch.nn.functional import linear
 
 from pa4.qwen_decoder import load_model
+from pa4.weight_awq import apply_awq
 from pa4.weight_calibration import collect, projection_modules
 from pa4.weight_compression import (
     pruning_scores, quantize_weight, row_pruning_mask, two_of_four_mask,
@@ -22,6 +23,7 @@ CONDITIONS = {
     **{f"{method}-{percent}": (method, percent) for method in ("magnitude", "wanda") for percent in (25, 50, 75)},
     "wanda-2of4": ("2of4", 50),
     **{f"q1-int{bits}": ("q1", bits) for bits in (8, 4, 3)},
+    **{f"q2-int{bits}": ("q2", bits) for bits in (8, 4, 3)},
 }
 
 
@@ -49,6 +51,8 @@ def output_distortion(module, original, samples):
 @torch.inference_mode()
 def apply_uniform(model, calibration, condition):
     method, setting = CONDITIONS[condition]
+    if method == "q2":
+        return apply_awq(model, calibration, setting)
     modules = projection_modules(model)
     if set(modules) != set(calibration):
         raise ValueError("Activation statistics do not match the eligible projections")
@@ -107,15 +111,20 @@ def run(args, evidence):
     nonzero = sum(row["nonzero"] for row in projections)
     uncompressed = inventory["dense_baseline_weight_bytes"] - eligible * 2
     if "packed_weight_bytes" in projections[0]:
-        storage = uncompressed + sum(row["packed_weight_bytes"] for row in projections)
+        storage = uncompressed + sum(
+            row["packed_weight_bytes"] + row.get("compensation_bytes", 0) for row in projections
+        )
         storage_format = "group-128 integer codes with FP16 scales and uint8 zero points"
+        if args.condition.startswith("q2-"):
+            storage_format += " plus explicit FP16 input compensation where required"
     else:
         storage = uncompressed + sum((row["eligible_weights"] + 7) // 8 + 2 * row["nonzero"] for row in projections)
         storage_format = "FP16 nonzeros plus one mask bit per eligible weight, aligned per projection"
     evidence.update(
         projections=projections, eligible_weights=eligible, eligible_nonzero=nonzero,
         actual_sparsity=1 - nonzero / eligible, packed_bytes=storage, packed_format=storage_format,
-        execution="dense FP16 weights with SDPA",
+        execution=("dense FP16 weights and AWQ input compensation with SDPA"
+                   if args.condition.startswith("q2-") else "dense FP16 weights with SDPA"),
     )
     del statistics
     with (args.output / "development.jsonl").open("w", encoding="utf-8") as stream:
