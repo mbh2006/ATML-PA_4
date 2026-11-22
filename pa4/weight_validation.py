@@ -15,6 +15,32 @@ from pa4.weight_compression import (
     pruning_scores, quantize_weight, row_pruning_mask, two_of_four_mask, unpack_codes,
 )
 from pa4.weight_evaluation import ELIGIBLE
+from pa4.weight_uniform import CONDITIONS, apply_uniform
+
+
+def check_uniform_controls():
+    generator = torch.Generator().manual_seed(6304)
+    inputs = torch.randn(16, 128, generator=generator)
+    calibration = {
+        name: {"l2": inputs.square().sum(0).sqrt(), "probe_inputs": inputs}
+        for name in ELIGIBLE
+    }
+    results = {}
+    for condition, (method, setting) in CONDITIONS.items():
+        model = nn.Module()
+        model.config = SimpleNamespace(num_hidden_layers=1)
+        for name in ELIGIBLE:
+            model.add_module(name, nn.Linear(128, 4))
+        biases = {name: module.bias.detach().clone() for name, module in model.named_children()}
+        rows = apply_uniform(model, calibration, condition)
+        assert len(rows) == 7 and all(row["relative_projection_output_mse"] >= 0 for row in rows)
+        assert all(torch.equal(biases[name], module.bias) for name, module in model.named_children())
+        if method == "q1":
+            assert all(row["packed_weight_bytes"] == 4 * (128 * setting // 8 + 3) for row in rows)
+        else:
+            assert all(row["mask_count"] == 512 * setting // 100 for row in rows)
+        results[condition] = "passed"
+    return results
 
 
 class CalibrationFixture(nn.Module):
@@ -103,6 +129,7 @@ def validate():
     return {
         "status": "passed", "torch": torch.__version__, "pruning_counts": pruning, "precision": mixed,
         "packing": packing, "calibration_hooks": check_calibration_hooks(),
+        "uniform_controls": check_uniform_controls(),
     }
 
 

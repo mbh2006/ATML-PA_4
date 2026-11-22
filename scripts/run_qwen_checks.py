@@ -18,13 +18,19 @@ def matching_data(input_root: Path, expected_manifest: Path) -> Path:
     raise FileNotFoundError("The verified public-data v2 artifact is not mounted")
 
 
+UNIFORM_CONDITIONS = (
+    "magnitude-25", "magnitude-50", "magnitude-75", "wanda-25", "wanda-50", "wanda-75",
+    "wanda-2of4", "q1-int8", "q1-int4", "q1-int3",
+)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--source", type=Path, required=True)
     parser.add_argument("--revision", required=True)
     parser.add_argument("--inputs", type=Path, default=Path("/kaggle/input"))
     parser.add_argument("--output", type=Path, default=Path("/kaggle/working"))
-    parser.add_argument("--tasks", nargs="+", choices=("task1", "task3", "calibration"),
+    parser.add_argument("--tasks", nargs="+", choices=("task1", "task3", "calibration", *UNIFORM_CONDITIONS),
                         default=["task3", "task1"])
     args = parser.parse_args()
     source = args.source.resolve()
@@ -36,7 +42,7 @@ def main():
             subprocess.run([
                 sys.executable, "-m", "pip", "install", "--disable-pip-version-check",
                 "--target", temp, "--no-deps", "transformers==4.57.1",
-                "huggingface_hub==0.36.2", "tokenizers>=0.22.0,<=0.23.0",
+                "huggingface_hub==0.36.2", "tokenizers==0.22.2",
             ], check=True)
             environment = dict(os.environ, PYTHONPATH=temp, PA4_SOURCE_REVISION=args.revision)
             for task in args.tasks:
@@ -57,6 +63,11 @@ def main():
                             "-m", module, "--data", str(data),
                             "--output", str(args.output / directory),
                         ]
+                        if task in UNIFORM_CONDITIONS:
+                            arguments = [
+                                "-m", "pa4.weight_uniform", "--data", str(data),
+                                "--output", str(args.output / task), "--condition", task,
+                            ]
                     result = subprocess.run(
                         [sys.executable, "-u", *arguments], cwd=source, env=environment, check=False
                     )
