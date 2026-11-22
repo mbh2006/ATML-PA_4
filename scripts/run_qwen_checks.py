@@ -24,6 +24,15 @@ UNIFORM_CONDITIONS = (
 )
 
 
+def pinned_environment(target, revision):
+    subprocess.run([
+        sys.executable, "-m", "pip", "install", "--disable-pip-version-check",
+        "--target", str(target), "--no-deps", "transformers==4.57.1",
+        "huggingface_hub==0.36.2", "tokenizers==0.22.2",
+    ], check=True)
+    return dict(os.environ, PYTHONPATH=str(target), PA4_SOURCE_REVISION=revision)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--source", type=Path, required=True)
@@ -42,12 +51,7 @@ def main():
 
     try:
         with tempfile.TemporaryDirectory(prefix="pa4-runtime-") as temp:
-            subprocess.run([
-                sys.executable, "-m", "pip", "install", "--disable-pip-version-check",
-                "--target", temp, "--no-deps", "transformers==4.57.1",
-                "huggingface_hub==0.36.2", "tokenizers==0.22.2",
-            ], check=True)
-            environment = dict(os.environ, PYTHONPATH=temp, PA4_SOURCE_REVISION=args.revision)
+            environment = pinned_environment(temp, args.revision)
             for task in args.tasks:
                 try:
                     if task == "task3":

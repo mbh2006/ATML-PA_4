@@ -30,6 +30,45 @@ def normalized(text):
     return " ".join(text.casefold().split())
 
 
+def audit_compression_development(results, baseline, calibration, development):
+    inventory = baseline["inventory"]
+    eligible = inventory["eligible_weights"]
+    uncompressed = inventory["dense_baseline_weight_bytes"] - 2 * eligible
+    source_rows = [row["source_row"] for row in calibration]
+    development_ids = [row["source_row"] for row in development]
+    checked, timings = 0, 0
+    for group in ("uniform-development", "awq-development"):
+        base = results / "task1" / group
+        for path in sorted(base.glob("*/summary.json")):
+            summary = read_json(path)
+            condition = path.parent.name
+            assert summary["status"] == "passed" and summary["condition"] == condition
+            assert summary["calibration_rows"] == source_rows
+            windows = read_rows(path.with_name("development.jsonl"))
+            assert [row["source_row"] for row in windows] == development_ids
+            assert sum(row["scored_tokens"] for row in windows) == summary["development"]["scored_tokens"]
+            assert math.isclose(sum(row["nll_sum"] for row in windows), summary["development"]["nll_sum"])
+            rows = summary["projections"]
+            assert len(rows) == len(inventory["eligible"])
+            assert sum(row["eligible_weights"] for row in rows) == eligible
+            if condition.startswith(("q1-", "q2-")):
+                packed = sum(row["packed_weight_bytes"] + row.get("compensation_bytes", 0) for row in rows)
+                if condition.startswith("q2-"):
+                    assert all(row["fold_relative_error"] is None or row["fold_relative_error"] <= 1e-5
+                               for row in rows)
+            else:
+                fraction = 0.5 if condition.endswith("2of4") else int(condition.rsplit("-", 1)[1]) / 100
+                assert sum(row["mask_count"] for row in rows) == round(fraction * eligible)
+                packed = sum((row["eligible_weights"] + 7) // 8 + 2 * row["nonzero"] for row in rows)
+            assert summary["packed_bytes"] == packed + uncompressed
+            for phase in ("prefill_512", "prefill_2048", "decode_64_prompt_512"):
+                elapsed = summary["latency"][phase]["elapsed_seconds"]
+                assert len(elapsed) == 5 and all(t > 0 and math.isfinite(t) for t in elapsed)
+                timings += len(elapsed)
+            checked += 1
+    return {"controls": checked, "timings": timings}
+
+
 def audit(root, data, staff):
     results = root / "results"
     manifest = read_json(results / "setup/public-data-manifest.json")
@@ -71,6 +110,7 @@ def audit(root, data, staff):
     choices = read_rows(fp16 / "hellaswag.jsonl")
     assert len(choices) == 2000 and all(len(r["log_likelihoods"]) == 4 for r in choices)
     assert [r["source_row"] for r in choices] == [r["source_row_index"] for r in locked("hellaswag_val")]
+    compression = audit_compression_development(results, baseline, calibration, development)
     selection_root = results / "task2b"
     expected_selection = read_json(selection_root / "intervention-selection.json")
     assert select(selection_root) == expected_selection
@@ -95,6 +135,7 @@ def audit(root, data, staff):
         "input_artifact_hashes": "passed",
         "c4_gsm8k_short_form_split_checks": "passed",
         "fp16_baseline_pairing_and_denominators": "passed",
+        "compression_development": compression,
         "mqar_development_selection": "reproduced",
         "exact_attention_timing_rows": len(attention["rows"]),
         "speculative_sampler_and_cache_checks": "passed",

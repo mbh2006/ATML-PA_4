@@ -1,0 +1,255 @@
+{
+  "status": "passed",
+  "seed": 6304,
+  "torch": "2.11.0+cpu",
+  "cases": [
+    {
+      "length": 1,
+      "bits": 2,
+      "channel_key": false,
+      "bytes": 2048,
+      "key_mse": 0.0,
+      "value_mse": 0.0
+    },
+    {
+      "length": 1,
+      "bits": 2,
+      "channel_key": true,
+      "bytes": 2048,
+      "key_mse": 0.0,
+      "value_mse": 0.0
+    },
+    {
+      "length": 1,
+      "bits": 4,
+      "channel_key": false,
+      "bytes": 2048,
+      "key_mse": 0.0,
+      "value_mse": 0.0
+    },
+    {
+      "length": 1,
+      "bits": 4,
+      "channel_key": true,
+      "bytes": 2048,
+      "key_mse": 0.0,
+      "value_mse": 0.0
+    },
+    {
+      "length": 63,
+      "bits": 2,
+      "channel_key": false,
+      "bytes": 129024,
+      "key_mse": 0.0,
+      "value_mse": 0.0
+    },
+    {
+      "length": 63,
+      "bits": 2,
+      "channel_key": true,
+      "bytes": 129024,
+      "key_mse": 0.0,
+      "value_mse": 0.0
+    },
+    {
+      "length": 63,
+      "bits": 4,
+      "channel_key": false,
+      "bytes": 129024,
+      "key_mse": 0.0,
+      "value_mse": 0.0
+    },
+    {
+      "length": 63,
+      "bits": 4,
+      "channel_key": true,
+      "bytes": 129024,
+      "key_mse": 0.0,
+      "value_mse": 0.0
+    },
+    {
+      "length": 64,
+      "bits": 2,
+      "channel_key": false,
+      "bytes": 20480,
+      "key_mse": 0.2043970674276352,
+      "value_mse": 0.19890570640563965
+    },
+    {
+      "length": 64,
+      "bits": 2,
+      "channel_key": true,
+      "bytes": 20480,
+      "key_mse": 0.20291836559772491,
+      "value_mse": 0.19890570640563965
+    },
+    {
+      "length": 64,
+      "bits": 4,
+      "channel_key": false,
+      "bytes": 36864,
+      "key_mse": 0.008120065554976463,
+      "value_mse": 0.00797942839562893
+    },
+    {
+      "length": 64,
+      "bits": 4,
+      "channel_key": true,
+      "bytes": 36864,
+      "key_mse": 0.00808518286794424,
+      "value_mse": 0.00797942839562893
+    },
+    {
+      "length": 65,
+      "bits": 2,
+      "channel_key": false,
+      "bytes": 22528,
+      "key_mse": 0.1937042474746704,
+      "value_mse": 0.20044614374637604
+    },
+    {
+      "length": 65,
+      "bits": 2,
+      "channel_key": true,
+      "bytes": 22528,
+      "key_mse": 0.18977022171020508,
+      "value_mse": 0.20044614374637604
+    },
+    {
+      "length": 65,
+      "bits": 4,
+      "channel_key": false,
+      "bytes": 38912,
+      "key_mse": 0.007600111421197653,
+      "value_mse": 0.007973711006343365
+    },
+    {
+      "length": 65,
+      "bits": 4,
+      "channel_key": true,
+      "bytes": 38912,
+      "key_mse": 0.007492792326956987,
+      "value_mse": 0.007973711006343365
+    },
+    {
+      "length": 130,
+      "bits": 2,
+      "channel_key": false,
+      "bytes": 45056,
+      "key_mse": 0.19622766971588135,
+      "value_mse": 0.19684740900993347
+    },
+    {
+      "length": 130,
+      "bits": 2,
+      "channel_key": true,
+      "bytes": 45056,
+      "key_mse": 0.19535976648330688,
+      "value_mse": 0.19684740900993347
+    },
+    {
+      "length": 130,
+      "bits": 4,
+      "channel_key": false,
+      "bytes": 77824,
+      "key_mse": 0.007814459502696991,
+      "value_mse": 0.007855094969272614
+    },
+    {
+      "length": 130,
+      "bits": 4,
+      "channel_key": true,
+      "bytes": 77824,
+      "key_mse": 0.007760191801935434,
+      "value_mse": 0.007855094969272614
+    }
+  ],
+  "budgets": [
+    {
+      "length": 2048,
+      "rule": "recent",
+      "budget_bytes": 16515072,
+      "packed_bytes": 16488700,
+      "selected": 575,
+      "low_precision": 0,
+      "residual": 0
+    },
+    {
+      "length": 2048,
+      "rule": "question",
+      "budget_bytes": 16515072,
+      "packed_bytes": 16488700,
+      "selected": 575,
+      "low_precision": 0,
+      "residual": 0
+    },
+    {
+      "length": 2048,
+      "rule": "hybrid",
+      "budget_bytes": 16515072,
+      "packed_bytes": 15369216,
+      "selected": 256,
+      "low_precision": 1792,
+      "residual": 0
+    },
+    {
+      "length": 2077,
+      "rule": "recent",
+      "budget_bytes": 17346560,
+      "packed_bytes": 17320304,
+      "selected": 604,
+      "low_precision": 0,
+      "residual": 0
+    },
+    {
+      "length": 2077,
+      "rule": "question",
+      "budget_bytes": 17346560,
+      "packed_bytes": 17320304,
+      "selected": 604,
+      "low_precision": 0,
+      "residual": 0
+    },
+    {
+      "length": 2077,
+      "rule": "hybrid",
+      "budget_bytes": 17346560,
+      "packed_bytes": 16200820,
+      "selected": 285,
+      "low_precision": 1792,
+      "residual": 0
+    },
+    {
+      "length": 4096,
+      "rule": "recent",
+      "budget_bytes": 33030144,
+      "packed_bytes": 33006076,
+      "selected": 1151,
+      "low_precision": 0,
+      "residual": 0
+    },
+    {
+      "length": 4096,
+      "rule": "question",
+      "budget_bytes": 33030144,
+      "packed_bytes": 33006076,
+      "selected": 1151,
+      "low_precision": 0,
+      "residual": 0
+    },
+    {
+      "length": 4096,
+      "rule": "hybrid",
+      "budget_bytes": 33030144,
+      "packed_bytes": 32286976,
+      "selected": 576,
+      "low_precision": 3520,
+      "residual": 0
+    }
+  ],
+  "question_inputs": {
+    "scope": "character-offset fixture",
+    "cases": 180,
+    "explicit_head_reference_passed": true
+  }
+}
