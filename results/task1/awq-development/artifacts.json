@@ -1,0 +1,45 @@
+{
+  "remote_version": "mbh2006/atml-pa4-awq-controls/1",
+  "artifacts": [
+    {
+      "path": "atml-pa4-awq-controls.log",
+      "bytes": 4101,
+      "sha256": "c2a942811b7d443907e26896e70db5cb6317f15b8807e2bbc11b7d4c1440b62f"
+    },
+    {
+      "path": "q2-int3/development.jsonl",
+      "bytes": 2341,
+      "sha256": "018a8b68da950b780768bb298cad272bd28d580e8a1fb232d737d2deb962c0e6"
+    },
+    {
+      "path": "q2-int3/summary.json",
+      "bytes": 179978,
+      "sha256": "261869889d4ecf8547a31ebc4b095bbc066bce40b56b80a446956f9c00761643"
+    },
+    {
+      "path": "q2-int4/development.jsonl",
+      "bytes": 2325,
+      "sha256": "61da2995386990688a691fab4ee415f768779a255e24579aa66e44ef60c26c79"
+    },
+    {
+      "path": "q2-int4/summary.json",
+      "bytes": 180714,
+      "sha256": "98b324a04f235b299435a0fe9c8833398ae665263f39613f86c5221fa66c17be"
+    },
+    {
+      "path": "q2-int8/development.jsonl",
+      "bytes": 2327,
+      "sha256": "3edfac85409c94f8745b64a3f99ad3a0a7d8868c6e20199799e54fdb36bd1c28"
+    },
+    {
+      "path": "q2-int8/summary.json",
+      "bytes": 182084,
+      "sha256": "744c89c76cbb29036525d202b3abac9a1e1959aad436c99991a7b7cd67ebb0cd"
+    },
+    {
+      "path": "qwen-job.json",
+      "bytes": 245,
+      "sha256": "74255b1b36879a1b38089bb2a235d612cb9591e3d8ce91320e3ae6ddd92f1cad"
+    }
+  ]
+}

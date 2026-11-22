@@ -30,8 +30,10 @@ def main():
     parser.add_argument("--revision", required=True)
     parser.add_argument("--inputs", type=Path, default=Path("/kaggle/input"))
     parser.add_argument("--output", type=Path, default=Path("/kaggle/working"))
+    parser.add_argument("--q2-results", type=Path)
     parser.add_argument("--tasks", nargs="+",
-                        choices=("task1", "task3", "calibration", "pruning-selection", *UNIFORM_CONDITIONS),
+                        choices=("task1", "task3", "calibration", "pruning-selection",
+                                 "precision-selection", *UNIFORM_CONDITIONS),
                         default=["task3", "task1"])
     args = parser.parse_args()
     source = args.source.resolve()
@@ -59,6 +61,7 @@ def main():
                         module, directory = {
                             "calibration": ("pa4.weight_calibration", "task1-calibration"),
                             "pruning-selection": ("pa4.weight_pruning_selection", "task1-pruning-selection"),
+                            "precision-selection": ("pa4.weight_precision_selection", "task1-precision-selection"),
                         }.get(task, ("pa4.weight_evaluation", "task1-fp16"))
                         arguments = [
                             "-m", module, "--data", str(data),
@@ -69,6 +72,10 @@ def main():
                                 "-m", "pa4.weight_uniform", "--data", str(data),
                                 "--output", str(args.output / task), "--condition", task,
                             ]
+                        if task == "precision-selection":
+                            if args.q2_results is None:
+                                raise ValueError("Precision selection requires the verified Q2 measurements")
+                            arguments.extend(("--q2-results", str(args.q2_results.resolve())))
                     result = subprocess.run(
                         [sys.executable, "-u", *arguments], cwd=source, env=environment, check=False
                     )

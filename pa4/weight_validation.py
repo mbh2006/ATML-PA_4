@@ -16,6 +16,7 @@ from pa4.weight_compression import (
     pruning_scores, quantize_weight, row_pruning_mask, two_of_four_mask, unpack_codes,
 )
 from pa4.weight_evaluation import ELIGIBLE
+from pa4.weight_precision_selection import score_options
 from pa4.weight_pruning_selection import block_errors, prune_block, restore
 from pa4.weight_uniform import CONDITIONS, apply_uniform
 
@@ -93,6 +94,40 @@ def check_adaptive_pruning_replay():
     restore(modules, originals)
     assert all(torch.equal(module.weight, originals[name]) for name, module in modules.items())
     return {"status": "passed", "block_relative_errors": errors, "verified_mask_count": 115}
+
+
+class PrecisionReplayFixture(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.gate_proj = nn.Linear(128, 128)
+        self.up_proj = nn.Linear(128, 128, bias=False)
+        self.down_proj = nn.Linear(128, 128)
+
+    def forward(self, inputs):
+        return self.down_proj(torch.nn.functional.silu(self.gate_proj(inputs)) * self.up_proj(inputs))
+
+
+@torch.inference_mode()
+def check_adaptive_precision_replay():
+    layer = PrecisionReplayFixture()
+    modules = {f"mlp.{name}": module for name, module in layer.named_children()}
+    generator = torch.Generator().manual_seed(6304)
+    inputs = torch.randn(12, 128, generator=generator)
+    statistics = {
+        name: {"mean_abs": inputs.abs().mean(0), "probe_inputs": inputs} for name in modules
+    }
+    originals = {name: module.weight.clone() for name, module in modules.items()}
+    options = score_options(layer, modules, [inputs], {}, statistics, originals, "cpu")
+    assert set(options) == set(BIT_WIDTHS)
+    assert all(row["packed_bytes"] == 3 * 128 * (128 * bits // 8 + 3) + 512
+               for bits, row in options.items())
+    assert all(torch.equal(originals[name], module.weight) and not hasattr(module, "awq_input_inverse")
+               for name, module in modules.items())
+    return {
+        "status": "passed",
+        "packed_bytes_by_width": {bits: row["packed_bytes"] for bits, row in options.items()},
+        "relative_block_mse_by_width": {bits: row["relative_block_mse"] for bits, row in options.items()},
+    }
 
 
 class CalibrationFixture(nn.Module):
@@ -183,6 +218,7 @@ def validate():
         "packing": packing, "calibration_hooks": check_calibration_hooks(),
         "uniform_controls": check_uniform_controls(), "awq_controls": check_awq_controls(),
         "adaptive_pruning_replay": check_adaptive_pruning_replay(),
+        "adaptive_precision_replay": check_adaptive_precision_replay(),
     }
 
 

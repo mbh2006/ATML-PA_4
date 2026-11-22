@@ -66,6 +66,11 @@ def apply_awq(model, calibration, bits):
     modules = projection_modules(model)
     if set(modules) != set(calibration):
         raise ValueError("Activation statistics do not match the eligible projections")
+    return apply_awq_modules(modules, calibration, bits)[0]
+
+
+@torch.inference_mode()
+def apply_awq_modules(modules, calibration, bits):
     if any(hasattr(module, "awq_input_inverse") for module in modules.values()):
         raise ValueError("AWQ requires a fresh model")
     choices = {name: search_scale(module, calibration[name], bits) for name, module in modules.items()}
@@ -86,6 +91,7 @@ def apply_awq(model, calibration, bits):
     folded_producers = {producer: choices[consumer][1] for consumer, producer in folded.items()}
 
     rows = []
+    handles = {}
     for name, module in modules.items():
         exponent, inverse, scores = choices[name]
         weight = module.weight.float() / inverse.float()
@@ -96,7 +102,7 @@ def apply_awq(model, calibration, bits):
         compensation_bytes = 0
         if name not in folded:
             module.register_buffer("awq_input_inverse", inverse.to(module.weight.dtype))
-            module.register_forward_pre_hook(compensate_input)
+            handles[name] = module.register_forward_pre_hook(compensate_input)
             compensation_bytes = inverse.numel() * inverse.element_size()
         rows.append({
             "name": name, "bits": bits, "exponent": exponent, "candidate_errors": scores,
@@ -104,4 +110,10 @@ def apply_awq(model, calibration, bits):
             "packed_weight_bytes": packed.nbytes, "eligible_weights": module.weight.numel(),
             "compensation_bytes": compensation_bytes, "nonzero": module.weight.count_nonzero().item(),
         })
-    return rows
+    return rows, handles
+
+
+def remove_compensation(modules, handles):
+    for name, handle in handles.items():
+        handle.remove()
+        delattr(modules[name], "awq_input_inverse")

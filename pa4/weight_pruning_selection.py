@@ -29,7 +29,7 @@ def block_projections(model):
     return groups
 
 
-def captured_block_inputs(model, calibration):
+def captured_block_inputs(model, calibration, *, save_probe_inputs=False):
     batches = [[] for _ in model.model.layers]
     arguments = [None] * len(batches)
     hooks = []
@@ -47,7 +47,7 @@ def captured_block_inputs(model, calibration):
     for index, layer in enumerate(model.model.layers):
         hooks.append(layer.register_forward_pre_hook(bind(index), with_kwargs=True))
     try:
-        statistics, _ = collect(model, calibration)
+        statistics, _ = collect(model, calibration, save_probe_inputs=save_probe_inputs)
     finally:
         for hook in hooks:
             hook.remove()
