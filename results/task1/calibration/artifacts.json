@@ -1,0 +1,25 @@
+{
+  "remote_version": "mbh2006/atml-pa4-qwen-validation/3",
+  "artifacts": [
+    {
+      "path": "atml-pa4-qwen-validation.log",
+      "bytes": 3451,
+      "sha256": "a69cadd9933ea94b270ca17d70c47741bc6080339cca58d915f1bed6497ab256"
+    },
+    {
+      "path": "qwen-job.json",
+      "bytes": 159,
+      "sha256": "9943163d17ba71e78383d227892582352ad93a26228a4fa063c7d21749a964d0"
+    },
+    {
+      "path": "task1-calibration/projection-stats.pt",
+      "bytes": 4190509,
+      "sha256": "c0f9b931d085173a3c86203f72974da780329e3a2522f6c3eedd35962bbd338a"
+    },
+    {
+      "path": "task1-calibration/summary.json",
+      "bytes": 1733,
+      "sha256": "fa18781cbd6ea7816aa9e93e4769cc4e5a7b3a605eb494488f2d7ed5239aee42"
+    }
+  ]
+}
