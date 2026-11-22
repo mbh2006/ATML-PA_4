@@ -1,0 +1,135 @@
+{
+  "remote_version": "mbh2006/atml-pa4-mqar-dense-k4/1",
+  "artifacts": [
+    {
+      "path": "atml-pa4-mqar-dense-k4.log",
+      "bytes": 1274,
+      "sha256": "694bb079df02dc2082d9dbd7c11e60c9e132c5da90168898aa8d6fa2d8c50bc0"
+    },
+    {
+      "path": "mqar/status.json",
+      "bytes": 364,
+      "sha256": "161641e458deb62c4b7816c864f4b958f1660bd8bd185f404dfc2cb6161bb473"
+    },
+    {
+      "path": "mqar/test/dense-mixed-k4-6304-local/per-query.jsonl.gz",
+      "bytes": 834352,
+      "sha256": "f5a85f3e208d42e7a9f0bad88c794ec5ffb4f90e6710ea9fa3f73141842bcc9f"
+    },
+    {
+      "path": "mqar/test/dense-mixed-k4-6304-local/summary.json",
+      "bytes": 4560,
+      "sha256": "d3baa215947d75eacd6db04d63d2bb25cf6599cedbbb1f9e63aa169b2f8e8d8e"
+    },
+    {
+      "path": "mqar/test/dense-mixed-k4-6304-native/per-query.jsonl.gz",
+      "bytes": 832241,
+      "sha256": "4c58df1e2271a133db1beaa80f624f6497e7d3528996451771f1ccefc3248c40"
+    },
+    {
+      "path": "mqar/test/dense-mixed-k4-6304-native/summary.json",
+      "bytes": 4512,
+      "sha256": "55acb94aef6fcf8335167ec7a9ac5f4dca3db30c2bf403510b6b3764b3f26afb"
+    },
+    {
+      "path": "mqar/training/dense-mixed-k4-6304/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "6a089a1f11dca2bacf3d3fe6f729a1bd0f7317d4f1ec67e1b759d2d62451508f"
+    },
+    {
+      "path": "mqar/training/dense-mixed-k4-6304/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "7217ddc5de89f57906c8ce657e34e0a8bc6cb0a9440be4ccd8a261fffdd28e62"
+    },
+    {
+      "path": "mqar/training/dense-mixed-k4-6304/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "34f68e866654426a8704478c301716ab6094b16ff5aeafb1242000c7b2ae2b1d"
+    },
+    {
+      "path": "mqar/training/dense-mixed-k4-6304/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "c9647794fdf7ff9b2b73813b7fdbf18b2e6a8abe18fa1db0b7384608d2efa17c"
+    },
+    {
+      "path": "mqar/training/dense-mixed-k4-6304/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "901310108b3c03636b0f82730ff5435b8bb708deef8d2f2deacc123fed097acb"
+    },
+    {
+      "path": "mqar/training/dense-mixed-k4-6304/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "e7e4619b2233bf95309446b671bd389fb87c25d1797672d502ea84755bb673af"
+    },
+    {
+      "path": "mqar/training/dense-mixed-k4-6304/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "4715ee40651af31a67e241725b8453b5a41e94db5f00350bf4e547ffc5893847"
+    },
+    {
+      "path": "mqar/training/dense-mixed-k4-6304/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "ecf08c3efbae40cd8b2fa8159a8254fdd1de5b092ebf12b10d3c0c43e40ad446"
+    },
+    {
+      "path": "mqar/training/dense-mixed-k4-6304/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "32029c5c91247dd666ab33ac8553e54863f4b5b8bf00d5f5dfc19d42eb0c8ad2"
+    },
+    {
+      "path": "mqar/training/dense-mixed-k4-6304/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "8e7dae55097d38aef10c1157d84647a224f87bdddd2d6fc34daff5ff085b77eb"
+    },
+    {
+      "path": "mqar/training/dense-mixed-k4-6304/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "69b45f33a0cd024256a6d67c2e0018e8fa59742ac55c1dad503bc7665169d300"
+    },
+    {
+      "path": "mqar/training/dense-mixed-k4-6304/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "ac15b407f96b1d1696ac028d41a591701d4f3f3ed69ded43577044e01ba1b7cd"
+    },
+    {
+      "path": "mqar/training/dense-mixed-k4-6304/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "4904f915b268e10eff576b041705927f68ce03db2c8d1c3cdc2c346bd64786e0"
+    },
+    {
+      "path": "mqar/training/dense-mixed-k4-6304/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "a7771991fc61eb00633cb7579422856d7934b3cb0392faa347b1803f1b03269c"
+    },
+    {
+      "path": "mqar/training/dense-mixed-k4-6304/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "e63abe62710fb6f2a15ec8d71f5eeb068d60ae25fc93f1f089604ade3a50b48f"
+    },
+    {
+      "path": "mqar/training/dense-mixed-k4-6304/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "6d4ba8150920208bd02ea36e7a98f33b38d273d2263abfba184580037a64c338"
+    },
+    {
+      "path": "mqar/training/dense-mixed-k4-6304/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "d02f12355495d0a3494bd999fcda68a8d64d453e374ea8a29cc4639b3758f87c"
+    },
+    {
+      "path": "mqar/training/dense-mixed-k4-6304/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "a487201bbe008cdce7d895b412719c13ab7a23ffb441f793096df7bede2d8bc4"
+    },
+    {
+      "path": "mqar/training/dense-mixed-k4-6304/config.json",
+      "bytes": 407,
+      "sha256": "e007f7513cecdc354916f761cea7158681bd8349692459270c825d2bbd9307cf"
+    },
+    {
+      "path": "mqar/training/dense-mixed-k4-6304/updates.jsonl",
+      "bytes": 790358,
+      "sha256": "c90728c5af0f5cea88722fec1a2dd677e34fcdddd06914a57e68c4f7732a6d68"
+    }
+  ]
+}

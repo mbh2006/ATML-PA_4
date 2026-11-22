@@ -1,0 +1,16 @@
+{
+  "seed": 6304,
+  "mode": "dense",
+  "top_k": 64,
+  "k": 4,
+  "regime": "mixed",
+  "generator_sha256": "af69fe1cfd03a63ddbe2cc5844691bff138f06206bd94e8c7cb7aad93c727d08",
+  "start_update": 0,
+  "stop_after": 4500,
+  "source_revision": "d6d6afaeb1941a6aaf8309ed4ee26f728f328782",
+  "torch": "2.11.0+cu130",
+  "cuda": "13.0",
+  "device": "cuda:0",
+  "resumed_from": null,
+  "trainable_parameters": 437824
+}
