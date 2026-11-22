@@ -1,0 +1,25 @@
+{
+  "remote_version": "mbh2006/atml-pa4-p3-selection/1",
+  "artifacts": [
+    {
+      "path": "atml-pa4-p3-selection.log",
+      "bytes": 3417,
+      "sha256": "84445c6dfb317ba17240ca9bbabb991f419d034920b73459f0cdb4a13a9f10e5"
+    },
+    {
+      "path": "qwen-job.json",
+      "bytes": 165,
+      "sha256": "0b59fa18496b093d29269e3ff5bcd517ebc033cc637ae00f1e445ffc3ead4207"
+    },
+    {
+      "path": "task1-pruning-selection/replay.jsonl",
+      "bytes": 2335,
+      "sha256": "1329e4a65640b25411464911e2fe0f915d5ccb0d82f11b8373850dc55b83576d"
+    },
+    {
+      "path": "task1-pruning-selection/selection.json",
+      "bytes": 121361,
+      "sha256": "b54360e3c498bbde9923bb79382db8401124d898290ac0f5cb98e2f7623a2407"
+    }
+  ]
+}
