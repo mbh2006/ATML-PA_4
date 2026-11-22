@@ -1,0 +1,13 @@
+{
+  "input_artifact_hashes": "passed",
+  "c4_gsm8k_short_form_split_checks": "passed",
+  "fp16_baseline_pairing_and_denominators": "passed",
+  "mqar_development_selection": "reproduced",
+  "exact_attention_timing_rows": 36,
+  "speculative_sampler_and_cache_checks": "passed",
+  "pending": [
+    "Real compressed-model sparsity/byte comparisons and Task 1 adaptive selections",
+    "Remaining MQAR training and test evaluations, pretrained KV cache studies",
+    "Full Task 3 training, prefix isolation audit and timing comparisons"
+  ]
+}

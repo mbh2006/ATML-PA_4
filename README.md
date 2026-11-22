@@ -15,6 +15,42 @@ The [course dataset repository](https://github.com/AbDu11aHHH/atml-pa4-datasets)
 
 Setup evidence includes the [CUDA smoke result](results/setup/gpu-preflight.json), [validated data manifest](results/setup/public-data-manifest.json), and [locked source revisions](results/setup/local_source_revisions.json).
 
+## Reproduce completed stages
+
+The measured CUDA runs use Linux, Python 3.13.16, PyTorch 2.11.0+cu130, CUDA 13.0, and Tesla T4. The Qwen runs use Transformers 4.57.1, huggingface_hub 0.36.2, and tokenizers 0.22.2. Staff data preparation used Datasets 4.8.5. The attention plotting script uses Matplotlib 3.11.2. Check each result's recorded environment when comparing measurements.
+
+From the repository root, check out the pinned staff data tools. Keep the recovered private public-data bundle, including its manifest, under `runs/preflight/public-data-v2/public-data` for the exact artifact audit and Qwen commands.
+
+```sh
+git clone https://github.com/AbDu11aHHH/atml-pa4-datasets.git vendor/atml-pa4-datasets
+git -C vendor/atml-pa4-datasets checkout --detach 6a0a9ec9da7ef3d313ee3036cfec493886723644
+python vendor/atml-pa4-datasets/scripts/validate_assets.py
+python -m scripts.audit_submission --data runs/preflight/public-data-v2/public-data --staff vendor/atml-pa4-datasets
+```
+
+To regenerate the staff materialization from the same revisions, install the dependencies above, copy `results/setup/local_source_revisions.json` to `vendor/atml-pa4-datasets/data/local_source_revisions.json`, then run the staff `scripts/setup_data.py --public` and `scripts/check_setup.py` from the staff checkout. The audit above uses the original recovered byte hashes. Preserve a separate manifest for regenerated gzip files, whose container bytes can differ.
+
+```sh
+# On the pinned CUDA environment
+python -m pa4.weight_evaluation --data runs/preflight/public-data-v2/public-data --output runs/task1/fp16-reproduction
+python -m pa4.weight_calibration --data runs/preflight/public-data-v2/public-data --output runs/task1/calibration-reproduction
+python -m pa4.attention_benchmark --output runs/task2a/operator-grid-reproduction.json
+python scripts/run_mqar_dense_controls.py --staff vendor/atml-pa4-datasets --output runs/task2b/dense-reproduction
+python scripts/select_mqar_intervention.py --dense-controls results/task2b --output runs/task2b/selection-reproduction.json
+python -m pa4.qwen_validation --lock results/setup/local_source_revisions.json --output runs/task3/qwen-reproduction.json
+
+# CPU checks and plots
+python -m pa4.speculative_validation --output runs/task3/markov-reproduction.json
+python -m pa4.kv_codec_validation --output runs/task2c/codec-reproduction.json
+python scripts/plot_attention.py --input results/task2a/operator-grid.json --output runs/task2a/reproduction-plots
+```
+
+## Attribution and submission audit
+
+- The staff data repository supplies the MQAR generator, fixed selection manifests, retrieval files, and preprocessing scripts. The runners use the pinned staff checkout. [Course data repository](https://github.com/AbDu11aHHH/atml-pa4-datasets)
+- Task 1 adapts the HellaSwag task formatting and continuation boundary convention from lm-evaluation-harness v0.4.9. [HellaSwag task code](https://github.com/EleutherAI/lm-evaluation-harness/blob/v0.4.9/lm_eval/tasks/hellaswag/utils.py), [continuation encoding](https://github.com/EleutherAI/lm-evaluation-harness/blob/v0.4.9/lm_eval/api/model.py)
+- The audit records only the checks supported by completed results. The final review requires actual compressed budgets and matched timing, frozen adaptive choices, held-out result pairing, and source artifacts for each reported number. The student writes the report and its interpretation under the assignment's AI usage policy. [Evidence and recovery](plans/evidence-and-recovery.md)
+
 ## Verified experiments
 
 - Task 1 FP16 reference completed both perplexity suites and 2,000 HellaSwag examples. [Baseline summary](results/task1/fp16/summary.json)
