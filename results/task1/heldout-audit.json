@@ -1,0 +1,319 @@
+{
+  "status": "verified",
+  "source_revision": "9a74b0872419575e789bfa3e71f46559eff43b6d",
+  "conditions": {
+    "fp16": {
+      "wiki_ppl": 16.107232320825414,
+      "c4_ppl": 14.962276622962518,
+      "hellaswag": {
+        "n": 2000,
+        "accuracy": 0.504,
+        "accuracy_norm": 0.6945,
+        "token_boundary_differences": 0,
+        "task_version": "lm-eval v0.4.9 / HellaSwag 1.0"
+      },
+      "packed_bytes": null,
+      "actual_sparsity": null
+    },
+    "magnitude-25": {
+      "wiki_ppl": 21.32966651767038,
+      "c4_ppl": 17.986049710726792,
+      "hellaswag": {
+        "n": 512,
+        "accuracy": 0.453125,
+        "accuracy_norm": 0.587890625,
+        "token_boundary_differences": 0,
+        "task_version": "lm-eval v0.4.9 / HellaSwag 1.0"
+      },
+      "packed_bytes": 2596105216,
+      "actual_sparsity": 0.25
+    },
+    "magnitude-50": {
+      "wiki_ppl": 127.79457261230347,
+      "c4_ppl": 102.45666942920565,
+      "hellaswag": {
+        "n": 2000,
+        "accuracy": 0.324,
+        "accuracy_norm": 0.3985,
+        "token_boundary_differences": 0,
+        "task_version": "lm-eval v0.4.9 / HellaSwag 1.0"
+      },
+      "packed_bytes": 1941007360,
+      "actual_sparsity": 0.5
+    },
+    "magnitude-75": {
+      "wiki_ppl": 1579814.754864898,
+      "c4_ppl": 1221922.582054357,
+      "hellaswag": {
+        "n": 512,
+        "accuracy": 0.28125,
+        "accuracy_norm": 0.275390625,
+        "token_boundary_differences": 0,
+        "task_version": "lm-eval v0.4.9 / HellaSwag 1.0"
+      },
+      "packed_bytes": 1285909504,
+      "actual_sparsity": 0.75
+    },
+    "wanda-25": {
+      "wiki_ppl": 16.549818657308798,
+      "c4_ppl": 15.389589604607187,
+      "hellaswag": {
+        "n": 512,
+        "accuracy": 0.46875,
+        "accuracy_norm": 0.591796875,
+        "token_boundary_differences": 0,
+        "task_version": "lm-eval v0.4.9 / HellaSwag 1.0"
+      },
+      "packed_bytes": 2596105216,
+      "actual_sparsity": 0.25
+    },
+    "wanda-50": {
+      "wiki_ppl": 25.49434263138842,
+      "c4_ppl": 21.22433433441637,
+      "hellaswag": {
+        "n": 2000,
+        "accuracy": 0.4275,
+        "accuracy_norm": 0.581,
+        "token_boundary_differences": 0,
+        "task_version": "lm-eval v0.4.9 / HellaSwag 1.0"
+      },
+      "packed_bytes": 1941007360,
+      "actual_sparsity": 0.5
+    },
+    "wanda-75": {
+      "wiki_ppl": 63766.33049629596,
+      "c4_ppl": 51687.46150748093,
+      "hellaswag": {
+        "n": 512,
+        "accuracy": 0.271484375,
+        "accuracy_norm": 0.298828125,
+        "token_boundary_differences": 0,
+        "task_version": "lm-eval v0.4.9 / HellaSwag 1.0"
+      },
+      "packed_bytes": 1285909504,
+      "actual_sparsity": 0.75
+    },
+    "wanda-2of4": {
+      "wiki_ppl": 68.03446521307987,
+      "c4_ppl": 51.442220254819176,
+      "hellaswag": {
+        "n": 512,
+        "accuracy": 0.3515625,
+        "accuracy_norm": 0.4453125,
+        "token_boundary_differences": 0,
+        "task_version": "lm-eval v0.4.9 / HellaSwag 1.0"
+      },
+      "packed_bytes": 1941007360,
+      "actual_sparsity": 0.5
+    },
+    "q1-int8": {
+      "wiki_ppl": 16.08467951245303,
+      "c4_ppl": 14.9677611175835,
+      "hellaswag": {
+        "n": 512,
+        "accuracy": 0.462890625,
+        "accuracy_norm": 0.58203125,
+        "token_boundary_differences": 0,
+        "task_version": "lm-eval v0.4.9 / HellaSwag 1.0"
+      },
+      "packed_bytes": 1807940608,
+      "actual_sparsity": 0.008891650226985348
+    },
+    "q1-int4": {
+      "wiki_ppl": 18.896452581676503,
+      "c4_ppl": 16.728950510066845,
+      "hellaswag": {
+        "n": 2000,
+        "accuracy": 0.4895,
+        "accuracy_norm": 0.6695,
+        "token_boundary_differences": 0,
+        "task_version": "lm-eval v0.4.9 / HellaSwag 1.0"
+      },
+      "packed_bytes": 1152842752,
+      "actual_sparsity": 0.1495112746942039
+    },
+    "q1-int3": {
+      "wiki_ppl": 40.533731823429974,
+      "c4_ppl": 30.57057568357961,
+      "hellaswag": {
+        "n": 2000,
+        "accuracy": 0.407,
+        "accuracy_norm": 0.5615,
+        "token_boundary_differences": 0,
+        "task_version": "lm-eval v0.4.9 / HellaSwag 1.0"
+      },
+      "packed_bytes": 989068288,
+      "actual_sparsity": 0.31106332303429185
+    },
+    "q2-int8": {
+      "wiki_ppl": 16.127765334868982,
+      "c4_ppl": 14.966669894387683,
+      "hellaswag": {
+        "n": 512,
+        "accuracy": 0.4609375,
+        "accuracy_norm": 0.583984375,
+        "token_boundary_differences": 0,
+        "task_version": "lm-eval v0.4.9 / HellaSwag 1.0"
+      },
+      "packed_bytes": 1808456704,
+      "actual_sparsity": 0.009513633639490982
+    },
+    "q2-int4": {
+      "wiki_ppl": 18.16549781708397,
+      "c4_ppl": 16.088676423276162,
+      "hellaswag": {
+        "n": 2000,
+        "accuracy": 0.4915,
+        "accuracy_norm": 0.6745,
+        "token_boundary_differences": 0,
+        "task_version": "lm-eval v0.4.9 / HellaSwag 1.0"
+      },
+      "packed_bytes": 1153358848,
+      "actual_sparsity": 0.15408709412720167
+    },
+    "q2-int3": {
+      "wiki_ppl": 25.014787518142978,
+      "c4_ppl": 21.231061567269784,
+      "hellaswag": {
+        "n": 2000,
+        "accuracy": 0.45,
+        "accuracy_norm": 0.6125,
+        "token_boundary_differences": 0,
+        "task_version": "lm-eval v0.4.9 / HellaSwag 1.0"
+      },
+      "packed_bytes": 989584384,
+      "actual_sparsity": 0.31940833431761373
+    },
+    "p3-50": {
+      "wiki_ppl": 24.7979796504079,
+      "c4_ppl": 20.83868439798439,
+      "hellaswag": {
+        "n": 2000,
+        "accuracy": 0.429,
+        "accuracy_norm": 0.578,
+        "token_boundary_differences": 0,
+        "task_version": "lm-eval v0.4.9 / HellaSwag 1.0"
+      },
+      "packed_bytes": 1941007360,
+      "actual_sparsity": 0.5
+    },
+    "p3-75": {
+      "wiki_ppl": 240.5952398180328,
+      "c4_ppl": 184.15887627845277,
+      "hellaswag": {
+        "n": 512,
+        "accuracy": 0.302734375,
+        "accuracy_norm": 0.3671875,
+        "token_boundary_differences": 0,
+        "task_version": "lm-eval v0.4.9 / HellaSwag 1.0"
+      },
+      "packed_bytes": 1285909504,
+      "actual_sparsity": 0.75
+    },
+    "q3-int4-budget": {
+      "wiki_ppl": 20.232035744100333,
+      "c4_ppl": 17.651635520650085,
+      "hellaswag": {
+        "n": 2000,
+        "accuracy": 0.457,
+        "accuracy_norm": 0.636,
+        "token_boundary_differences": 0,
+        "task_version": "lm-eval v0.4.9 / HellaSwag 1.0"
+      },
+      "packed_bytes": 1153358848,
+      "actual_sparsity": 0.2274179645613128
+    },
+    "q3-int3-budget": {
+      "wiki_ppl": 1557.7582929837047,
+      "c4_ppl": 690.6528290545716,
+      "hellaswag": {
+        "n": 2000,
+        "accuracy": 0.2645,
+        "accuracy_norm": 0.2935,
+        "token_boundary_differences": 0,
+        "task_version": "lm-eval v0.4.9 / HellaSwag 1.0"
+      },
+      "packed_bytes": 989584384,
+      "actual_sparsity": 0.4455114244794598
+    }
+  },
+  "paired": {
+    "seed": 6304,
+    "draws": 10000,
+    "direction": "adaptive minus control",
+    "intervals": {
+      "p3_at_50": {
+        "c4_validation_windows_ppl_diff_ci95": [
+          -0.5228778782638257,
+          -0.2793383101458926
+        ],
+        "wikitext2_test_windows_ppl_diff_ci95": [
+          -0.808133782647106,
+          -0.5922707217214754
+        ],
+        "hellaswag_prediction_diff_ci95": [
+          -0.0045,
+          0.0075
+        ],
+        "hellaswag_normalized_prediction_diff_ci95": [
+          -0.01,
+          0.004
+        ]
+      },
+      "p3_at_75": {
+        "c4_validation_windows_ppl_diff_ci95": [
+          -67611.81588930776,
+          -37953.28032548801
+        ],
+        "wikitext2_test_windows_ppl_diff_ci95": [
+          -69491.32826514322,
+          -58175.37247411073
+        ],
+        "hellaswag_prediction_diff_ci95": [
+          0.00390625,
+          0.05859375
+        ],
+        "hellaswag_normalized_prediction_diff_ci95": [
+          0.0234375,
+          0.11328125
+        ]
+      },
+      "q3_int4_budget": {
+        "c4_validation_windows_ppl_diff_ci95": [
+          1.2855328239725237,
+          1.9615943165863658
+        ],
+        "wikitext2_test_windows_ppl_diff_ci95": [
+          1.8774511901681123,
+          2.271684673400012
+        ],
+        "hellaswag_prediction_diff_ci95": [
+          -0.046,
+          -0.0235
+        ],
+        "hellaswag_normalized_prediction_diff_ci95": [
+          -0.051,
+          -0.0265
+        ]
+      },
+      "q3_int3_budget": {
+        "c4_validation_windows_ppl_diff_ci95": [
+          602.1592766273069,
+          747.7888771634356
+        ],
+        "wikitext2_test_windows_ppl_diff_ci95": [
+          1391.961515927914,
+          1688.7755040333122
+        ],
+        "hellaswag_prediction_diff_ci95": [
+          -0.206,
+          -0.1655
+        ],
+        "hellaswag_normalized_prediction_diff_ci95": [
+          -0.344,
+          -0.294
+        ]
+      }
+    }
+  }
+}

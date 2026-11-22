@@ -1,0 +1,59 @@
+{
+  "source_revision": "9a74b0872419575e789bfa3e71f46559eff43b6d",
+  "conditions": {
+    "fp16": {
+      "exit_code": 0
+    },
+    "magnitude-25": {
+      "exit_code": 0
+    },
+    "magnitude-50": {
+      "exit_code": 0
+    },
+    "magnitude-75": {
+      "exit_code": 0
+    },
+    "wanda-25": {
+      "exit_code": 0
+    },
+    "wanda-50": {
+      "exit_code": 0
+    },
+    "wanda-75": {
+      "exit_code": 0
+    },
+    "wanda-2of4": {
+      "exit_code": 0
+    },
+    "q1-int8": {
+      "exit_code": 0
+    },
+    "q1-int4": {
+      "exit_code": 0
+    },
+    "q1-int3": {
+      "exit_code": 0
+    },
+    "q2-int8": {
+      "exit_code": 0
+    },
+    "q2-int4": {
+      "exit_code": 0
+    },
+    "q2-int3": {
+      "exit_code": 0
+    },
+    "p3-50": {
+      "exit_code": 0
+    },
+    "p3-75": {
+      "exit_code": 0
+    },
+    "q3-int4-budget": {
+      "exit_code": 0
+    },
+    "q3-int3-budget": {
+      "exit_code": 0
+    }
+  }
+}
