@@ -54,6 +54,7 @@ python scripts/plot_attention.py --input results/task2a/operator-grid.json --out
 ## Verified experiments
 
 - Task 1 FP16 reference completed both perplexity suites and 2,000 HellaSwag examples. [Baseline summary](results/task1/fp16/summary.json)
+- Task 1 completed all 18 held-out conditions and archived paired scores, confidence intervals, and figures. Regenerate the figures with `python scripts/plot_compression.py`. [Held-out audit](results/task1/heldout-audit.json), [figures and aligned scores](results/task1/figures/)
 - Task 2A ran all 36 exact attention conditions on CUDA. [Raw grid](results/task2a/operator-grid.json), [summary table](results/task2a/operator-summary.csv), [latency and memory](results/task2a/attention-latency-memory.png), [output error](results/task2a/attention-output-error.png)
 - Task 3 passed the local Markov sampler gate. Reproduce with `python -m pa4.speculative_validation --output runs/task3/markov-validation.json`. [Joint sequence counts and test statistics](results/task3/markov-validation.json)
 - Task 3 real-Qwen validation passed split prefill, replay after speculative rounds, and targeted rollback. [Cache validation evidence](results/task3/qwen-cache-validation.json)
