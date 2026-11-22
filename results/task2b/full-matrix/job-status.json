@@ -1,0 +1,12 @@
+{
+  "shard_exit_codes": [
+    0,
+    0
+  ],
+  "reused_controls": [
+    "dense-mixed-k16-6304",
+    "dense-mixed-k16-6305",
+    "dense-mixed-k16-6306",
+    "dense-mixed-k4-6304"
+  ]
+}

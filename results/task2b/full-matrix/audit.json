@@ -1,0 +1,294 @@
+{
+  "remote_version": "mbh2006/atml-pa4-mqar-full-matrix/1",
+  "training_conditions": 42,
+  "reused_training_checkpoints": 4,
+  "heldout_evaluations": 54,
+  "artifact_scope": "Kaggle status and held-out summary files",
+  "artifacts": [
+    {
+      "path": "gpu-0/status.json",
+      "bytes": 6123,
+      "sha256": "fb59d342f1fdacc71b2974376a95e62aeb37efd9a9ff89d1f272c13629f37e82"
+    },
+    {
+      "path": "gpu-0/test/dense-mixed-k16-6304-local/summary.json",
+      "bytes": 4539,
+      "sha256": "b4d407522fe61a042c25948d91b5ef28751d36678ecb1c676fd276325937c01d"
+    },
+    {
+      "path": "gpu-0/test/dense-mixed-k16-6304-native/summary.json",
+      "bytes": 4408,
+      "sha256": "f56e4563ae00e53575d1c809a1342f0456cdd53b183e985c71bfe65a6b7acf76"
+    },
+    {
+      "path": "gpu-0/test/dense-mixed-k16-6306-local/summary.json",
+      "bytes": 4538,
+      "sha256": "4069b3b2bd8834e761e4131948751c9c6805443d2c8b19d6bbd6ec50371b6870"
+    },
+    {
+      "path": "gpu-0/test/dense-mixed-k16-6306-native/summary.json",
+      "bytes": 4404,
+      "sha256": "c9381be2d55f30c1a590df3035a43909422ad5c14d8b4624f40bba2142be14e3"
+    },
+    {
+      "path": "gpu-0/test/dense-mixed-k4-6304-local/summary.json",
+      "bytes": 4562,
+      "sha256": "a233d689c0773a0973ac32dd19c269b5f8b2f068d58fd722a4974cfa39e22afa"
+    },
+    {
+      "path": "gpu-0/test/dense-mixed-k4-6304-native/summary.json",
+      "bytes": 4514,
+      "sha256": "924296b554d03f2e28e4c8b3bf2ff936211e63a26f38d0f6cca60b6c82809171"
+    },
+    {
+      "path": "gpu-0/test/dense-mixed-k4-6306-local/summary.json",
+      "bytes": 4569,
+      "sha256": "980614a05294af454c494e41776178556c1532e97a66b508986e3374d5587d31"
+    },
+    {
+      "path": "gpu-0/test/dense-mixed-k4-6306-native/summary.json",
+      "bytes": 4520,
+      "sha256": "82dd2795066e3b366272c35bc056f0e52eefda017cc7a8560718637eda96417b"
+    },
+    {
+      "path": "gpu-0/test/dense-mixed-k8-6305-local/summary.json",
+      "bytes": 4525,
+      "sha256": "330766300520bb2aa8bc5fc4516df93557f6b76cb202bf2d9f67be17852ed5b1"
+    },
+    {
+      "path": "gpu-0/test/dense-mixed-k8-6305-native/summary.json",
+      "bytes": 4428,
+      "sha256": "a427598a3ced5d31bd2ad8735c8e670055bfa69efc1ede245003b5b390aae3dd"
+    },
+    {
+      "path": "gpu-0/test/dense-near-k16-6305-local/summary.json",
+      "bytes": 4487,
+      "sha256": "68fa3ae03964268f49afa5f2ca72232227d726722865c6ced228f8d09d3bface"
+    },
+    {
+      "path": "gpu-0/test/dense-near-k16-6305-native/summary.json",
+      "bytes": 4463,
+      "sha256": "50de1b168d2581a488f970fa6d5238d70ac76dc351848e487c03109ab8aabdb7"
+    },
+    {
+      "path": "gpu-0/test/dilated-mixed-k16-6304-native/summary.json",
+      "bytes": 4614,
+      "sha256": "b380b920f65206f24b762ee68c6ec0e280fc0e18d0208ce4888fafa4d1dfe1c0"
+    },
+    {
+      "path": "gpu-0/test/dilated-mixed-k16-6306-native/summary.json",
+      "bytes": 4612,
+      "sha256": "151f35e17cc4075cde2ccf94d6cebf35e14a247e838ac98d6f67bb272a1e7c81"
+    },
+    {
+      "path": "gpu-0/test/dilated-mixed-k4-6305-native/summary.json",
+      "bytes": 4589,
+      "sha256": "e11451b88fd77ed394a73cd9e4457a0abc2f581225f3e32b02dab39f1e140bbe"
+    },
+    {
+      "path": "gpu-0/test/linear-mixed-k16-6304-native/summary.json",
+      "bytes": 4599,
+      "sha256": "4627bcf0cb636a1a14755c8c2a75e47eff69a49105fa0152026ce065ca1310c4"
+    },
+    {
+      "path": "gpu-0/test/linear-mixed-k16-6306-native/summary.json",
+      "bytes": 4598,
+      "sha256": "089e5fbea553258055c0aa4e687b5e0ccbe93631ac521d7227b5e1d294df7516"
+    },
+    {
+      "path": "gpu-0/test/linear-mixed-k4-6304-native/summary.json",
+      "bytes": 4617,
+      "sha256": "f3644c0c904030980ee6fe8add87fa4e1e17289e86cca5fbd41d7ed6bc908b0b"
+    },
+    {
+      "path": "gpu-0/test/linear-mixed-k4-6306-native/summary.json",
+      "bytes": 4601,
+      "sha256": "5a61fe9281231edf0987c79c0cab81dc2d789838a5056f788b2a6a44b80ffd5a"
+    },
+    {
+      "path": "gpu-0/test/linear-mixed-k8-6305-native/summary.json",
+      "bytes": 4607,
+      "sha256": "60e0b50854d3232114d4447615d9b294e8ce9c3bb21e7141dd388b7f3d4a7bfa"
+    },
+    {
+      "path": "gpu-0/test/local-mixed-k16-6305-native/summary.json",
+      "bytes": 4592,
+      "sha256": "e59c32ca8053ec67c08f83204f1d16044bf296337d9bb8f1c4db56d1f608b2e3"
+    },
+    {
+      "path": "gpu-0/test/local-near-k16-6304-native/summary.json",
+      "bytes": 4535,
+      "sha256": "8fbc34d9b69d40adaf43b99416d4b76be222535e60f0fd5457583baa20dbc54c"
+    },
+    {
+      "path": "gpu-0/test/local-near-k16-6306-native/summary.json",
+      "bytes": 4535,
+      "sha256": "c7ed93b8ce7b432bc97b8bd4a55ff5fc795cd73c7ef19d9d1368979bbb44228b"
+    },
+    {
+      "path": "gpu-0/test/local-near-k4-6304-native/summary.json",
+      "bytes": 4565,
+      "sha256": "45e4376e2612f48d2456a47b732b2b3070ff3ba78d632df85f0e6a2225ee72de"
+    },
+    {
+      "path": "gpu-0/test/local-near-k4-6306-native/summary.json",
+      "bytes": 4565,
+      "sha256": "25a3a2c0fe0be56f2a42691c81dd503bc10545d30ae64e2ee3a710769bff754a"
+    },
+    {
+      "path": "gpu-0/test/local-near-k8-6305-native/summary.json",
+      "bytes": 4523,
+      "sha256": "91e61b15ab93470585b4377cbc02fb9d9e3f0ac2019ec4b5deb5ab4440d12aba"
+    },
+    {
+      "path": "gpu-0/test/topk-mixed-k16-6305-native/summary.json",
+      "bytes": 4425,
+      "sha256": "a0f311d3fea0b5a8e05da5bc47d9e53a66a55c21a5e78488194ae036d500adcf"
+    },
+    {
+      "path": "gpu-1/status.json",
+      "bytes": 6122,
+      "sha256": "32bbd452251877dcea33bc4342551476a7620d5d1f33e3276719c39307a68917"
+    },
+    {
+      "path": "gpu-1/test/dense-mixed-k16-6305-local/summary.json",
+      "bytes": 4545,
+      "sha256": "dc1f6dae52c1627eeec6ed00261f602d1708cf830320fb9fbf41425c2b294668"
+    },
+    {
+      "path": "gpu-1/test/dense-mixed-k16-6305-native/summary.json",
+      "bytes": 4424,
+      "sha256": "de14df2fe92a92316cc96efef7f904746f491213e046c4aa11e6a6932253eddf"
+    },
+    {
+      "path": "gpu-1/test/dense-mixed-k4-6305-local/summary.json",
+      "bytes": 4596,
+      "sha256": "40da97ea93753aceb9a1cc5ef710d4e5aae9af9c8b480185b46ebf203e116fc5"
+    },
+    {
+      "path": "gpu-1/test/dense-mixed-k4-6305-native/summary.json",
+      "bytes": 4544,
+      "sha256": "ae85a2e06b05e27cf94466d4739457a51401d3a22425f206eeafe6e737ebcae0"
+    },
+    {
+      "path": "gpu-1/test/dense-mixed-k8-6304-local/summary.json",
+      "bytes": 4532,
+      "sha256": "8da01f806b7b896d09eb3bb37ced23a461da1803a8e9d3f0cce21c7931313860"
+    },
+    {
+      "path": "gpu-1/test/dense-mixed-k8-6304-native/summary.json",
+      "bytes": 4430,
+      "sha256": "da55881d935d9858c93b981aa05d2ee76c716a7b4bef394ab383a1a25a9e92a8"
+    },
+    {
+      "path": "gpu-1/test/dense-mixed-k8-6306-local/summary.json",
+      "bytes": 4548,
+      "sha256": "61af01bff311e64c9b7b725c5ce725b8ffcfac9a25b2fad6892f9432fffc3305"
+    },
+    {
+      "path": "gpu-1/test/dense-mixed-k8-6306-native/summary.json",
+      "bytes": 4444,
+      "sha256": "00ff75342c484993838e73016c6e015a325895aca6855b991873e08bf45642d0"
+    },
+    {
+      "path": "gpu-1/test/dense-near-k16-6304-local/summary.json",
+      "bytes": 4541,
+      "sha256": "b3501ff9e12e1a5f35d01961e58ed8ec166caf4623c457fb071ec5955268db04"
+    },
+    {
+      "path": "gpu-1/test/dense-near-k16-6304-native/summary.json",
+      "bytes": 4516,
+      "sha256": "e4ed4755a13e6560417eefdc628cd0af58aba0cce6a6c6018c11c942e4852822"
+    },
+    {
+      "path": "gpu-1/test/dense-near-k16-6306-local/summary.json",
+      "bytes": 4528,
+      "sha256": "e1ab224e2a33375568a3349011c7393fa5a1fef06697d0a567f4521cc2cdd4c3"
+    },
+    {
+      "path": "gpu-1/test/dense-near-k16-6306-native/summary.json",
+      "bytes": 4496,
+      "sha256": "25caedb44925e207b6eb51bf8218eeabf92ce9b51ebc84aeebbda4ef98eb36a3"
+    },
+    {
+      "path": "gpu-1/test/dilated-mixed-k16-6305-native/summary.json",
+      "bytes": 4613,
+      "sha256": "65ce4549521d52ee66f68d87ad8f7a2e81e332e75934e39878c735a49526968c"
+    },
+    {
+      "path": "gpu-1/test/dilated-mixed-k4-6304-native/summary.json",
+      "bytes": 4614,
+      "sha256": "b96f50e133cfa4b3c7f34aab05e8cf8434986d05861fc865c1133464d744ff5e"
+    },
+    {
+      "path": "gpu-1/test/dilated-mixed-k4-6306-native/summary.json",
+      "bytes": 4617,
+      "sha256": "3a2e7127821abe066e09495fa1502519fd32dee7d35995f3c4a9f2c7e57b9415"
+    },
+    {
+      "path": "gpu-1/test/linear-mixed-k16-6305-native/summary.json",
+      "bytes": 4615,
+      "sha256": "acd52dee26171fb2c572889f744cf70aa4cf217d4e1cfe28b87af61974dc0392"
+    },
+    {
+      "path": "gpu-1/test/linear-mixed-k4-6305-native/summary.json",
+      "bytes": 4611,
+      "sha256": "b6ab30d36ed1358c518f9dc79d044825da271eda99c5e6dae6cd2769699e1799"
+    },
+    {
+      "path": "gpu-1/test/linear-mixed-k8-6304-native/summary.json",
+      "bytes": 4573,
+      "sha256": "1582a3207d703f2ea1f8144caaa4a3b7ff624366ee7bf1c11c6834d5942b9e50"
+    },
+    {
+      "path": "gpu-1/test/linear-mixed-k8-6306-native/summary.json",
+      "bytes": 4615,
+      "sha256": "d99dc9f836b4ffb1acd29d0c0bb43180457dc42e7c0e79bb7c7435a38eb9f3a9"
+    },
+    {
+      "path": "gpu-1/test/local-mixed-k16-6304-native/summary.json",
+      "bytes": 4605,
+      "sha256": "bf529f29e17cbce703aca57d060c59739b2ad83e025b0909c532e01b77578c85"
+    },
+    {
+      "path": "gpu-1/test/local-mixed-k16-6306-native/summary.json",
+      "bytes": 4607,
+      "sha256": "6c8defe506192b3cc7cb61e849a141f8160b2aa2df1412e179fd6019c174e318"
+    },
+    {
+      "path": "gpu-1/test/local-near-k16-6305-native/summary.json",
+      "bytes": 4524,
+      "sha256": "bd2d5c5558f8308da35c6e69f401fbc2c7c72d76ed92a9073953caf9ad1abced"
+    },
+    {
+      "path": "gpu-1/test/local-near-k4-6305-native/summary.json",
+      "bytes": 4566,
+      "sha256": "bcd5a80c892a10e4086912123711c9600f56ba09ce9635bd370b3bfe2e1c8e45"
+    },
+    {
+      "path": "gpu-1/test/local-near-k8-6304-native/summary.json",
+      "bytes": 4516,
+      "sha256": "a1d9f8f9f752dd3f404dd65cecad895a4059b673ddadc742fe908d1aecf22815"
+    },
+    {
+      "path": "gpu-1/test/local-near-k8-6306-native/summary.json",
+      "bytes": 4525,
+      "sha256": "433bf9bdb245d016fd4bdaf49b5d95329e040772ced9acd5667fad70441010ad"
+    },
+    {
+      "path": "gpu-1/test/topk-mixed-k16-6304-native/summary.json",
+      "bytes": 4434,
+      "sha256": "d1fbfbc2956baa8f3fb3fd36e040f96c79a43d483514aac551efc52e68d5d62c"
+    },
+    {
+      "path": "gpu-1/test/topk-mixed-k16-6306-native/summary.json",
+      "bytes": 4440,
+      "sha256": "7d57775c0a448ca6d6e62c571b2da37fd5a2bce6da9e2d87be5f0eac94438e63"
+    },
+    {
+      "path": "job-status.json",
+      "bytes": 183,
+      "sha256": "56a0c2c6a2efb7dbb9c3f8b97d55f064edfc91ddbcb3a5699a49385c57427efa"
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "source_revision": "abe35b7676e528492a57a94389fbb435fda32b66",
+  "checkpoint": "/kaggle/working/mqar/gpu-1/training/linear-mixed-k4-6305/checkpoints/update-4500.pt",
+  "training": {
+    "seed": 6305,
+    "mode": "linear",
+    "top_k": 64,
+    "k": 4,
+    "regime": "mixed",
+    "generator_sha256": "af69fe1cfd03a63ddbe2cc5844691bff138f06206bd94e8c7cb7aad93c727d08"
+  },
+  "update": 4500,
+  "split": "test",
+  "attention_override": null,
+  "top_k": 64,
+  "cells": [
+    {
+      "k": 4,
+      "group": "[0,32)",
+      "correct": 2258,
+      "queries": 2271,
+      "accuracy": 0.9942756494936151,
+      "label_chance": 0.015625,
+      "example_chance": 0.25
+    },
+    {
+      "k": 4,
+      "group": "[128,256)",
+      "correct": 6111,
+      "queries": 6154,
+      "accuracy": 0.9930126746831329,
+      "label_chance": 0.015625,
+      "example_chance": 0.25
+    },
+    {
+      "k": 4,
+      "group": "[32,64)",
+      "correct": 2789,
+      "queries": 2816,
+      "accuracy": 0.9904119318181818,
+      "label_chance": 0.015625,
+      "example_chance": 0.25
+    },
+    {
+      "k": 4,
+      "group": "[64,128)",
+      "correct": 1042,
+      "queries": 1047,
+      "accuracy": 0.9952244508118434,
+      "label_chance": 0.015625,
+      "example_chance": 0.25
+    },
+    {
+      "k": 4,
+      "group": "far",
+      "correct": 4071,
+      "queries": 4096,
+      "accuracy": 0.993896484375,
+      "label_chance": 0.015625,
+      "example_chance": 0.25
+    },
+    {
+      "k": 4,
+      "group": "mixed",
+      "correct": 4064,
+      "queries": 4096,
+      "accuracy": 0.9921875,
+      "label_chance": 0.015625,
+      "example_chance": 0.25
+    },
+    {
+      "k": 4,
+      "group": "near",
+      "correct": 4065,
+      "queries": 4096,
+      "accuracy": 0.992431640625,
+      "label_chance": 0.015625,
+      "example_chance": 0.25
+    },
+    {
+      "k": 8,
+      "group": "[0,32)",
+      "correct": 2096,
+      "queries": 4062,
+      "accuracy": 0.5160019694731659,
+      "label_chance": 0.015625,
+      "example_chance": 0.125
+    },
+    {
+      "k": 8,
+      "group": "[128,256)",
+      "correct": 7147,
+      "queries": 12294,
+      "accuracy": 0.5813404912965674,
+      "label_chance": 0.015625,
+      "example_chance": 0.125
+    },
+    {
+      "k": 8,
+      "group": "[32,64)",
+      "correct": 3568,
+      "queries": 5977,
+      "accuracy": 0.5969549941442195,
+      "label_chance": 0.015625,
+      "example_chance": 0.125
+    },
+    {
+      "k": 8,
+      "group": "[64,128)",
+      "correct": 1270,
+      "queries": 2243,
+      "accuracy": 0.5662059741417744,
+      "label_chance": 0.015625,
+      "example_chance": 0.125
+    },
+    {
+      "k": 8,
+      "group": "far",
+      "correct": 4710,
+      "queries": 8192,
+      "accuracy": 0.574951171875,
+      "label_chance": 0.015625,
+      "example_chance": 0.125
+    },
+    {
+      "k": 8,
+      "group": "mixed",
+      "correct": 4700,
+      "queries": 8192,
+      "accuracy": 0.57373046875,
+      "label_chance": 0.015625,
+      "example_chance": 0.125
+    },
+    {
+      "k": 8,
+      "group": "near",
+      "correct": 4671,
+      "queries": 8192,
+      "accuracy": 0.5701904296875,
+      "label_chance": 0.015625,
+      "example_chance": 0.125
+    },
+    {
+      "k": 16,
+      "group": "[0,32)",
+      "correct": 424,
+      "queries": 5382,
+      "accuracy": 0.07878112225938314,
+      "label_chance": 0.015625,
+      "example_chance": 0.0625
+    },
+    {
+      "k": 16,
+      "group": "[128,256)",
+      "correct": 7280,
+      "queries": 24618,
+      "accuracy": 0.2957185799008855,
+      "label_chance": 0.015625,
+      "example_chance": 0.0625
+    },
+    {
+      "k": 16,
+      "group": "[32,64)",
+      "correct": 4986,
+      "queries": 14409,
+      "accuracy": 0.34603372891942535,
+      "label_chance": 0.015625,
+      "example_chance": 0.0625
+    },
+    {
+      "k": 16,
+      "group": "[64,128)",
+      "correct": 1326,
+      "queries": 4743,
+      "accuracy": 0.27956989247311825,
+      "label_chance": 0.015625,
+      "example_chance": 0.0625
+    },
+    {
+      "k": 16,
+      "group": "far",
+      "correct": 4707,
+      "queries": 16384,
+      "accuracy": 0.28729248046875,
+      "label_chance": 0.015625,
+      "example_chance": 0.0625
+    },
+    {
+      "k": 16,
+      "group": "mixed",
+      "correct": 4654,
+      "queries": 16384,
+      "accuracy": 0.2840576171875,
+      "label_chance": 0.015625,
+      "example_chance": 0.0625
+    },
+    {
+      "k": 16,
+      "group": "near",
+      "correct": 4655,
+      "queries": 16384,
+      "accuracy": 0.28411865234375,
+      "label_chance": 0.015625,
+      "example_chance": 0.0625
+    }
+  ]
+}

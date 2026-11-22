@@ -1,0 +1,215 @@
+{
+  "source_revision": "abe35b7676e528492a57a94389fbb435fda32b66",
+  "runs": [
+    {
+      "run_id": "dense-mixed-k4-6305",
+      "mode": "dense",
+      "k": 4,
+      "regime": "mixed",
+      "seed": 6305,
+      "top_k": 64,
+      "status": "complete",
+      "checkpoint": "/kaggle/working/mqar/gpu-1/training/dense-mixed-k4-6305/checkpoints/update-4500.pt"
+    },
+    {
+      "run_id": "dense-mixed-k8-6304",
+      "mode": "dense",
+      "k": 8,
+      "regime": "mixed",
+      "seed": 6304,
+      "top_k": 64,
+      "status": "complete",
+      "checkpoint": "/kaggle/working/mqar/gpu-1/training/dense-mixed-k8-6304/checkpoints/update-4500.pt"
+    },
+    {
+      "run_id": "dense-mixed-k8-6306",
+      "mode": "dense",
+      "k": 8,
+      "regime": "mixed",
+      "seed": 6306,
+      "top_k": 64,
+      "status": "complete",
+      "checkpoint": "/kaggle/working/mqar/gpu-1/training/dense-mixed-k8-6306/checkpoints/update-4500.pt"
+    },
+    {
+      "run_id": "dense-mixed-k16-6305",
+      "mode": "dense",
+      "k": 16,
+      "regime": "mixed",
+      "seed": 6305,
+      "top_k": 64,
+      "status": "complete",
+      "checkpoint": "/tmp/pa4-existing-mqar-1rd_kw7d/dense-mixed-k16-6305/checkpoints/update-4500.pt"
+    },
+    {
+      "run_id": "dense-near-k16-6304",
+      "mode": "dense",
+      "k": 16,
+      "regime": "near",
+      "seed": 6304,
+      "top_k": 64,
+      "status": "complete",
+      "checkpoint": "/kaggle/working/mqar/gpu-1/training/dense-near-k16-6304/checkpoints/update-4500.pt"
+    },
+    {
+      "run_id": "dense-near-k16-6306",
+      "mode": "dense",
+      "k": 16,
+      "regime": "near",
+      "seed": 6306,
+      "top_k": 64,
+      "status": "complete",
+      "checkpoint": "/kaggle/working/mqar/gpu-1/training/dense-near-k16-6306/checkpoints/update-4500.pt"
+    },
+    {
+      "run_id": "local-near-k4-6305",
+      "mode": "local",
+      "k": 4,
+      "regime": "near",
+      "seed": 6305,
+      "top_k": 64,
+      "status": "complete",
+      "checkpoint": "/kaggle/working/mqar/gpu-1/training/local-near-k4-6305/checkpoints/update-4500.pt"
+    },
+    {
+      "run_id": "local-near-k8-6304",
+      "mode": "local",
+      "k": 8,
+      "regime": "near",
+      "seed": 6304,
+      "top_k": 64,
+      "status": "complete",
+      "checkpoint": "/kaggle/working/mqar/gpu-1/training/local-near-k8-6304/checkpoints/update-4500.pt"
+    },
+    {
+      "run_id": "local-near-k8-6306",
+      "mode": "local",
+      "k": 8,
+      "regime": "near",
+      "seed": 6306,
+      "top_k": 64,
+      "status": "complete",
+      "checkpoint": "/kaggle/working/mqar/gpu-1/training/local-near-k8-6306/checkpoints/update-4500.pt"
+    },
+    {
+      "run_id": "local-near-k16-6305",
+      "mode": "local",
+      "k": 16,
+      "regime": "near",
+      "seed": 6305,
+      "top_k": 64,
+      "status": "complete",
+      "checkpoint": "/kaggle/working/mqar/gpu-1/training/local-near-k16-6305/checkpoints/update-4500.pt"
+    },
+    {
+      "run_id": "local-mixed-k16-6304",
+      "mode": "local",
+      "k": 16,
+      "regime": "mixed",
+      "seed": 6304,
+      "top_k": 64,
+      "status": "complete",
+      "checkpoint": "/kaggle/working/mqar/gpu-1/training/local-mixed-k16-6304/checkpoints/update-4500.pt"
+    },
+    {
+      "run_id": "local-mixed-k16-6306",
+      "mode": "local",
+      "k": 16,
+      "regime": "mixed",
+      "seed": 6306,
+      "top_k": 64,
+      "status": "complete",
+      "checkpoint": "/kaggle/working/mqar/gpu-1/training/local-mixed-k16-6306/checkpoints/update-4500.pt"
+    },
+    {
+      "run_id": "linear-mixed-k4-6305",
+      "mode": "linear",
+      "k": 4,
+      "regime": "mixed",
+      "seed": 6305,
+      "top_k": 64,
+      "status": "complete",
+      "checkpoint": "/kaggle/working/mqar/gpu-1/training/linear-mixed-k4-6305/checkpoints/update-4500.pt"
+    },
+    {
+      "run_id": "linear-mixed-k8-6304",
+      "mode": "linear",
+      "k": 8,
+      "regime": "mixed",
+      "seed": 6304,
+      "top_k": 64,
+      "status": "complete",
+      "checkpoint": "/kaggle/working/mqar/gpu-1/training/linear-mixed-k8-6304/checkpoints/update-4500.pt"
+    },
+    {
+      "run_id": "linear-mixed-k8-6306",
+      "mode": "linear",
+      "k": 8,
+      "regime": "mixed",
+      "seed": 6306,
+      "top_k": 64,
+      "status": "complete",
+      "checkpoint": "/kaggle/working/mqar/gpu-1/training/linear-mixed-k8-6306/checkpoints/update-4500.pt"
+    },
+    {
+      "run_id": "linear-mixed-k16-6305",
+      "mode": "linear",
+      "k": 16,
+      "regime": "mixed",
+      "seed": 6305,
+      "top_k": 64,
+      "status": "complete",
+      "checkpoint": "/kaggle/working/mqar/gpu-1/training/linear-mixed-k16-6305/checkpoints/update-4500.pt"
+    },
+    {
+      "run_id": "dilated-mixed-k4-6304",
+      "mode": "dilated",
+      "k": 4,
+      "regime": "mixed",
+      "seed": 6304,
+      "top_k": 64,
+      "status": "complete",
+      "checkpoint": "/kaggle/working/mqar/gpu-1/training/dilated-mixed-k4-6304/checkpoints/update-4500.pt"
+    },
+    {
+      "run_id": "dilated-mixed-k4-6306",
+      "mode": "dilated",
+      "k": 4,
+      "regime": "mixed",
+      "seed": 6306,
+      "top_k": 64,
+      "status": "complete",
+      "checkpoint": "/kaggle/working/mqar/gpu-1/training/dilated-mixed-k4-6306/checkpoints/update-4500.pt"
+    },
+    {
+      "run_id": "dilated-mixed-k16-6305",
+      "mode": "dilated",
+      "k": 16,
+      "regime": "mixed",
+      "seed": 6305,
+      "top_k": 64,
+      "status": "complete",
+      "checkpoint": "/kaggle/working/mqar/gpu-1/training/dilated-mixed-k16-6305/checkpoints/update-4500.pt"
+    },
+    {
+      "run_id": "topk-mixed-k16-6304",
+      "mode": "topk",
+      "k": 16,
+      "regime": "mixed",
+      "seed": 6304,
+      "top_k": 64,
+      "status": "complete",
+      "checkpoint": "/kaggle/working/mqar/gpu-1/training/topk-mixed-k16-6304/checkpoints/update-4500.pt"
+    },
+    {
+      "run_id": "topk-mixed-k16-6306",
+      "mode": "topk",
+      "k": 16,
+      "regime": "mixed",
+      "seed": 6306,
+      "top_k": 64,
+      "status": "complete",
+      "checkpoint": "/kaggle/working/mqar/gpu-1/training/topk-mixed-k16-6306/checkpoints/update-4500.pt"
+    }
+  ]
+}
