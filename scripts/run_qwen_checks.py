@@ -30,7 +30,8 @@ def main():
     parser.add_argument("--revision", required=True)
     parser.add_argument("--inputs", type=Path, default=Path("/kaggle/input"))
     parser.add_argument("--output", type=Path, default=Path("/kaggle/working"))
-    parser.add_argument("--tasks", nargs="+", choices=("task1", "task3", "calibration", *UNIFORM_CONDITIONS),
+    parser.add_argument("--tasks", nargs="+",
+                        choices=("task1", "task3", "calibration", "pruning-selection", *UNIFORM_CONDITIONS),
                         default=["task3", "task1"])
     args = parser.parse_args()
     source = args.source.resolve()
@@ -55,10 +56,10 @@ def main():
                         ]
                     else:
                         data = matching_data(args.inputs, source / "results/setup/public-data-manifest.json")
-                        module, directory = (
-                            ("pa4.weight_calibration", "task1-calibration")
-                            if task == "calibration" else ("pa4.weight_evaluation", "task1-fp16")
-                        )
+                        module, directory = {
+                            "calibration": ("pa4.weight_calibration", "task1-calibration"),
+                            "pruning-selection": ("pa4.weight_pruning_selection", "task1-pruning-selection"),
+                        }.get(task, ("pa4.weight_evaluation", "task1-fp16"))
                         arguments = [
                             "-m", module, "--data", str(data),
                             "--output", str(args.output / directory),

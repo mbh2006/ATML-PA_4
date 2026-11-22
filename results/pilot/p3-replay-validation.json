@@ -1,0 +1,102 @@
+{
+  "status": "passed",
+  "torch": "2.11.0+cpu",
+  "pruning_counts": {
+    "0.5": [
+      38,
+      247,
+      45,
+      130
+    ],
+    "0.75": [
+      63,
+      362,
+      59,
+      206
+    ]
+  },
+  "precision": {
+    "widths": [
+      4,
+      3,
+      4
+    ],
+    "packed_bytes": 20,
+    "probe_error": 5.2
+  },
+  "packing": {
+    "2": {
+      "packed_bytes": 280,
+      "max_reconstruction_error": 0.31467175483703613
+    },
+    "3": {
+      "packed_bytes": 408,
+      "max_reconstruction_error": 0.13478747010231018
+    },
+    "4": {
+      "packed_bytes": 536,
+      "max_reconstruction_error": 0.06290990114212036
+    },
+    "8": {
+      "packed_bytes": 1048,
+      "max_reconstruction_error": 0.003703474998474121
+    }
+  },
+  "calibration_hooks": {
+    "scope": "fixture",
+    "projections": 7,
+    "probe_positions": [
+      15,
+      47,
+      79,
+      111,
+      143,
+      175,
+      207,
+      239,
+      271,
+      303,
+      335,
+      367,
+      399,
+      431,
+      463,
+      495
+    ]
+  },
+  "uniform_controls": {
+    "magnitude-25": "passed",
+    "magnitude-50": "passed",
+    "magnitude-75": "passed",
+    "wanda-25": "passed",
+    "wanda-50": "passed",
+    "wanda-75": "passed",
+    "wanda-2of4": "passed",
+    "q1-int8": "passed",
+    "q1-int4": "passed",
+    "q1-int3": "passed"
+  },
+  "awq_controls": {
+    "8": {
+      "tested_projections": 7,
+      "fold_relative_error": 2.480274190475029e-07
+    },
+    "4": {
+      "tested_projections": 7,
+      "fold_relative_error": 0.0
+    },
+    "3": {
+      "tested_projections": 7,
+      "fold_relative_error": 0.0
+    }
+  },
+  "adaptive_pruning_replay": {
+    "status": "passed",
+    "block_relative_errors": [
+      0.0,
+      0.20206245501349715,
+      0.44530277360862563
+    ],
+    "verified_mask_count": 115
+  }
+}

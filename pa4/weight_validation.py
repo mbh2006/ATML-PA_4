@@ -16,6 +16,7 @@ from pa4.weight_compression import (
     pruning_scores, quantize_weight, row_pruning_mask, two_of_four_mask, unpack_codes,
 )
 from pa4.weight_evaluation import ELIGIBLE
+from pa4.weight_pruning_selection import block_errors, prune_block, restore
 from pa4.weight_uniform import CONDITIONS, apply_uniform
 
 
@@ -75,6 +76,23 @@ def check_awq_controls():
         assert torch.isfinite(forward).all()
         results[str(bits)] = {"tested_projections": len(rows), "fold_relative_error": by_name["mlp.down_proj"]["fold_relative_error"]}
     return results
+
+
+@torch.inference_mode()
+def check_adaptive_pruning_replay():
+    layer = nn.Sequential(nn.Linear(16, 16), nn.Linear(16, 8))
+    modules = dict(layer.named_children())
+    originals = {name: module.weight.detach().clone() for name, module in modules.items()}
+    generator = torch.Generator().manual_seed(6304)
+    inputs = [torch.randn(4, 16, generator=generator), torch.randn(3, 16, generator=generator)]
+    statistics = {name: {"l2": torch.ones(16)} for name in modules}
+    errors = block_errors(layer, modules, inputs, {}, statistics, originals, [0, 192, 288], "cpu")
+    assert errors[0] == 0 and all(error > 0 for error in errors[1:])
+    assert all(torch.equal(module.weight, originals[name]) for name, module in modules.items())
+    assert sum(prune_block(modules, statistics, 115)) == 115
+    restore(modules, originals)
+    assert all(torch.equal(module.weight, originals[name]) for name, module in modules.items())
+    return {"status": "passed", "block_relative_errors": errors, "verified_mask_count": 115}
 
 
 class CalibrationFixture(nn.Module):
@@ -164,6 +182,7 @@ def validate():
         "status": "passed", "torch": torch.__version__, "pruning_counts": pruning, "precision": mixed,
         "packing": packing, "calibration_hooks": check_calibration_hooks(),
         "uniform_controls": check_uniform_controls(), "awq_controls": check_awq_controls(),
+        "adaptive_pruning_replay": check_adaptive_pruning_replay(),
     }
 
 
