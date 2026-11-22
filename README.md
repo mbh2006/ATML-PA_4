@@ -61,4 +61,5 @@ python scripts/plot_attention.py --input results/task2a/operator-grid.json --out
 - Task 1 compression primitives passed exact mask, packed-byte, and mixed-allocation checks. [Compression checks](results/pilot/weight-validation.json)
 - Task 2B pilots covered each operator on CUDA. The CPU recovery check reproduced model and optimizer states bit for bit. [Operator and resume checks](results/pilot/mqar-validation.json), [pilot timing](results/pilot/mqar-timing.json)
 - All three dense mixed K=16 controls reached 4,500 updates. The development rule selected top-64 for the trained intervention. [Frozen selection and source scores](results/task2b/intervention-selection.json)
+- Task 2B completed all 42 MQAR training runs, 54 held-out evaluations, and the 20-condition cost sweep. [Matrix audit](results/task2b/full-matrix/audit.json), [cost measurements](results/task2b/mqar-cost.json), [figures and tables](results/task2b/figures/)
 - Task 2C packing and byte-budget checks passed on synthetic cache tensors. [KV codec validation](results/pilot/kv-codec-validation.json)
