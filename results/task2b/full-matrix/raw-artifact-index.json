@@ -1,0 +1,4368 @@
+{
+  "remote_version": "mbh2006/atml-pa4-mqar-full-matrix/1",
+  "training_runs": 38,
+  "checkpoints": 684,
+  "per_query_files": 54,
+  "artifacts": [
+    {
+      "path": "atml-pa4-mqar-full-matrix.log",
+      "bytes": 1288,
+      "sha256": "40fc96e5ab76ad60cecbf9bcb1064f88f039d1630ff88ecc607991c19173b135"
+    },
+    {
+      "path": "mqar/gpu-0/status.json",
+      "bytes": 6123,
+      "sha256": "fb59d342f1fdacc71b2974376a95e62aeb37efd9a9ff89d1f272c13629f37e82"
+    },
+    {
+      "path": "mqar/gpu-0/test/dense-mixed-k16-6304-local/per-query.jsonl.gz",
+      "bytes": 809442,
+      "sha256": "29c93173ebc6e2f4c506bb41e6a328a7c332732aa8231846fd6cbe8b8af0cedb"
+    },
+    {
+      "path": "mqar/gpu-0/test/dense-mixed-k16-6304-local/summary.json",
+      "bytes": 4539,
+      "sha256": "b4d407522fe61a042c25948d91b5ef28751d36678ecb1c676fd276325937c01d"
+    },
+    {
+      "path": "mqar/gpu-0/test/dense-mixed-k16-6304-native/per-query.jsonl.gz",
+      "bytes": 765941,
+      "sha256": "6056fb76c2ac689faf67531a7ac09a4b21e3e0986630a23d7f52030296550b34"
+    },
+    {
+      "path": "mqar/gpu-0/test/dense-mixed-k16-6304-native/summary.json",
+      "bytes": 4408,
+      "sha256": "f56e4563ae00e53575d1c809a1342f0456cdd53b183e985c71bfe65a6b7acf76"
+    },
+    {
+      "path": "mqar/gpu-0/test/dense-mixed-k16-6306-local/per-query.jsonl.gz",
+      "bytes": 790098,
+      "sha256": "209a728d12a765fc6f8e535d97d343a94bcd51f29a91db76def4ef4e79e17104"
+    },
+    {
+      "path": "mqar/gpu-0/test/dense-mixed-k16-6306-local/summary.json",
+      "bytes": 4538,
+      "sha256": "4069b3b2bd8834e761e4131948751c9c6805443d2c8b19d6bbd6ec50371b6870"
+    },
+    {
+      "path": "mqar/gpu-0/test/dense-mixed-k16-6306-native/per-query.jsonl.gz",
+      "bytes": 765886,
+      "sha256": "fe11c3d235d7749112264d70de86b855f052639376b73ef64d186c4b46702805"
+    },
+    {
+      "path": "mqar/gpu-0/test/dense-mixed-k16-6306-native/summary.json",
+      "bytes": 4404,
+      "sha256": "c9381be2d55f30c1a590df3035a43909422ad5c14d8b4624f40bba2142be14e3"
+    },
+    {
+      "path": "mqar/gpu-0/test/dense-mixed-k4-6304-local/per-query.jsonl.gz",
+      "bytes": 834352,
+      "sha256": "7ced4ed3bfa42851e0f5e572ccdeb07ce84df0ff2a66b2294a5bffe422354283"
+    },
+    {
+      "path": "mqar/gpu-0/test/dense-mixed-k4-6304-local/summary.json",
+      "bytes": 4562,
+      "sha256": "a233d689c0773a0973ac32dd19c269b5f8b2f068d58fd722a4974cfa39e22afa"
+    },
+    {
+      "path": "mqar/gpu-0/test/dense-mixed-k4-6304-native/per-query.jsonl.gz",
+      "bytes": 832241,
+      "sha256": "6d3d3c5e824d94e1a48b8850bf064ab4556fde0094264209a61c15fe9760dc25"
+    },
+    {
+      "path": "mqar/gpu-0/test/dense-mixed-k4-6304-native/summary.json",
+      "bytes": 4514,
+      "sha256": "924296b554d03f2e28e4c8b3bf2ff936211e63a26f38d0f6cca60b6c82809171"
+    },
+    {
+      "path": "mqar/gpu-0/test/dense-mixed-k4-6306-local/per-query.jsonl.gz",
+      "bytes": 839654,
+      "sha256": "f4ac52cee4b221668409b78e6711d45aaa12cdf4150894756830f3ee15f674f2"
+    },
+    {
+      "path": "mqar/gpu-0/test/dense-mixed-k4-6306-local/summary.json",
+      "bytes": 4569,
+      "sha256": "980614a05294af454c494e41776178556c1532e97a66b508986e3374d5587d31"
+    },
+    {
+      "path": "mqar/gpu-0/test/dense-mixed-k4-6306-native/per-query.jsonl.gz",
+      "bytes": 834237,
+      "sha256": "757b777af6354f81ded522cd5b815b6423bfe8fe02d7fa4ac48a579ed1dd485c"
+    },
+    {
+      "path": "mqar/gpu-0/test/dense-mixed-k4-6306-native/summary.json",
+      "bytes": 4520,
+      "sha256": "82dd2795066e3b366272c35bc056f0e52eefda017cc7a8560718637eda96417b"
+    },
+    {
+      "path": "mqar/gpu-0/test/dense-mixed-k8-6305-local/per-query.jsonl.gz",
+      "bytes": 814641,
+      "sha256": "20e3be68dff44405e0ac48926dcd0ba4634a41135bcd474502a04d3c46cc3cc9"
+    },
+    {
+      "path": "mqar/gpu-0/test/dense-mixed-k8-6305-local/summary.json",
+      "bytes": 4525,
+      "sha256": "330766300520bb2aa8bc5fc4516df93557f6b76cb202bf2d9f67be17852ed5b1"
+    },
+    {
+      "path": "mqar/gpu-0/test/dense-mixed-k8-6305-native/per-query.jsonl.gz",
+      "bytes": 810449,
+      "sha256": "493d6baf5aad6b462712f28b6437b1d71aefa42ed57f2a3f61979df90679955c"
+    },
+    {
+      "path": "mqar/gpu-0/test/dense-mixed-k8-6305-native/summary.json",
+      "bytes": 4428,
+      "sha256": "a427598a3ced5d31bd2ad8735c8e670055bfa69efc1ede245003b5b390aae3dd"
+    },
+    {
+      "path": "mqar/gpu-0/test/dense-near-k16-6305-local/per-query.jsonl.gz",
+      "bytes": 814568,
+      "sha256": "3be4414fb8b5ac8773a2dd1b6230b69ede866814d5f3faec104f25d7a27c918d"
+    },
+    {
+      "path": "mqar/gpu-0/test/dense-near-k16-6305-local/summary.json",
+      "bytes": 4487,
+      "sha256": "68fa3ae03964268f49afa5f2ca72232227d726722865c6ced228f8d09d3bface"
+    },
+    {
+      "path": "mqar/gpu-0/test/dense-near-k16-6305-native/per-query.jsonl.gz",
+      "bytes": 766118,
+      "sha256": "dee9ebebe1c21da3eee3b57d9ee9bec742b0ccac6207d625898eda9a96d39f79"
+    },
+    {
+      "path": "mqar/gpu-0/test/dense-near-k16-6305-native/summary.json",
+      "bytes": 4463,
+      "sha256": "50de1b168d2581a488f970fa6d5238d70ac76dc351848e487c03109ab8aabdb7"
+    },
+    {
+      "path": "mqar/gpu-0/test/dilated-mixed-k16-6304-native/per-query.jsonl.gz",
+      "bytes": 827670,
+      "sha256": "84428fbe91e04ee3493a31026bfb4b609a15f39bad967849267e69958dede6e6"
+    },
+    {
+      "path": "mqar/gpu-0/test/dilated-mixed-k16-6304-native/summary.json",
+      "bytes": 4614,
+      "sha256": "b380b920f65206f24b762ee68c6ec0e280fc0e18d0208ce4888fafa4d1dfe1c0"
+    },
+    {
+      "path": "mqar/gpu-0/test/dilated-mixed-k16-6306-native/per-query.jsonl.gz",
+      "bytes": 824709,
+      "sha256": "b5ff10266b5d0e75a56e8836ed8247ab022b32311f5f5687dd879cefca02ac8e"
+    },
+    {
+      "path": "mqar/gpu-0/test/dilated-mixed-k16-6306-native/summary.json",
+      "bytes": 4612,
+      "sha256": "151f35e17cc4075cde2ccf94d6cebf35e14a247e838ac98d6f67bb272a1e7c81"
+    },
+    {
+      "path": "mqar/gpu-0/test/dilated-mixed-k4-6305-native/per-query.jsonl.gz",
+      "bytes": 823560,
+      "sha256": "63705159d3395fab2c48f8756a99ca572edb69934eeb6895a38c93686ccc70b3"
+    },
+    {
+      "path": "mqar/gpu-0/test/dilated-mixed-k4-6305-native/summary.json",
+      "bytes": 4589,
+      "sha256": "e11451b88fd77ed394a73cd9e4457a0abc2f581225f3e32b02dab39f1e140bbe"
+    },
+    {
+      "path": "mqar/gpu-0/test/linear-mixed-k16-6304-native/per-query.jsonl.gz",
+      "bytes": 834409,
+      "sha256": "9acb90b78d49ba889f681c1baefdca654783677bcc090da3eae76c50a39ea9e3"
+    },
+    {
+      "path": "mqar/gpu-0/test/linear-mixed-k16-6304-native/summary.json",
+      "bytes": 4599,
+      "sha256": "4627bcf0cb636a1a14755c8c2a75e47eff69a49105fa0152026ce065ca1310c4"
+    },
+    {
+      "path": "mqar/gpu-0/test/linear-mixed-k16-6306-native/per-query.jsonl.gz",
+      "bytes": 767259,
+      "sha256": "1cb1a9fa26c62b73c7cea70124e192f4afaefbcd9699b8da35954cbe3e711160"
+    },
+    {
+      "path": "mqar/gpu-0/test/linear-mixed-k16-6306-native/summary.json",
+      "bytes": 4598,
+      "sha256": "089e5fbea553258055c0aa4e687b5e0ccbe93631ac521d7227b5e1d294df7516"
+    },
+    {
+      "path": "mqar/gpu-0/test/linear-mixed-k4-6304-native/per-query.jsonl.gz",
+      "bytes": 824462,
+      "sha256": "cbdd9d0e53b39d1e3189ac229f47a631b1232d1670c1a66cb737a7ac0f384eac"
+    },
+    {
+      "path": "mqar/gpu-0/test/linear-mixed-k4-6304-native/summary.json",
+      "bytes": 4617,
+      "sha256": "f3644c0c904030980ee6fe8add87fa4e1e17289e86cca5fbd41d7ed6bc908b0b"
+    },
+    {
+      "path": "mqar/gpu-0/test/linear-mixed-k4-6306-native/per-query.jsonl.gz",
+      "bytes": 825221,
+      "sha256": "9f7c9ba807159db872de74df6542c6f754976d58e3a33c59a674d816f582d130"
+    },
+    {
+      "path": "mqar/gpu-0/test/linear-mixed-k4-6306-native/summary.json",
+      "bytes": 4601,
+      "sha256": "5a61fe9281231edf0987c79c0cab81dc2d789838a5056f788b2a6a44b80ffd5a"
+    },
+    {
+      "path": "mqar/gpu-0/test/linear-mixed-k8-6305-native/per-query.jsonl.gz",
+      "bytes": 809221,
+      "sha256": "fac280474da349b338ab35506637adcd2587f2cd6b44186ffa9dbeb40cdd3018"
+    },
+    {
+      "path": "mqar/gpu-0/test/linear-mixed-k8-6305-native/summary.json",
+      "bytes": 4607,
+      "sha256": "60e0b50854d3232114d4447615d9b294e8ce9c3bb21e7141dd388b7f3d4a7bfa"
+    },
+    {
+      "path": "mqar/gpu-0/test/local-mixed-k16-6305-native/per-query.jsonl.gz",
+      "bytes": 833028,
+      "sha256": "5caecb525a1b454313d4ef7fa61651157816b457625efb3d98f9563ca031f0df"
+    },
+    {
+      "path": "mqar/gpu-0/test/local-mixed-k16-6305-native/summary.json",
+      "bytes": 4592,
+      "sha256": "e59c32ca8053ec67c08f83204f1d16044bf296337d9bb8f1c4db56d1f608b2e3"
+    },
+    {
+      "path": "mqar/gpu-0/test/local-near-k16-6304-native/per-query.jsonl.gz",
+      "bytes": 811693,
+      "sha256": "ebfaae6eb1f0b75903ed44fead6e88f7d1e54f8e86dc255ff6242c2bef5000b7"
+    },
+    {
+      "path": "mqar/gpu-0/test/local-near-k16-6304-native/summary.json",
+      "bytes": 4535,
+      "sha256": "8fbc34d9b69d40adaf43b99416d4b76be222535e60f0fd5457583baa20dbc54c"
+    },
+    {
+      "path": "mqar/gpu-0/test/local-near-k16-6306-native/per-query.jsonl.gz",
+      "bytes": 803387,
+      "sha256": "360258e39ce3cc6af120db9f83225047670b26b7396fcb1e7b373101c52f8b34"
+    },
+    {
+      "path": "mqar/gpu-0/test/local-near-k16-6306-native/summary.json",
+      "bytes": 4535,
+      "sha256": "c7ed93b8ce7b432bc97b8bd4a55ff5fc795cd73c7ef19d9d1368979bbb44228b"
+    },
+    {
+      "path": "mqar/gpu-0/test/local-near-k4-6304-native/per-query.jsonl.gz",
+      "bytes": 836876,
+      "sha256": "2d0ed12c6de17787c887fcfc81583a3c3b85724438fbebdfc1016d8544786770"
+    },
+    {
+      "path": "mqar/gpu-0/test/local-near-k4-6304-native/summary.json",
+      "bytes": 4565,
+      "sha256": "45e4376e2612f48d2456a47b732b2b3070ff3ba78d632df85f0e6a2225ee72de"
+    },
+    {
+      "path": "mqar/gpu-0/test/local-near-k4-6306-native/per-query.jsonl.gz",
+      "bytes": 843784,
+      "sha256": "c1debc5f896a4126d81d9184970053956fd77893813a8afa150887e38079552e"
+    },
+    {
+      "path": "mqar/gpu-0/test/local-near-k4-6306-native/summary.json",
+      "bytes": 4565,
+      "sha256": "25a3a2c0fe0be56f2a42691c81dd503bc10545d30ae64e2ee3a710769bff754a"
+    },
+    {
+      "path": "mqar/gpu-0/test/local-near-k8-6305-native/per-query.jsonl.gz",
+      "bytes": 846555,
+      "sha256": "8e280f5ba9b017f21830e987734d34d75e32419d8c73ec4309d1082ceab7e645"
+    },
+    {
+      "path": "mqar/gpu-0/test/local-near-k8-6305-native/summary.json",
+      "bytes": 4523,
+      "sha256": "91e61b15ab93470585b4377cbc02fb9d9e3f0ac2019ec4b5deb5ab4440d12aba"
+    },
+    {
+      "path": "mqar/gpu-0/test/topk-mixed-k16-6305-native/per-query.jsonl.gz",
+      "bytes": 765869,
+      "sha256": "a2a9261f20d9d50b6564c56234bc1a605886dd1b17f08e82ed0f5fafc4122552"
+    },
+    {
+      "path": "mqar/gpu-0/test/topk-mixed-k16-6305-native/summary.json",
+      "bytes": 4425,
+      "sha256": "a0f311d3fea0b5a8e05da5bc47d9e53a66a55c21a5e78488194ae036d500adcf"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k4-6306/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "55176f10e8d4ce85423921b7410c4530f1e4c0f7e41682a123f157bc5f13a3da"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k4-6306/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "b2083c4a17a29333e8aeceeb9e5a08b30ef44cc754ee917bc1da9c63736f419e"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k4-6306/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "2bb8e6adbabc191e69d7a707b1b032b0e34439e5b1687a4e31ce1e45cc3a97bc"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k4-6306/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "8adb847d87ff3292952691c01376eda9e6c196520ad6399d45f73b2a08fa955b"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k4-6306/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "c585c7504fd1d55064decd0413944f5bb2091ade32957e642bd9f1a6b8d47638"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k4-6306/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "e789edc0252616d1698f251fbbf1fb1418a1c8dc9b2efc84eff0178db9a06ca2"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k4-6306/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "1abddae0fec72897b55c4aed18a768b9f8c3d87185ee6e1789dcad628e16d3ce"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k4-6306/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "dea84e5b1c16f45a7258095b2459d4e7a4fdfc4b0c9e8e6d3b570ccf980d1abb"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k4-6306/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "d950e715d508e77edeb5f7cae10faf031a05e97fa874eb7fd580509300527232"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k4-6306/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "a870dc9a1f2959bea7affabf101105f3df86728fb06c5f921f0cd631a21cf676"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k4-6306/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "2a5463aad8fafc6c7486ad24244ebd6d06f1d2b5df15562d555ca5c79805a377"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k4-6306/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "c6888ad6fc646f88b28d612851da8038190a570fe329626235aca20daaf47369"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k4-6306/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "db564ed8251a6e2056d87195b81f0e3bc004666f25dc81cec2f4a9b18fc430ff"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k4-6306/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "eeebaccc6fbc4cb3f5759fe6a6d34b46efb64c362414e952450f80b4f9f974b9"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k4-6306/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "c99c2e28ba42a1e99f637b09919cf023825eccbc717156113c33a11da41a0da2"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k4-6306/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "a2265f27a4b760a07504c3d3466f5459a17192ece491acfd4b639f8c5e327160"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k4-6306/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "f188e4706b97aee04fe4357bf8067a69178d2b519375b2f370f53eff173c91fc"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k4-6306/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "84589a98008c4a7f8b95e70fb7f239fc7174019a2d45ce99fed80adbe79d01a8"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k4-6306/config.json",
+      "bytes": 407,
+      "sha256": "8c54a77006994c8782bfcc32d9e61065471ceebc5221e049a093bbe52604f568"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k4-6306/updates.jsonl",
+      "bytes": 790798,
+      "sha256": "a95785538d0432609aa1bf973f3af68cfe129abbf311cfc971e0bc024f22de5b"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k8-6305/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "2c9612490b37e8fbfef5889463e14f7e29e44094edefd84f9b780c2ff1782ad1"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k8-6305/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "bc8ec2e99e2a20da7cdcc7e41ae776965bd6db9473eb72c4908f2d38003488a5"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k8-6305/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "b4b422bad46200080cec122f6552314c37ada7716116e1c791af34273da15aea"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k8-6305/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "f67ed8905ba59b303867d3bfa007f794e2bc7df3b7d2a9f39cf884e50cd9197d"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k8-6305/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "1bc1e15fb337b8fb105b8e28bdb74f4699401ffc3ffc54ddf426364d743457bc"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k8-6305/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "0c312e743bdeb37264a423f22229a58b7b7b811a0106c2c2b10e5cd11341caa8"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k8-6305/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "3f092303ed5c4e1dc554ad67d5d21966f4b22eb39c52fb83a22846890627a8db"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k8-6305/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "ce06451b046d8bd728a347ed23ba6195ec7d0496eeae77d3f8e349fd57fc9aaf"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k8-6305/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "5bc9e090a292382722560da327217336a3f7129cd297e33e5b0be838df0d5fff"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k8-6305/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "fcabc55993ce5eedefcc7d2f7e94dbe4140c2c08d37e39f85b236890b9a2c0c0"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k8-6305/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "ebbe5400c6be9a578f9646f22dd1a6788db2eac7e2d4558ce1bc9ff9b9527de9"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k8-6305/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "d0d21f23c0973bf3f118fb09746046fb7291441a25f9716ef65e3e2bf99c2b29"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k8-6305/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "cae33fbfcffa9cb885a33efffbbb5c52cf13a738c73e45f94e72ce6393758f04"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k8-6305/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "0600a006fbcec286993eb9e9e9512aab0d9fe4fa1c6dc8bf0cc7352034170337"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k8-6305/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "dfe4f2cb25619293dafe048f752bd7176bf50e4cda4b0fdfb699290bc8100385"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k8-6305/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "f166acd9c9661299f10329451c84eca6c8bc887fef3a99e8c3d51e606c039e53"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k8-6305/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "d7c29fac8f9ac48c4f5d86fdb81dbe68080f8c993b072e0996d373fef22b5ba8"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k8-6305/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "589cf08834d5512bf9ac51164b6fb9264cfd410ef47646403f08ebb6a6a172d2"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k8-6305/config.json",
+      "bytes": 407,
+      "sha256": "6337bcb1d7f7d3e1c3f0f92de27ac67bc246478cb7264b10945f511cc0ed5385"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-mixed-k8-6305/updates.jsonl",
+      "bytes": 789196,
+      "sha256": "127275c064cf4ad3b410c1538eb28a8cc970dad01c46d74ba3f1f09d22cd9fdb"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-near-k16-6305/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "a8955e674d2505a18f9bfb7c09a9e81b32d736c715a9ff1fe3d129ba2b311c26"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-near-k16-6305/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "e1e806539780cb95d57fc0c33fc71e854e3921b85d4c17b15adeb4ab026ffa38"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-near-k16-6305/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "b52c8a6cc528e188342617d461214783548f945e4ac25a9ba5ff84724d4d2ec9"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-near-k16-6305/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "13be5743317eedd02f0f1a3ea8d2f23d37bfa847e6b9fb9a396f4f9ed0347220"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-near-k16-6305/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "d556f73a2426471b96a03f1ff986097dc21da747aaf37fc0274fdb7c572dbd04"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-near-k16-6305/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "0c41d50b11e53fcef1801610946dcd86874a4c32e1dfb7f2196578841dc21f00"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-near-k16-6305/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "4c5030a58d2a04c6d1db9d509fb4ae35fb4a8b7a55aa715c9a8244b3e8d8996f"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-near-k16-6305/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "eda972206436f48027aa29b41ca3a1e9f0ca73b8a94226e43f15db7059b343ed"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-near-k16-6305/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "d1a1931a78610be1b12348c87dd21714d22a3e24e6deaf9a3655e832f7edc0fe"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-near-k16-6305/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "04b9f96ab4ae5b875a3b952096529a6f12795e06206a95d5986923438502fbc5"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-near-k16-6305/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "d974a8fab17ae9f9acd0e192bee0801f550c98d15df79b8b8aaa226daaedcb12"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-near-k16-6305/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "aba894c675ce53ee5a2c0368240f4323f0f1287d48dd8d9db97e09f2d5a722d7"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-near-k16-6305/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "73b3dfbec957b42fd413f17a4b9c26c6dcc6832979b4541435acd9addc0bfd4d"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-near-k16-6305/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "f06d93b1220a4fc481794143e2c09b8619b77bd1bbc8064f545a83354f63a839"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-near-k16-6305/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "2e649ac471755cf33baa108fca1850bea5d1129f5f5fa81e544010e0f5cf4697"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-near-k16-6305/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "dfc65cc89b45f5f4bd46ab231967b3fe51e2729b8532e3de02f833af9c405555"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-near-k16-6305/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "6f0e07dec62838d4b97760b42264838bb2bf2f84229b9a67bb031acfa322571b"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-near-k16-6305/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "2ce88222b63ac8c17a3ef66ffe1fab0a08a83aba9a280b93b98c2b358ec4b0ee"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-near-k16-6305/config.json",
+      "bytes": 407,
+      "sha256": "06529f85cfbbca98758523cd97d888a2887a363bff5b1f4282f698e23b5402b4"
+    },
+    {
+      "path": "mqar/gpu-0/training/dense-near-k16-6305/updates.jsonl",
+      "bytes": 794229,
+      "sha256": "2c12e6a89141aa18153f36b9c67b96d1c9ccf72b94db40912dd664067d7aa321"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6304/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "737882c2bb89608f629bb6d8e2a8055be6720460b37b304e1e0974cc02460015"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6304/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "f632354a383b5cc391533bda407704f7e1bdb1da2d4afe31c939bfed0b04091c"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6304/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "2cbd9dd245c7ab36302286359eb7758c23cb0217edfd3e818d19fd0b144da5c4"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6304/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "f1478310f824bc18eb97764567e0f64433ef7475edad4705e5ef67cae112f8f6"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6304/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "238cf80ee12b276a4fa15bdec57bbc3bc8ddff14ed5e0b5c087dab753de35482"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6304/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "0d43344e1268b0dc0e0ade4ea6b1f7dd70f48088eeba8b41901e618849611544"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6304/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "2092c660c475ceb189fd3b60fd2d5a62cf49b8e78aa30f8456e927d9bba59759"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6304/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "e7a9c6b969d7df77f752fc99649c8e2e2578e2959de21cdc61b5909b3e8fe448"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6304/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "36f279333621457ad51bac69389d25006c633f77c4a958a1317e53e0c6fb93b7"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6304/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "31a74db8f46b5d679746a49c23a5b49f337a5633381bd4e4bfa73fcad0b69cc4"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6304/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "a0eab554ded8e1b7303d695ee87dd9b7e57f61d6e28d056e010cd84b50f7a779"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6304/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "eca2afa55c0b2b230a75c70ef74f503190d2533c81b2e13a8b2ceed39ce6a1e8"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6304/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "1a54e3b71cebe1fcb21f360c3ea0e4878ac5689e1826b7fda3f0e4a1f46bb966"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6304/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "079058a26bc53623e0c42e5c9c666f77968f29a82e1fc6d50a2c6cc67b91fa5a"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6304/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "905d1fc3d48078f3e7889a8daa59c4f036b656307a184280663bfbcf47dd6411"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6304/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "5478e4f78b96ce8ca112fd441226258105d3c1ae21697c2db484b8e1ec852cbe"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6304/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "e084f6caae3ea0b7afdeb9138bc48f1737a1f5929c1279622f70a91b55ead547"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6304/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "9061ab827d2840e18069bbd44c86a08ca64409730edec38c896c0d2ddd51c71d"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6304/config.json",
+      "bytes": 410,
+      "sha256": "4557d85bf09b39df784d7bc64c4bbf57777897186e8d560dae98db5f04b331e6"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6304/updates.jsonl",
+      "bytes": 775488,
+      "sha256": "7ee0edb191329cf641a8e5145e4d8e5b19204e3a0d84a65454549ebfc83789f8"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6306/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "9ae6420ef906676fe51afa1351cbd8b1ba2bcd40ca6d220bd93b31791748093e"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6306/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "693884db4e1defdb8ffecb4c86dcf647e296cf9d69366540d25d50f193d51eed"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6306/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "1dd09f709855a78f68739780c439252decd963f69bfa014df1e03fb7429d66a2"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6306/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "c492814318fbecff73a4bdca8e516da15d7a5ccf1144cfcc99cbfd57a33c6a0d"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6306/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "c8b3bcaaac6a967ec121a352238decf08e94184b6b22877d4175aba801e4c39a"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6306/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "5013fe33b8b46968ca86bdc112ecf747cfe27e6249235b4f615c245fcd722cb2"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6306/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "e7910f5d15a0e4a79ff8a1f4b90a86cfa3bcc63d78327c6d5a90566bb48d48ea"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6306/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "0aad2f01ad67b6c00e16343e358f9da008a56f473d370ca4e0aa2e752cd0ffb5"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6306/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "9eacd8588239d610f0b702226fe053b8d7609fa0afdb3ffd025b60726387151a"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6306/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "aa599aa9c574b679c1c4790eba58974a9004631904b8267bff05633602237e46"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6306/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "b551a7a49b466fa0df9bfdd731d5c43ca9eaa92ba6db003a573b78c3eae23c48"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6306/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "4b0ee508999822480d11359c855bc358d2debf6d79a92e2d90f5e58366ad182c"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6306/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "50cb9c44b6b1903244b8bd64ed22c0ab70ba333600d9e2f62f00af30fd606779"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6306/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "0563b739616d47b0a840ed81459e3a311f2a89ff2be4592e020c472e6c3ad39b"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6306/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "5aee3cca986e510fc0a80cdfc03d1360a97ea0949efa1280200352418546761b"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6306/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "21a7f722c7b456a548fd2e08a9235f36f0472602c9af379950c103d260d77e52"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6306/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "8b7ed991c3fcc6955e93a68c5aae6b2beeb1cb135842c2778e26192deb96e56b"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6306/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "84433af14ac4fa0319941c4fb319bfff91e7ec708e9ed226a6b9594ed85e70ed"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6306/config.json",
+      "bytes": 410,
+      "sha256": "b87b84fe710a881dc8fd3a45568ab87ad42b0edfaa380cf1caea789167a05ddf"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k16-6306/updates.jsonl",
+      "bytes": 775204,
+      "sha256": "2def87fffeff77bae1d29d5c539743fa4a7b8de59e96ae307b3c8b37002f0973"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k4-6305/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "4311e4f39e95fa92bf782f2988b733f19407460796bac208a350bbe9722c9bad"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k4-6305/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "6f2cd845b50805569c83f81ee4fd21729e35566125b28f65c7123681245f1c5f"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k4-6305/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "b657474d1a7e26a7c1be7cbc3bd5ad68e4d2dad7d9d477ba88f5bceb4cf1d6e5"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k4-6305/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "0a5b40e5a3572b441816520112232a524395b2c98575aaa8cacc0b8b98acb8a2"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k4-6305/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "85d606dde5a4f97c82d4b42be6d6ee0b7d9f3f6efbd020bad7bc086d4cd77d23"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k4-6305/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "e5889a6eb4174c5c258dfaa0fc2bbd73d80a401a070ab5d1045d14c1cb1bc615"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k4-6305/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "c792144c95f6b3b62ee70cbcb7fe74549aaf42d638f23ee127719f1d882918fa"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k4-6305/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "19f905af36e54f80bb3a5242e618abace070798689b48f35fe69e79c24f9d6d6"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k4-6305/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "cbdb78e578a82c541633dab4d56d1a877d5df3dff4faa713895037c40dedf2dc"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k4-6305/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "20cbae60e4ad3c262911616fa5e4f9fd8c047507193a52f83eb50e284696a175"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k4-6305/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "ca4060a4c09b3afa12086ce4957defd273c39cebfa56a9efe6bab415ca153c96"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k4-6305/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "9641841ffb87766a6332f9134f6b280133bb8974dfea7eee9b248d252a99a277"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k4-6305/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "d106972d08d77a1183b596c4d5f0c22fd5d8e4e93b1c5055ed775cc06b5a3aee"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k4-6305/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "d452e11f8881febe19017e430804dc6beb65271fd348d1367db3563530b3e2cb"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k4-6305/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "1d3809a659c2ec5da9fddba2f90587675a49ba5d663e5738090dded4e3db3abc"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k4-6305/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "da17caf40206c0f80ddbd6665a6153ecb983d0bf438c4afc3f1de95fdcfcdf71"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k4-6305/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "765b3027968cc374769b50ffc5c12dd06966d9810b1360958c2f6526a7bfbbe7"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k4-6305/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "3400e7c5b197997d500472a2b511de2b9dadab3d61f486746e7edfb84813b4aa"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k4-6305/config.json",
+      "bytes": 409,
+      "sha256": "ea0d81e864a6bd827434fad5994d6cb473571fde328539deed7563f84842c02b"
+    },
+    {
+      "path": "mqar/gpu-0/training/dilated-mixed-k4-6305/updates.jsonl",
+      "bytes": 774581,
+      "sha256": "b5fe5b5cf221c38f754da438f33a1161d4185641caab0195d305a1060cf42505"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6304/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "de634a8a97c45a885ad341ad34964ce95011b01ee0d6e6ddde05ec980c0d45f8"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6304/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "5f1d569c766e2d60274e7f48b599074ab40a174a67eb1f1f82ae36e54005a444"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6304/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "b37c39aa40a477311068320bad757af5ae3480f9c8446fa1a40a27f6f166dcf5"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6304/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "82dca0da8f6767191d4128770124b9f936db8b27855e4bc1146249171cc7869d"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6304/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "51dff3fb161393f0d2c80aa1495aa61d5f24ae819c5dcf325a0af62f4003c974"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6304/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "008bf8669a6b9b0107ba1a751f24ef95d70ba4e72ceeaa95609ca29715f65af7"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6304/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "f04aee53c1d1eb21a80e5607e69cadab2d94fab42e69ba5fba70d49d9ba6b24a"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6304/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "7614e296d47e8c7dec1d0bc54a88a843f080906595e92652e3f6975add3f0c87"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6304/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "8145520107b046d49eede57bc5907dec446e69fa15abe5d2ce81764ead3e71b6"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6304/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "5d190ca544bb7641b1b588e27e65059b16101d2f5755c3b683635f097132bf43"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6304/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "d2f194feb4e2e027698a4c939856a74df70d985e9f97e0b9ab1362e6774e5d1d"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6304/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "1bf5ac344df238da39d988448219b727babf12bdc77f0c9fa9428e388b20d74b"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6304/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "189717bf396094f504b3e67c7f224808e86352483a241e61c00268c31cad3e2c"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6304/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "b72e06e6d0ff2e63b82362fe2ba00d45260bbd0e687b461c1813b8a56df69195"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6304/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "5bb08fb37632d4290e16ebbe922690215a391e50216455e669b3d2c5c3b2aba8"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6304/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "198a44ca62617e9fab8cd19a4c563b16094ad888d2f5e9bf7f723d0da167b9d4"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6304/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "280632cd62121c04f5f17cbaf525db9bbbdd6006488bc71ca9236855c69f6b58"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6304/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "d58ae04b9c309bdff1d385d535b7ffb1184e7cd85b414ee4f2b4264d908a3265"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6304/config.json",
+      "bytes": 409,
+      "sha256": "d6ff3b1ed64f27507e49ed4b1148dae396bbc8ca62c4d6d7d10c30d585bf4522"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6304/updates.jsonl",
+      "bytes": 776904,
+      "sha256": "3ea0568919ee5df24eea8c127006e52c63cc48188fc07ef8535a0fbcb4ace954"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6306/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "926a33201aa0b1fb6e4eb06810b26e50db78240d339911ba01e509c420e12ee4"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6306/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "fc3193f723491274281f14b3a5b862ceb46f49c283ff38eec6bb0afa980bcce2"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6306/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "1cb54040826d465f84ea9f88d8b639e639099001b8fd63cc46d2943f1254854e"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6306/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "7be9f2769ea06842243d20c50860923f2900626c57509906caa2a025a4b09a7b"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6306/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "d0df860e22ae45d00ca9f72666ee456743a1817bfb04d231654781a8706533cb"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6306/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "bfe4caa564359541db3e5b1bee3e3dd6a88142c487cad347af4a61a7cee7ce22"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6306/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "6bccfe11032ecbdd280a6e27e93efd5067742e330142beea48001fa36447d4c2"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6306/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "808b70007aa146a809adf4b9615e54a1241774a140880b2e324a1e3057b1eb77"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6306/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "69e3e6ecec8383a92542a702a6875ef871bcad69ffe95321f9edfdc7f0dd810b"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6306/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "287cba825c420f3046b0dfc3f057738cb7d9b4a04f89b4142bbe61df361b1721"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6306/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "700a5f1ecdf3b44660aa8ece402afdd9872812f65fb3e1295d017aee0b531546"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6306/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "a0413406ca4f7c503aed65744bb09ce00620603143f034fc6b2251b4db7c83cf"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6306/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "974f2d60e44b39a4f6c3ac4331c6964d5748a71520da830d3133090aaef70dae"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6306/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "7ce922e8ef9530a7bc24198490154f66053e0d6047046a5562f008f0f51c1d9a"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6306/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "807bc783ce2bf4225f202e37c59c7004201ba31590897968a257c2de157660a5"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6306/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "38ab018ce7c91851a25f27ecf896baeb5ba9cd2c832398184a6d8308caed08fe"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6306/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "09fcd08d677ea578e05bfa01233bf66df284d50b43ebdc30c29c21fe19e29443"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6306/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "c990ea01b88dfc89972374a97760a6081cee9c6b9017c0bed2b5a5ebd6666845"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6306/config.json",
+      "bytes": 409,
+      "sha256": "df86b780f0f7a28261eb867cfe00d014959fa295c309127b09a922baaa400ec3"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k16-6306/updates.jsonl",
+      "bytes": 777388,
+      "sha256": "08910014a73427f60c454bf340eb93451aae9179b8e9a0b1388e57304a2f2723"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6304/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "d002972ee5d54bbafd985e0567b03ff4157e5c01cf8b457b246807e09331a8d9"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6304/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "e5e8c25029e08f6b0ba270595a909b4620d0ed44a16be0de19efdfce0e624449"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6304/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "33cfe406b9d7633e26bf8f44ec9ab95206f91b79e74669b5296e38081de1e49d"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6304/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "7c27fec653be7a8d01d6b71e3168684ed2b4b649f0cbf8167ff1210a3cadcf31"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6304/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "ed238240c7712b8a158135ea6458aece08c03067793513f10709993bceb96fa6"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6304/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "473e39b2011cfaea5b88968a631b2ab43ca78c7f04ffdff70ca801f8a351537e"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6304/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "67eb1977084b720200983f551a7d8d0466b64c26e8961d02afd646de35873bc4"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6304/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "5357182a06fe2456e8d02d8f297260d1a841962698723f2b0391f9be4a956219"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6304/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "750ed1e01a08bb5d92c391e14dc65cdc46d5399123c5a56e6c50731048a73d85"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6304/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "31576830a827071d1e74ad3c1b394ec818e991b23a26afd815f00fb8da98c853"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6304/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "7d9e9095df7a6b22bd8b3f9c0b4114b51508cd41794997f2b0b9c20721643e84"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6304/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "717218570f66d0164adf994a5a5993db2249552c61da7e1852e4f4d530f19e57"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6304/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "404807f1c9a63a8accd9ad163318c8b34db9ef9483187438cfdbbe4afd19b7e6"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6304/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "853a0e0b6e355b06e5bbccbeed75c3b16b732c4525552010720c46cdef58ef2f"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6304/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "728f423dbefd91c94aab8a39d063087618de662c25dd57822745f23ca6c3d82d"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6304/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "797861f3ae1469e30d182bf8a3a499bf4b07f92de68c61101a05f188b92e166c"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6304/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "c0a9314cef74ffb8e348a5421997d74543f6ceb08d131451199b2ea2741806fc"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6304/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "ef485398e1cb7f3e15ffa79c7e0ce7d85df8668ca1d9d34c172d4ffddf12025e"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6304/config.json",
+      "bytes": 408,
+      "sha256": "d1c752402ddf2cc56dbc241515097b746453d7c55ca92adf8174b6329a574669"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6304/updates.jsonl",
+      "bytes": 780154,
+      "sha256": "0eb996344adff9f2e105607c7c9710628f5c90ce06af4bf88bc8bea3c2b41e01"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6306/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "89f8f99eea5dd2126607ecfe8dac34abcc971e0d6bbc781d31813ea512e2b9f6"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6306/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "b438b27b23ded93b5cacaf3c2c0a34079a53b4392dae4d677ee95ec9227ad246"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6306/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "90b2cafdaaa0f448ce46a4de3edf4f4a07df59436ad74315c13a482e97579b52"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6306/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "df7ff883bb468a21f1add352d3aa46d7b5747bf6561cce638aff333d69245246"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6306/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "e0000e2860fa65cc6163635d7f725157ec76ba909b6a362708a39ccb9dfe7021"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6306/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "5f8fded47ac63c18751412df4baa66af9b7557ad12b256fc893fc99e7ca3ede2"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6306/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "f9b90bacfd07068e791bdd393ded0c3a80485ca5fd46942056663189e58e0438"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6306/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "e233dbc4122d9e9fd49f68430b8ebfcee6d406d6ae0c3b7530afdfaef2ea0c1f"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6306/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "df196d613c2730227b86a2006f66d2cce02eb00ff78ebbd6cc47296864998fec"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6306/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "782eb5a43776b2e8f158d867e39ce0d4325773117d13218fecc745369b8bec8f"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6306/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "f340eb7f96250c2f052198be9f2984dbad113796cc9d34a6029605ee508b7d68"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6306/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "1a5dae5c7bf19c2d4068019f0fd7ece64fc45c21e8fbdfd5bd444e05c9e00cec"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6306/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "088d1e667a5413278a64b6994da6bc6e43d0f6e960407a6b0bbfbf22a970af79"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6306/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "fbdbdc798bb9dbbf3925c8ce3dae4f650e2411fef54a31e83fe06aa832cf923e"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6306/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "f08bdd940f3a72ccdf2a54cb9e89e40e0595159b7bd090e98889e50c895502ed"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6306/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "27d58316ca3077d1a97984548c2067e0c6aeee63ed71dcf320473597c92a104c"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6306/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "5a61e423ecd97193bdf4e63073693964f2a4b3f4cdd06cb957944a77b88d0155"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6306/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "71f7c7534e86bcd86c5780bbc434344b9bfa4c12e27916d7e0c64a7091a9a23c"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6306/config.json",
+      "bytes": 408,
+      "sha256": "95e26c992f0768caf65ac0efb49976441a0d4f3e4a521207c7a1edb80b035ec5"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k4-6306/updates.jsonl",
+      "bytes": 780993,
+      "sha256": "37f00f5f898d047a592d2982dc2cb48252a66a23a3013d82dc373b4b817897ba"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k8-6305/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "521c422779ca316994bf87c817b88624e648912d0a86d4560efbe56273ee69af"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k8-6305/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "5b7c7a50689ba818090f0bdbe2d63f3b95b1246892ea5d7461783d636d96b584"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k8-6305/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "20c2d15759790a1dbfb0f213483b0d254a6820ba919494ec8c6ebf49693ebca9"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k8-6305/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "b8bed235f97cd7ecc3aec28353538fbdca1f60d0f36833fd84251f64148a1ae6"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k8-6305/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "a497a7e9d0e6a0c8ee5ac02c07f5d0b69ead8eccb36d4ebbcacf6808aa619a8f"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k8-6305/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "f4853e35a606aa011db64eb9abb4fd25c842d4321dba4302875da111781c5039"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k8-6305/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "22e60f1f6116f8b2a86e0810ec2dec0057a6e6ca812bce3b20c1f54097217a2b"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k8-6305/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "3970d167b754dc9bb9afba28fea1570d36656977d022203628e70e168a1dc83a"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k8-6305/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "8c83ad6609e24c03838dac56aac5ba163dffb7d656101e8936967cdfff976c82"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k8-6305/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "fe41b3b41704a3f72f1282def3d18ee5f35275f50d16bdb62ee5eabbe763dd37"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k8-6305/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "4768aa546cb377dfe3c64361db096bd563ea03f048b6ceaa728aa4d05402b6f2"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k8-6305/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "f3942ea21edc28921d2a311cc218631e146b9d97d29ff5a280a6ae556290412e"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k8-6305/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "7f124ce552de3467835e381a9815db2b1f3792dedce12273cd814c74a167eafa"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k8-6305/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "35a101cb8d7bc8cf782d4c2eda32bcc4fe4d0954a3b848a78ad060d50fc5f7ad"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k8-6305/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "92ad78d3711a6eacae2931b1ac77f585b6b987b18dad61711fbde9622931540f"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k8-6305/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "ee16019ebbbef367ad4b7b149834006e572ff135fb9a35f437490886d88ff418"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k8-6305/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "96dc9f3b4f106575094306cafcc3ce0d877ef8291254c41a0040f63178e496ac"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k8-6305/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "a574f637476ac69cd6af85fdfe2cd8dba44738120d62d14c67b2cb185ce541a1"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k8-6305/config.json",
+      "bytes": 408,
+      "sha256": "798c219c6cdadb3c4add3b630f559605deeac7fb9f3cdb31432e33e381f39ca6"
+    },
+    {
+      "path": "mqar/gpu-0/training/linear-mixed-k8-6305/updates.jsonl",
+      "bytes": 777809,
+      "sha256": "713e25a0cc45f81db3f7a88d2b5dc68cf24f2f48cd9de5b78c5222f4ea9387ea"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-mixed-k16-6305/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "c2cd10e2c31053462e1acfc5edbe6de1c94603f2236d73baae7d3f604eec06a3"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-mixed-k16-6305/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "2b543563e66e8d7abdb7bda19bd114474f26ca22ae83524fd81afcb9203b6d27"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-mixed-k16-6305/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "b6d6a1d58c460515b066583ad61e8934be385dede0ac4a3cf55a9f1a5c63c289"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-mixed-k16-6305/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "5dd514887fe6277288b436da0a8fc09e6fd78be77282f5f3a8ecc489d01f005f"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-mixed-k16-6305/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "bbfacaa32f50614b68c3b02393bfdde9986f48c3e082d318a5f652d5e3bc88be"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-mixed-k16-6305/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "5742790f3377a798f16f4a2d126eb97ca74d1d45b7e88705fb5453de299e99c2"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-mixed-k16-6305/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "ad805dc768ad46b4c4c6aafd76e018d7dfcb5bf7a1ff48eb5f66ff213b942c8d"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-mixed-k16-6305/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "6280bdf7363914e597aca0f16c7a0468e3f810a21fbf257c552940714a4430cb"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-mixed-k16-6305/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "c02ab55dca97ab4b58b6b70d59a7d795d5dd8b58b7372f76365672bbfa0eef6a"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-mixed-k16-6305/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "7acdc15b24128ccba25c067aad4ad48a22855378403b6a7d378f5316bee1fb8e"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-mixed-k16-6305/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "bbcd7f82130a0cf31ca0e525465f4b9ed108f339ae4685f40c6bcdbb5389cbbf"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-mixed-k16-6305/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "7a8f2758d6f34d03f0c01cb26e339f84713c30196c7bd3b2f2c32ed68fb08426"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-mixed-k16-6305/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "666803a7e3d468b56eb3ea086223d140970e18fd011b7f101af3449cf4458d71"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-mixed-k16-6305/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "8058ba4397d1ad6060bc0ef7a8ba8486abc361957ca5ebdeda8fb5d0221b25ec"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-mixed-k16-6305/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "7c934ec4e1cfe68e756a49ee1fafda3bccadf3d604ec7e819abe8d26a9e2d40d"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-mixed-k16-6305/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "f49e9a58b0ed679977214d1363f8a10ef683b2c1bbd302c844221e4c7a851b89"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-mixed-k16-6305/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "dca13e3a243ca5456fee9bbe74f8d38a713c66554c362fd0f1898276fab6eefd"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-mixed-k16-6305/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "57ed5186e0245fa59935eb4fc20ab6ca4eef8b478d3f151f5f7ee69d9eeb1119"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-mixed-k16-6305/config.json",
+      "bytes": 408,
+      "sha256": "3c7e20f51eda3c5a13362ba3965cf55ebe8517cc8dc92da5435c5bdd00c476c8"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-mixed-k16-6305/updates.jsonl",
+      "bytes": 775055,
+      "sha256": "4a132f3ccc4256a0fda23304edd61235d92bb2b6f7a3c877c4332449c8f877de"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6304/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "597c01a405bcdfda20fc96b12cab851bb6f3f084a8e465bb6c956d057ae5db89"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6304/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "4c6efb7da1dbf5a675e20dc989418b76d44ccf84b69b81104b9465cf400df8b7"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6304/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "e9c94d94a2ee89ff4b1acc982765dfd28f6bedbd2dbb8104f5b0564c5b8fcd47"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6304/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "dbb45745973e67645afbee5db50148206dc0d4f3af5f091fe92b7fd4d5b67b66"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6304/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "bbd2db7e46721d6f0eb31bf4c13d8371a4d3a88ce5c24bad67015973d4975235"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6304/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "87100d100cf97126f0470bbc52bd0bf5ac2f80265de2c4111025f2f74224fa6f"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6304/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "8ac50a718d3140244b1ae680d48674a068177fbfcd98e88c178822ad91d3dbec"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6304/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "6b71e635022dde0ab91c18a6d3a7a51c12848938fa4dffa9cb2609ff01792ee5"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6304/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "691efb134b1785a53517298768d0b6484064c053e48506bfca81204bd358115a"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6304/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "4c7b487a7f5f7ec17fa162e142e8b40f0371e1a24a6ade06ceee02dd7c521b56"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6304/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "c91ab0a5dc529911e2247dcd345db4a4641954b4c3c64700c7c12f0e68fff78f"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6304/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "ac7ae87ac5f850c6f3625ea50586214282fa0fa98467a2912b7d0c1cd405d3eb"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6304/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "ac0674ab2d0d7d59789aff395bc025c15a91d74adb3e033e9779de9ec9687555"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6304/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "c0b6284cc3a4eba9c7c958269a6dfd94020f8e798d05ccd56be8111f04338953"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6304/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "c5599b4d44f08509878f74045b8057e32f36e7fe08cb70f037f920ffd043478e"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6304/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "b3d460eab2fc70ef0efca4d4d1b90a30851ecf6e0ce006360e2b0898f03bc458"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6304/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "1e942ee2443440692cca083a657fd86a71fce3971e61c7e339dc585cbc778c26"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6304/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "61988f4eff9ef97b4ab3dc9c142bfd24b09c12eec5fa014cb6acc749d2fee238"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6304/config.json",
+      "bytes": 407,
+      "sha256": "bda55fe85e0c8ef313cf8a944612a966f85e32f5b7dba9b085407be9663d7977"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6304/updates.jsonl",
+      "bytes": 795613,
+      "sha256": "c35d4264ef5c89d75af413b7ef5b8380aa86b102f698c704cd4f53859fdaf051"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6306/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "cc50aedb53606171276d5d58e7160ab6bac4916418a78845fa4176af0a26a188"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6306/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "99e0f17518c41c2d045448f28ef8f74be45966b94615f08d7875394f823d2892"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6306/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "e37bea1a7d4e30077dd1fccd9fa05a110f176e6c7a5c0fd0bed385b9e2f0bfce"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6306/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "0832451826f0f428a57195d98c9e0f9e7b67552b50907dd45eb191ecf0bcca96"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6306/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "f9cb0e2658abe0525101b85dea60a2c8e678844ea0f9109428c56eb5c731d9e4"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6306/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "e8fce04748dfaec4c027db510a95afd8c162b9b63120b78c144120168c04736b"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6306/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "422575986d324a78f3134d533bd40c501069c9e8c5632618ed6c5895d4634233"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6306/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "04e109d1895d1f1e7ea6c303d43bb5169265cc25dd72887ec383439591f512ee"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6306/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "2d27b06c5cde1918aa9c86f150725d209ff968721dd33cbb03d9e124e91d679a"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6306/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "2634da8883ae2aa88a0529f147f0858f2a10380668c843f1b9e099474887576b"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6306/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "c488be4f0e9f46a32312028a704fa31aaf2f0f5016d40d213e09a27ac96c3e42"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6306/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "6e476790208c2fa63562f407cd2d0047e388d369d77b800a4e7d6992942318cf"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6306/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "80ee87e1438706c514a5dbfb4e3e554cb4b9764b88ec0a0c3fbeb83da91bcb0e"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6306/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "51f1ce00c5083041c2d560ab6d15334b9477f2cc49a1252f7633836e48698f4a"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6306/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "910a57da655967545aa6f09f01daa7e8184cecbd298bcd0ae10d6da2762a6dda"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6306/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "c12057b3f51a6b56bc4210935b22780c2fec3f7f8ff2d4ed71d18b685b2290e5"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6306/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "d89b5a64c41743b56df8b8a5382d93b1694e9e6364bee0d7d262caaa936818b5"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6306/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "6a3e2a9f254e78a42e47316ff954c55f97399b8a82f7f73bba5b213b2dd3e995"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6306/config.json",
+      "bytes": 407,
+      "sha256": "d180d5620c031a8abaa530add5f114e20b3ef310961ed2b7409256c5ca7bac95"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k16-6306/updates.jsonl",
+      "bytes": 796390,
+      "sha256": "22acadff2eb668cd3c4535978e2e90bdc665a64b4aa8d67dd5cff7e8cd9d97b2"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6304/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "91db8e4b194145d984ea501232a9d1a03a9c15095a3107b37d8b3174eaf3c534"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6304/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "2b76f604f8f2f1c860f03efdb16f74e94fe685a3e8aa08b8811cb194b6bf6e81"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6304/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "4b1eef6193d426730fd7ba186f50c40d91c77b54ba09c5fccc29a7e0b45a8846"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6304/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "6aaea95d122e51ba51695949b8558589e0d473f16a1d60a87b35024a04aa1477"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6304/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "f5f06120a7fc83148fd183d2603c1086bcbae5c41b47338f0dc3ff73439246cf"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6304/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "33503b283f8566ff7a085c3c0d4a5748baffc3333f757886a806c74ab6af01c4"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6304/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "9d10972f8b54d5371118944f90458ae515d5149b8ba28e856e8b75679a563394"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6304/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "41dcbe479a820346a0cce7aa237f00ca6b5287cef8e8c3ca1dc2b04b04fa68ad"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6304/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "ce83d43f53c425c0f547add8c408b6662279e52f61ab4b2d034cc44fda029bb0"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6304/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "34f8752c1a41bee3be879e6eed48fcc852b8be6d6b2463567387653125f7c13f"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6304/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "67bf5007ad20f5625929966f868e9027753d14a9e6aac7ecaa1d3c18fef34ee4"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6304/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "a7b250278405ef384e9ccab2eb076ddd51180182e2d696390f2ecee71750abc9"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6304/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "d8f1b4629e53dbe49067056f17fe20906f09822e905f4767e4aec2da409bf840"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6304/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "f6c47aa22146046439017feebbd96d7b9b878334d2bfdd7ad2f6f679e10f485f"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6304/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "af51eb45f7c46a99054a33c613f37f73fb36bf77a844c46d6d8985a9d5de76ff"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6304/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "8dbcb226fff0dab290d6a1ab4275cc529c78c9f7493c8e06d32ed76c46239205"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6304/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "3a492132f6e17e36376b1f4f8c116695b481b13031d23c55b7ecdc2694b0e761"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6304/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "90262c44edfd0a877ea944c5e37500a960f455cac0ae65f7b9c5477ae14d96c4"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6304/config.json",
+      "bytes": 406,
+      "sha256": "5cd43d1583fed93697a4dd3702b7c3bd70ea3570ace4e98346b2689f88708cbd"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6304/updates.jsonl",
+      "bytes": 795139,
+      "sha256": "4af00fe40dd6a69738cec8fa88729257ef1f77db3c59374e1269138015e564ae"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6306/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "2d5606f85ef62eb1eab1857953f906abdec314a431408f18743687fdc8c2bec2"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6306/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "35224ea02cd3a416bf82c2ac5567aea711f457bd0725a69d43fe683de719b9db"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6306/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "410697e0431dbf99eac68e55dd7b5537e9cd5fa0e03a6b71989eeb3dbfe1d522"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6306/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "b79175dcb85dd6a4290e9bc59dbd4b90ff0d8f78932ad22bec49d92b9b0c7925"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6306/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "50bee69c869d18b4a5770ef6c02d3fdea08ad1abdbdda84fb5d1aa59eff457bc"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6306/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "0a3b55ca6e291f0f48689b1f5cf559d826dd2ef5a32627df6e71e78394bdd367"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6306/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "cae0ad946a2901c40e31aefc7b55795169bad8dc6080167c4a4f90f4dc3f5e02"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6306/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "793d592b8b6aa37276bed11dbc81caabcd4ed705d4cfa348617815969f939ece"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6306/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "d9b82c5f27dfc5a7116f88ec368692680516054f7f7e7ba75716617c904a1445"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6306/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "6cf769e83054a31c6dfa9ef1b7c83d18a99300da62237e873c3d8f0693a1f267"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6306/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "83a56487063b2dc0285e1950dc1019ecd94d768a8f5ec5da3e953e3cba8244b2"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6306/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "17985ef5376c5f3a3908f947870f9e0e7ce3c43fca83fa9c70bb78a0bed860f0"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6306/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "b11a841adc6771e05fef3a99a10d64022c8ddee67d457bc97b75b4aa38bf539f"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6306/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "b2e98ee895d1c4ae77f9247e412f2c2c7aff9696b01376aee67aab9d897efb08"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6306/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "b6d8cec9a5bcbd642acf47d135ffd228b3e19061ee4273147d3f0165a5351d76"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6306/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "0d74eecbff98253321e5a656e7cee9f7f2195bdbd2866b1e120a66869bc7b278"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6306/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "230c07baa0c50dc25272c72d8b247f7d252f442228b66750e0d08abc362e0055"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6306/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "a0f5f258c3bdfd782dc72b6888d0b7505243ad114f1e669bc3345b0eca2c8e75"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6306/config.json",
+      "bytes": 406,
+      "sha256": "1e94042748f7afdba6dfc99781a2f7da70a27ab22d95261a216243f8434eb62d"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k4-6306/updates.jsonl",
+      "bytes": 795140,
+      "sha256": "ba9f0bcf8c9259b5cebba095296ebd57720e83f2bb6f1368bbdd7c034883cecd"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k8-6305/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "efade0815bcbe83926d402837fa9f64c429c0ec8ebe54b3bb61994ea38736b4f"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k8-6305/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "dd6096c4370512dcc1ff412731eda41c2d09b4c388270df322ecfeaeb2458de5"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k8-6305/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "18abab17dc972a897842eae64af4d4472ce9688f504ece958512ff45f99763f5"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k8-6305/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "15b2179b6ee6e3192629531059fb07986cf5568aae4c91f471a21a3951125df3"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k8-6305/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "56ceb892b74f8c69d50bc958659ee01925d3d4f00996b554b5d56984a19e967a"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k8-6305/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "2d084ad2032be7016227dcae73f47033a7f59eb05249a352d0437e12c33475fe"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k8-6305/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "bed0bf726051c35686f7c428cacded469eaa7cbf599e7aa5573cbe3b303c0c50"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k8-6305/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "1805e4eef71e91ed16a44734b3001c6b3fc49daaa2d5137e026af4623deb253e"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k8-6305/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "7f5f434b17fd2989ea2a056bb14953c47d47789d2f1aacbece4a33a657c92329"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k8-6305/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "47bbb0f5ef5872e8d7acb869670122d8a74f0229b2d822a7c637b9f61c3bcbb0"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k8-6305/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "8c02a883c56fab2dbc6351ded8ebe6df02f890dbe9f88c19e4f94f97f90c5aa6"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k8-6305/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "21e45e662653b95cb0a008d2e952e664fc3c732e1797c51494afa4d3e8b4ed18"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k8-6305/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "01741383104ced0d55c50eea3acad3c71af04db6e11e4426b4b6721206e6d63f"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k8-6305/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "d6cf089626fe960d1bfd6b380ac59310d1f0936fff073e4a019c6b3fc5b1162a"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k8-6305/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "10d43d2df2b7325ccab5c14741ac1ac3d291f30fcd7d6a352ef69bb2d74cc25a"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k8-6305/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "9d75a2f85b751ed1211e987aa011ced1b55cbb404c87b4d21c5a85b6b44b8941"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k8-6305/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "a84091bc1dcd37bf725a164489cca30f865663ea649cfcbb938b0a0eb90b1df2"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k8-6305/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "2600195d108782acdbfc102a14eb8a4f1eb7c1d74049fcb63ca0c8ffdc80e74c"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k8-6305/config.json",
+      "bytes": 406,
+      "sha256": "5720ca0cb24f6ae0222951462637915a3e4f3381c3294c477cdc4ded2e4040b5"
+    },
+    {
+      "path": "mqar/gpu-0/training/local-near-k8-6305/updates.jsonl",
+      "bytes": 795169,
+      "sha256": "63c8fdacc0b24917db8a2633d0f0f2c19a45a52d3262b1e4b16b3b05e0711a68"
+    },
+    {
+      "path": "mqar/gpu-0/training/topk-mixed-k16-6305/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "7228d13d1a09b80d6afc4f9a368c2922d09985c29d953c8672b7bff0bfc09d4d"
+    },
+    {
+      "path": "mqar/gpu-0/training/topk-mixed-k16-6305/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "87e92846834a8c9dc408e3d672b99622bca1908b2d3a530554140208a11593cb"
+    },
+    {
+      "path": "mqar/gpu-0/training/topk-mixed-k16-6305/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "61c22f0e46b4ed7843d4551608deb73789676cb9b36b8cdc1dee1adc613f164b"
+    },
+    {
+      "path": "mqar/gpu-0/training/topk-mixed-k16-6305/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "e52672192b5f6f5ed26e30220d6a1b65f953576b1df3243a4671377e38196d15"
+    },
+    {
+      "path": "mqar/gpu-0/training/topk-mixed-k16-6305/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "4103e2554cf0080bcfb43c83f43e08c5cedecaf5a49f41f5bb85cafc8d7e2ca7"
+    },
+    {
+      "path": "mqar/gpu-0/training/topk-mixed-k16-6305/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "769ed57566e3540044add6303b21d77546a3dc4ed57d9cb7a238d5f5f6f9459c"
+    },
+    {
+      "path": "mqar/gpu-0/training/topk-mixed-k16-6305/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "506a2df5f9b865c80e53d3ad026f861fa4d8c0591bd6c9f3bfaefe49d0463395"
+    },
+    {
+      "path": "mqar/gpu-0/training/topk-mixed-k16-6305/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "6c0c45bde5f49d8b837dfd141ed91c2442ab938de0c30025fad50c5f969493d8"
+    },
+    {
+      "path": "mqar/gpu-0/training/topk-mixed-k16-6305/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "5d5304bf5221214c3b94732ae7141c14014757236ea5bb20e80cb0c20e921357"
+    },
+    {
+      "path": "mqar/gpu-0/training/topk-mixed-k16-6305/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "bcb9200134bbd9ca156d898ff59f063dfc466eda208addc7d1decd4e2923e53a"
+    },
+    {
+      "path": "mqar/gpu-0/training/topk-mixed-k16-6305/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "cfcac05c6ce0e06aa015a9e23c9a722aa25088105d9c38703cc840c5335ccdfe"
+    },
+    {
+      "path": "mqar/gpu-0/training/topk-mixed-k16-6305/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "a2348f42de3aa55b3e7b1e00c91f0ec28335c1b3e93aac672c8896022759afa9"
+    },
+    {
+      "path": "mqar/gpu-0/training/topk-mixed-k16-6305/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "c660798de6b82e17f8e730d983ae0a0a850630b61371815d8142afeeb953e3ed"
+    },
+    {
+      "path": "mqar/gpu-0/training/topk-mixed-k16-6305/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "484287b8b18f16d8deda3810fc2dc807e5c8a7b06262a6e55bb0bffe6f53519f"
+    },
+    {
+      "path": "mqar/gpu-0/training/topk-mixed-k16-6305/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "716cff4d97f1e5ad66ee489b6beb8f9832367cf5c5e099cb8941abf10734889b"
+    },
+    {
+      "path": "mqar/gpu-0/training/topk-mixed-k16-6305/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "e99776a022d58beb03b336f85fdd57ff76bfbe917d5911ffe269fa0e996962f0"
+    },
+    {
+      "path": "mqar/gpu-0/training/topk-mixed-k16-6305/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "c7eee4656d481cd520bcfac766807e9adde4ba9f25f5fba82517e5f62678216b"
+    },
+    {
+      "path": "mqar/gpu-0/training/topk-mixed-k16-6305/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "3a5a58b57db14f1c39a1ada51ba66adaea1ce5fb60189939d2b079585a6f2a60"
+    },
+    {
+      "path": "mqar/gpu-0/training/topk-mixed-k16-6305/config.json",
+      "bytes": 407,
+      "sha256": "6f93406189980bb26961f9a36aa6450b45d3b09ea3e9833a386287e8c6dcf3ff"
+    },
+    {
+      "path": "mqar/gpu-0/training/topk-mixed-k16-6305/updates.jsonl",
+      "bytes": 789985,
+      "sha256": "2d553746d01207b51af47db5805720a540a8106e963dc74fb0f7987f3b07826f"
+    },
+    {
+      "path": "mqar/gpu-1/status.json",
+      "bytes": 6122,
+      "sha256": "32bbd452251877dcea33bc4342551476a7620d5d1f33e3276719c39307a68917"
+    },
+    {
+      "path": "mqar/gpu-1/test/dense-mixed-k16-6305-local/per-query.jsonl.gz",
+      "bytes": 798739,
+      "sha256": "4fc2bf614c26e67ce2e4efe488983fb19df4e8d860d818cb3075460aa64fa3e9"
+    },
+    {
+      "path": "mqar/gpu-1/test/dense-mixed-k16-6305-local/summary.json",
+      "bytes": 4545,
+      "sha256": "dc1f6dae52c1627eeec6ed00261f602d1708cf830320fb9fbf41425c2b294668"
+    },
+    {
+      "path": "mqar/gpu-1/test/dense-mixed-k16-6305-native/per-query.jsonl.gz",
+      "bytes": 765862,
+      "sha256": "0a09654e8adc9848381d8f09c4af693459ff52d9d82b8cb082ca804aa519a62f"
+    },
+    {
+      "path": "mqar/gpu-1/test/dense-mixed-k16-6305-native/summary.json",
+      "bytes": 4424,
+      "sha256": "de14df2fe92a92316cc96efef7f904746f491213e046c4aa11e6a6932253eddf"
+    },
+    {
+      "path": "mqar/gpu-1/test/dense-mixed-k4-6305-local/per-query.jsonl.gz",
+      "bytes": 841740,
+      "sha256": "4c9d25ade073ad5001cb5d3a22284121de2999812ce69527a52b86f56b369f5d"
+    },
+    {
+      "path": "mqar/gpu-1/test/dense-mixed-k4-6305-local/summary.json",
+      "bytes": 4596,
+      "sha256": "40da97ea93753aceb9a1cc5ef710d4e5aae9af9c8b480185b46ebf203e116fc5"
+    },
+    {
+      "path": "mqar/gpu-1/test/dense-mixed-k4-6305-native/per-query.jsonl.gz",
+      "bytes": 831739,
+      "sha256": "4e95f0bef6d2d3d0c94693294f082fe03420be7d33e1a0e823f6cabe4673d929"
+    },
+    {
+      "path": "mqar/gpu-1/test/dense-mixed-k4-6305-native/summary.json",
+      "bytes": 4544,
+      "sha256": "ae85a2e06b05e27cf94466d4739457a51401d3a22425f206eeafe6e737ebcae0"
+    },
+    {
+      "path": "mqar/gpu-1/test/dense-mixed-k8-6304-local/per-query.jsonl.gz",
+      "bytes": 818237,
+      "sha256": "f7e05a2b784ab22e562892f679028154237e9fb1af8354ee296282dfe08ed04d"
+    },
+    {
+      "path": "mqar/gpu-1/test/dense-mixed-k8-6304-local/summary.json",
+      "bytes": 4532,
+      "sha256": "8da01f806b7b896d09eb3bb37ced23a461da1803a8e9d3f0cce21c7931313860"
+    },
+    {
+      "path": "mqar/gpu-1/test/dense-mixed-k8-6304-native/per-query.jsonl.gz",
+      "bytes": 810125,
+      "sha256": "cf79b60258e8c8c33009b26c13d4ce3775dcc03b14ea3120939e90282026260a"
+    },
+    {
+      "path": "mqar/gpu-1/test/dense-mixed-k8-6304-native/summary.json",
+      "bytes": 4430,
+      "sha256": "da55881d935d9858c93b981aa05d2ee76c716a7b4bef394ab383a1a25a9e92a8"
+    },
+    {
+      "path": "mqar/gpu-1/test/dense-mixed-k8-6306-local/per-query.jsonl.gz",
+      "bytes": 817239,
+      "sha256": "2cbfdac15e992bcd98d9797ed03b78cfaa04957798dc778d56b3a2cd09cac878"
+    },
+    {
+      "path": "mqar/gpu-1/test/dense-mixed-k8-6306-local/summary.json",
+      "bytes": 4548,
+      "sha256": "61af01bff311e64c9b7b725c5ce725b8ffcfac9a25b2fad6892f9432fffc3305"
+    },
+    {
+      "path": "mqar/gpu-1/test/dense-mixed-k8-6306-native/per-query.jsonl.gz",
+      "bytes": 809754,
+      "sha256": "afcbc0fec5d7fc9ea048262ddc1f2f531fba319a33f35d71e88ffafe2ff67d79"
+    },
+    {
+      "path": "mqar/gpu-1/test/dense-mixed-k8-6306-native/summary.json",
+      "bytes": 4444,
+      "sha256": "00ff75342c484993838e73016c6e015a325895aca6855b991873e08bf45642d0"
+    },
+    {
+      "path": "mqar/gpu-1/test/dense-near-k16-6304-local/per-query.jsonl.gz",
+      "bytes": 822847,
+      "sha256": "6342d24bafa2d65d2c440ffbcd4caf1ae807cda9e393da1d846fc9632f0d4459"
+    },
+    {
+      "path": "mqar/gpu-1/test/dense-near-k16-6304-local/summary.json",
+      "bytes": 4541,
+      "sha256": "b3501ff9e12e1a5f35d01961e58ed8ec166caf4623c457fb071ec5955268db04"
+    },
+    {
+      "path": "mqar/gpu-1/test/dense-near-k16-6304-native/per-query.jsonl.gz",
+      "bytes": 765981,
+      "sha256": "07b517d3adf38457677f2f1947330e2407767f3e696a81c6d9c1a455b7b15a98"
+    },
+    {
+      "path": "mqar/gpu-1/test/dense-near-k16-6304-native/summary.json",
+      "bytes": 4516,
+      "sha256": "e4ed4755a13e6560417eefdc628cd0af58aba0cce6a6c6018c11c942e4852822"
+    },
+    {
+      "path": "mqar/gpu-1/test/dense-near-k16-6306-local/per-query.jsonl.gz",
+      "bytes": 803894,
+      "sha256": "bbb0d559ae9677cc83477f13098db7617f5ef64422bf93cd2309104d6accd1ab"
+    },
+    {
+      "path": "mqar/gpu-1/test/dense-near-k16-6306-local/summary.json",
+      "bytes": 4528,
+      "sha256": "e1ab224e2a33375568a3349011c7393fa5a1fef06697d0a567f4521cc2cdd4c3"
+    },
+    {
+      "path": "mqar/gpu-1/test/dense-near-k16-6306-native/per-query.jsonl.gz",
+      "bytes": 766141,
+      "sha256": "7e7135125642aa78f0623a6e1b1009686a011aacab82882175137220fe2297cf"
+    },
+    {
+      "path": "mqar/gpu-1/test/dense-near-k16-6306-native/summary.json",
+      "bytes": 4496,
+      "sha256": "25caedb44925e207b6eb51bf8218eeabf92ce9b51ebc84aeebbda4ef98eb36a3"
+    },
+    {
+      "path": "mqar/gpu-1/test/dilated-mixed-k16-6305-native/per-query.jsonl.gz",
+      "bytes": 826635,
+      "sha256": "14677e91fc341c9826f1b3f43fe0faef93525b91d07f7662e1c1d0dd799a4879"
+    },
+    {
+      "path": "mqar/gpu-1/test/dilated-mixed-k16-6305-native/summary.json",
+      "bytes": 4613,
+      "sha256": "65ce4549521d52ee66f68d87ad8f7a2e81e332e75934e39878c735a49526968c"
+    },
+    {
+      "path": "mqar/gpu-1/test/dilated-mixed-k4-6304-native/per-query.jsonl.gz",
+      "bytes": 825329,
+      "sha256": "8c1afda37b44275f20cb4dcb12a8c248ddabdc1cc93d4c072032aae5c7b46493"
+    },
+    {
+      "path": "mqar/gpu-1/test/dilated-mixed-k4-6304-native/summary.json",
+      "bytes": 4614,
+      "sha256": "b96f50e133cfa4b3c7f34aab05e8cf8434986d05861fc865c1133464d744ff5e"
+    },
+    {
+      "path": "mqar/gpu-1/test/dilated-mixed-k4-6306-native/per-query.jsonl.gz",
+      "bytes": 829178,
+      "sha256": "3081502dba20c04fa3551cc1ced380b16dd7a4860db126ae868c2fee5e251e27"
+    },
+    {
+      "path": "mqar/gpu-1/test/dilated-mixed-k4-6306-native/summary.json",
+      "bytes": 4617,
+      "sha256": "3a2e7127821abe066e09495fa1502519fd32dee7d35995f3c4a9f2c7e57b9415"
+    },
+    {
+      "path": "mqar/gpu-1/test/linear-mixed-k16-6305-native/per-query.jsonl.gz",
+      "bytes": 766814,
+      "sha256": "cf4e478f95de9ab040e4a70c42265651118e6fad197bedcafd92437f24a41a6b"
+    },
+    {
+      "path": "mqar/gpu-1/test/linear-mixed-k16-6305-native/summary.json",
+      "bytes": 4615,
+      "sha256": "acd52dee26171fb2c572889f744cf70aa4cf217d4e1cfe28b87af61974dc0392"
+    },
+    {
+      "path": "mqar/gpu-1/test/linear-mixed-k4-6305-native/per-query.jsonl.gz",
+      "bytes": 824730,
+      "sha256": "a6770c48fe2b99af25e71a7c70fcc122d92c069c0ed519cc00eacd0618d6b5ea"
+    },
+    {
+      "path": "mqar/gpu-1/test/linear-mixed-k4-6305-native/summary.json",
+      "bytes": 4611,
+      "sha256": "b6ab30d36ed1358c518f9dc79d044825da271eda99c5e6dae6cd2769699e1799"
+    },
+    {
+      "path": "mqar/gpu-1/test/linear-mixed-k8-6304-native/per-query.jsonl.gz",
+      "bytes": 807617,
+      "sha256": "227d501a4add0b442184e6a0374ddb75af581dfe5acf2c5b1101aee7cc94c078"
+    },
+    {
+      "path": "mqar/gpu-1/test/linear-mixed-k8-6304-native/summary.json",
+      "bytes": 4573,
+      "sha256": "1582a3207d703f2ea1f8144caaa4a3b7ff624366ee7bf1c11c6834d5942b9e50"
+    },
+    {
+      "path": "mqar/gpu-1/test/linear-mixed-k8-6306-native/per-query.jsonl.gz",
+      "bytes": 808676,
+      "sha256": "feb5698c88cf715ca1778c21ad85bf4ea0c88d0497ff3187546fbd2f79a815a9"
+    },
+    {
+      "path": "mqar/gpu-1/test/linear-mixed-k8-6306-native/summary.json",
+      "bytes": 4615,
+      "sha256": "d99dc9f836b4ffb1acd29d0c0bb43180457dc42e7c0e79bb7c7435a38eb9f3a9"
+    },
+    {
+      "path": "mqar/gpu-1/test/local-mixed-k16-6304-native/per-query.jsonl.gz",
+      "bytes": 835213,
+      "sha256": "ab3e79968b6ab67a9f01f8fe4145227c232519fb1bbf7a48cc1d177df2e0022f"
+    },
+    {
+      "path": "mqar/gpu-1/test/local-mixed-k16-6304-native/summary.json",
+      "bytes": 4605,
+      "sha256": "bf529f29e17cbce703aca57d060c59739b2ad83e025b0909c532e01b77578c85"
+    },
+    {
+      "path": "mqar/gpu-1/test/local-mixed-k16-6306-native/per-query.jsonl.gz",
+      "bytes": 811672,
+      "sha256": "0a21a936108c3c5bc8f82064f234a6a655f9714e32b9e8f6ab2c5e6c429d23cc"
+    },
+    {
+      "path": "mqar/gpu-1/test/local-mixed-k16-6306-native/summary.json",
+      "bytes": 4607,
+      "sha256": "6c8defe506192b3cc7cb61e849a141f8160b2aa2df1412e179fd6019c174e318"
+    },
+    {
+      "path": "mqar/gpu-1/test/local-near-k16-6305-native/per-query.jsonl.gz",
+      "bytes": 805056,
+      "sha256": "6184048eedb7ae8b689ccbd4142585ed8c6bff70846dc55b373de617171aa54e"
+    },
+    {
+      "path": "mqar/gpu-1/test/local-near-k16-6305-native/summary.json",
+      "bytes": 4524,
+      "sha256": "bd2d5c5558f8308da35c6e69f401fbc2c7c72d76ed92a9073953caf9ad1abced"
+    },
+    {
+      "path": "mqar/gpu-1/test/local-near-k4-6305-native/per-query.jsonl.gz",
+      "bytes": 848989,
+      "sha256": "46fee3430cf7224001811486dd88e0fc6a41eea7a501a1c4c39b380213ee9fbe"
+    },
+    {
+      "path": "mqar/gpu-1/test/local-near-k4-6305-native/summary.json",
+      "bytes": 4566,
+      "sha256": "bcd5a80c892a10e4086912123711c9600f56ba09ce9635bd370b3bfe2e1c8e45"
+    },
+    {
+      "path": "mqar/gpu-1/test/local-near-k8-6304-native/per-query.jsonl.gz",
+      "bytes": 832101,
+      "sha256": "749d144a09ae6518b267056de00cf0c538ed6b9f2bbfa0585a6825092bb12720"
+    },
+    {
+      "path": "mqar/gpu-1/test/local-near-k8-6304-native/summary.json",
+      "bytes": 4516,
+      "sha256": "a1d9f8f9f752dd3f404dd65cecad895a4059b673ddadc742fe908d1aecf22815"
+    },
+    {
+      "path": "mqar/gpu-1/test/local-near-k8-6306-native/per-query.jsonl.gz",
+      "bytes": 838943,
+      "sha256": "24288788bef32cc690ef50b759437bef0cfe5c5f4a6f2fb3c7dc6ac0a1cc9a78"
+    },
+    {
+      "path": "mqar/gpu-1/test/local-near-k8-6306-native/summary.json",
+      "bytes": 4525,
+      "sha256": "433bf9bdb245d016fd4bdaf49b5d95329e040772ced9acd5667fad70441010ad"
+    },
+    {
+      "path": "mqar/gpu-1/test/topk-mixed-k16-6304-native/per-query.jsonl.gz",
+      "bytes": 765893,
+      "sha256": "49fe120d460db7e1ffa46011ce7cbffc01adeb8a484f1fb21ba1e25e0ad37813"
+    },
+    {
+      "path": "mqar/gpu-1/test/topk-mixed-k16-6304-native/summary.json",
+      "bytes": 4434,
+      "sha256": "d1fbfbc2956baa8f3fb3fd36e040f96c79a43d483514aac551efc52e68d5d62c"
+    },
+    {
+      "path": "mqar/gpu-1/test/topk-mixed-k16-6306-native/per-query.jsonl.gz",
+      "bytes": 765881,
+      "sha256": "a18e47ec71b04dd72e72bac76f13f40bc784b3a718e5393cd3c91fc6178a2c7a"
+    },
+    {
+      "path": "mqar/gpu-1/test/topk-mixed-k16-6306-native/summary.json",
+      "bytes": 4440,
+      "sha256": "7d57775c0a448ca6d6e62c571b2da37fd5a2bce6da9e2d87be5f0eac94438e63"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k4-6305/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "bbd836b7e4cde7c8b8751fa3babecabf4594de870a8a334a980ef5c1f0d81d87"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k4-6305/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "eafe884890a7c2e95521f954637ca72924fbe3a23216b2a712100f1eec58ae9a"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k4-6305/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "1bdba127b78cba335e8dba35db2dabe7a81fb40348150599ce223c331d4ed428"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k4-6305/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "6b195519a15f3f1c61ab3803b3a77ae49fb6425a56ea9068db7c0f94f827c1eb"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k4-6305/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "bc5cc8437d5063754839626bada6823b883b096df37b0f86050e43d125229732"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k4-6305/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "a07ac8ddf16d49bf250acfa38fb57d4c6852fa4bfa89a86199050c8344fd3470"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k4-6305/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "1599e998a799e48d1c00b05267a0942a3c75eb3f5f0e6e0f80c18d85e26283d8"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k4-6305/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "017d4f2775841afcecf733b7ef02b9ea2e9b8acf5d435cdd0e1adfe43f8fb7aa"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k4-6305/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "fbd06fbca2e8197e24efa9602066a9629082f2288bfb33a46777d74356dc6e7f"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k4-6305/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "89052bc7e5f9edbd368e6d9b69bc426b563245b289a2df21c9a808cc6d15097a"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k4-6305/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "4ed9ae2818475a3f40c4eae4742f7dfd4b6b19d243098db1cd62984673d25bb3"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k4-6305/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "73886049a080070ddf2c3d0292a77ce290dc286df097247c74d089c945b7d44d"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k4-6305/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "d963a114f855eb3ddbe26417f29471de93b650925c6b0c39bf0de1619facf21e"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k4-6305/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "0e59eae9e7812a00737fd62215e45e3352efa33600ba54bb043d5fa4d7edafd0"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k4-6305/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "b1f92ec17ee3a4030e44a00258155e6d0ac890bcf394a9f67809f8dc7b8bb656"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k4-6305/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "02ed9e16ed80f0dde3441a9b94410498c0838664f66caba005354bfdd87c402f"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k4-6305/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "453a8fbe93c4d30c4ed3c5283a29efc2b0d534ad4e8fe664f9319e530f1e2336"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k4-6305/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "6c8647c8d88d88a2c95fae31f8c1b41b15d75a6ba7146e2dc8e47caa11c8213a"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k4-6305/config.json",
+      "bytes": 407,
+      "sha256": "f0e180144d1aef52fb8957884ecaec459c1f313bacf1a63509b5c9695adecee7"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k4-6305/updates.jsonl",
+      "bytes": 789138,
+      "sha256": "7f38bd0f9f50b3615df573d22e7315794581c8ee89eecf29dc0256bbe6087fa8"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6304/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "1856a603fae2293c5811779ff6bc694f3d0f2d85a2af7b7a8d467f943ea0439a"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6304/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "d193dc121f904c76db619ffdbed18ec003e610bd9082bcae5d036673e9c26e87"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6304/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "104075c9f74f51874420293b50fecc23dc049b206c5efc2750e0eba080e3f6c8"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6304/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "d8e11b344cd55c585a291a735e72cb0f32284b01c60df1bf62f4e9407db3adf5"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6304/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "85b0008bfeb07eb5f9ebaf0e2903698de6247e46ee2f06c015bb9d2b458a5f5a"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6304/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "3bbd29ee6135646b6b8b3c545588712a615b92ce7b0daaf110110d464aa28b9e"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6304/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "2239fce1bf233b653b03fb9ab9cecb6677640508da2ba9717c63c15230e4f410"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6304/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "74b7bb9e5e1180d5604907b50812077d005f71c2b71f383012b8d6d669f13b97"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6304/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "8b8a0cb7509b53e85d8bbd18f21003f0d68916a6a663601d1935f76b05363488"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6304/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "8a4cee57c9105c6d7b1b1ea86c690493b7c88ab8a4d1764b5d07f07bf56717b5"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6304/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "6900a4ada8fd5e18a250342ca7f2fd25042b609ea762b6f7efe2cb0eae8e0ab9"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6304/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "1cc1735f1723e64d94dd8aa941005b094865415b4c72ab672e0bcfceaf86d5ed"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6304/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "0f3905027f497a5254add56eb6d7b7969ddcbbaaba92c50793da5efd243fc7a4"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6304/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "d3ad39b414215d6e196e1bfee46304b74c4793617da714b433c491b4b670a7e8"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6304/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "d8ae198f6889eef48e2eeab0833eeee40f284c29916e7f7c828e907c94037e87"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6304/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "a5a1b752cc304190401f1b856c204413f94e774b51d618635f4db5c6dc9007ae"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6304/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "fbbbaddea83b12e32a399118c9a05deb32b6e8c9dcf5ff2fdd844b1638e45293"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6304/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "6c350c186b78ca4445a64379b362d28b813eb0032f63bc34112498404a3d9c06"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6304/config.json",
+      "bytes": 407,
+      "sha256": "cd9a34e38b06f2bba6f1bfe7efb81ef2b3a984c3ed8a0546fa9ffbb34ea10cf2"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6304/updates.jsonl",
+      "bytes": 790315,
+      "sha256": "aa0d7e84dd6d30a9d4a18dda3bf833b9acb92bc86f4b11efe0590f0195567104"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6306/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "b362ef4b22af86bff83c69b6730e5b3ccc84ef55ed434bb45f6265b5072277e4"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6306/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "d54cb392a4cafc7e2c287fec526e3339d76f9961db28818664024974b7dc703b"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6306/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "cc79448ecba284bae16ae4ef72586b0385bf6aed3fb7eadf3a6e9a37a88a8b6b"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6306/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "31f0ea6531faad5b58637e06c85d978266fe41d9bf0c5027505c6e1f3ee8c988"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6306/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "ebdca89e3a370c52e8deb2f4089d879fcc115f42f58504d9fcca6be348fd4969"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6306/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "75c6922c245a7a3a877ff15c15fd360b0cb99d408a4b19c3811549463c9859ff"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6306/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "23404e73a3f2b36c8a59b8f143f53060a423363fc9a6f300961af8dcf88f47df"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6306/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "8367f52c9fc7d1fd251b0f47c9c09385b84fa9248c5fc498d6decd9fa442b47e"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6306/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "1750661735f85105f05b7a54b8229f2f88f1389d2e58905f7edcd9c97fba8f94"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6306/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "18afb2a2f73d35240ebc1401b0e67076637922861c3eff5f0eb540062110d40c"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6306/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "8ca0ce7f69d547c8af2d981bb8f794765eb380791c8e88657ca939a9b9905a62"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6306/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "66f46df5d2fd73aeccdb0342c2d6b33d5afc5042cd89071c3aa8349d2fc9ba79"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6306/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "d75a4094db0e16e6461612cfb0e2c43c77b37c154343321ac3204509e7e629b6"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6306/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "c8c60bf89560895be14e17c61082ad77f99db06db473522bf570379e0cd213c0"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6306/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "368e58cee8aa919c23152bc43f52b7cc3c3c28fda768e32404deb3d0c86effe5"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6306/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "c5fa4b86a1ee64725fe9d86eac48b0444f398fbd3d76a9895e53da2f51d2bf67"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6306/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "1fda70382830d86251dba4fa2696f20f649934b93e1793f1e7b40b15dea7f20e"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6306/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "19bc5c790132d4d60dffc13a0b26368379889512bdd806867f743a5a9633a7b5"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6306/config.json",
+      "bytes": 407,
+      "sha256": "6d0aa3733fba6099b87f478f263a8459a48f5f3dba9900d0abcbec816e6a3e55"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-mixed-k8-6306/updates.jsonl",
+      "bytes": 792913,
+      "sha256": "c4a01b5577c1b1aa4095b54bd92a8d7c6eacfb62eaf63e3d0136922f0dff8094"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6304/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "1494df9e3832bed7d8d26c13a15eb206990c094591c09466424a39d3f610f925"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6304/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "29f002f0dcd2ab45ba9a292d8818800ba7d8bd47d7c211c693c5b4a9efcf99c4"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6304/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "212eb949401da1c6386e0a3ba21b0fd25bca8e436a6b725fd715cc5f6712d357"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6304/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "3ca73cceed4d9064e0c46549d12e9277fee88657e9d79159e5c36225b1bdee2a"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6304/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "d83daeb22503443bd3ef12701cac117faf3315db7482e9a2f59338cad03344a4"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6304/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "86d35c44cba1bc23d6caa313fedf83411a57ff401e9a999aaac2deb372fb0e75"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6304/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "bcbed5d1c537a7900e87ba097be0100034d9d5ab6e39b48d4b41d286644807e7"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6304/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "01f583a14c964148bb905ce5c25a7dc4b1504369c3c8b76fdd86daff9085fded"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6304/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "392387685ee6c37472ea40652fef9f8ee36d1351d83af01986e3e7bce37699d9"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6304/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "4a64c67aeaafc710b38786e899d17585eb21586887b1c4844b295c0115b550f8"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6304/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "9da8484a206cea6852ab4f2a85cf2b41b118d672b47ff253aca601784e28ff6a"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6304/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "7923153ca49981886610069b7cd4c1e8a07f4265a77c7868c7e25930a8ee4ea8"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6304/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "57432eedf16cb63d16c3c2713b2f1c7d19261526828c8101d54fcedaba9798f1"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6304/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "d8c7cfdba9462dc01f9a2bdbec0c3aef4114ddefdb5905f1af30f6b75e70694c"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6304/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "896ae5b490af043c29f3e692ab3af651d5a1ac14788392dbfdda5d61390741bd"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6304/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "8fa75f86931073d4567472857e9705baabefa555bd2dc60bbe0ea684e6d42ee2"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6304/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "974b8757c7ba64c30b4bf11e1775362bada24eade3c99ced3240bb07cc205270"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6304/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "f793b6e9c4e24a4837a2e2233e80e24228e7cd5ebdfd6b92a9e708a44ef007eb"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6304/config.json",
+      "bytes": 407,
+      "sha256": "6ebfd683ef0ced2ff116de674033e41f4eb71377a5ec6a6e214fe7c594884a2e"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6304/updates.jsonl",
+      "bytes": 794201,
+      "sha256": "310f6f1dbda9b2ecedec0a08e930ee596b1c4ce703c6b51454d394e01a7c1089"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6306/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "132948031a9bba992c6aa758bc164d43035d39d434d233b3ef0343e7cc35b522"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6306/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "2e967fb3e9d109f082c9a217b87a6766c8903c3b9d19cca0a841a025f4df14b6"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6306/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "74982d61d5a61d338faac7a6f044adf8401eb5e0826bc829ae92b04054867f65"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6306/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "2e6174c3cee733b5dee15afab8b51af851649193b8d6e6545b6c49d9ae2ccb7e"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6306/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "1762e2027c3607542c981aee1a0aff6b0f82ea68ff9c212f46b15692b59c6597"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6306/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "acacad3c0f5b61b062dd2fb4344b086ef8ed2b71cd328c8c1b329a7ddb27206e"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6306/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "291dcfaefc5a4480300eb603e6034bf1b7371c0f677aef5d963bf4f5c89f387e"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6306/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "b7c1732cc66bdf6b36d236b9321062239d403e819eb2ce26a40c138d0d37747d"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6306/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "1fa4804bd224a305651cc42eb23e8e78a9235b8b6beaf23177f3735c793befa4"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6306/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "baadc269b084f8a03ac797ec2508aa423236b958c486fe5b0b023adc6b7816f4"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6306/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "dbc6a76258d79d60d5157156d9b2e9c91668e939876ca042bb993f12cc5cf8ac"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6306/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "e632ab0a7e2cacc7eae95809b9f7cb3687b7dec2e79e941df3ffbca5379bada2"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6306/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "6f7e8797a18bc7e696a7326549a9bf33f97c58351263c88a5bfecf6fbd7cae59"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6306/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "eaa15c24e9583d99855b30218002bab4cb0285a08c2083f0e3f4facbe2e2e46c"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6306/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "39d92280be3854011efdbb6cdcb5acf329fda1483641e7daac9913e42e7e4bb5"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6306/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "f3419c52ec0b55f93a919d31aca7176c26dd10bf26922fe64da10c3f6e333c42"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6306/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "afe42d4fb4e8a42b08eaad0a1d47091d6031649846d98b1356b42018e9b99738"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6306/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "ff93efcf3d37e4689ed4fe2efd7d16623a95b56b5d44ff312981511dc9c5d699"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6306/config.json",
+      "bytes": 407,
+      "sha256": "85394a50f5dffa0843353fc45a95164a820135b060e8416459db24d495af0a4f"
+    },
+    {
+      "path": "mqar/gpu-1/training/dense-near-k16-6306/updates.jsonl",
+      "bytes": 794172,
+      "sha256": "3d3eba8481ebee6cc380f09e2ba8041b855a024b1261eb3c86f3e609724f9c5e"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k16-6305/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "32ecbb70cbccfa3da18d437b4181878fb4eae9ccdf69dda57458e824557e7993"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k16-6305/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "18bd1818646fee11dd588118bb3c51288840f9fc23e9f95376b87aa32887cf0a"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k16-6305/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "a3d07568989e8672ea2a869c788a185248ad5212756481111fbad8fda58c3594"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k16-6305/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "5787ebf2f98b37950d34427a7df8f6281e91c92aa5d2b28df0de0f4d9657314d"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k16-6305/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "40452a8ed1481aa64336a7dd48902941de9cb26bcf5ec80a754cc6be1bf8fe09"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k16-6305/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "b3014d432e80d1b76eee3b0020c7f6129418bffaa53fec5fc72a6832fd2b5e90"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k16-6305/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "a52165b7fa19dfad06c71cd5160058d50fc7ec612ce1c1b6bb82c6dabc79ac25"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k16-6305/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "7a59a3a2a23f1b8e147284976a2770bc20fab6c7118507099ecc8062b19bbc25"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k16-6305/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "8c2a9f1d84e920b62b06928eeed429bb89da5c99616c9660744427406c7b846c"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k16-6305/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "dfe330b10432c8bc2f0fa96e556a55e9ac3e3f01f23227946ef0a20e4b5d7fe6"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k16-6305/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "beecb992fc1cadae213e49031bcefae2d17c4772a4c35974a0d8cc69ddba118e"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k16-6305/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "b2dc31e6a93ff1f88d46c7a28bc77115b7bc36558c67904b7c5576a901748ee7"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k16-6305/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "23badb8f22a7fea03fe1a8e08b9d02b1551a020d2a4e6f389499fc5a43897dab"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k16-6305/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "1a7db02090383ccf5e1b070daa1cdb827a929da65d2e7839e36e04f431e8ad44"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k16-6305/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "3272655cbe1d869e60ac65fae4da8a40839895507aa059f5ca9c1b9d2925dfa9"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k16-6305/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "5c6c423a63ded63f87390ef4d6e6dad2275d51d4c6d75b572621c18ddc06dfa5"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k16-6305/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "5e773dc5c79ce9c3283a952dbaac7a7156f2ad4c3bcf79421fe90db30907b990"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k16-6305/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "0c6f9f01941f7e434ab7092b7ad9f9df91c5cd270642471cf9d4df921e166afd"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k16-6305/config.json",
+      "bytes": 410,
+      "sha256": "7d68ad3bfef6053ff5c44df7bd348bddd5f9a263cad827949ee276737a3065b3"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k16-6305/updates.jsonl",
+      "bytes": 775205,
+      "sha256": "2437ca0dbfdec2a9ec687bebed48eff8d58791086d89b49c85e1eb472ff4c0d7"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6304/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "37cb8ede48c642c692de9637cbe920fc84351fce8c8a4786b73f5c5cd97a2ba9"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6304/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "01a989a11787986c577d9a89dd222ef356b4a398121bf8e3d91eaf2efbe5640d"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6304/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "811c241590b7a1e68c39c6e3c8d47914e298201f077a4a0fbd388098359c04ec"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6304/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "bed205684e5a52479566b795bd9ba38d64a5ca3dcae9ab1e9954db60b8195e76"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6304/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "5cbcbc05b63f96c5bb313f89b63cd9d2f0122cc6551392a891ebbabc1a7f3e78"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6304/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "858496d9ed2b927ef4572a6bedde0d5823a2edf9ad4d14374c3341f5e2144883"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6304/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "8447bfca19680b6ec25bb4c254f97e2276b9796d707999c4a79fb98e8b6df348"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6304/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "9480e95e76f22b89df96bb7b26d324e94ea0a9c3a80e296044e0744eaefa4c0a"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6304/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "18e888fcf7a92b94f904e52cbed912765512f58f40440580bee49c71937cd38c"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6304/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "5be298bf13150714ec945b0cb70e0e38e3411e145ee4188c1347a29b08e1f03c"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6304/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "fcdd941707d34ae966e96885605299f0336a0f42ed6edfad4f87c5bc9a371b21"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6304/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "6d79dc001d4e90a96246f9a7e06a80b71d7b9c3f63c234d99a030e4150a0f62c"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6304/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "48b751bb0ea7f75763fd773d8c23df402544cf77541f95baa51dc0498bcd244e"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6304/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "c8b89f876893490f80d4393ff37af2b86174fb116785719ffe621385a762991a"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6304/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "cae406bf29365e5cc5c8ed427d9b7369cb16badcf5aa20eaf4b7d4a2e0eea643"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6304/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "92d3b5763e05264d62499495616df4a9736ac7c1d93015eb53f24779e5c763d1"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6304/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "8010c6c23817950c35944473e6450ef39d5211f27ccf15abd59b0c87babd809c"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6304/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "863c2999b5f008c19d91411dbfbc299e40c2c21bb7d1a6bffeb13c2ff60ef7c1"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6304/config.json",
+      "bytes": 409,
+      "sha256": "3aa955caca75c17676f70790e7fee5a682ce124d1c03f38cd716b29e3e8657bb"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6304/updates.jsonl",
+      "bytes": 774546,
+      "sha256": "7bf0e88f8fafa7547fee0a6f61e3eb3f4d329ddbbfc5e7916956ea3866b7dff4"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6306/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "2ef8f88a1ac8ce8ca24561ad439fc924cac94fc28844e22dcad89d95dce2b26c"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6306/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "130fccde6f1df3809e021d810d327d282c9ef0c2bac02993269cc8f575164745"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6306/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "23a25e9f7f30265c5e3bcdf6385643a7288677c77736f97659c3fe0bb94f2050"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6306/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "2487692e69c39d450e0ab3e28f95c8fc5c4ed21f36b65bb2a2ddfca8a670dfb9"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6306/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "5a3af9535aba35e3a9ed5274b1f18971a722af8550b2d450d990488744871692"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6306/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "8291736b4ab7842beba6786ace8ce07eb9fd3e7a54367ff91342842ba19cef19"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6306/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "809c4a47a51c3d6048296d32b05e6ec4195c14e357e266139f0e7a1b9e6c4ad1"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6306/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "c61b4a08b644362a7f465c35747eefc788943f20a40f20d035c261baa497315a"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6306/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "a32d526852028f235e27597f11b85ed33c0424ad71f38ea6287f5addd45bde77"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6306/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "279a56b0850c71cfb0916b3cd05b82642eb17e12f5e7ab84c08a30f272af8c33"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6306/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "4e5eb88fe9c63d866b42c0eba6bc25c6c2104778608dc678b2bdce99a7d5740b"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6306/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "009252a6d109d1a15b3ed6e88217c4a2c2d5d2fd91e60096fa2314db69be7b40"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6306/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "fa338dd40e72123a249f5e66f35958a9629fea8842a2320bfd7d7c24eb39ef4a"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6306/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "c2ee41414077ffbe6bc4451a3cdf8fa26ecea463fc3c1d9a7fbc6c8ea9a079db"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6306/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "ad9cafdb1ef28941be66a34d0aadfd30ddcb0555cdc6fdd51fe5a0ecbb941d26"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6306/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "d0f6291a98e1bd040bc64306951ec1b95ba6d5ee7354e41eee300eac4368119b"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6306/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "22bac4c3b9f9bef2b1da56c1e9768b91562615d66010c237538b0eb5c611ed1d"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6306/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "b1ba55dae1a01ae7a32eb1e72f80f10032b7387b4b67086138b2644faef97b8b"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6306/config.json",
+      "bytes": 409,
+      "sha256": "b5301b27afa4e158de31f8222af51d3f37161f2bc7ab21c7a3789e3380a816b0"
+    },
+    {
+      "path": "mqar/gpu-1/training/dilated-mixed-k4-6306/updates.jsonl",
+      "bytes": 774716,
+      "sha256": "763a580894d4439f22ca816e9d414de8b2ef9a57e5e2e66453cf3ee981678cf2"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k16-6305/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "7e35035975427ead18453935b5ae66529342d2918a8d959ced93b65887d128ea"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k16-6305/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "9c9de82b4a3fc3bf21b802fef36ec2804345f2d14757c5611ff754e452c5156a"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k16-6305/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "0a1c332248fdd2be187309c67d8f7827ffedfda445248567f9c78912ef69b1af"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k16-6305/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "8e6b58224bcbba66b870fe66f5e34f367a6d842af6e122635d80a8e56c8d9b4c"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k16-6305/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "7be8d5c5fe2ac1853c6c389c040c1d8e9ce61eb6b2b0a0875c854d9e30843e59"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k16-6305/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "af5335c05828135466a63dbc1f332219ea0085fcb439e1ad267b6e6d080ec3c8"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k16-6305/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "4fc5be6644d8ab735de110b3586b29947f4c0a189ab828d749d3f4acc8705da3"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k16-6305/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "81964d75ec67bc0c66dcb92efc9eff4656e829d3d0086cd721d6bb180259f277"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k16-6305/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "4362fdfeb5a4a4486ea1f8ebe0563c829100465a81601a93119284316ae29c84"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k16-6305/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "aa072b2eb644873728a77440f4d463e8a66e3147f2db5403bd7b47d9d8993c03"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k16-6305/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "f83a6a442241efd95b36dc8bd936a7bd0887e4adb9c60bc5fbf229895da46cea"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k16-6305/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "3f455906de7838f1f0279f6edb566682c8589f80a5c16db2f3d85b1bc357a654"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k16-6305/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "52acb0718e5e1185cf7a401d2fc189cbe1279ae5f54c1ef350d5343e3ce4efd9"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k16-6305/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "f930a54264c6e9fcaece2ab46ca62e72e9c6ce83867aa79309cff3617052d719"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k16-6305/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "8cbf4887be300f9c3d910b72f54ec15aa0ca452cfedf215d24b91f97fa88a2f6"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k16-6305/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "b55f2a9d80fe1f281a9353c4926e4658c2ff71b3c606dad30bb81495b82bf0c8"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k16-6305/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "aa20886e5951b4092b7ee7f2d3db3098269873abf06066024fa845d889515b44"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k16-6305/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "954fce26d968fd809b075dafec1289998a53811957e4585fc31355b268056a28"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k16-6305/config.json",
+      "bytes": 409,
+      "sha256": "237d1569b70dbec206fd47bc0ddd9ef18c62e7b3f3d1b762d12c491c1e675176"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k16-6305/updates.jsonl",
+      "bytes": 778976,
+      "sha256": "2c892e58d8087a350fae871417b0ae8af5a0eb3ae8ca986a8eed2d89b83ebfd7"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k4-6305/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "4bb7b3dfb1610e602488e103f9751a0d0112d7acb3dd1b4e1df45e28fb202ecb"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k4-6305/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "473504d53a8e7afdad7d49520dfdc9a5e8daa984b544f6f3b8d35440605b8527"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k4-6305/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "bde6a92befc010b24779b7ed5f56175c75868d80076c7b4cb47102be7b85ace1"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k4-6305/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "1a6c93d83f6b4e88e3980e80dae7bfc9551331b9502bef034869cb64dd39d9e9"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k4-6305/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "17346e2f8309018746e7312a010ab5ee5a466719874ebf9f91d96ea582c5853c"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k4-6305/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "38191cbd86d3bed43bd74ba0cb92931b32e1590a29a9e9281afc04b57bc8cb8e"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k4-6305/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "7f4f26e8cd65cb6e3ef64bbafff970d4cafd4da6e7280f42684974765cde1353"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k4-6305/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "0d1ec12e25cfb82faee497f5be3fefeccc1cd8d9ba1c56d760b33c66be199b4e"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k4-6305/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "eb06dfe66110ef8c98758b0a72dbff229b457829e547860598b7968f56366175"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k4-6305/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "adb497db17660bb7b06bee712b62433df254282aaf912ba1a8e5c1e07873164b"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k4-6305/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "7540bf7d97b7b1b78b9d65ce53ff5b5b805360984eae4ad3d069caac482e39fc"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k4-6305/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "672c87a53ab4fee65efeec13ec619b73b50644510610d607989a178756a9fc71"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k4-6305/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "b1a94d0726d6f08b84c67e8e32baae54bd1c34c896c79b505f70e12590ddc21f"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k4-6305/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "63f822445e1891e103bd960b1fe332b63578cff3a0d0581a01058d6c6a185c83"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k4-6305/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "c38422ca68f7def4164d0714e577dfc591abb3193620cbcb6c984f0acf944d13"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k4-6305/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "4a9598dff8227b3d1c02eb04fadc48dbaddf3f5c4ea5a7cab26ac99b224e6c70"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k4-6305/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "72fe7e3d93eec2362153632fa346b15640b91cfba9b506fa8a91b9816d17f73e"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k4-6305/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "afcfe648f6fa67342c85d90f118b3f22303654a21104cd68f845a6ba9ed0a0aa"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k4-6305/config.json",
+      "bytes": 408,
+      "sha256": "181e639c3fab1aa1181824768fff435ddcfb2aa942a1d0cfbeb2659f92b65e33"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k4-6305/updates.jsonl",
+      "bytes": 779468,
+      "sha256": "8674d8c23e96197685195cc68f778955381d4420a3257837d531c7c3314dc8b2"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6304/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "7d400be36925913cc2e7adda5a9cec650ad35dd2002598a709c47a24cbdfaae7"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6304/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "452b2ddc27d74b06eb70ab4335c625434ba37eec076d1b6b9762351b95e1c402"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6304/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "76660ecbc3ac96abc823c126e257aab05adf9983c36e3a7c75184537a722b20e"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6304/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "ef81c35a677d53a2e7da111b4acd9f784af6e4a17f8603d1fa6d13c15459c7a3"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6304/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "f44cd83b6eda716a962cd8240f7ccf436b45d2936a7495ca2ff557e7eb602d8b"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6304/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "574bddf9b649ca32c9fe854d6180fc787ab0c049ad7beb0701460c1950c3c2d8"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6304/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "a6db3cee2c6cf9c6bc8bc46ab899ac8b186bcde7125a872872b5530b55d9466f"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6304/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "f8b7f85dc94fe4e52cffcd870cb837c53af68b29e8e819d41e2463bb74018097"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6304/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "d740110f026d1bc43642588de71b324f16c3568b3e6f141e1877b7940bad1a0b"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6304/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "e82c0d8aacaa0a6370632e8cccd8fdd3363abb83a71dc42f4868578486ca4749"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6304/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "f81c6221d25a0973fe77dbaab71d5d95702475f0505e851931c5bf3cc035a713"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6304/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "2e75db1ab6784c1c699ffb5de54da7a114a3d8a4add371ca133bb32b04de0e5e"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6304/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "9b586531b85af77df358f37ab51ea5966a8cfffc31210ad29e8636bbc4ebe793"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6304/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "a92ac36dd563e9330a129078c6ac3029edf28d645de50f41e5a2c10eb2f78bfa"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6304/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "82bc22e26c0f6bc68acb6da4c18b35f781eb440cefe3a7201b29b2e30c70be0d"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6304/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "7aa6dc0d0e15092cf91660c1de0fbdb7c92e776c08d64acac776514017e00ee2"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6304/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "a4c78f47bc3c48f39eb8177e0d4128079d17c3921602cdfdd8df3b3fefabf013"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6304/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "97e3002d4bb403394650dae35005f05f8bf0bceebbe310dd9d2cab0f69da640a"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6304/config.json",
+      "bytes": 408,
+      "sha256": "4098665d5fb2e2ec757ff31b15a9b51749691e071de9eb86af4f1ef24554d8ec"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6304/updates.jsonl",
+      "bytes": 779330,
+      "sha256": "9b412e7632b407fe84d8ff4cec6c06fb6f0b96ca32ac39329956cc6d490d0a01"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6306/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "d4c768744f760d1021db3455264257c9060b1994059ead0371a6294a5224f8c4"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6306/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "0b8fcfcf6eb3f58343c2f70dc8d11cb8d6e3cf90dfc41100730a421c59cb39cc"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6306/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "e8c32ccaea4913f684cfbcf2eb75db41aadf40a826b13bfc2eaaa6967f1d165d"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6306/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "ff4b4aad905297f7064ad2745cb0c30286c528ec1dedd51b4b97e3eca164a6a5"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6306/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "2c481334afec99fede2a23be118301c136d7730b7ffd0053833a1f939bb0a0f2"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6306/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "984fa591383e5907fde745c3ed6fdc7de0698e452eaa887b05b1da23a6663f54"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6306/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "87f2000f161a7ab58eefa3a7b3143765494469a8c3c48ba7d7371b2b556913c0"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6306/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "cdf9a295cae882914f4381d9901cb81ff9df26f56fc56067829f462394ad8d1c"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6306/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "f60e5b7cd6d1e70f4aee5f95c5c74e913c561d0d730053d1a3a6e51fe472570b"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6306/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "32bba160c142a2d222e69102fc2e9a130d081798ee4bbc717ea402c7a7681dfe"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6306/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "03a4873771e4de6da4afb2bc4c838ea14256b08c98ec78baec3e3e3580b0305f"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6306/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "c03ae09ba8b36aeebb16871d9edfcdafe1c000c612581524eecf9b78f94cfc8d"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6306/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "7858a899dfb064e83a3addee1ee37cc6a2e8838a5f5d6cdccd3b130cfb08a16a"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6306/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "327b02b2fd186bd267ef53c953e009d546364a0d1f94812f3ee2738ae8031874"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6306/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "1ee37f043aa1e5cc4c09952c8e93446729c92236a4e50bc4d0880ccb19caa5c7"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6306/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "cf89e074218e065c7ccf8e83011bb7511dafd8b87904c28b48ef38c7deb1ce75"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6306/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "c20f9cab4a9ece13f43298c1e24633fa63d8cc8492a022940a802f60ec66d252"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6306/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "b3fcd6a0167ad3862414efe5a92d690f7dd7f7dfef97ddb94566ec89180372ec"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6306/config.json",
+      "bytes": 408,
+      "sha256": "60615bc230f8a396e2d85c1816fe9e71d999e58b6d5e95038fa9f9e00f62b113"
+    },
+    {
+      "path": "mqar/gpu-1/training/linear-mixed-k8-6306/updates.jsonl",
+      "bytes": 779466,
+      "sha256": "1df0a1d26c27200388353dd0333e821a9f684d0913c8c5887bdb59084b67c7fa"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6304/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "abefbe9dd91e55895430f55c44e82f7751b384755292b92892477e78638793ba"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6304/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "0a95b0400fdfd9e10f6d0737bc2d327ff5ae4e55debdc01abf2231817e1d5a57"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6304/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "519ead8e933832da41caef39c5c9af4b48f571e8b7ae56dbc762f65768bc9b62"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6304/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "632a53068980f0c7a45b75e0f858b2ce47b22a59a69fd5bc6b4d6c406ce441d8"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6304/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "ff0840b0667b657556dcea1d213b320d2d582944e6990f0bc19193d1098734be"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6304/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "9168a86a3c2ad48179dd07fe97706c3ecc711d3245839b0ab622f5b04c95d520"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6304/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "787303ad8bc0b74c3014c40f91cde5c6ea2b3cabaa9c102bc10c4e08364a5dcd"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6304/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "a8c482256beedd766e3d3406be71b9455ebe9554b65523eff8ce802498a0b1e9"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6304/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "833bf7fec493e7ffd500e7b8d80d150eb5e0e7a35033bd6347f16d10d78ca691"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6304/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "defce08ffb4cc1314b589482969f6e41b637039983f44d32137d2d99e22001cc"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6304/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "f05c0ac4f817edf1409100219e96f95785e5ee3259b642c0889844366ea5d201"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6304/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "68cea0c618e645a67b31786c6a74f56f2d47967acda8179355bee06ab0fe8a21"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6304/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "1345d61dc7d9d42018ef16317ea2524c1f866842aba626dd21abbe107d9d33cd"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6304/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "dab75892c644fb97ba722e33ee00635a5c9e222b16fb3d4d36c63a74f98e2c28"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6304/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "1d354aeb62b5d41a0f08b5c3633eb5ad112b6f16f206141d386847da7e89baf8"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6304/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "1b27bfe14960c779287995dc9dbc48a2baa89f6bb7a4a5b5b7c13560fac91a21"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6304/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "551bf46febaaab2da2937e019200dd852c48d36c48a8af0f13d8264a75f81e04"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6304/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "a40b7c07456b5e26ed61bc4c1dea39d5b9d103850e28c23da843ba9a98fd7fc3"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6304/config.json",
+      "bytes": 408,
+      "sha256": "f5d7a7afe1666b5c4d6bc6180d83c42e04a95d835422f425f9baaad65e3c8abf"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6304/updates.jsonl",
+      "bytes": 775213,
+      "sha256": "300935e45c1770a8cf036394b1e1f3b1686c2c99045527a81756b54e22c4b308"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6306/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "9c4b8cc367cbed0d2a132ef4c4017b95029df30b7241bfb87d9d1926a5bb4992"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6306/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "53af228420c718381e6d6483892981d4c13b254714f74fa659ff013724e537ba"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6306/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "aad2e76dd0850a8993a9deff04534aab7bf84e3cefe246f59e07db323fdfee3a"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6306/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "608214ccac831e4ea4f12825d257ddb8c9926a8283be5ddee5a7c8553486c9da"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6306/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "d6b277e392680cdca7621f43880117ca4f0409c4bce612433a05713512e82b33"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6306/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "cb2e237d62e9061261de79ea18db6cb1de7008bb70271fc701495c2a601794e7"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6306/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "7146d634f0f9abf23a355cbc7f0d20e43bdf1dbb140a291045ac03cd35f0b111"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6306/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "e87b8732badefec1b269c71218f9c3905c2d3b679bab17392b25c9b5dcca2a8d"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6306/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "d0eb2cbc18ecb8b111629cb28e3e41a77f2a3d9ede13e49ceb310c3fa248f9b7"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6306/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "fd7bd7fc2bb8ecbf593977a0bd92256f02b28fc49667ac2ba850ea3a5ab124a5"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6306/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "3b99e45722e004301d536ca86dcecea8edc0589169f8719969d83063e6cf5d4e"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6306/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "682a1ddce783b83cb9c4432645eae580aaaf59fcfaea45b9c99131ffbcf98b1c"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6306/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "efb2520a19720c9cef839b3540aa417668910d629360f1957d1b7d09eabfb5a7"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6306/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "30aaf36190bc6e1ed11af22e201830d5388fff0fa06f5fd90dd2a2a3dadf6905"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6306/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "2ee7b60c3d31c8d0ceb6c629c8cb3c165c1e6c195de141a7a92335ceedeb7413"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6306/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "ecb26605eca1ae7b17d643249cb50be82448e7631d91f3cf49cacae4cc606652"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6306/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "9c54ad9e510da02ce59ba39da8077ad5bffacf7308ae145488f20827e63cd054"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6306/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "868a54d935ea96fd32d134b645aed006589eb66e962e8e66d8d78d8983608177"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6306/config.json",
+      "bytes": 408,
+      "sha256": "42032254e02879d917669f519b50c6e4d7676b2b5e57dc048118cce3fa909fef"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-mixed-k16-6306/updates.jsonl",
+      "bytes": 775617,
+      "sha256": "2d8c7fddaf0b9f6e2de7ce0b17bc82ec5a38ab7b46f1e50ba38416e73c7a846d"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k16-6305/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "503bcbb64081f7c57707573cb271839da5fb07eab40594fb70a955824a8d1a0c"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k16-6305/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "bb725f41c5ac6507de5446a4e5357b31477e85d42815aec63aa9a151c6420081"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k16-6305/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "614bf3b82278a0d2b152e481f8d55c2f70faa5ed033ea5788fe3049258e214de"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k16-6305/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "0fb705db7268d5ff7cbb1f93621d2b3a6f73d990a5326f004066acbf2ca7bdd9"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k16-6305/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "83aa1da9a2ef32948e64c5d9fd4b825d616e70d8b9d6566708049cc428310831"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k16-6305/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "fad8fff315f64b89612c91e7e9b8199239c13ca07467e479f52459949bb862f7"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k16-6305/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "64d74b44c73813f18a9e95bfd25443ad74f8c811e539ebaa844222fc08813a14"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k16-6305/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "634a0ec9cef4788c54335f7e37544963d490d5c1475169d831ecb726f8131ef5"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k16-6305/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "39a1aaa274a943b01ac2109126581135fcd7ad65bb2467c40700e36919a67c12"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k16-6305/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "d670a6fd919e07a16c1ec23c3a7afbbf27cea86db865c7ec3e2fea60ee26d0df"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k16-6305/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "9a5481abae72a7d2b0a305865cf7d98ca075e10216cc65b4ed8e573744b34933"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k16-6305/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "d45022346bc554e02bced884e499ed6313bc16b6b44f13c1c73bec9fe211b816"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k16-6305/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "111527e7446c3eddceedd64209e0b55536a4a5cffc1546d667944f1bbf99d92d"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k16-6305/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "919fec66a042f05cf1845289418d174c5fb1528cc1b267f3935bebd6fb9fcd55"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k16-6305/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "3d3bbf955cfb40297cdcd6418852335ad61911d6f1f9fec7f72c54516c2a5ebb"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k16-6305/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "9e39e1fcea0bbfffd9aad0a502fea25b457bc6ce66a0c0f97dde53ac33a776b7"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k16-6305/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "4958ec8fac66bcc76e3a7d17185943dc001fa3f7aef48522d4fc2727e33d3f6a"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k16-6305/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "3c90e5503bd6fe148da7fafad86d8b79e5f15c30f69a20c01856ef3b3778d39e"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k16-6305/config.json",
+      "bytes": 407,
+      "sha256": "0516dc98ad2e6400a1fc92e5cbab687744e37ef12806ff6dfb9e4036bfbb75e3"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k16-6305/updates.jsonl",
+      "bytes": 795885,
+      "sha256": "28d076383391b11128ba6f0a2b52b8d26d2417420c9fa63d1839f3d10041c368"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k4-6305/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "dc0da778921e24fc99babae904b2332e48adae8f9c22cf9e885ec7b9a2cdf925"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k4-6305/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "f528f54ae360733dca0d4645c0af67d3aafe2811c57bab5280b4982931cdbae9"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k4-6305/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "fa3f1d71da373d706c47db8c5ef14a46ec39581a425b09d1be27d94420fe0a48"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k4-6305/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "dd226f8754ec5f0b8fcea8a845f7c910a1744e93fad75c8b61e4c01084cc8cc4"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k4-6305/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "11d8e3353475dc14b158495f75ee66e10e2f217a5b4335186d76535395c5bd60"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k4-6305/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "33845f650fd0d779359fdb55a59bbbd36e183183edc518468d11ed8e2f0c956b"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k4-6305/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "a2b9d175dbc5e4be6369743559ed8c421c7a4f4c7f20487ad598d20fb989b425"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k4-6305/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "f6b90065ac1f994e71c2aa04847989fe8db800ce4052c8dd0c9f192dc0a04a01"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k4-6305/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "384158290f5472b3723bd7402d61fb2743e1953f8e0f56da42f7bd092e985f40"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k4-6305/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "bebebf9ada93d6e8d61f07d17c9f89bae24834bd1604876f05786c958af1aae9"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k4-6305/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "96da840110d440206476879d0cdf78810934f82667f97b318217ffd1fd739e32"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k4-6305/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "180379b4ddb4c502ead63a37648ef1ffa6cb1d00577b9221a1b933125d8ed687"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k4-6305/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "e33d81bcddc3723e28df11c5134e2b1091a5118f5ccbbd0ead0f3eacc234f1fe"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k4-6305/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "de2be1c20a00a293f57a9797f0480deb9d01ff7e68155bbb97f5495e02327583"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k4-6305/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "c0ecaa253ad35640f2d648bec32a36cab4b2a3a87c731df123b3335103bca8bf"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k4-6305/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "fb8e39a2e0d0d315df30d8f99753a3125acbe40e2be207152bf04a5be5427074"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k4-6305/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "b2345d2713700b081a8757cd25f53763de7e0422ebad49c54304dab9247ea6f5"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k4-6305/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "6db4130d3ac61bb5464dc9ec2e87682b8cfeb952724a280fe3028fe901f84c82"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k4-6305/config.json",
+      "bytes": 406,
+      "sha256": "810549f21aef13383b501981191ac0178723323eb051a877b052e8a2f75299fc"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k4-6305/updates.jsonl",
+      "bytes": 794126,
+      "sha256": "1d8ebd0512e5fc7113def823234c06c5f8536bfb8f02124613576ecbfb616e28"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6304/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "0cd933a9cfe62a6b3266e33c899ccd6eee727b7dd3256cdfe58b0b704bcdf20e"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6304/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "f2ef24e93766204982b4707cd027ebd486ced20642afa765745226dfcba35027"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6304/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "9e4847d050083e36e3d6c93e4b33fe1c3c10439449ce1d57df2542b3212d36cb"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6304/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "6d2a2abae1fdaa9fc1fa13a609a97a683f6a95a8e6d3fb23cf3d8887f682ce0b"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6304/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "0fdb719a91aa2a76298be447f68e99601e6b9429d93201ffc11bf0d9543db9ed"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6304/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "a9eafe5695ff29261c33e945ce01b28d495162a354f7f24cc9b4be44191d17dd"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6304/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "3a67b94cf02509e40bf98aa58e5213a893a60384b767dc51a4a01efcc7ba6faa"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6304/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "1945608ec3fcb79c5c5a1b7ed45038a22d40316e611f3067af9f806777948e63"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6304/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "f751677b3b722c54889e434a16b2698ff10b0e1e89b6b4886317990a39aee558"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6304/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "db3234fba2c8827c3c3b209fcc960f159b73919f69dab7c1564fda3c9e2b3653"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6304/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "9d75f72db7babadcc90feb066ae4e0c059a31d39feb9e629fc840caa224c174b"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6304/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "13c625d833567ce12dbfae58d9ff55096a5b68194eaf254fde8fbb49e854514f"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6304/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "e1d4aad019c96a913277e771bc9c379bfdac8dc95ac38afb5733366eecf1c5e8"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6304/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "377c2cd991864d53e1d3de2f54b41ef01ff3cd89bf9e31aea7fa346e6d8ddcf2"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6304/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "6674278896e483a9a0ee385c90fb4cd387d1d0ec660c270311141e0b1ac5db0c"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6304/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "6aea4398e0bf84b3bdc93440e3a1b883fafb4bd7752264f5efdb49a553e8ebac"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6304/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "aa6d9207ed9eb3b29bceaba0d56e2b5fab3adedd55528874fb2287730d9dfa13"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6304/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "3ac26b92a2bff9736796a38eac952d081255e65a3df349390ed9d1b1da88a7c3"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6304/config.json",
+      "bytes": 406,
+      "sha256": "9001b2984731cb8b4b3790942bee09291264374bdabc607302dd047416d08307"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6304/updates.jsonl",
+      "bytes": 796061,
+      "sha256": "8f98f60ac16b9bb20d19ad1686bb1ac75ad23c286b220ce1dd288f7ec62f3a94"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6306/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "5128fc7f170a67ae6410c372ea98a1a5c2a83711b529b32037e323c36154b9fd"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6306/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "99e7b205a104d52fd3f8bd5f63e48cd3d265aedaf7c2060a1059f0074abf80ea"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6306/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "ab07d7f4883ac121356f67c6df4b86157a28601121afec0e4504d6c66efd386b"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6306/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "fbe38ad099fdd118c6319425db409c2b12af4f0576a18bfd49d066d6cc94080c"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6306/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "c457d7495f945da6abdf1727369db42b03c4b15e6bad5a0fc3b922cd791a3ba5"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6306/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "9a67f441db626fae8828c14ff42dec063baf81fad90d6bcee4022973a8304687"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6306/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "aba9f8ec5b649de1063f07491785185c979ecbb104b70057a5f77a17f0a93611"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6306/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "2dc9a16d38edf894c679022e53ce82d234650c87d7b8971ec03ff2ef0dde89d3"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6306/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "f93dc306e909ce50c984aaa5db5062a4832b5741b9476dca10b40c2f99e17ceb"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6306/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "7186bbdf664bb18b802d6dc81239d3178902249c68dfa147c6958660ada1faa4"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6306/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "a05de1587ecbef97490e9c6fd6b5cc4e1f53c5082fa958a33c9edcac4660214e"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6306/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "4f90783760ba6328d571e9f880a47e7676c871cd9e12806ead59c7b1fe6a7cbf"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6306/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "b4591ff2730274b3c6f113bf6aae27351c357e213e785de0efc31ada13c5ef34"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6306/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "70293f125fcf4db975569431af6664b6d1cc439e3765b48eec752e95bc43e811"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6306/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "e598edd262580c759133e22c9606b9f6e79a4253f01899b59ebd772dfe71fc8f"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6306/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "6c5f6f2f9f533dae95baabaed3f9aefd8a3e00028f0dad002796bc449d15fd4f"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6306/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "42904ce7a7f1ebbeebc7cdd068a09d3ee2427a704720040bab46c9820e70dfdd"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6306/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "77f77b42b11b813e3bc81d96835e114c8b3234c877305c51b566dd2bbaa0dea8"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6306/config.json",
+      "bytes": 406,
+      "sha256": "d73e2031d2f27b50dd092a9c3d3238e4b665eaf329847a682e74e9c93acfe521"
+    },
+    {
+      "path": "mqar/gpu-1/training/local-near-k8-6306/updates.jsonl",
+      "bytes": 796068,
+      "sha256": "9c65255e93d2cbcc50f9bbef9bc33f8a87915eb04d5790927e1b9bc319fe5be3"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6304/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "8a0dcbf6632b360a3d5abc25fec69ffb3c97bd764acc7f54649e85ce15a44299"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6304/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "dfad168ea049fef009f39c62db34e799148519699056c393f6cc1eb6c9b6a7a4"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6304/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "175b9670461adf5fed3653d83700e155ec6acc999b57b6dc2503d5f18bce218a"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6304/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "d4586f881bc1f03d1fbcce52fc7e96455d31408d6d325ae8eda93327dcbb788a"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6304/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "39e06e582b7642bc2c5405906db19872b44126f7bd1eb09e8f51fe1a424ef328"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6304/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "00b3d3b8f06b1b32d0dceff699ec8162ea7799a9627ace395bcf3225d5162af6"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6304/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "18c963c6765341534ca227b13eec9e98dc96bac24435c33000a1d03f76ba27c2"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6304/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "e592db98ad5427e1d94fa48004043672d445f467d0f8ef5d7d1eb48b981c3231"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6304/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "0d41f7712bc367e486dac4ee83c0db58b41f8e9d9f93a58ab8f335c26752b577"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6304/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "5bdaaf56690e492ec58e253441477eeb94d9f919ea12142b8843f41db5f4bd50"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6304/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "9e77466a2b933aa5942c25c61019c9af4b961a90933302d59901538f5e192578"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6304/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "6d2b10a9929cbb9ef88acb82c693ce9772e32fd0ff3c917147cf86f2ed908639"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6304/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "28c6898d4a86e802439ca968dd773f15c7385953e7bae49b78b1bf0525276303"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6304/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "d70335cf114808ab9d961032093e017cbcbef1fe6880f3917284b0a3ee854be0"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6304/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "5a82d5812130f96d9249218de288f29147d4cdf5be5a499e661624e367916148"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6304/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "3601a60b84f195f4210eb0df1480fbb41d2c9507a5ebaa4003fc954f1dd8426c"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6304/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "ac5f2a1fbf7ee4b60dbd90a41d3ef33c4e1baf763e3c84f77a3536788e3b0930"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6304/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "5316c02ecddc85a8444339e5f6a2df8a28ac854f034a8df0d70176a95d42a1e9"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6304/config.json",
+      "bytes": 407,
+      "sha256": "3432865055176d1e2e3a70ca757d48304581f066b0d2e17ac37b0c0605e3ccda"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6304/updates.jsonl",
+      "bytes": 791781,
+      "sha256": "0a718e0ae5003398bd6f0ee6d59737a7d4001f6e6d425c6cbe2944d78a48d2d6"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6306/checkpoints/update-1000.pt",
+      "bytes": 5295107,
+      "sha256": "d383f3defbb15801d042877f587f09c3865024dda5101374f1a50b19ec3f2d39"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6306/checkpoints/update-1250.pt",
+      "bytes": 5295107,
+      "sha256": "b529d3a0a9cb1e9f74f2825fbb8ac38ddb6b7b4a48f256c6e8c84f523873b876"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6306/checkpoints/update-1500.pt",
+      "bytes": 5295107,
+      "sha256": "b376bef2135e37dc577f159eb1eed840907b8ab39539adf1f2fcbe616eb242f9"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6306/checkpoints/update-1750.pt",
+      "bytes": 5295107,
+      "sha256": "197a2bac078b6ff4177d20e320df470113508ca123d2edb97babbcec109762bd"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6306/checkpoints/update-2000.pt",
+      "bytes": 5295107,
+      "sha256": "f843f67eb7df6ea7aacec46a8dd5fdf11375c7b461af9e2f55016a40859e81d9"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6306/checkpoints/update-2250.pt",
+      "bytes": 5295107,
+      "sha256": "73e723ffa7bb5464a0d11beac813749c9b0b46c67941f9c7757476b37d88254f"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6306/checkpoints/update-250.pt",
+      "bytes": 5294983,
+      "sha256": "52201e33c1e8c3bf17d14499d862957388bc24be8c9a608720051a63159cc3ed"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6306/checkpoints/update-2500.pt",
+      "bytes": 5295107,
+      "sha256": "6a0e712fc2a82acb1645050f5c4f8ad9cdd659bd66c681174cab381354583ddb"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6306/checkpoints/update-2750.pt",
+      "bytes": 5295107,
+      "sha256": "d1b4bc39a535611e1db9b289d213445f3ad8baa91e3757d0ba78ecf29e8f1a2e"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6306/checkpoints/update-3000.pt",
+      "bytes": 5295107,
+      "sha256": "abf80855019ec655793523348ca96819c48d1d13381d6435d128583f17a46805"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6306/checkpoints/update-3250.pt",
+      "bytes": 5295107,
+      "sha256": "cb03a14a088660001bb053c8a6122308d515ad73ee9306c54c7a777c5a57e32c"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6306/checkpoints/update-3500.pt",
+      "bytes": 5295107,
+      "sha256": "32d89efede8902b752cdda84542e45b8d7bf0c76be539611f045d516413cc7aa"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6306/checkpoints/update-3750.pt",
+      "bytes": 5295107,
+      "sha256": "9876cc1521c2a01302abb9702c9988105a5245ac8b0bb54b2971e9d182d4751e"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6306/checkpoints/update-4000.pt",
+      "bytes": 5295107,
+      "sha256": "18fc2f4f0664fa22b8bc93f46dd272c70437bfdc1ecd9be0d6fa7c622d132d44"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6306/checkpoints/update-4250.pt",
+      "bytes": 5295107,
+      "sha256": "17b7839d53230bd41c5b829fc452a2f4f9c85c4abdd6522520276d3b9d377093"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6306/checkpoints/update-4500.pt",
+      "bytes": 5295107,
+      "sha256": "1531639a4e6ee3ef45c13ddc5b252d9d648c3baa1cdf7072fea78e49fa8185ef"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6306/checkpoints/update-500.pt",
+      "bytes": 5294983,
+      "sha256": "2e695b1d4f9edcebfe8b2c9b04dd3b42e275aeacdb08dc8cbcb7ef7d4f17b22b"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6306/checkpoints/update-750.pt",
+      "bytes": 5294983,
+      "sha256": "7bd1393c21f24607f9420b790d1bf784e6fe0a2997915aabed7f70f8bc028cd0"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6306/config.json",
+      "bytes": 407,
+      "sha256": "38a2a0a835bf64f6d27138bce5164bb47ae761887ba2c93a8a3ab3bba474a403"
+    },
+    {
+      "path": "mqar/gpu-1/training/topk-mixed-k16-6306/updates.jsonl",
+      "bytes": 792911,
+      "sha256": "694f155cdefdb1a81d89f10b3b9a4d57e0316148f4b8c00b731dab40dade57e7"
+    },
+    {
+      "path": "mqar/job-status.json",
+      "bytes": 183,
+      "sha256": "56a0c2c6a2efb7dbb9c3f8b97d55f064edfc91ddbcb3a5699a49385c57427efa"
+    }
+  ]
+}
