@@ -29,7 +29,13 @@
     6304,
     6305
   ],
-  "task3_complete_evaluations": {},
+  "task3_complete_evaluations": {
+    "original_draft": {
+      "primary": 480,
+      "quality": 120,
+      "fixed": 48
+    }
+  },
   "task3_alignment_rows_by_bank": {},
   "pending": [
     "Task 3 runtime, standalone quality, and adapter timing evaluations",

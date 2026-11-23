@@ -1,0 +1,66 @@
+{
+  "draft": "original_draft",
+  "source_revision": "fdaede4b889d17f427f4588ce9963d7252b09361",
+  "kaggle_version": "mbh2006/atml-pa4-original-evaluation/1",
+  "modes": {
+    "primary": {
+      "rows": 480,
+      "raw_sha256": "aab8378d9cd2eea8bd9ece88712244b539217657a34b304282f54da0165b5577",
+      "compressed_sha256": "961a5b0c14a9e8fdee3274b4f93c222e8fbe9d109cb81d30b2770fd04db08447"
+    },
+    "quality": {
+      "rows": 120,
+      "raw_sha256": "3d82ff1e8d3ee45cc45273041b4ff2bac1f444b97bd3d6eaaa2ce84bd0224974",
+      "compressed_sha256": "6307c022eb6f4d134250c3aefab2cc435fd66534d3583b68e508ceca5d3a5f57"
+    },
+    "fixed": {
+      "rows": 48,
+      "raw_sha256": "543635bfd891493e5b26e439fb691412ca58d65f8ab226e8ca6e814940144c45",
+      "compressed_sha256": "efd1981c9b5433f61c4f768c77336deb633800a072682be5d69b389fce511990"
+    }
+  },
+  "status": "passed",
+  "local_directory": "runs/task3/original-evaluation-v1/evaluation/original_draft",
+  "files": {
+    "fixed/benchmark.jsonl": {
+      "bytes": 162223,
+      "sha256": "543635bfd891493e5b26e439fb691412ca58d65f8ab226e8ca6e814940144c45"
+    },
+    "fixed/config.json": {
+      "bytes": 2756,
+      "sha256": "ceeccd3359306528e82ce2679361eff51fd63d2492eeb57952e5de28e282452d"
+    },
+    "fixed/status.json": {
+      "bytes": 70,
+      "sha256": "61e8da0535b53d5fbcc681a82354635a7c0932de8ce7da6d25fd314d688cf444"
+    },
+    "job-status.json": {
+      "bytes": 251,
+      "sha256": "f2254be8ed03d0621da95e74e7f992869731b6cbe61c7f5b538591b42ee06108"
+    },
+    "primary/benchmark.jsonl": {
+      "bytes": 3263695,
+      "sha256": "aab8378d9cd2eea8bd9ece88712244b539217657a34b304282f54da0165b5577"
+    },
+    "primary/config.json": {
+      "bytes": 2764,
+      "sha256": "e7fdd8a22a631716d713587ad074e6534042ac682e473c6c88a558cf85e9e6fb"
+    },
+    "primary/status.json": {
+      "bytes": 73,
+      "sha256": "b9d46842fd527877211a25a9e8eec936c1c6959e6db2ea91e0ca4e154c8beb4f"
+    },
+    "quality/benchmark.jsonl": {
+      "bytes": 248542,
+      "sha256": "3d82ff1e8d3ee45cc45273041b4ff2bac1f444b97bd3d6eaaa2ce84bd0224974"
+    },
+    "quality/config.json": {
+      "bytes": 2761,
+      "sha256": "e5946f6f09661b1ed2f5f5171d6d5ba44884ecba0586822ed0c6b7d20022c77f"
+    },
+    "quality/status.json": {
+      "bytes": 73,
+      "sha256": "a8ded29c820101895c4de84f6dd672c69741d44544f2e9b009b0a50285cfc6f9"
+    }
+  }
+}
