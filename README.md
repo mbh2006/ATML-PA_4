@@ -17,7 +17,7 @@ Setup evidence includes the [CUDA smoke result](results/setup/gpu-preflight.json
 
 ## Reproduce completed stages
 
-The measured CUDA runs use Linux, Python 3.13.16, PyTorch 2.11.0+cu130, CUDA 13.0, and Tesla T4. The Qwen runs use Transformers 4.57.1, huggingface_hub 0.36.2, and tokenizers 0.22.2. Staff data preparation used Datasets 4.8.5. The attention plotting script uses Matplotlib 3.11.2. Check each result's recorded environment when comparing measurements.
+The measured CUDA runs use Linux, Python 3.13.16, PyTorch 2.11.0+cu130, CUDA 13.0, and Tesla T4. Start with that CUDA build of PyTorch and install the direct dependencies in [requirements.txt](requirements.txt). The Qwen runs use Transformers 4.57.1, huggingface_hub 0.36.2, and tokenizers 0.22.2. Staff data preparation used Datasets 4.8.5. The local result summaries and figures use NumPy 2.5.5 and Matplotlib 3.11.2. Check each result's recorded environment when comparing measurements.
 
 From the repository root, check out the pinned staff data tools. Keep the recovered private public-data bundle, including its manifest, under `runs/preflight/public-data-v2/public-data` for the exact artifact audit and Qwen commands.
 
@@ -39,7 +39,8 @@ python scripts/run_mqar_dense_controls.py --staff vendor/atml-pa4-datasets --out
 python scripts/select_mqar_intervention.py --dense-controls results/task2b --output runs/task2b/selection-reproduction.json
 python -m pa4.qwen_validation --lock results/setup/local_source_revisions.json --output runs/task3/qwen-reproduction.json
 python -m pa4.kv_retrieval --lock results/setup/local_source_revisions.json --cases vendor/atml-pa4-datasets/data/kv_retrieval/kv_retrieval_cases.jsonl.gz --output runs/task2c/retrieval-reproduction
-python -m scripts.summarize_kv --retrieval runs/task2c/retrieval-reproduction/cases.jsonl --output runs/task2c/retrieval-reproduction/summary.json
+python -m scripts.summarize_kv --retrieval runs/task2c/retrieval-reproduction/cases.jsonl --locked-cases vendor/atml-pa4-datasets/data/kv_retrieval/kv_retrieval_cases.jsonl.gz --output runs/task2c/retrieval-reproduction/summary.json
+python -m scripts.plot_kv --summary runs/task2c/retrieval-reproduction/summary.json --output runs/task2c/retrieval-reproduction/figures
 
 # CPU checks and plots
 python -m pa4.speculative_validation --output runs/task3/markov-reproduction.json
@@ -65,4 +66,4 @@ python scripts/plot_attention.py --input results/task2a/operator-grid.json --out
 - All three dense mixed K=16 controls reached 4,500 updates. The development rule selected top-64 for the trained intervention. [Frozen selection and source scores](results/task2b/intervention-selection.json)
 - Task 2B completed all 42 MQAR training runs, 54 held-out evaluations, and the 20-condition cost sweep. [Matrix audit](results/task2b/full-matrix/audit.json), [cost measurements](results/task2b/mqar-cost.json), [figures and tables](results/task2b/figures/)
 - Task 2C packing and byte-budget checks passed on synthetic cache tensors. [KV codec validation](results/pilot/kv-codec-validation.json)
-- Task 2C ran six cache policies on all 180 locked Qwen retrieval prompts. The archive preserves each generated answer, the per-token scores, selection positions, and measured byte budgets. [Raw paired evidence and summaries](results/task2c/retrieval-full/)
+- Task 2C ran six cache policies on all 180 locked Qwen retrieval prompts. The archive preserves each generated answer, the per-token scores, selection positions, and measured byte budgets. [Raw paired evidence and summaries](results/task2c/retrieval-full/), [retrieval accuracy figure](results/task2c/figures/retrieval-accuracy.png)

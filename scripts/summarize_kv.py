@@ -2,6 +2,7 @@
 
 import argparse
 import gzip
+import hashlib
 import json
 import math
 from collections import Counter
@@ -66,6 +67,14 @@ def summarize_group(rows, intervals=False):
             "mean_fraction_evidence_retained": float(np.mean([
                 item["evidence_retained"] / len(row["evidence_positions"]) for row, item in zip(rows, items, strict=True)
             ])),
+            "mean_fraction_evidence_selected_for_fp16": float(np.mean([
+                item["evidence_fp16_selected"] / len(row["evidence_positions"])
+                for row, item in zip(rows, items, strict=True)
+            ])) if policy in ("sink-recent", "question", "hybrid") else None,
+            "median_question_scoring_seconds": median(row["question_scoring_seconds"] for row in rows),
+            "median_pack_seconds": median(item["pack_seconds"] for item in items),
+            "median_suffix_seconds": median(item["suffix_seconds"] for item in items),
+            "median_generation_seconds": median(item["generation_seconds"] for item in items),
             "median_prefix_bytes": median(item["prefix_packed_bytes"] for item in items),
             "median_int4_cap_bytes": median(item["int4_budget_bytes"] for item in items),
             "median_decode_live_bytes": median(item["decode_live_bytes"] for item in items),
@@ -118,6 +127,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--retrieval", type=Path, required=True)
     parser.add_argument("--systems", type=Path)
+    parser.add_argument("--locked-cases", type=Path)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--expected-cases", type=int, default=180)
     args = parser.parse_args()
@@ -130,6 +140,15 @@ def main():
                   for cell in cells],
         "aligned_examples": [min(row["id"] for row in rows if tuple(row["cell"]) == cell) for cell in cells],
     }
+    if args.locked_cases:
+        locked = read_rows(args.locked_cases)
+        observed = [(row["id"], row["cell"], row["gold"]) for row in rows]
+        expected = [(row["id"], [row["target_tokens"], row["position"], row["distractors"]], str(row["code"]))
+                    for row in locked]
+        if observed != expected:
+            raise ValueError("Retrieval cases or answers differ from the ordered staff manifest")
+        with args.locked_cases.open("rb") as stream:
+            summary["locked_cases_sha256"] = hashlib.file_digest(stream, "sha256").hexdigest()
     if args.systems:
         summary["systems"] = systems(read_rows(args.systems))
     args.output.parent.mkdir(parents=True, exist_ok=True)

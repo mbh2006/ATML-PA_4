@@ -1,0 +1,8 @@
+# Kaggle measurements used the preinstalled CUDA 13.0 build of PyTorch 2.11.0.
+torch==2.11.0
+transformers==4.57.1
+huggingface_hub==0.36.2
+tokenizers==0.22.2
+datasets==4.8.5
+numpy==2.5.5
+matplotlib==3.11.2

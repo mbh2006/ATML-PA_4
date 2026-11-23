@@ -119,16 +119,78 @@ def deployment(config, stats, teacher_seconds):
         return None
     phases = audit["training"]["seconds"]
     pool = teacher_seconds if audit["policy"] == "off" else 0.0
-    cost = pool + sum(phases.values()) + audit["merge_seconds"]
+    training_wall = audit["training"].get("training_loop_wall_seconds", sum(phases.values()))
+    cost = pool + training_wall + audit["merge_seconds"]
     net = stats["mean_paired_wall_seconds_saved"]
     return {"teacher_pool_seconds_charged": pool, "training_seconds_by_phase": phases,
-            "merge_seconds": audit["merge_seconds"], "total_measured_upfront_seconds": cost,
+            "training_loop_wall_seconds": training_wall, "merge_seconds": audit["merge_seconds"],
+            "total_measured_upfront_seconds": cost,
             "requests_to_recover_cost_vs_target_only": cost / net if net > 0 else None}
+
+
+def by_output_length(rows):
+    result = {}
+    for low, high in ((1, 16), (17, 32), (33, 64)):
+        segment = [row for row in rows if low <= len(row["runs"]["spec"]["tokens"]) <= high]
+        if segment:
+            result[f"{low}-{high}"] = paired_statistics(segment, bootstrap=False)
+    return result
+
+
+def summarize_quality(rows):
+    if len(rows) != 120 or len({row["id"] for row in rows}) != 120:
+        raise ValueError("Standalone quality requires all 120 fixed prompts")
+    summary = {}
+    for group in ("math", "familiar", "shifted"):
+        segment = [row for row in rows if row["group"] == group]
+        expected = 60 if group == "math" else 30
+        if len(segment) != expected:
+            raise ValueError("Incorrect standalone workload counts")
+        summary[group] = {
+            "n": len(segment), "accuracy": sum(row["correct"] for row in segment) / expected,
+            "compliance": sum(row["extraction_compliant"] for row in segment) / expected if group != "math" else None,
+            "unextractable": sum(row["unextractable"] for row in segment),
+            "eos": sum(row["result"]["eos"] for row in segment),
+            "truncated": sum(row["result"]["truncated"] for row in segment),
+        }
+    return summary
+
+
+def summarize_fixed(rows):
+    if len(rows) != 48 or len({(row["id"], row["gamma"]) for row in rows}) != 48:
+        raise ValueError("Fixed-cap diagnostic requires 24 prompts at each width")
+    if any(len(row["runs"][mode]["tokens"]) != 64 for row in rows for mode in ("spec", "target")):
+        raise ValueError("Fixed-cap diagnostic must ignore EOS and emit all 64 tokens")
+    return {width: paired_statistics([row for row in rows if row["gamma"] == width], bootstrap=True) for width in (2, 4)}
+
+
+def compare_unmerged(rows, merged_rows):
+    if len(rows) != 48 or len({(row["id"], row["gamma"]) for row in rows}) != 48:
+        raise ValueError("The unmerged experiment must use the fixed 24-prompt diagnostic subset")
+    reference = {(row["id"], row["gamma"], row["repeat"]): row for row in merged_rows}
+    by_width = defaultdict(list)
+    for row in rows:
+        key = row["id"], row["gamma"], row["repeat"]
+        merged = reference[key]
+        if merged["seed"] != row["seed"]:
+            raise ValueError("Unmerged timing seed differs from the corresponding merged trial")
+        base, wrapped = merged["runs"]["spec"], row["runs"]["spec"]
+        by_width[row["gamma"]].append({
+            "id": row["id"], "unmerged_to_merged_wall_ratio": wrapped["wall_seconds"] / base["wall_seconds"],
+            "merged_output_tokens": len(base["tokens"]), "unmerged_output_tokens": len(wrapped["tokens"]),
+            "unmerged_to_merged_seconds_per_token": (wrapped["wall_seconds"] / len(wrapped["tokens"])) / (
+                base["wall_seconds"] / len(base["tokens"])
+            ),
+        })
+    return dict(by_width)
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--primary", action="append", type=Path, required=True)
+    parser.add_argument("--quality", action="append", type=Path, default=[])
+    parser.add_argument("--fixed", action="append", type=Path, default=[])
+    parser.add_argument("--unmerged", type=Path)
     parser.add_argument("--teacher-pool-status", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
@@ -142,24 +204,39 @@ def main():
             raise ValueError(f"Expected primary benchmark evidence in {path}")
         experiments[config["draft"]].append((config, rows))
     result = {}
+    primary_rows = {}
     for name, jobs in experiments.items():
         configs, rows_by_job = zip(*jobs)
         all_rows = [row for job in rows_by_job for row in job]
+        primary_rows[name] = all_rows
         keys = {(row["id"], row["gamma"], row["repeat"]) for row in all_rows}
         if len(all_rows) != 480 or len(keys) != 480 or Counter(row["id"] for row in all_rows).total() != 480:
             raise ValueError(f"The primary grid for {name} must contain 480 unique comparisons")
         if Counter(Counter(row["id"] for row in all_rows).values()) != {4: 120}:
             raise ValueError(f"The primary grid for {name} has an incomplete prompt")
-        result[name] = {}
+        result[name] = {"widths": {}}
         for width in (2, 4):
             rows = [row for row in all_rows if row["gamma"] == width]
             pooled = paired_statistics(rows, bootstrap=True)
-            result[name][width] = {
+            result[name]["widths"][width] = {
                 "pooled": pooled, "cost_model": timing_model(configs, rows, width, pooled["acceptance"]),
                 "deployment": deployment(configs[0], pooled, pool["sampling_elapsed_seconds"]),
                 "by_group": {group: paired_statistics([r for r in rows if r["group"] == group], bootstrap=True)
                              for group in ("math", "familiar", "shifted")},
+                "by_speculative_output_length": by_output_length(rows),
             }
+    for paths, mode, summarize in ((args.quality, "quality", summarize_quality), (args.fixed, "fixed", summarize_fixed)):
+        for path in paths:
+            config, rows = load_experiment(path)
+            if config["mode"] != mode:
+                raise ValueError(f"Expected {mode} evidence in {path}")
+            result[config["draft"]][mode] = summarize(rows)
+    if args.unmerged:
+        config, rows = load_experiment(args.unmerged)
+        if config["mode"] != "unmerged":
+            raise ValueError("The unmerged diagnostic has the wrong configuration")
+        name = config["draft"]
+        result[name]["unmerged"] = compare_unmerged(rows, primary_rows[name])
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, indent=2, allow_nan=False) + "\n", encoding="utf-8")
 

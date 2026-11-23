@@ -146,7 +146,7 @@ def run(args):
     scaler = torch.amp.GradScaler("cuda", init_scale=1024)
     state = {
         "attempted": 0, "executed": 0, "counts": dict.fromkeys(QUOTAS, 0), "cursors": dict.fromkeys(QUOTAS, 0),
-        "pending": dict.fromkeys(QUOTAS), "journal_size": 0, "peak_allocated_gpu_bytes": 0,
+        "pending": dict.fromkeys(QUOTAS), "journal_size": 0, "peak_allocated_gpu_bytes": 0, "wall_seconds": 0.0,
         "seconds": dict.fromkeys(("teacher", "rollout", "backward", "optimizer"), 0.0),
     }
     if args.resume:
@@ -165,11 +165,13 @@ def run(args):
 
     log_path = args.output / "training.jsonl"
     checkpoint_path = args.resume
+    previous_wall_seconds = state.get("wall_seconds", 0.0)
     with log_path.open("r+b" if args.resume else "x+b") as journal:
         if journal.seek(0, os.SEEK_END) < state["journal_size"]:
             raise ValueError("The training journal is shorter than the checkpoint")
         journal.seek(state["journal_size"])
         journal.truncate()
+        wall_start = synced_time()
         for index, group in enumerate(token_schedule()):
             if index < state["attempted"]:
                 continue
@@ -258,6 +260,7 @@ def run(args):
                     "loss_scale": scale, "lr": optimizer.param_groups[0]["lr"], "peak_allocated_gpu_bytes": peak,
                     "cumulative_seconds": state["seconds"]})
             journal.flush()
+            state["wall_seconds"] = previous_wall_seconds + time.perf_counter() - wall_start
             if state["attempted"] % 25 == 0 or state["attempted"] == args.max_updates or state["counts"] == QUOTAS:
                 checkpoint_path = save_checkpoint(args.output, adapters, optimizer, scaler, state, journal)
                 print(f"{args.policy}/{args.seed}: {state['attempted']} updates, {state['counts']} tokens", flush=True)
@@ -265,6 +268,7 @@ def run(args):
         "status": "passed" if state["counts"] == QUOTAS else "partial",
         "tokens": state["counts"], "attempted_updates": state["attempted"], "executed_updates": state["executed"],
         "parameter_counts": parameter_counts, "peak_allocated_gpu_bytes": state.get("peak_allocated_gpu_bytes", 0),
+        "training_loop_wall_seconds": previous_wall_seconds + time.perf_counter() - wall_start,
         "seconds": state["seconds"], "checkpoint": checkpoint_path.name if checkpoint_path else None,
     })
 

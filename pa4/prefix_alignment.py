@@ -27,11 +27,13 @@ def compare(teacher, draft):
     p, q = teacher.exp(), draft.exp()
     difference = teacher - draft
     tv = ((p - q).abs().sum(-1) * 0.5).clamp(0, 1)
+    target_top1, draft_top1 = teacher.argmax(-1), draft.argmax(-1)
     return {
         "forward_kl": (p * difference).sum(-1).clamp_min(0).tolist(),
         "reverse_kl": (-q * difference).sum(-1).clamp_min(0).tolist(),
         "tv": tv.tolist(), "expected_acceptance": (1 - tv).tolist(),
-        "greedy_agreement": (teacher.argmax(-1) == draft.argmax(-1)).tolist(),
+        "greedy_agreement": (target_top1 == draft_top1).tolist(),
+        "target_top1_ids": target_top1.tolist(), "draft_top1_ids": draft_top1.tolist(),
     }
 
 
