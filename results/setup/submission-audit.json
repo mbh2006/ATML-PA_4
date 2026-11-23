@@ -19,6 +19,10 @@
   "task3_frozen_initial_banks": 3,
   "task3_resumed_smoke_updates": 6,
   "task3_teacher_pool_prompts": 800,
+  "task3_complete_training_seeds": {
+    "off_6304": 157,
+    "off_6305": 157
+  },
   "pending": [
     "Task 3 full draft training and aligned-prefix, runtime, and standalone evaluations",
     "Task 2C batched cache systems timings"

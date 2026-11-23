@@ -118,6 +118,8 @@ Run the same three benchmarks with `--checkpoint` for each of the four trained d
 - Task 3 real-Qwen validation passed split prefill, replay after speculative rounds, and targeted rollback. [Cache validation evidence](results/task3/qwen-cache-validation.json)
 - Task 3 completed the on-policy CUDA smoke and resumed from update four in a fresh process. The journal audit reconciled all six optimizer updates. [Resume audit and artifact hashes](results/task3/distillation-smoke/)
 - Task 3 recovered the frozen teacher pool for all 800 locked training prompts. The raw responses are kept with the private Kaggle run and local evidence. [Audit, response-length index, and artifact hashes](results/task3/teacher-pool/)
+- Both off-policy seeds completed their 40,000-token budgets. The archives include update losses, rollout IDs, scored-token offsets, and checkpoint hashes. [Off-policy training](results/task3/training/)
+- The original-draft timing smoke covered all 12 paired trials in its three-prompt slice. [Per-round timing evidence](results/task3/original-timing-smoke/)
 - Task 1 compression primitives passed exact mask, packed-byte, and mixed-allocation checks. [Compression checks](results/pilot/weight-validation.json)
 - Task 2B pilots covered each operator on CUDA. The CPU recovery check reproduced model and optimizer states bit for bit. [Operator and resume checks](results/pilot/mqar-validation.json), [pilot timing](results/pilot/mqar-timing.json)
 - All three dense mixed K=16 controls reached 4,500 updates. The development rule selected top-64 for the trained intervention. [Frozen selection and source scores](results/task2b/intervention-selection.json)

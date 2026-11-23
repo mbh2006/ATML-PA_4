@@ -128,6 +128,17 @@ def deployment(config, stats, teacher_seconds):
             "requests_to_recover_cost_vs_target_only": cost / net if net > 0 else None}
 
 
+def savings_vs_original(rows, original_rows, width):
+    original = {(row["id"], row["repeat"]): row for row in original_rows if row["gamma"] == width}
+    matched = []
+    for row in rows:
+        reference = original[row["id"], row["repeat"]]
+        if (row["seed"], row["group"]) != (reference["seed"], reference["group"]):
+            raise ValueError("Original and distilled benchmarks must share prompt groups and seeds")
+        matched.append(reference["runs"]["spec"]["wall_seconds"] - row["runs"]["spec"]["wall_seconds"])
+    return sum(matched) / len(matched)
+
+
 def by_output_length(rows):
     result = {}
     for low, high in ((1, 16), (17, 32), (33, 64)):
@@ -204,11 +215,10 @@ def main():
             raise ValueError(f"Expected primary benchmark evidence in {path}")
         experiments[config["draft"]].append((config, rows))
     result = {}
-    primary_rows = {}
+    primary_rows = {name: [row for _, rows in jobs for row in rows] for name, jobs in experiments.items()}
     for name, jobs in experiments.items():
-        configs, rows_by_job = zip(*jobs)
-        all_rows = [row for job in rows_by_job for row in job]
-        primary_rows[name] = all_rows
+        configs = [config for config, _ in jobs]
+        all_rows = primary_rows[name]
         keys = {(row["id"], row["gamma"], row["repeat"]) for row in all_rows}
         if len(all_rows) != 480 or len(keys) != 480 or Counter(row["id"] for row in all_rows).total() != 480:
             raise ValueError(f"The primary grid for {name} must contain 480 unique comparisons")
@@ -217,10 +227,19 @@ def main():
         result[name] = {"widths": {}}
         for width in (2, 4):
             rows = [row for row in all_rows if row["gamma"] == width]
+            if len(rows) != 240 or {row["repeat"] for row in rows} != {0, 1}:
+                raise ValueError(f"The width-{width} comparison for {name} does not contain its two matched repeats")
             pooled = paired_statistics(rows, bootstrap=True)
+            upfront = deployment(configs[0], pooled, pool["sampling_elapsed_seconds"])
+            if upfront is not None and "original_draft" in primary_rows:
+                original_saving = savings_vs_original(rows, primary_rows["original_draft"], width)
+                upfront["mean_wall_seconds_saved_vs_original_speculation"] = original_saving
+                upfront["requests_to_recover_cost_vs_original_speculation"] = (
+                    upfront["total_measured_upfront_seconds"] / original_saving if original_saving > 0 else None
+                )
             result[name]["widths"][width] = {
                 "pooled": pooled, "cost_model": timing_model(configs, rows, width, pooled["acceptance"]),
-                "deployment": deployment(configs[0], pooled, pool["sampling_elapsed_seconds"]),
+                "deployment": upfront,
                 "by_group": {group: paired_statistics([r for r in rows if r["group"] == group], bootstrap=True)
                              for group in ("math", "familiar", "shifted")},
                 "by_speculative_output_length": by_output_length(rows),

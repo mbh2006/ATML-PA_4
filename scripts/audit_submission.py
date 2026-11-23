@@ -164,6 +164,14 @@ def audit(root, data, staff):
     pool_index = read_rows(results / "task3/teacher-pool/rollout-index.jsonl")
     assert len({row["prompt_id"] for row in pool_index}) == 800
     assert sum(row["response_tokens"] for row in pool_index) == sum(pool["response_tokens"].values())
+    training_seeds = {}
+    for path in sorted((results / "task3/training").glob("*/audit.json")):
+        training = read_json(path)
+        assert training["status"] == "passed" and training["attempted_updates"] == 157
+        assert training["tokens"] == {"math": 30_000, "short": 10_000}
+        if training["policy"] == "off":
+            assert training["frozen_pool_match"] is True
+        training_seeds[path.parent.name] = training["executed_updates"]
     return {
         "input_artifact_hashes": "passed",
         "c4_gsm8k_short_form_split_checks": "passed",
@@ -182,6 +190,7 @@ def audit(root, data, staff):
         "task3_frozen_initial_banks": len(banks["banks"]),
         "task3_resumed_smoke_updates": distillation_smoke["executed_updates"],
         "task3_teacher_pool_prompts": pool["prompts"],
+        "task3_complete_training_seeds": training_seeds,
         "pending": pending,
     }
 
