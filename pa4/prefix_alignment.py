@@ -58,8 +58,6 @@ def run(args):
         name = f"{audit['policy']}_{audit['seed']}"
         if name in audits or name not in TRAINED_BANKS:
             raise ValueError("Duplicate or unexpected draft checkpoint")
-        with checkpoint.open("rb") as stream:
-            audit["checkpoint_sha256"] = hashlib.file_digest(stream, "sha256").hexdigest()
         drafts[name] = draft
         audits[name] = audit
     config = json.loads((args.bank_dir / "config.json").read_bytes())

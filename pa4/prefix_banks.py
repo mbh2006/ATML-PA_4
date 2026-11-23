@@ -106,8 +106,7 @@ def build_bank(args):
         "top_p": 1, "temperature": 1, "max_new_tokens": MAX_NEW_TOKENS, "eos_ids": sorted(stop),
     }
     if checkpoint is not None:
-        with checkpoint.open("rb") as stream:
-            config["checkpoint_sha256"] = hashlib.file_digest(stream, "sha256").hexdigest()
+        config["checkpoint_sha256"] = merge_audit["checkpoint_sha256"]
     args.output.mkdir(parents=True, exist_ok=True)
     config_path = args.output / "config.json"
     if config_path.exists() and json.loads(config_path.read_text(encoding="utf-8")) != config:

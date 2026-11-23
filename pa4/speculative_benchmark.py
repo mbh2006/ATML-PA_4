@@ -3,6 +3,7 @@
 import argparse
 import calendar
 import gzip
+import hashlib
 import json
 import os
 import random
@@ -178,7 +179,10 @@ def run(args):
         draft_tokenizer, draft = load_model(lock, "model_draft", device)
         if args.checkpoint:
             config, status = apply_checkpoint(draft, args.checkpoint, lock)
-            model_audit = {"policy": config["policy"], "seed": config["seed"], "training": status}
+            with args.checkpoint.open("rb") as stream:
+                fingerprint = hashlib.file_digest(stream, "sha256").hexdigest()
+            model_audit = {"policy": config["policy"], "seed": config["seed"], "training": status,
+                           "checkpoint_sha256": fingerprint}
     name = f"{model_audit['policy']}_{model_audit['seed']}" if model_audit else "original_draft"
     if draft_tokenizer.get_vocab() != tokenizer.get_vocab() or stops != eos_ids(draft):
         raise ValueError("Draft and target must agree on vocabulary and EOS")

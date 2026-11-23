@@ -1,5 +1,6 @@
 """Load and verify the merged FP16 draft used for Task 3 measurement."""
 
+import hashlib
 import json
 from pathlib import Path
 
@@ -66,5 +67,8 @@ def load_verified_draft(lock, device, path, smoke_prompts):
             "forward_kl": max(0.0, F.kl_div(log_actual, log_ref, log_target=True, reduction="sum").item()),
             "top1_agreement": (reference.argmax(-1) == actual.argmax(-1)).item(),
         })
+    with Path(path).open("rb") as stream:
+        fingerprint = hashlib.file_digest(stream, "sha256").hexdigest()
     return tokenizer, draft, {"policy": config["policy"], "seed": config["seed"], "training": status,
-                              "merge_seconds": seconds, "checks": checks, "checkpoint": Path(path).name}
+                              "merge_seconds": seconds, "checks": checks, "checkpoint": Path(path).name,
+                              "checkpoint_sha256": fingerprint}
