@@ -6,12 +6,21 @@
     "controls": 13,
     "timings": 195
   },
+  "compression_final_conditions": 18,
   "mqar_development_selection": "reproduced",
+  "mqar_training_conditions": 42,
+  "mqar_heldout_evaluations": 54,
+  "mqar_cost_conditions": 20,
   "exact_attention_timing_rows": 36,
+  "kv_retrieval_cells": 18,
+  "kv_retrieval_paired_cases": 180,
+  "kv_systems_conditions": 0,
   "speculative_sampler_and_cache_checks": "passed",
+  "task3_frozen_initial_banks": 3,
+  "task3_resumed_smoke_updates": 6,
+  "task3_teacher_pool_prompts": 800,
   "pending": [
-    "Real compressed-model sparsity/byte comparisons and Task 1 adaptive selections",
-    "Remaining MQAR training and test evaluations, pretrained KV cache studies",
-    "Full Task 3 training, prefix isolation audit and timing comparisons"
+    "Task 3 full draft training and aligned-prefix, runtime, and standalone evaluations",
+    "Task 2C batched cache systems timings"
   ]
 }

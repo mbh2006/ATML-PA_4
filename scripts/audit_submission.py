@@ -8,6 +8,7 @@ import math
 from pathlib import Path
 
 from scripts.select_mqar_intervention import select
+from scripts.summarize_kv import fidelity, systems
 
 
 def read_json(path):
@@ -131,19 +132,57 @@ def audit(root, data, staff):
     assert sampler["exact"]["p_value"] >= 0.01 > sampler["incorrect_residual"]["p_value"]
     qwen = read_json(results / "task3/qwen-cache-validation.json")
     assert qwen["status"] == "passed" and qwen["split_prefill"] and qwen["rounds"] and qwen["forced_rollback"]
+    final_compression = read_json(results / "task1/heldout-audit.json")
+    assert final_compression["status"] == "verified" and len(final_compression["conditions"]) == 18
+    mqar = read_json(results / "task2b/full-matrix/audit.json")
+    assert (mqar["training_conditions"], mqar["heldout_evaluations"]) == (42, 54)
+    mqar_cost = read_json(results / "task2b/mqar-cost.json")
+    assert mqar_cost["status"] == "complete" and len(mqar_cost["results"]) == 20
+    archive = results / "task2c/retrieval-full/cases.jsonl.gz"
+    kv_rows = read_rows(archive)
+    logged = read_json(archive.with_name("raw-sha256.json"))
+    assert hashlib.sha256(archive.read_bytes()).hexdigest() == logged["compressed_sha256"]
+    assert hashlib.sha256(gzip.decompress(archive.read_bytes())).hexdigest() == logged["uncompressed_sha256"]
+    grid = fidelity(kv_rows, 180)
+    source = staff / "data/kv_retrieval/kv_retrieval_cases.jsonl.gz"
+    assert [row["id"] for row in kv_rows] == [row["id"] for row in read_rows(source)]
+    summary = read_json(archive.with_name("summary.json"))
+    assert summary["locked_cases_sha256"] == hashlib.sha256(source.read_bytes()).hexdigest()
+    kvruntime = results / "task2c/systems/timings.jsonl"
+    pending = ["Task 3 full draft training and aligned-prefix, runtime, and standalone evaluations"]
+    systems_count = 0
+    if kvruntime.exists():
+        systems_count = len(systems(read_rows(kvruntime)))
+    else:
+        pending.append("Task 2C batched cache systems timings")
+    banks = read_json(results / "task3/prefix-banks-audit.json")
+    assert banks["status"] == "verified" and len(banks["banks"]) == 3
+    distillation_smoke = read_json(results / "task3/distillation-smoke/audit.json")
+    assert distillation_smoke["status"] == "passed" and distillation_smoke["executed_updates"] == 6
+    pool = read_json(results / "task3/teacher-pool/audit.json")
+    assert pool["status"] == "passed" and pool["prompts"] == 800
+    pool_index = read_rows(results / "task3/teacher-pool/rollout-index.jsonl")
+    assert len({row["prompt_id"] for row in pool_index}) == 800
+    assert sum(row["response_tokens"] for row in pool_index) == sum(pool["response_tokens"].values())
     return {
         "input_artifact_hashes": "passed",
         "c4_gsm8k_short_form_split_checks": "passed",
         "fp16_baseline_pairing_and_denominators": "passed",
         "compression_development": compression,
+        "compression_final_conditions": len(final_compression["conditions"]),
         "mqar_development_selection": "reproduced",
+        "mqar_training_conditions": mqar["training_conditions"],
+        "mqar_heldout_evaluations": mqar["heldout_evaluations"],
+        "mqar_cost_conditions": len(mqar_cost["results"]),
         "exact_attention_timing_rows": len(attention["rows"]),
+        "kv_retrieval_cells": len(grid),
+        "kv_retrieval_paired_cases": len(kv_rows),
+        "kv_systems_conditions": systems_count,
         "speculative_sampler_and_cache_checks": "passed",
-        "pending": [
-            "Real compressed-model sparsity/byte comparisons and Task 1 adaptive selections",
-            "Remaining MQAR training and test evaluations, pretrained KV cache studies",
-            "Full Task 3 training, prefix isolation audit and timing comparisons",
-        ],
+        "task3_frozen_initial_banks": len(banks["banks"]),
+        "task3_resumed_smoke_updates": distillation_smoke["executed_updates"],
+        "task3_teacher_pool_prompts": pool["prompts"],
+        "pending": pending,
     }
 
 

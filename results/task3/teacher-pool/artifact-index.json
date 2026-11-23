@@ -1,0 +1,26 @@
+{
+  "kaggle_version": "mbh2006/atml-pa4-teacher-pool/1",
+  "local_directory": "runs/task3/teacher-pool-v1",
+  "artifacts": {
+    "atml-pa4-teacher-pool.log": {
+      "bytes": 6888,
+      "sha256": "3924c0e86511537ed4cff7b5bc78736c3fba84f7ead747b237f35fb35b2f85a4"
+    },
+    "audit.json": {
+      "bytes": 253,
+      "sha256": "0a9dde02e1f2c6b04d025f0eae437bab3943a7314f54f4d70ed13800d35eccba"
+    },
+    "teacher-pool/config.json": {
+      "bytes": 417,
+      "sha256": "05c24ac1c03626f7d61d16de440f6c3f9313549246a6684950eaa8c0a2da3ace"
+    },
+    "teacher-pool/status.json": {
+      "bytes": 207,
+      "sha256": "875fff8cf2826905d8de6d5cffa337bf302bf64946f7fc36b0520c0ef1485c45"
+    },
+    "teacher-pool/teacher-pool.jsonl": {
+      "bytes": 815599,
+      "sha256": "f3f1d78e031d9fc060f219cb8bb77269175d4855c6bdba00f171c4365ea080e0"
+    }
+  }
+}

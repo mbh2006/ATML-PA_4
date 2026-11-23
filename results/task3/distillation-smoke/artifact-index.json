@@ -1,0 +1,34 @@
+{
+  "kaggle_version": "mbh2006/atml-pa4-distillation-smoke/1",
+  "local_directory": "runs/task3/distillation-smoke-v1",
+  "artifacts": {
+    "atml-pa4-distillation-smoke.log": {
+      "bytes": 4220,
+      "sha256": "c057a6677e1cbea615ce9814db9ecb190657506a1a74d008056fa3caea663e7d"
+    },
+    "audit.json": {
+      "bytes": 446,
+      "sha256": "267c95c14b84355dff6b0132dd89b6669010e4fdd88d400d1521c785daf1e9f3"
+    },
+    "distillation-smoke/config.json": {
+      "bytes": 16186,
+      "sha256": "5b1745715e2325a3e29b248adccf2fe35e36923bee51ec2d4d20f4522d2910bc"
+    },
+    "distillation-smoke/status.json": {
+      "bytes": 258,
+      "sha256": "f4853cdc4bcb6007dfcf5ac3a5f4e1c9aa33bb70b51f7a06f1071682bac47f37"
+    },
+    "distillation-smoke/training.jsonl": {
+      "bytes": 24656,
+      "sha256": "0b148121a3db2e65084c72d65e40ec2c482bb4d29006f30429ce4726710bab08"
+    },
+    "distillation-smoke/update-0004.pt": {
+      "bytes": 13208347,
+      "sha256": "e3715dae759f125fa52ffb034229f749da0d83bb05d92169b62db40d2a0c94e7"
+    },
+    "distillation-smoke/update-0006.pt": {
+      "bytes": 13208475,
+      "sha256": "35e6ca916b55d5c1fceaebbda6a7e6b92dcc7b3d977b759e0dcb61adb4d7d0c2"
+    }
+  }
+}

@@ -1,0 +1,1 @@
+{"status":"partial","tokens":{"math":1280,"short":256},"attempted_updates":6,"executed_updates":6,"seconds":{"teacher":2.056806377000015,"rollout":69.25469924500001,"backward":3.9769098949999773,"optimizer":0.2301017080000065},"checkpoint":"update-0006.pt"}

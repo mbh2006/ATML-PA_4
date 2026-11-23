@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "policy": "on",
+  "seed": 6304,
+  "tokens": {
+    "math": 1280,
+    "short": 256
+  },
+  "attempted_updates": 6,
+  "executed_updates": 6,
+  "rollouts": 24,
+  "checkpoint_sha256": "35e6ca916b55d5c1fceaebbda6a7e6b92dcc7b3d977b759e0dcb61adb4d7d0c2",
+  "journal_sha256": "0b148121a3db2e65084c72d65e40ec2c482bb4d29006f30429ce4726710bab08",
+  "first_kl": 0.18079440295696259,
+  "last_kl": 0.05215207673609257
+}

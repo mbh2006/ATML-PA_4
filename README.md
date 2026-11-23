@@ -39,6 +39,7 @@ python scripts/run_mqar_dense_controls.py --staff vendor/atml-pa4-datasets --out
 python scripts/select_mqar_intervention.py --dense-controls results/task2b --output runs/task2b/selection-reproduction.json
 python -m pa4.qwen_validation --lock results/setup/local_source_revisions.json --output runs/task3/qwen-reproduction.json
 python -m pa4.kv_retrieval --lock results/setup/local_source_revisions.json --cases vendor/atml-pa4-datasets/data/kv_retrieval/kv_retrieval_cases.jsonl.gz --output runs/task2c/retrieval-reproduction
+python -m pa4.kv_systems --lock results/setup/local_source_revisions.json --cases vendor/atml-pa4-datasets/data/kv_retrieval/kv_retrieval_cases.jsonl.gz --output runs/task2c/systems-reproduction
 python -m scripts.summarize_kv --retrieval runs/task2c/retrieval-reproduction/cases.jsonl --locked-cases vendor/atml-pa4-datasets/data/kv_retrieval/kv_retrieval_cases.jsonl.gz --output runs/task2c/retrieval-reproduction/summary.json
 python -m scripts.plot_kv --summary runs/task2c/retrieval-reproduction/summary.json --output runs/task2c/retrieval-reproduction/figures
 
@@ -47,6 +48,35 @@ python -m pa4.speculative_validation --output runs/task3/markov-reproduction.jso
 python -m pa4.kv_codec_validation --output runs/task2c/codec-reproduction.json
 python scripts/plot_attention.py --input results/task2a/operator-grid.json --output runs/task2a/reproduction-plots
 ```
+
+## Task 3 training and evaluation commands
+
+Use the same pinned data and CUDA environment for all four training runs. Generate the teacher pool once. Each run writes its full journal and checkpoints locally.
+
+```sh
+DATA=runs/preflight/public-data-v2/public-data
+STAFF=vendor/atml-pa4-datasets
+python -m pa4.teacher_pool --data "$DATA" --staff "$STAFF" --output runs/task3/teacher-pool
+python -m scripts.audit_distillation --pool runs/task3/teacher-pool --data "$DATA" --staff "$STAFF" --output runs/task3/teacher-pool/audit.json
+for seed in 6304 6305; do
+  python -m pa4.distillation --data "$DATA" --staff "$STAFF" --policy off --seed "$seed" --pool runs/task3/teacher-pool/teacher-pool.jsonl --output "runs/task3/off_${seed}"
+  python -m pa4.distillation --data "$DATA" --staff "$STAFF" --policy on --seed "$seed" --output "runs/task3/on_${seed}"
+done
+```
+
+To resume, use the same configuration and output directory, with `--resume <path-to-update-checkpoint>`. Run `python -m scripts.audit_distillation --training <run-directory> --output <audit-json>` on each finished run. Use only the audited final checkpoints for prefix and runtime evaluation.
+
+```sh
+# Frozen banks and a merged checkpoint, shown for one trained draft
+python -m pa4.prefix_banks --data "$DATA" --staff "$STAFF" --bank off_6304 --checkpoint runs/task3/off_6304/update-0157.pt --output runs/task3/banks/off_6304 --merged-output runs/task3/merged/off_6304
+
+# Baseline paired performance, fixed-cap diagnostic, and standalone quality
+for mode in primary fixed quality; do
+  python -m pa4.speculative_benchmark --data "$DATA" --staff "$STAFF" --mode "$mode" --output "runs/task3/original-${mode}"
+done
+```
+
+Run the same three benchmarks with `--checkpoint` for each of the four trained drafts. Use mode `unmerged` with a completed checkpoint for the adapter overhead diagnostic. Score each of the seven frozen prefix banks with `pa4.prefix_alignment`, supplying one `--checkpoint` argument per trained draft. Use `scripts.summarize_alignment` and `scripts.summarize_speculation` to derive the token-weighted alignment and paired performance tables from those output directories.
 
 ## Attribution and submission audit
 
@@ -61,6 +91,8 @@ python scripts/plot_attention.py --input results/task2a/operator-grid.json --out
 - Task 2A ran all 36 exact attention conditions on CUDA. [Raw grid](results/task2a/operator-grid.json), [summary table](results/task2a/operator-summary.csv), [latency and memory](results/task2a/attention-latency-memory.png), [output error](results/task2a/attention-output-error.png)
 - Task 3 passed the local Markov sampler gate. Reproduce with `python -m pa4.speculative_validation --output runs/task3/markov-validation.json`. [Joint sequence counts and test statistics](results/task3/markov-validation.json)
 - Task 3 real-Qwen validation passed split prefill, replay after speculative rounds, and targeted rollback. [Cache validation evidence](results/task3/qwen-cache-validation.json)
+- Task 3 completed the on-policy CUDA smoke and resumed from update four in a fresh process. The journal audit reconciled all six optimizer updates. [Resume audit and artifact hashes](results/task3/distillation-smoke/)
+- Task 3 recovered the frozen teacher pool for all 800 locked training prompts. The raw responses are kept with the private Kaggle run and local evidence. [Audit, response-length index, and artifact hashes](results/task3/teacher-pool/)
 - Task 1 compression primitives passed exact mask, packed-byte, and mixed-allocation checks. [Compression checks](results/pilot/weight-validation.json)
 - Task 2B pilots covered each operator on CUDA. The CPU recovery check reproduced model and optimizer states bit for bit. [Operator and resume checks](results/pilot/mqar-validation.json), [pilot timing](results/pilot/mqar-timing.json)
 - All three dense mixed K=16 controls reached 4,500 updates. The development rule selected top-64 for the trained intervention. [Frozen selection and source scores](results/task2b/intervention-selection.json)
