@@ -1,0 +1,24 @@
+{
+  "status": "verified_remote",
+  "source_kaggle_version": "mbh2006/atml-pa4-on-policy-evaluation/2",
+  "verification_kaggle_version": "mbh2006/atml-pa4-on-evidence-bundle/1",
+  "merged_weights": {
+    "evaluation/on_6304/merged/model.safetensors": {
+      "bytes": 988097536,
+      "sha256": "88df2323fd3dcdcbf43d0f54598912f3c1bce024881199dc6b228cdd7243acdd"
+    },
+    "evaluation/on_6305/merged/model.safetensors": {
+      "bytes": 988097536,
+      "sha256": "0dbcd7213150eb20e31bbd5429d3ce072b432cc6e10532ca453c50a4e944801f"
+    }
+  },
+  "independent_bank_matched_prompt_records": {
+    "on_6304": 120,
+    "on_6305": 120
+  },
+  "evidence_bundle": {
+    "path": "on-evaluation-evidence.zip",
+    "bytes": 9197217,
+    "sha256": "6bff7d0060f1fb6c86e180929e337015f3284cbbda131a2ae2bfa3841eae50a9"
+  }
+}
