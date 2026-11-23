@@ -207,6 +207,9 @@ def audit(root, data, staff):
     for path in sorted((results / "task3/alignment").glob("*/status.json")):
         bank = read_json(path)
         assert (bank["status"], bank["prompts"], bank["rows"]) == ("passed", 120, 600)
+        index = read_json(path.with_name("artifact-index.json"))
+        archive_hash = hashlib.sha256(path.with_name("alignment.jsonl.gz").read_bytes()).hexdigest()
+        assert (index["bank"], index["rows"], index["compressed_sha256"]) == (bank["bank"], 600, archive_hash)
         alignment[bank["bank"]] = bank["rows"]
     if len(alignment) != 7 or not (results / "task3/alignment-summary.json").exists():
         pending.append("Task 3 shared-prefix alignment and derived evidence")
