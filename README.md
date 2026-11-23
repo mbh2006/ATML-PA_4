@@ -40,7 +40,7 @@ python scripts/select_mqar_intervention.py --dense-controls results/task2b --out
 python -m pa4.qwen_validation --lock results/setup/local_source_revisions.json --output runs/task3/qwen-reproduction.json
 python -m pa4.kv_retrieval --lock results/setup/local_source_revisions.json --cases vendor/atml-pa4-datasets/data/kv_retrieval/kv_retrieval_cases.jsonl.gz --output runs/task2c/retrieval-reproduction
 python -m pa4.kv_systems --lock results/setup/local_source_revisions.json --cases vendor/atml-pa4-datasets/data/kv_retrieval/kv_retrieval_cases.jsonl.gz --output runs/task2c/systems-reproduction
-python -m scripts.summarize_kv --retrieval runs/task2c/retrieval-reproduction/cases.jsonl --locked-cases vendor/atml-pa4-datasets/data/kv_retrieval/kv_retrieval_cases.jsonl.gz --output runs/task2c/retrieval-reproduction/summary.json
+python -m scripts.summarize_kv --retrieval runs/task2c/retrieval-reproduction/cases.jsonl --systems runs/task2c/systems-reproduction/timings.jsonl --locked-cases vendor/atml-pa4-datasets/data/kv_retrieval/kv_retrieval_cases.jsonl.gz --output runs/task2c/retrieval-reproduction/summary.json
 python -m scripts.plot_kv --summary runs/task2c/retrieval-reproduction/summary.json --output runs/task2c/retrieval-reproduction/figures
 
 # CPU checks and plots
@@ -118,7 +118,7 @@ Run the same three benchmarks with `--checkpoint` for each of the four trained d
 - Task 3 real-Qwen validation passed split prefill, replay after speculative rounds, and targeted rollback. [Cache validation evidence](results/task3/qwen-cache-validation.json)
 - Task 3 completed the on-policy CUDA smoke and resumed from update four in a fresh process. The journal audit reconciled all six optimizer updates. [Resume audit and artifact hashes](results/task3/distillation-smoke/)
 - Task 3 recovered the frozen teacher pool for all 800 locked training prompts. The raw responses are kept with the private Kaggle run and local evidence. [Audit, response-length index, and artifact hashes](results/task3/teacher-pool/)
-- Both off-policy seeds completed their 40,000-token budgets. The archives include update losses, rollout IDs, scored-token offsets, and checkpoint hashes. [Off-policy training](results/task3/training/)
+- Both off-policy and both on-policy seeds completed their 40,000-token budgets. The archives include update losses, rollout IDs, scored-token offsets, and checkpoint hashes. [Training evidence](results/task3/training/), [loss curves](results/task3/figures/training-loss.png)
 - The original-draft timing smoke covered all 12 paired trials in its three-prompt slice. [Per-round timing evidence](results/task3/original-timing-smoke/)
 - Task 1 compression primitives passed exact mask, packed-byte, and mixed-allocation checks. [Compression checks](results/pilot/weight-validation.json)
 - Task 2B pilots covered each operator on CUDA. The CPU recovery check reproduced model and optimizer states bit for bit. [Operator and resume checks](results/pilot/mqar-validation.json), [pilot timing](results/pilot/mqar-timing.json)
@@ -126,3 +126,4 @@ Run the same three benchmarks with `--checkpoint` for each of the four trained d
 - Task 2B completed all 42 MQAR training runs, 54 held-out evaluations, and the 20-condition cost sweep. [Matrix audit](results/task2b/full-matrix/audit.json), [cost measurements](results/task2b/mqar-cost.json), [figures and tables](results/task2b/figures/)
 - Task 2C packing and byte-budget checks passed on synthetic cache tensors. [KV codec validation](results/pilot/kv-codec-validation.json)
 - Task 2C ran six cache policies on all 180 locked Qwen retrieval prompts. The archive preserves each generated answer, the per-token scores, selection positions, and measured byte budgets. [Raw paired evidence and summaries](results/task2c/retrieval-full/), [retrieval accuracy figure](results/task2c/figures/retrieval-accuracy.png)
+- Task 2C completed all 24 systems conditions at batches 1 and 8 with 10 warmed measurements per condition. The benchmark uses a real prefix cache computed at batch one and replicated before timing. Packing operates on per-request payloads and the Qwen decode forward uses the full declared batch. [Timings](results/task2c/systems/), [cache figure](results/task2c/figures/cache-systems.png), [combined summary](results/task2c/summary.json)

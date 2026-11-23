@@ -79,8 +79,10 @@ def audit_training(directory, expected, frozen_pool=None):
                         raise ValueError("Rollout prompt order disagrees with the training manifest")
                     if not 0 < len(row["response_ids"]) <= RESPONSE_CAPS[category] or not row["prompt_ids"]:
                         raise ValueError("Invalid training rollout lengths")
-                    if config["policy"] == "on" and row["producer"]["attempted"] != updates:
-                        raise ValueError("On-policy rollout used a stale draft")
+                    if config["policy"] == "on":
+                        seed = config["seed"] * 1_000_000 + cursor * 2 + int(category == "short")
+                        if row["producer"] != {"attempted": updates, "executed": executed} or row["seed"] != seed:
+                            raise ValueError("On-policy rollout used a stale draft or the wrong deterministic seed")
                     if config["policy"] == "off" and row["producer"] != "frozen-teacher":
                         raise ValueError("Off-policy rollout did not use the frozen teacher")
                     if pool is not None:

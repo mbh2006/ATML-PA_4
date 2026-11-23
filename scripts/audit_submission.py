@@ -172,6 +172,17 @@ def audit(root, data, staff):
         if training["policy"] == "off":
             assert training["frozen_pool_match"] is True
         training_seeds[path.parent.name] = training["executed_updates"]
+    matched_seed_orders = []
+    for seed in (6304, 6305):
+        off = results / "task3/training" / f"off_{seed}" / "config.json"
+        on = results / "task3/training" / f"on_{seed}" / "config.json"
+        if off.exists() and on.exists():
+            off_config, on_config = read_json(off), read_json(on)
+            assert off_config["training_ids"] == on_config["training_ids"]
+            assert off_config["data_lock_sha256"] == on_config["data_lock_sha256"]
+            matched_seed_orders.append(seed)
+    if len(training_seeds) == 4:
+        pending[0] = "Task 3 aligned-prefix, runtime, and standalone evaluations"
     return {
         "input_artifact_hashes": "passed",
         "c4_gsm8k_short_form_split_checks": "passed",
@@ -191,6 +202,7 @@ def audit(root, data, staff):
         "task3_resumed_smoke_updates": distillation_smoke["executed_updates"],
         "task3_teacher_pool_prompts": pool["prompts"],
         "task3_complete_training_seeds": training_seeds,
+        "task3_matched_training_prompt_orders": matched_seed_orders,
         "pending": pending,
     }
 

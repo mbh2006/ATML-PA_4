@@ -36,6 +36,8 @@ def evaluate(args, draft, data, environment):
     root.mkdir(parents=True, exist_ok=False)
     status = {"source_revision": args.revision, "draft": draft, "stages": {}}
     for mode in args.modes:
+        if mode == "unmerged" and args.unmerged_draft and draft != args.unmerged_draft:
+            continue
         shared = ["--data", str(data), "--staff", str(args.staff), "--output", str(root / mode),
                   "--start", str(args.start), "--stop", str(args.stop)]
         if checkpoint:
@@ -90,6 +92,7 @@ def main():
     parser.add_argument("--inputs", type=Path, default=Path("/kaggle/input"))
     parser.add_argument("--drafts", nargs="+", choices=DRAFTS, required=True)
     parser.add_argument("--modes", nargs="+", choices=MODES, required=True)
+    parser.add_argument("--unmerged-draft", choices=DRAFTS[1:])
     parser.add_argument("--start", type=int, default=0)
     parser.add_argument("--stop", type=int, default=120)
     args = parser.parse_args()
@@ -97,6 +100,8 @@ def main():
         parser.error("Specify a nonempty slice of the 120 held-out prompts")
     if len(set(args.drafts)) != len(args.drafts) or len(set(args.modes)) != len(args.modes):
         parser.error("List each stage and draft once")
+    if args.unmerged_draft and (args.unmerged_draft not in args.drafts or "unmerged" not in args.modes):
+        parser.error("The selected unmerged draft and mode must be part of this job")
     run(args)
 
 

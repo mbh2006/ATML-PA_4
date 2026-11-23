@@ -14,17 +14,22 @@
   "exact_attention_timing_rows": 36,
   "kv_retrieval_cells": 18,
   "kv_retrieval_paired_cases": 180,
-  "kv_systems_conditions": 0,
+  "kv_systems_conditions": 24,
   "speculative_sampler_and_cache_checks": "passed",
   "task3_frozen_initial_banks": 3,
   "task3_resumed_smoke_updates": 6,
   "task3_teacher_pool_prompts": 800,
   "task3_complete_training_seeds": {
     "off_6304": 157,
-    "off_6305": 157
+    "off_6305": 157,
+    "on_6304": 157,
+    "on_6305": 157
   },
+  "task3_matched_training_prompt_orders": [
+    6304,
+    6305
+  ],
   "pending": [
-    "Task 3 full draft training and aligned-prefix, runtime, and standalone evaluations",
-    "Task 2C batched cache systems timings"
+    "Task 3 aligned-prefix, runtime, and standalone evaluations"
   ]
 }

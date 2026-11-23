@@ -9,7 +9,7 @@ import numpy as np
 
 
 def plot(inputs, output):
-    fig, axes = plt.subplots(1, 2, figsize=(11, 4.5), constrained_layout=True)
+    fig, axes = plt.subplots(1, 2, figsize=(11, 4.5), sharey=True, constrained_layout=True)
     for directory in inputs:
         config = json.loads((directory / "config.json").read_bytes())
         status = json.loads((directory / "status.json").read_bytes())

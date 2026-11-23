@@ -58,7 +58,7 @@ def systems(summary, output):
         ax.set_xscale("log")
         ax.set_xlabel("Synchronized median time (ms)")
         ax.grid(axis="x", alpha=.2)
-    axes[0, 1].legend(loc="lower right", fontsize=9)
+    axes[0, 1].legend(loc="lower left", fontsize=9)
     fig.savefig(output, dpi=170)
     plt.close(fig)
 

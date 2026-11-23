@@ -1,0 +1,46 @@
+{
+  "kaggle_version": "mbh2006/atml-pa4-distillation-on-policy/1",
+  "local_directory": "runs/task3/distillation-on-policy-v1/distillation-on-6305",
+  "artifacts": {
+    "config.json": {
+      "bytes": 16186,
+      "sha256": "12b3fa0c21af190502b06b63f2c32a3c01c968cc8be1d8662b0065282cc21091"
+    },
+    "status.json": {
+      "bytes": 447,
+      "sha256": "50a78d7692251f0bbbb74d496a86c15d2fc338c4c35101e428744065b8583f1e"
+    },
+    "training.jsonl": {
+      "bytes": 755138,
+      "sha256": "2391d9472f50c284876e794fd7579d7c4c30dfbba3dc6277ef1df01d1a81839a"
+    },
+    "update-0025.pt": {
+      "bytes": 13208475,
+      "sha256": "9a432f47debe7f0612d62612f5b97e7c63561362162690d02190365a3912a698"
+    },
+    "update-0050.pt": {
+      "bytes": 13208411,
+      "sha256": "2966a0b75eac158faebde528091eadcc71e1fe226b1aa8d2e038870aa18fa084"
+    },
+    "update-0075.pt": {
+      "bytes": 13208411,
+      "sha256": "bf49713c8af20da3cf0fc518dee382bcc4a209d4ae1801d958df384a2bd9c9c3"
+    },
+    "update-0100.pt": {
+      "bytes": 13208475,
+      "sha256": "ffe20a88a0c0c6afdfa2575fa8c5c3457d39cd7b1774368bea666bbaa0f4e64a"
+    },
+    "update-0125.pt": {
+      "bytes": 13208411,
+      "sha256": "0507fbe4c613db6ffc955a44d0080975fed6f4a877e691b72a2cfda43653218f"
+    },
+    "update-0150.pt": {
+      "bytes": 13208411,
+      "sha256": "e2a4ab664cbcba2a73519cb5addbc1657ac72382aee1a48cf33546473281c9e1"
+    },
+    "update-0157.pt": {
+      "bytes": 13207707,
+      "sha256": "b8e28d4b6929148c0e7c05b5f83454e76817aca9960b30fd9c2af92b221d988d"
+    }
+  }
+}

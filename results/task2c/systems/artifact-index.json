@@ -1,0 +1,10 @@
+{
+  "kaggle_version": "mbh2006/atml-pa4-kv-systems/2",
+  "rows": 240,
+  "matches_serialized_fidelity_bytes": true,
+  "files": {
+    "atml-pa4-kv-systems.log": "bf34e2b2e00d8bbe0745f4d3cbadd61d75d42225c394feaa2b9860cbc02875f2",
+    "kv-systems/status.json": "63d722ae36c50302b962242aaa1af9bc7c1041aa78bc64d13337c57a8ce50bc7",
+    "kv-systems/timings.jsonl": "d8c8d497567afdd70e9f21f742261a58deb04631546617b6951e53be98cf866e"
+  }
+}

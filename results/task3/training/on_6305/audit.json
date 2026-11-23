@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "policy": "on",
+  "seed": 6305,
+  "tokens": {
+    "math": 30000,
+    "short": 10000
+  },
+  "attempted_updates": 157,
+  "executed_updates": 157,
+  "rollouts": 820,
+  "frozen_pool_match": null,
+  "checkpoint_sha256": "b8e28d4b6929148c0e7c05b5f83454e76817aca9960b30fd9c2af92b221d988d",
+  "journal_sha256": "2391d9472f50c284876e794fd7579d7c4c30dfbba3dc6277ef1df01d1a81839a",
+  "first_kl": 0.09270313754677773,
+  "last_kl": 0.22820174455773667
+}
