@@ -10,6 +10,7 @@ import torch
 from pa4.kv_budget import eviction_plan, hybrid_plan
 from pa4.kv_codec import compress_layer, uniform_payload_bytes
 from pa4.kv_prompt import prepare_prompt, question_attention
+from pa4.kv_policies import POLICIES, build_context
 
 
 class CharacterOffsetFixture:
@@ -19,6 +20,40 @@ class CharacterOffsetFixture:
 
     def __call__(self, text, **kwargs):
         return {"input_ids": list(map(ord, text)), "offset_mapping": [(i, i + 1) for i in range(len(text))]}
+
+
+def validate_materialized_policies():
+    generator = torch.Generator().manual_seed(6304)
+    rows = []
+    for length in (2048, 2077, 4096):
+        shape = (1, 2, length, 64)
+        layers = tuple(tuple(torch.randn(shape, generator=generator).half() for _ in range(2))
+                       for _ in range(2))
+        importance = [float((pos * 31) % 127) for pos in range(length)]
+        caps = set()
+        for policy in POLICIES:
+            context = build_context(layers, policy, importance)
+            caps.add(context.budget_bytes)
+            assert len(context.serialize()) == context.nbytes
+            reconstructed = tuple(context.decode_layers())
+            for initial, recovered in zip(layers, reconstructed, strict=True):
+                for original, decoded in zip(initial, recovered, strict=True):
+                    assert decoded.dtype == torch.float16 and torch.isfinite(decoded).all()
+                    if policy == "fp16":
+                        assert torch.equal(decoded, original)
+                    elif policy in ("sink-recent", "question"):
+                        assert torch.equal(decoded, original.index_select(-2, context.selected))
+                    else:
+                        assert decoded.shape == original.shape
+                        if policy == "hybrid":
+                            assert torch.equal(decoded.index_select(-2, context.selected),
+                                               original.index_select(-2, context.selected))
+            if policy != "fp16":
+                assert context.nbytes <= context.budget_bytes
+            rows.append({"policy": policy, "length": length, "serialized_bytes": context.nbytes,
+                         "common_budget": context.budget_bytes})
+        assert len(caps) == 1
+    return rows
 
 
 def validate_question_inputs(staff):
@@ -98,6 +133,7 @@ def main():
     parser.add_argument("--staff", type=Path)
     args = parser.parse_args()
     evidence = validate()
+    evidence["materialized_policies"] = validate_materialized_policies()
     if args.staff:
         evidence["question_inputs"] = validate_question_inputs(args.staff)
     args.output.parent.mkdir(parents=True, exist_ok=True)
