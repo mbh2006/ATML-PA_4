@@ -99,7 +99,7 @@ def teacher_controls(banks, prompts):
     results = []
     for draft in DRAFTS:
         for group in ("math", "familiar", "shifted"):
-            differences = defaultdict(list)
+            differences = defaultdict(lambda: defaultdict(list))
             eos = {"teacher": 0, "exact_spec": 0}
             selected = [prompt for prompt in prompts if prompts[prompt] == group]
             for prompt in selected:
@@ -113,14 +113,28 @@ def teacher_controls(banks, prompts):
                         continue
                     j = other[position]
                     delta = [float(speculative[key][j]) - float(teacher[key][i]) for key in METRICS]
-                    differences[teacher["position_bins"][i]].append(delta)
+                    differences[teacher["position_bins"][i]][prompt].append(delta)
+            intervals = {}
+            for bucket, prompt_differences in differences.items():
+                counts = np.array([len(prompt_differences[prompt]) for prompt in selected])
+                sums = np.array([
+                    np.sum(prompt_differences[prompt], axis=0) if prompt_differences[prompt] else np.zeros(len(METRICS))
+                    for prompt in selected
+                ])
+                rng = np.random.default_rng(6304)
+                resamples = rng.integers(len(selected), size=(2000, len(selected)))
+                denominators = counts[resamples].sum(axis=1)
+                numerators = sums[resamples].sum(axis=1)
+                nonempty = denominators > 0
+                bounds = np.quantile(numerators[nonempty] / denominators[nonempty, None], (.025, .975), axis=0).T
+                intervals[bucket] = {
+                    "tokens": int(counts.sum()), "prompts_with_shared_positions": int((counts > 0).sum()),
+                    "exact_minus_teacher": dict(zip(METRICS, (sums.sum(axis=0) / counts.sum()).tolist(), strict=True)),
+                    "prompt_paired_ci95": dict(zip(METRICS, bounds.tolist(), strict=True)),
+                }
             results.append({
                 "draft": draft, "group": group, "prompts": len(selected), "responses_eos": eos,
-                "paired_position_differences": {
-                    bucket: {"tokens": len(values), "exact_minus_teacher": dict(
-                        zip(METRICS, np.mean(values, 0).tolist(), strict=True),
-                    )} for bucket, values in differences.items()
-                },
+                "paired_position_differences": intervals,
             })
     return results
 
