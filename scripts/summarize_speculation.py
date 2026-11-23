@@ -244,6 +244,10 @@ def compare_unmerged(rows, merged_rows):
     return dict(by_width)
 
 
+def trial_keys(rows):
+    return {(row["id"], row["group"], row["gamma"], row["repeat"], row["seed"], row["spec_first"]) for row in rows}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--primary", action="append", type=Path, required=True)
@@ -264,6 +268,7 @@ def main():
         experiments[config["draft"]].append((config, rows))
     result = {}
     primary_rows = {name: [row for _, rows in jobs for row in rows] for name, jobs in experiments.items()}
+    original_keys = trial_keys(primary_rows["original_draft"]) if "original_draft" in primary_rows else None
     for name, jobs in experiments.items():
         configs = [config for config, _ in jobs]
         all_rows = primary_rows[name]
@@ -272,6 +277,8 @@ def main():
             raise ValueError(f"The primary grid for {name} must contain 480 unique comparisons")
         if Counter(Counter(row["id"] for row in all_rows).values()) != {4: 120}:
             raise ValueError(f"The primary grid for {name} has an incomplete prompt")
+        if original_keys is not None and trial_keys(all_rows) != original_keys:
+            raise ValueError(f"Primary prompt IDs, seeds or counterbalanced order differ for {name}")
         result[name] = {"widths": {}}
         for width in (2, 4):
             rows = [row for row in all_rows if row["gamma"] == width]
@@ -297,6 +304,10 @@ def main():
             config, rows = load_experiment(path)
             if config["mode"] != mode:
                 raise ValueError(f"Expected {mode} evidence in {path}")
+            if mode == "quality" and {(row["id"], row["group"]) for row in rows} != {
+                (row["id"], row["group"]) for row in primary_rows[config["draft"]]
+            }:
+                raise ValueError("Standalone workload differs from the frozen primary prompts")
             result[config["draft"]][mode] = summarize(rows)
     if args.unmerged:
         config, rows = load_experiment(args.unmerged)

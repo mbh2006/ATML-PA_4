@@ -1,0 +1,18 @@
+{
+  "status": "verified",
+  "kaggle_version": "mbh2006/atml-pa4-prefix-alignment-last/1",
+  "backup_version": "mbh2006/atml-pa4-on-prefix-bundle/1",
+  "archive_sha256": "0cdcfc58c0d7a171f6cb6341140fd5133b4bef3b9ff1934d44e8b9241abf487d",
+  "banks": {
+    "on_6304": {
+      "prompts": 120,
+      "manifest_sha256": "60d8c0054dac3cf98e48e62cb22b44300847bfaa1493012c66d3cf101ee26eea",
+      "checkpoint_sha256": "d9073da7e92898d0d2110031125c2fe34cf650b1bb97d2144d0f36af86f86def"
+    },
+    "on_6305": {
+      "prompts": 120,
+      "manifest_sha256": "6055d99ee7a4026b2e42ff39549493887ed0be4cdda57199fb1ec3fed4f3adda",
+      "checkpoint_sha256": "b8e28d4b6929148c0e7c05b5f83454e76817aca9960b30fd9c2af92b221d988d"
+    }
+  }
+}
