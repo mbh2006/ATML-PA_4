@@ -1,6 +1,7 @@
 """Plot audited loss curves against the cumulative number of teacher-scored tokens."""
 
 import argparse
+import gzip
 import json
 from pathlib import Path
 
@@ -17,10 +18,19 @@ def plot(inputs, output):
             updates = [json.loads(line) for line in stream]
         if status["status"] != "passed" or len(updates) != 157 or updates[-1]["counts"] != status["tokens"]:
             raise ValueError(f"Missing complete training evidence at {directory}")
+        with gzip.open(directory / "rollouts-and-segments.jsonl.gz", "rt", encoding="utf-8") as stream:
+            final_segments = [row for row in map(json.loads, stream)
+                              if row["event"] == "segment" and row["update"] == 157]
         for axis, category, heading in zip(axes, ("math", "short"), ("Mathematics", "Short-form extraction"), strict=True):
             category_updates = [row for row in updates if set(row["category_tokens"]) == {category}]
             x = [row["counts"][category] for row in category_updates]
             y = [row["kl"] for row in category_updates]
+            remaining = [row for row in final_segments if row["category"] == category]
+            n = sum(row["tokens"] for row in remaining)
+            if x[-1] + n != status["tokens"][category]:
+                raise ValueError(f"Final mixed update does not reach the {category} quota in {directory}")
+            x.append(status["tokens"][category])
+            y.append(sum(row["kl_sum"] for row in remaining) / n)
             color = "#176382" if config["policy"] == "off" else "#a45025"
             style = "-" if config["seed"] == 6304 else "--"
             label = f"{config['policy'].capitalize()}-policy · {config['seed']}"

@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "python": "3.13.16",
+  "platform": "x86_64-manylinux_2_28",
+  "command": "uv pip compile requirements.txt --python-version 3.13.16 --python-platform x86_64-manylinux_2_28",
+  "requirements_sha256": "0e10b88e5fc40c7a452279f1fa429f4ff7c29a26f23b4554d37270f191831457",
+  "resolved_direct_requirements": [
+    "torch==2.11.0",
+    "transformers==4.57.1",
+    "huggingface-hub==0.36.2",
+    "tokenizers==0.22.2",
+    "datasets==4.8.5",
+    "numpy==2.5.5",
+    "matplotlib==3.11.2"
+  ],
+  "measured_cuda_torch_build": "2.11.0+cu130"
+}
