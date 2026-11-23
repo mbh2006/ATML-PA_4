@@ -3,11 +3,58 @@
 import argparse
 import gzip
 import json
+import math
 from collections import Counter, defaultdict
 from pathlib import Path
 from statistics import median
 
 import numpy as np
+
+
+def check_generation(row, cap, stops, speculative):
+    tokens = row["tokens"]
+    if not 0 < len(tokens) <= cap or any(token in stops for token in tokens[:-1]):
+        raise ValueError("Saved generation violates its fixed cap or EOS boundary")
+    eos = tokens[-1] in stops
+    if row["eos"] != eos or row["truncated"] != (len(tokens) == cap and not eos):
+        raise ValueError("Saved termination flags disagree with the token sequence")
+    if not all(math.isfinite(row[key]) and row[key] > 0 for key in ("wall_seconds", "prefill_seconds", "decode_seconds")):
+        raise ValueError("Invalid timing measurement")
+    if row["peak_allocated_gpu_bytes"] < row["initial_allocated_gpu_bytes"]:
+        raise ValueError("Peak allocation is below initial allocation")
+    rounds = row["rounds"]
+    if not speculative:
+        if rounds or row["target_decode_calls"] != len(tokens) - 1 or row["draft_decode_calls"]:
+            raise ValueError("Incorrect target-only decode forward counts")
+        return
+    if not rounds or row["target_decode_calls"] != len(rounds):
+        raise ValueError("Each speculative round must record one verification")
+    if any(not 0 <= round_["accepted"] <= round_["examined"] <= round_["proposed"] for round_ in rounds):
+        raise ValueError("Invalid speculative acceptance counters")
+    if any(row[key] != sum(round_[key] for round_ in rounds) for key in ("proposed", "examined", "accepted")):
+        raise ValueError("Aggregate acceptance counts differ from round counts")
+    if sum(round_["emitted"] for round_ in rounds) != len(tokens) or (
+        sum(round_["draft_calls"] for round_ in rounds) != row["draft_decode_calls"]
+    ):
+        raise ValueError("Speculative work or output token counts disagree with the rounds")
+
+
+def audit_rows(config, rows):
+    mode = config["mode"]
+    stops = set() if mode == "fixed" else set(config["eos_ids"])
+    for row in rows:
+        if row["draft"] != config["draft"]:
+            raise ValueError("A measurement was attached to the wrong draft")
+        if mode == "quality":
+            check_generation(row["result"], 512 if row["group"] == "math" else 32, stops, speculative=False)
+        else:
+            modes = {"spec", "target", "profiled"} if mode == "primary" else {"spec", "target"}
+            if row["runs"].keys() != modes:
+                raise ValueError("Missing or extra paired timing lane")
+            for lane, run in row["runs"].items():
+                check_generation(run, 64, stops, speculative=lane != "target")
+            if mode == "primary" and row["runs"]["spec"]["tokens"] != row["runs"]["profiled"]["tokens"]:
+                raise ValueError("Timing instrumentation changed a sampled trajectory")
 
 
 def load_experiment(path):
@@ -23,6 +70,7 @@ def load_experiment(path):
         rows = [json.loads(line) for line in stream]
     if len(rows) != status["rows"] or config["draft"] != status["draft"]:
         raise ValueError(f"Experiment status and results disagree: {path}")
+    audit_rows(config, rows)
     return config, rows
 
 
