@@ -1,0 +1,27 @@
+{
+  "kaggle_version": "mbh2006/atml-pa4-kv-systems/1",
+  "status": "partial",
+  "error": "CUDA out of memory during untimed batch-8 context prefill at the longer context.",
+  "rows": 180,
+  "completed_shapes": [
+    [
+      2048,
+      1
+    ],
+    [
+      2048,
+      8
+    ],
+    [
+      4096,
+      1
+    ]
+  ],
+  "files": {
+    "atml-pa4-kv-systems.log": "b5cbbe62ace3b2e95aaeb419c5a0bc614c490e61676918a9113f53f7755f9f70",
+    "kv-systems/timings.jsonl": "b1679a897104e9e9f13a5c52be3b5f0469c7a02a11dd516bcb3be709d5e7cec0",
+    "original-smoke/benchmark.jsonl": "11f72190a04789f647a43d3793d8da47a9cd0bba2cbf2e429d4b023463018ef0",
+    "original-smoke/config.json": "aee394692e9e270659b7a7205ff8408bead338435b02b31ced2d981920851d9c",
+    "original-smoke/status.json": "8cc448558243966f589c92bb7c79d4c8f2223f4df7bbc7bdb9355b53fea771f8"
+  }
+}

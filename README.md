@@ -49,6 +49,31 @@ python -m pa4.kv_codec_validation --output runs/task2c/codec-reproduction.json
 python scripts/plot_attention.py --input results/task2a/operator-grid.json --output runs/task2a/reproduction-plots
 ```
 
+## Reproduce the compression and MQAR matrices
+
+The adaptive compression allocations are fixed with development or calibration evidence before evaluating any held-out condition. The commands below regenerate both allocation files and use them to evaluate the same 17 compressed conditions. The earlier FP16 command supplies the reference.
+
+```sh
+DATA=runs/preflight/public-data-v2/public-data
+STAFF=vendor/atml-pa4-datasets
+for condition in q2-int8 q2-int4 q2-int3; do
+  python -m pa4.weight_uniform --data "$DATA" --condition "$condition" --output "runs/task1/q2-reproduction/$condition"
+done
+python -m pa4.weight_pruning_selection --data "$DATA" --output runs/task1/p3-reproduction
+python -m pa4.weight_precision_selection --data "$DATA" --q2-results runs/task1/q2-reproduction --output runs/task1/q3-reproduction
+for condition in magnitude-25 magnitude-50 magnitude-75 wanda-25 wanda-50 wanda-75 wanda-2of4 q1-int8 q1-int4 q1-int3 q2-int8 q2-int4 q2-int3 p3-50 p3-75 q3-int4-budget q3-int3-budget; do
+  python -m pa4.weight_final_evaluation --data "$DATA" --condition "$condition" --pruning-selection runs/task1/p3-reproduction/selection.json --precision-selection runs/task1/q3-reproduction/selection.json --output "runs/task1/heldout-reproduction/$condition"
+done
+```
+
+For MQAR, the development-only top-K selection is versioned. The matrix runner uses it to train all 42 conditions and then evaluates each native checkpoint and the dense test-time local control where applicable.
+
+```sh
+python -m scripts.run_mqar_matrix --staff "$STAFF" --selection results/task2b/intervention-selection.json --output runs/task2b/matrix-reproduction
+python -m pa4.mqar_cost --selection results/task2b/intervention-selection.json --output runs/task2b/cost-reproduction.json
+python -m scripts.plot_mqar --raw runs/task2b/matrix-reproduction --cost runs/task2b/cost-reproduction.json --output runs/task2b/figures-reproduction
+```
+
 ## Task 3 training and evaluation commands
 
 Use the same pinned data and CUDA environment for all four training runs. Generate the teacher pool once. Each run writes its full journal and checkpoints locally.

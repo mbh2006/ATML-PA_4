@@ -46,11 +46,17 @@ def audit_pool(directory, data, staff):
             "sampling_elapsed_seconds": status["sampling_elapsed_seconds"]}
 
 
-def audit_training(directory, expected):
+def audit_training(directory, expected, frozen_pool=None):
     config = json.loads((directory / "config.json").read_bytes())
     status = json.loads((directory / "status.json").read_bytes())
     if status["attempted_updates"] != expected or status["status"] != ("passed" if expected == 157 else "partial"):
         raise ValueError("Training status disagrees with the required schedule")
+    pool = None
+    if frozen_pool:
+        if config["policy"] != "off" or config["pool_sha256"] != sha256(frozen_pool):
+            raise ValueError("The training config does not reference the supplied teacher pool")
+        with frozen_pool.open(encoding="utf-8") as stream:
+            pool = {row["prompt_id"]: row for row in map(json.loads, stream)}
     schedule = list(token_schedule())
     rollouts = {}
     cursors = Counter()
@@ -77,6 +83,10 @@ def audit_training(directory, expected):
                         raise ValueError("On-policy rollout used a stale draft")
                     if config["policy"] == "off" and row["producer"] != "frozen-teacher":
                         raise ValueError("Off-policy rollout did not use the frozen teacher")
+                    if pool is not None:
+                        source = pool[row["prompt_id"]]
+                        if any(row[field] != source[field] for field in ("prompt_ids", "response_ids", "seed", "eos")):
+                            raise ValueError("Off-policy rollout tokens differ from the frozen teacher result")
                     rollouts[key] = [len(row["response_ids"]), 0]
                     cursors[category] += 1
                 else:
@@ -110,6 +120,7 @@ def audit_training(directory, expected):
         raise ValueError("Checkpoint journal offset differs from the saved byte count")
     return {"status": "passed", "policy": config["policy"], "seed": config["seed"], "tokens": counts,
             "attempted_updates": updates, "executed_updates": executed, "rollouts": len(rollouts),
+            "frozen_pool_match": True if pool is not None else None,
             "checkpoint_sha256": sha256(checkpoint), "journal_sha256": sha256(log),
             "first_kl": losses[0], "last_kl": losses[-1]}
 
@@ -118,6 +129,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--pool", type=Path)
     parser.add_argument("--training", type=Path)
+    parser.add_argument("--frozen-pool", type=Path)
     parser.add_argument("--data", type=Path)
     parser.add_argument("--staff", type=Path)
     parser.add_argument("--updates", type=int, default=157)
@@ -127,7 +139,9 @@ def main():
         parser.error("Choose exactly one of --pool or --training")
     if args.pool and (not args.data or not args.staff):
         parser.error("Pool verification requires --data and --staff")
-    audit = audit_pool(args.pool, args.data, args.staff) if args.pool else audit_training(args.training, args.updates)
+    audit = audit_pool(args.pool, args.data, args.staff) if args.pool else audit_training(
+        args.training, args.updates, args.frozen_pool,
+    )
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(audit, indent=2, allow_nan=False) + "\n", encoding="utf-8")
 

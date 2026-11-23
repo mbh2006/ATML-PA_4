@@ -96,14 +96,16 @@ def run(args):
             prompt = prepare_prompt(tokenizer, case)
             ids = torch.tensor([prompt.token_ids], device=model.device)
             prefix, suffix = ids[:, :prompt.prefix_length], ids[:, prompt.prefix_length:]
+            result = model(input_ids=prefix, use_cache=True, logits_to_keep=1)
+            source_layers = cache_layers(result.past_key_values)
+            del result
+            started = synced_time()
+            scores = attention_scores(model, source_layers, suffix, prompt)
+            question_scoring_seconds = synced_time() - started
             for batch in (1, 8):
-                inputs = prefix.repeat(batch, 1)
-                result = model(input_ids=inputs, use_cache=True, logits_to_keep=1)
-                layers = cache_layers(result.past_key_values)
-                del result
-                started = synced_time()
-                scores = attention_scores(model, tuple((k[:1], v[:1]) for k, v in layers), suffix, prompt)
-                question_scoring_seconds = synced_time() - started
+                layers = source_layers if batch == 1 else tuple(
+                    (key.repeat(batch, 1, 1, 1), value.repeat(batch, 1, 1, 1)) for key, value in source_layers
+                )
                 batched_suffix = suffix.repeat(batch, 1)
                 for policy in POLICIES:
                     for repeat in range(-2, args.repeats):
@@ -120,8 +122,10 @@ def run(args):
         "status": "passed", "torch": str(torch.__version__), "gpu": torch.cuda.get_device_name(),
         "source_revision": os.environ.get("PA4_SOURCE_REVISION"), "model_revision": lock["revisions"]["model_target"],
         "repeats": args.repeats, "warmups": 2,
-        "batch": "Homogeneous copies of an actual Qwen retrieval cache; per-request payloads, batched model decode.",
-        "scope": "One appended token after the question. Source FP16 caches stay resident as inputs to the pack benchmark.",
+        "batch": "A real Qwen prefix cache is computed at batch one and physically replicated before timing. "
+                 "Payloads are packed per request and the decode forward uses the declared batch.",
+        "scope": "One appended token after the question. The initial context prefill is outside the measured stages. "
+                 "Source FP16 caches stay resident as inputs to the pack benchmark.",
     })
 
 

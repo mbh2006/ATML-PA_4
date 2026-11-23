@@ -61,7 +61,10 @@ def main():
     plt.close(fig)
 
     archive = Path("results/task2b")
-    training = sorted(args.raw.glob("gpu-*/training/*")) + sorted(p.parent for p in archive.glob("dense-*/updates.jsonl"))
+    flat_training = sorted(args.raw.glob("training/*"))
+    training = flat_training or (
+        sorted(args.raw.glob("gpu-*/training/*")) + sorted(p.parent for p in archive.glob("dense-*/updates.jsonl"))
+    )
     assert len(training) == len({p.name for p in training}) == 42
     learning = []
     fig, axes_grid = plt.subplots(3, 5, figsize=(14, 8), sharex=True, sharey=True, layout="constrained")
@@ -89,7 +92,8 @@ def main():
 
     distances = ("[0,32)", "[32,64)", "[64,128)", "[128,256)")
     results = defaultdict(list)
-    for path in (archive / "full-matrix").glob("gpu-*/test/*/summary.json"):
+    flat_test = sorted(args.raw.glob("test/*/summary.json"))
+    for path in flat_test or sorted((archive / "full-matrix").glob("gpu-*/test/*/summary.json")):
         label, mode = path.parent.name.rsplit("-", 1)
         condition, _ = label.rsplit("-", 1)
         for cell in read(path)["cells"]:
