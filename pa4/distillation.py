@@ -137,11 +137,16 @@ def run(args):
     _, teacher = load_model(lock, "model_target", device)
     stops = eos_ids(student)
     adapters = attach_adapters(student)
+    parameter_counts = {
+        "draft_total": sum(param.numel() for param in student.parameters()),
+        "draft_trainable": sum(param.numel() for param in adapters.values()),
+        "teacher_total": sum(param.numel() for param in teacher.parameters()),
+    }
     optimizer = torch.optim.AdamW(adapters.values(), lr=3e-4, weight_decay=.01)
     scaler = torch.amp.GradScaler("cuda", init_scale=1024)
     state = {
         "attempted": 0, "executed": 0, "counts": dict.fromkeys(QUOTAS, 0), "cursors": dict.fromkeys(QUOTAS, 0),
-        "pending": dict.fromkeys(QUOTAS), "journal_size": 0,
+        "pending": dict.fromkeys(QUOTAS), "journal_size": 0, "peak_allocated_gpu_bytes": 0,
         "seconds": dict.fromkeys(("teacher", "rollout", "backward", "optimizer"), 0.0),
     }
     if args.resume:
@@ -170,6 +175,7 @@ def run(args):
                 continue
             if index >= args.max_updates:
                 break
+            torch.cuda.reset_peak_memory_stats(device)
             optimizer.zero_grad(set_to_none=True)
             count = sum(tokens for _, tokens in group)
             categories = iter(group)
@@ -244,10 +250,12 @@ def run(args):
             state["seconds"]["optimizer"] += synced_time() - started
             state["attempted"] += 1
             state["executed"] += int(executed)
+            peak = torch.cuda.max_memory_allocated(device)
+            state["peak_allocated_gpu_bytes"] = max(state.get("peak_allocated_gpu_bytes", 0), peak)
             record({"event": "update", "update": state["attempted"], "category_tokens": dict(group), "tokens": processed,
                     "counts": state["counts"], "kl": loss_total / processed, "executed": executed,
                     "grad_norm": grad_norm if torch.isfinite(torch.tensor(grad_norm)).item() else None,
-                    "loss_scale": scale, "lr": optimizer.param_groups[0]["lr"],
+                    "loss_scale": scale, "lr": optimizer.param_groups[0]["lr"], "peak_allocated_gpu_bytes": peak,
                     "cumulative_seconds": state["seconds"]})
             journal.flush()
             if state["attempted"] % 25 == 0 or state["attempted"] == args.max_updates or state["counts"] == QUOTAS:
@@ -256,6 +264,7 @@ def run(args):
     write_json(args.output / "status.json", {
         "status": "passed" if state["counts"] == QUOTAS else "partial",
         "tokens": state["counts"], "attempted_updates": state["attempted"], "executed_updates": state["executed"],
+        "parameter_counts": parameter_counts, "peak_allocated_gpu_bytes": state.get("peak_allocated_gpu_bytes", 0),
         "seconds": state["seconds"], "checkpoint": checkpoint_path.name if checkpoint_path else None,
     })
 

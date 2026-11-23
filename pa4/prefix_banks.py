@@ -17,7 +17,8 @@ from pa4.speculative import SpeculativeDecoder
 
 
 BANKS = ("teacher", "original_draft", "exact_spec_original_gamma4")
-SEED_OFFSETS = {bank: 123 * index for index, bank in enumerate(BANKS)}
+TRAINED_BANKS = ("off_6304", "off_6305", "on_6304", "on_6305")
+SEED_OFFSETS = {bank: 123 * index for index, bank in enumerate(BANKS + TRAINED_BANKS)}
 POSITION_BINS = ((1, 16, 8), (17, 32, 8), (33, 64, 16), (65, 192, 16))
 MAX_NEW_TOKENS = 192
 
@@ -75,8 +76,23 @@ def build_bank(args):
     if not 0 <= args.start < args.stop <= len(cases):
         raise ValueError("Prompt slice must be nonempty and within the fixed prompt list")
     device = torch.device("cuda", 0)
-    key = "model_draft" if args.bank == "original_draft" else "model_target"
-    tokenizer, model = load_model(lock, key, device)
+    key = "model_draft" if args.bank == "original_draft" or args.bank in TRAINED_BANKS else "model_target"
+    checkpoint = getattr(args, "checkpoint", None)
+    if (args.bank in TRAINED_BANKS) != (checkpoint is not None):
+        raise ValueError("A trained bank requires its matching completed draft checkpoint")
+    merge_audit = None
+    if checkpoint is not None:
+        from pa4.distilled_models import load_verified_draft
+        from transformers import AutoTokenizer
+
+        template = AutoTokenizer.from_pretrained(lock["repos"][key], revision=lock["revisions"][key])
+        smoke = [template.apply_chat_template([{"role": "user", "content": cases[i][2]}],
+                                             tokenize=True, add_generation_prompt=True) for i in (0, 60, 90)]
+        tokenizer, model, merge_audit = load_verified_draft(lock, device, checkpoint, smoke)
+        if args.bank != f"{merge_audit['policy']}_{merge_audit['seed']}":
+            raise ValueError("Named prefix bank and checkpoint policy/seed differ")
+    else:
+        tokenizer, model = load_model(lock, key, device)
     stop = eos_ids(model)
     draft = None
     models = {key: lock["revisions"][key]}
@@ -89,11 +105,23 @@ def build_bank(args):
         "bank": args.bank, "models": models, "source_revision": os.environ.get("PA4_SOURCE_REVISION"),
         "top_p": 1, "temperature": 1, "max_new_tokens": MAX_NEW_TOKENS, "eos_ids": sorted(stop),
     }
+    if checkpoint is not None:
+        with checkpoint.open("rb") as stream:
+            config["checkpoint_sha256"] = hashlib.file_digest(stream, "sha256").hexdigest()
     args.output.mkdir(parents=True, exist_ok=True)
     config_path = args.output / "config.json"
     if config_path.exists() and json.loads(config_path.read_text(encoding="utf-8")) != config:
         raise ValueError("Prefix-bank configuration differs from the saved run")
     write_json(config_path, config)
+    if merge_audit is not None and not (args.output / "merge.json").exists():
+        write_json(args.output / "merge.json", merge_audit)
+    if getattr(args, "merged_output", None) is not None:
+        if merge_audit is None:
+            raise ValueError("Saving a merged model requires a trained checkpoint")
+        if args.merged_output.exists():
+            raise ValueError("Merged checkpoint output already exists")
+        model.save_pretrained(args.merged_output)
+        tokenizer.save_pretrained(args.merged_output)
 
     fingerprints = {}
     for index in range(args.start, args.stop):
@@ -141,7 +169,9 @@ def main():
     parser.add_argument("--data", type=Path, required=True)
     parser.add_argument("--staff", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
-    parser.add_argument("--bank", choices=BANKS, required=True)
+    parser.add_argument("--bank", choices=BANKS + TRAINED_BANKS, required=True)
+    parser.add_argument("--checkpoint", type=Path)
+    parser.add_argument("--merged-output", type=Path)
     parser.add_argument("--start", type=int, default=0)
     parser.add_argument("--stop", type=int, default=120)
     build_bank(parser.parse_args())

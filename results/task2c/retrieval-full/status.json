@@ -1,0 +1,10 @@
+{
+  "source_revision": "0265ceeec32667fda2219fd0c01867ae88f4fd57",
+  "start": 0,
+  "stop": 180,
+  "model_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "torch": "2.11.0+cu130",
+  "gpu": "Tesla T4",
+  "completed": 180,
+  "status": "passed"
+}

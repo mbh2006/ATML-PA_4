@@ -38,6 +38,8 @@ python -m pa4.attention_benchmark --output runs/task2a/operator-grid-reproductio
 python scripts/run_mqar_dense_controls.py --staff vendor/atml-pa4-datasets --output runs/task2b/dense-reproduction
 python scripts/select_mqar_intervention.py --dense-controls results/task2b --output runs/task2b/selection-reproduction.json
 python -m pa4.qwen_validation --lock results/setup/local_source_revisions.json --output runs/task3/qwen-reproduction.json
+python -m pa4.kv_retrieval --lock results/setup/local_source_revisions.json --cases vendor/atml-pa4-datasets/data/kv_retrieval/kv_retrieval_cases.jsonl.gz --output runs/task2c/retrieval-reproduction
+python -m scripts.summarize_kv --retrieval runs/task2c/retrieval-reproduction/cases.jsonl --output runs/task2c/retrieval-reproduction/summary.json
 
 # CPU checks and plots
 python -m pa4.speculative_validation --output runs/task3/markov-reproduction.json
@@ -63,3 +65,4 @@ python scripts/plot_attention.py --input results/task2a/operator-grid.json --out
 - All three dense mixed K=16 controls reached 4,500 updates. The development rule selected top-64 for the trained intervention. [Frozen selection and source scores](results/task2b/intervention-selection.json)
 - Task 2B completed all 42 MQAR training runs, 54 held-out evaluations, and the 20-condition cost sweep. [Matrix audit](results/task2b/full-matrix/audit.json), [cost measurements](results/task2b/mqar-cost.json), [figures and tables](results/task2b/figures/)
 - Task 2C packing and byte-budget checks passed on synthetic cache tensors. [KV codec validation](results/pilot/kv-codec-validation.json)
+- Task 2C ran six cache policies on all 180 locked Qwen retrieval prompts. The archive preserves each generated answer, the per-token scores, selection positions, and measured byte budgets. [Raw paired evidence and summaries](results/task2c/retrieval-full/)
