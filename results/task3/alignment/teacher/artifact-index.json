@@ -1,0 +1,8 @@
+{
+  "bank": "teacher",
+  "rows": 600,
+  "kaggle_version": "mbh2006/atml-pa4-prefix-alignment-first/1",
+  "raw_sha256": "51a9339c46f2700179e3a5c6d2b28997e1a33cb1204d3d47b30e7b5e3b7dcd18",
+  "compressed_sha256": "7203681acdb444961183d115ac0bc772fe20f7bdd48c1bee1e4a20c684d56201",
+  "local_directory": "runs/task3/prefix-alignment-first-v1/alignment/teacher"
+}

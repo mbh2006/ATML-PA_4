@@ -30,13 +30,29 @@
     6305
   ],
   "task3_complete_evaluations": {
+    "off_6304": {
+      "primary": 480,
+      "quality": 120,
+      "fixed": 48
+    },
+    "off_6305": {
+      "primary": 480,
+      "quality": 120,
+      "fixed": 48
+    },
     "original_draft": {
       "primary": 480,
       "quality": 120,
       "fixed": 48
     }
   },
-  "task3_alignment_rows_by_bank": {},
+  "task3_alignment_rows_by_bank": {
+    "exact_spec_original_gamma4": 600,
+    "off_6304": 600,
+    "off_6305": 600,
+    "original_draft": 600,
+    "teacher": 600
+  },
   "pending": [
     "Task 3 runtime, standalone quality, and adapter timing evaluations",
     "Task 3 shared-prefix alignment and derived evidence"

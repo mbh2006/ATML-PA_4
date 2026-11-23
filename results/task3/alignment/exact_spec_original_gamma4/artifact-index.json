@@ -1,0 +1,8 @@
+{
+  "bank": "exact_spec_original_gamma4",
+  "rows": 600,
+  "kaggle_version": "mbh2006/atml-pa4-prefix-alignment-first/1",
+  "raw_sha256": "29e3f4ddfec040083e45de4510b77e35280025d33d11b0754ef3e3e159f211fa",
+  "compressed_sha256": "2902793722eac7d101579f983c0095ffc2cf03967bb58cc68d2a33e75e09fdba",
+  "local_directory": "runs/task3/prefix-alignment-first-v1/alignment/exact_spec_original_gamma4"
+}

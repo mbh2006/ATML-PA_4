@@ -1,0 +1,8 @@
+{
+  "bank": "off_6304",
+  "rows": 600,
+  "kaggle_version": "mbh2006/atml-pa4-prefix-alignment-first/1",
+  "raw_sha256": "3341a3aacf696acd71e6dcf8842c7aa6be7abb27d2c0a4a3797d541c0963cb70",
+  "compressed_sha256": "2f8274ce138debac867e5093759084661d57b2fb094c3b9e08b26ea61d225c1b",
+  "local_directory": "runs/task3/prefix-alignment-first-v1/alignment/off_6304"
+}

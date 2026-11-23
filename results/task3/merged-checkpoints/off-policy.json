@@ -1,0 +1,20 @@
+{
+  "status": "verified_remote",
+  "source_kaggle_version": "mbh2006/atml-pa4-off-policy-evaluation/1",
+  "verification_kaggle_version": "mbh2006/atml-pa4-off-evidence-bundle/1",
+  "merged_weights": {
+    "evaluation/off_6304/merged/model.safetensors": {
+      "bytes": 988097536,
+      "sha256": "f4d0125231a9330f1af7dfac046d010149ad6f5471f3ef76482e3e882418e28b"
+    },
+    "evaluation/off_6305/merged/model.safetensors": {
+      "bytes": 988097536,
+      "sha256": "7d275a95c691dab6587fa9db298741d46911169a96cde124139dc34f913cec80"
+    }
+  },
+  "evidence_bundle": {
+    "path": "off-evaluation-evidence.zip",
+    "bytes": 9128644,
+    "sha256": "b0ea804a33a987569accc9b631ef957b3fa27f8eadff8f62245e67bc40e51dca"
+  }
+}

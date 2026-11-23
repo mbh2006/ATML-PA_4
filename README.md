@@ -121,6 +121,7 @@ Run the same three benchmarks with `--checkpoint` for each of the four trained d
 - Both off-policy and both on-policy seeds completed their 40,000-token budgets. The archives include update losses, rollout IDs, scored-token offsets, and checkpoint hashes. [Training evidence](results/task3/training/), [loss curves](results/task3/figures/training-loss.png)
 - The original-draft timing smoke covered all 12 paired trials in its three-prompt slice. [Per-round timing evidence](results/task3/original-timing-smoke/)
 - The original draft completed 480 paired timing trials, 120 standalone examples, and 48 fixed-cap comparisons. [Original-draft evaluation](results/task3/evaluations/original_draft/)
+- The two off-policy drafts completed the same runtime, standalone, and fixed-cap grids. Their frozen prefix-bank audits match the final training checkpoint hashes. [Seed 6304](results/task3/evaluations/off_6304/), [seed 6305](results/task3/evaluations/off_6305/)
 - Task 1 compression primitives passed exact mask, packed-byte, and mixed-allocation checks. [Compression checks](results/pilot/weight-validation.json)
 - Task 2B pilots covered each operator on CUDA. The CPU recovery check reproduced model and optimizer states bit for bit. [Operator and resume checks](results/pilot/mqar-validation.json), [pilot timing](results/pilot/mqar-timing.json)
 - All three dense mixed K=16 controls reached 4,500 updates. The development rule selected top-64 for the trained intervention. [Frozen selection and source scores](results/task2b/intervention-selection.json)
