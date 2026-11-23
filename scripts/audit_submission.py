@@ -149,7 +149,7 @@ def audit(root, data, staff):
     summary = read_json(archive.with_name("summary.json"))
     assert summary["locked_cases_sha256"] == hashlib.sha256(source.read_bytes()).hexdigest()
     kvruntime = results / "task2c/systems/timings.jsonl"
-    pending = ["Task 3 full draft training and aligned-prefix, runtime, and standalone evaluations"]
+    pending = []
     systems_count = 0
     if kvruntime.exists():
         systems_count = len(systems(read_rows(kvruntime)))
@@ -181,8 +181,35 @@ def audit(root, data, staff):
             assert off_config["training_ids"] == on_config["training_ids"]
             assert off_config["data_lock_sha256"] == on_config["data_lock_sha256"]
             matched_seed_orders.append(seed)
-    if len(training_seeds) == 4:
-        pending[0] = "Task 3 aligned-prefix, runtime, and standalone evaluations"
+    expected_drafts = {"original_draft", "off_6304", "off_6305", "on_6304", "on_6305"}
+    if len(training_seeds) != 4:
+        pending.append("Task 3 full draft training")
+    evaluation = {}
+    for path in sorted((results / "task3/evaluations").glob("*/artifact-index.json")):
+        draft = path.parent.name
+        status = read_json(path)
+        assert status["draft"] == draft and status["status"] == "passed" and draft in expected_drafts
+        expected_modes = {"primary": 480, "quality": 120, "fixed": 48}
+        if "unmerged" in status["modes"]:
+            expected_modes["unmerged"] = 48
+        assert status["modes"].keys() == expected_modes.keys()
+        for mode, expected in expected_modes.items():
+            artifact = path.parent / mode / "benchmark.jsonl.gz"
+            evidence = status["modes"][mode]
+            assert evidence["rows"] == expected
+            assert hashlib.sha256(artifact.read_bytes()).hexdigest() == evidence["compressed_sha256"]
+        if draft != "original_draft":
+            assert status["trained_bank_prompts"] == 120
+        evaluation[draft] = expected_modes
+    if evaluation.keys() != expected_drafts or sum("unmerged" in modes for modes in evaluation.values()) != 1:
+        pending.append("Task 3 runtime, standalone quality, and adapter timing evaluations")
+    alignment = {}
+    for path in sorted((results / "task3/alignment").glob("*/status.json")):
+        bank = read_json(path)
+        assert (bank["status"], bank["prompts"], bank["rows"]) == ("passed", 120, 600)
+        alignment[bank["bank"]] = bank["rows"]
+    if len(alignment) != 7 or not (results / "task3/alignment-summary.json").exists():
+        pending.append("Task 3 shared-prefix alignment and derived evidence")
     return {
         "input_artifact_hashes": "passed",
         "c4_gsm8k_short_form_split_checks": "passed",
@@ -203,6 +230,8 @@ def audit(root, data, staff):
         "task3_teacher_pool_prompts": pool["prompts"],
         "task3_complete_training_seeds": training_seeds,
         "task3_matched_training_prompt_orders": matched_seed_orders,
+        "task3_complete_evaluations": evaluation,
+        "task3_alignment_rows_by_bank": alignment,
         "pending": pending,
     }
 
